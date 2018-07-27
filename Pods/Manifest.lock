@@ -1,0 +1,42 @@
+PODS:
+  - Alamofire (4.7.2)
+  - Crashlytics (3.10.2):
+    - Fabric (~> 1.7.7)
+  - Fabric (1.7.7)
+  - SwiftValidator (4.0.0)
+  - Toaster (2.1.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - Crashlytics
+  - Fabric
+  - SwiftValidator (from `https://github.com/jpotts18/SwiftValidator.git`, branch `swift-4.1`)
+  - Toaster
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Crashlytics
+    - Fabric
+    - Toaster
+
+EXTERNAL SOURCES:
+  SwiftValidator:
+    :branch: swift-4.1
+    :git: https://github.com/jpotts18/SwiftValidator.git
+
+CHECKOUT OPTIONS:
+  SwiftValidator:
+    :commit: ba27b0e501bf542b5c1a97bed8f706d12fb2d4f4
+    :git: https://github.com/jpotts18/SwiftValidator.git
+
+SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  Crashlytics: 0360624eea1c978a743feddb2fb1ef8b37fb7a0d
+  Fabric: bda89e242bce1b7b8ab264248cf3407774ce0095
+  SwiftValidator: 25ded5ca1f10c05adf57f6ac82a72d28ac8d91af
+  Toaster: a6c9532de1ded8105e77376f7dffeb2e12b46dbb
+
+PODFILE CHECKSUM: f0825e4601759e6030adee23da784aebf92ee482
+
+COCOAPODS: 1.5.3

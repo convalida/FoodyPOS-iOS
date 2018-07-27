@@ -1,0 +1,6 @@
+framework module Pods_FoodyPOSUITests {
+  umbrella header "Pods-FoodyPOSUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
