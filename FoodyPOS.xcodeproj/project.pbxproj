@@ -7,17 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		043DD8E3210DA079009B89C2 /* Highcharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 043DD8E2210DA078009B89C2 /* Highcharts.framework */; };
+		043DD8E4210DA087009B89C2 /* Highcharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 043DD8E2210DA078009B89C2 /* Highcharts.framework */; };
+		043DD8E5210DA087009B89C2 /* Highcharts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 043DD8E2210DA078009B89C2 /* Highcharts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		043DD8EC210DBFAA009B89C2 /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 043DD8EA210DBFAA009B89C2 /* KxMenu.m */; };
+		043DD8EF210DE88C009B89C2 /* TopSaleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DD8EE210DE88C009B89C2 /* TopSaleVC.swift */; };
+		043DD8F1210DE8D5009B89C2 /* TopSaleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DD8F0210DE8D5009B89C2 /* TopSaleCell.swift */; };
 		04C8F98C210956E6005DD9F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8F98B210956E6005DD9F2 /* AppDelegate.swift */; };
-		04C8F98E210956E6005DD9F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8F98D210956E6005DD9F2 /* ViewController.swift */; };
 		04C8F991210956E6005DD9F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C8F98F210956E6005DD9F2 /* Main.storyboard */; };
 		04C8F993210956E8005DD9F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C8F992210956E8005DD9F2 /* Assets.xcassets */; };
 		04C8F996210956E8005DD9F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C8F994210956E8005DD9F2 /* LaunchScreen.storyboard */; };
 		04C8F9A1210956E8005DD9F2 /* FoodyPOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8F9A0210956E8005DD9F2 /* FoodyPOSTests.swift */; };
 		04C8F9AC210956E8005DD9F2 /* FoodyPOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8F9AB210956E8005DD9F2 /* FoodyPOSUITests.swift */; };
-		04C8F9BF210957A9005DD9F2 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8F9BC210957A8005DD9F2 /* GradientView.swift */; };
 		04C8F9C0210957A9005DD9F2 /* StoryboardConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8F9BD210957A8005DD9F2 /* StoryboardConstant.swift */; };
 		04C8F9C1210957A9005DD9F2 /* DesignTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8F9BE210957A9005DD9F2 /* DesignTextField.swift */; };
 		04C8F9E421095D11005DD9F2 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8F9E321095D11005DD9F2 /* UIView.swift */; };
+		04E84D81210C109600537500 /* ARSInfiniteLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84D71210C109600537500 /* ARSInfiniteLoader.swift */; };
+		04E84D82210C109600537500 /* ARSLineProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84D72210C109600537500 /* ARSLineProgress.swift */; };
+		04E84D83210C109600537500 /* ARSLineProgressConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84D73210C109600537500 /* ARSLineProgressConstants.swift */; };
+		04E84D84210C109600537500 /* ARSLineProgressCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84D74210C109600537500 /* ARSLineProgressCustomization.swift */; };
+		04E84D85210C109600537500 /* ARSLineProgressExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84D75210C109600537500 /* ARSLineProgressExtensions.swift */; };
+		04E84D86210C109600537500 /* ARSLineProgressHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84D76210C109600537500 /* ARSLineProgressHelpers.swift */; };
+		04E84D87210C109600537500 /* ARSLineProgressProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84D77210C109600537500 /* ARSLineProgressProtocols.swift */; };
+		04E84D88210C109600537500 /* ARSLineProgressTypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84D78210C109600537500 /* ARSLineProgressTypeAliases.swift */; };
+		04E84D89210C109600537500 /* ARSProgressLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84D79210C109600537500 /* ARSProgressLoader.swift */; };
+		04E84D8A210C109600537500 /* ARSStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84D7A210C109600537500 /* ARSStatus.swift */; };
+		04E84D8B210C109600537500 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E84D7E210C109600537500 /* TPKeyboardAvoidingScrollView.m */; };
+		04E84D8C210C109600537500 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E84D80210C109600537500 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		04E84D8E210C119300537500 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84D8D210C119300537500 /* LoginVC.swift */; };
+		04E84D91210C128600537500 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84D90210C128600537500 /* Constant.swift */; };
+		04E84D93210C13A300537500 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84D92210C13A300537500 /* SignUpVC.swift */; };
+		04E84D97210C26EF00537500 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84D96210C26EF00537500 /* ForgotPasswordVC.swift */; };
+		04E84D99210C27A300537500 /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84D98210C27A300537500 /* ChangePasswordVC.swift */; };
+		04E84DD3210CD87F00537500 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84DD2210CD87F00537500 /* UIColor.swift */; };
+		04E84DD5210CE3A400537500 /* DashboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84DD4210CE3A400537500 /* DashboardCell.swift */; };
+		04E84DD7210CE3BB00537500 /* DashboardGraphCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84DD6210CE3BB00537500 /* DashboardGraphCell.swift */; };
+		04E84DD9210CE3DF00537500 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84DD8210CE3DF00537500 /* DashboardVC.swift */; };
+		04E84DDB210CE7F200537500 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84DDA210CE7F200537500 /* Dashboard.swift */; };
+		04E84DDD210CF09000537500 /* LeftSlideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84DDC210CF09000537500 /* LeftSlideMenu.swift */; };
+		04E84DDF210CF0AE00537500 /* LeftMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84DDE210CF0AE00537500 /* LeftMenuVC.swift */; };
+		04E84DE1210CF1E100537500 /* LeftMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84DE0210CF1E100537500 /* LeftMenuCell.swift */; };
+		04E84DE3210CF34000537500 /* LeftMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84DE2210CF34000537500 /* LeftMenu.swift */; };
 		7014FAD9AE1C42B0D8A34449 /* Pods_FoodyPOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF69F29960234784FB0C5F0 /* Pods_FoodyPOS.framework */; };
 		B76D9C3991320F9A563531D3 /* Pods_FoodyPOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 442844A4622D4E29CD710497 /* Pods_FoodyPOSTests.framework */; };
 		D2419726B67DCA319FB1BA6E /* Pods_FoodyPOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6C1DBEB8360AEA42A6A11C /* Pods_FoodyPOSUITests.framework */; };
@@ -40,10 +70,29 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		043DD8E6210DA087009B89C2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				043DD8E5210DA087009B89C2 /* Highcharts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		043DD8E2210DA078009B89C2 /* Highcharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Highcharts.framework; sourceTree = "<group>"; };
+		043DD8EA210DBFAA009B89C2 /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
+		043DD8EB210DBFAA009B89C2 /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
+		043DD8ED210DC0AC009B89C2 /* FoodyPOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FoodyPOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		043DD8EE210DE88C009B89C2 /* TopSaleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSaleVC.swift; sourceTree = "<group>"; };
+		043DD8F0210DE8D5009B89C2 /* TopSaleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSaleCell.swift; sourceTree = "<group>"; };
 		04C8F988210956E6005DD9F2 /* FoodyPOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodyPOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C8F98B210956E6005DD9F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		04C8F98D210956E6005DD9F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		04C8F990210956E6005DD9F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04C8F992210956E8005DD9F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04C8F995210956E8005DD9F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,10 +103,37 @@
 		04C8F9A7210956E8005DD9F2 /* FoodyPOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodyPOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C8F9AB210956E8005DD9F2 /* FoodyPOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodyPOSUITests.swift; sourceTree = "<group>"; };
 		04C8F9AD210956E8005DD9F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04C8F9BC210957A8005DD9F2 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		04C8F9BD210957A8005DD9F2 /* StoryboardConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardConstant.swift; sourceTree = "<group>"; };
 		04C8F9BE210957A9005DD9F2 /* DesignTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignTextField.swift; sourceTree = "<group>"; };
 		04C8F9E321095D11005DD9F2 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		04E84D71210C109600537500 /* ARSInfiniteLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARSInfiniteLoader.swift; sourceTree = "<group>"; };
+		04E84D72210C109600537500 /* ARSLineProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARSLineProgress.swift; sourceTree = "<group>"; };
+		04E84D73210C109600537500 /* ARSLineProgressConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARSLineProgressConstants.swift; sourceTree = "<group>"; };
+		04E84D74210C109600537500 /* ARSLineProgressCustomization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARSLineProgressCustomization.swift; sourceTree = "<group>"; };
+		04E84D75210C109600537500 /* ARSLineProgressExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARSLineProgressExtensions.swift; sourceTree = "<group>"; };
+		04E84D76210C109600537500 /* ARSLineProgressHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARSLineProgressHelpers.swift; sourceTree = "<group>"; };
+		04E84D77210C109600537500 /* ARSLineProgressProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARSLineProgressProtocols.swift; sourceTree = "<group>"; };
+		04E84D78210C109600537500 /* ARSLineProgressTypeAliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARSLineProgressTypeAliases.swift; sourceTree = "<group>"; };
+		04E84D79210C109600537500 /* ARSProgressLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARSProgressLoader.swift; sourceTree = "<group>"; };
+		04E84D7A210C109600537500 /* ARSStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARSStatus.swift; sourceTree = "<group>"; };
+		04E84D7D210C109600537500 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		04E84D7E210C109600537500 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		04E84D7F210C109600537500 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		04E84D80210C109600537500 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		04E84D8D210C119300537500 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		04E84D90210C128600537500 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		04E84D92210C13A300537500 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		04E84D96210C26EF00537500 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
+		04E84D98210C27A300537500 /* ChangePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
+		04E84DD2210CD87F00537500 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		04E84DD4210CE3A400537500 /* DashboardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCell.swift; sourceTree = "<group>"; };
+		04E84DD6210CE3BB00537500 /* DashboardGraphCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardGraphCell.swift; sourceTree = "<group>"; };
+		04E84DD8210CE3DF00537500 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
+		04E84DDA210CE7F200537500 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
+		04E84DDC210CF09000537500 /* LeftSlideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftSlideMenu.swift; sourceTree = "<group>"; };
+		04E84DDE210CF0AE00537500 /* LeftMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuVC.swift; sourceTree = "<group>"; };
+		04E84DE0210CF1E100537500 /* LeftMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuCell.swift; sourceTree = "<group>"; };
+		04E84DE2210CF34000537500 /* LeftMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenu.swift; sourceTree = "<group>"; };
 		2528BF695A4F3378450D4EEF /* Pods-FoodyPOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodyPOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodyPOSTests/Pods-FoodyPOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		442844A4622D4E29CD710497 /* Pods_FoodyPOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodyPOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A6C1DBEB8360AEA42A6A11C /* Pods_FoodyPOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodyPOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,7 +150,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				043DD8E4210DA087009B89C2 /* Highcharts.framework in Frameworks */,
 				7014FAD9AE1C42B0D8A34449 /* Pods_FoodyPOS.framework in Frameworks */,
+				043DD8E3210DA079009B89C2 /* Highcharts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,14 +200,12 @@
 		04C8F98A210956E6005DD9F2 /* FoodyPOS */ = {
 			isa = PBXGroup;
 			children = (
+				04E84D8F210C126C00537500 /* Resources */,
+				04E84D6F210C107400537500 /* Helper */,
 				04C8F9E521095D19005DD9F2 /* Extensions */,
 				04C8F9BB21095735005DD9F2 /* Model */,
 				04C8F9BA21095733005DD9F2 /* View */,
 				04C8F9B92109572C005DD9F2 /* Controller */,
-				04C8F98B210956E6005DD9F2 /* AppDelegate.swift */,
-				04C8F98D210956E6005DD9F2 /* ViewController.swift */,
-				04C8F992210956E8005DD9F2 /* Assets.xcassets */,
-				04C8F997210956E8005DD9F2 /* Info.plist */,
 			);
 			path = FoodyPOS;
 			sourceTree = "<group>";
@@ -155,6 +231,13 @@
 		04C8F9B92109572C005DD9F2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				04E84D8D210C119300537500 /* LoginVC.swift */,
+				04E84D92210C13A300537500 /* SignUpVC.swift */,
+				04E84D96210C26EF00537500 /* ForgotPasswordVC.swift */,
+				04E84D98210C27A300537500 /* ChangePasswordVC.swift */,
+				04E84DD8210CE3DF00537500 /* DashboardVC.swift */,
+				04E84DDE210CF0AE00537500 /* LeftMenuVC.swift */,
+				043DD8EE210DE88C009B89C2 /* TopSaleVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -165,8 +248,11 @@
 				04C8F98F210956E6005DD9F2 /* Main.storyboard */,
 				04C8F994210956E8005DD9F2 /* LaunchScreen.storyboard */,
 				04C8F9BE210957A9005DD9F2 /* DesignTextField.swift */,
-				04C8F9BC210957A8005DD9F2 /* GradientView.swift */,
 				04C8F9BD210957A8005DD9F2 /* StoryboardConstant.swift */,
+				04E84DD4210CE3A400537500 /* DashboardCell.swift */,
+				04E84DD6210CE3BB00537500 /* DashboardGraphCell.swift */,
+				04E84DE0210CF1E100537500 /* LeftMenuCell.swift */,
+				043DD8F0210DE8D5009B89C2 /* TopSaleCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -174,6 +260,8 @@
 		04C8F9BB21095735005DD9F2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				04E84DDA210CE7F200537500 /* Dashboard.swift */,
+				04E84DE2210CF34000537500 /* LeftMenu.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -182,8 +270,61 @@
 			isa = PBXGroup;
 			children = (
 				04C8F9E321095D11005DD9F2 /* UIView.swift */,
+				04E84DD2210CD87F00537500 /* UIColor.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		04E84D6F210C107400537500 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				043DD8EB210DBFAA009B89C2 /* KxMenu.h */,
+				043DD8EA210DBFAA009B89C2 /* KxMenu.m */,
+				04E84DDC210CF09000537500 /* LeftSlideMenu.swift */,
+				04E84D70210C109600537500 /* ARSInfinite */,
+				04E84D7B210C109600537500 /* Keyboard Avoid */,
+				043DD8ED210DC0AC009B89C2 /* FoodyPOS-Bridging-Header.h */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		04E84D70210C109600537500 /* ARSInfinite */ = {
+			isa = PBXGroup;
+			children = (
+				04E84D71210C109600537500 /* ARSInfiniteLoader.swift */,
+				04E84D72210C109600537500 /* ARSLineProgress.swift */,
+				04E84D73210C109600537500 /* ARSLineProgressConstants.swift */,
+				04E84D74210C109600537500 /* ARSLineProgressCustomization.swift */,
+				04E84D75210C109600537500 /* ARSLineProgressExtensions.swift */,
+				04E84D76210C109600537500 /* ARSLineProgressHelpers.swift */,
+				04E84D77210C109600537500 /* ARSLineProgressProtocols.swift */,
+				04E84D78210C109600537500 /* ARSLineProgressTypeAliases.swift */,
+				04E84D79210C109600537500 /* ARSProgressLoader.swift */,
+				04E84D7A210C109600537500 /* ARSStatus.swift */,
+			);
+			path = ARSInfinite;
+			sourceTree = "<group>";
+		};
+		04E84D7B210C109600537500 /* Keyboard Avoid */ = {
+			isa = PBXGroup;
+			children = (
+				04E84D7D210C109600537500 /* TPKeyboardAvoidingScrollView.h */,
+				04E84D7E210C109600537500 /* TPKeyboardAvoidingScrollView.m */,
+				04E84D7F210C109600537500 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				04E84D80210C109600537500 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+			);
+			path = "Keyboard Avoid";
+			sourceTree = "<group>";
+		};
+		04E84D8F210C126C00537500 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				04E84D90210C128600537500 /* Constant.swift */,
+				04C8F98B210956E6005DD9F2 /* AppDelegate.swift */,
+				04C8F992210956E8005DD9F2 /* Assets.xcassets */,
+				04C8F997210956E8005DD9F2 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		A560441C1ABC21488994E970 /* Pods */ = {
@@ -202,6 +343,7 @@
 		B90D81428A09ACC1DCB2B893 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				043DD8E2210DA078009B89C2 /* Highcharts.framework */,
 				DCF69F29960234784FB0C5F0 /* Pods_FoodyPOS.framework */,
 				442844A4622D4E29CD710497 /* Pods_FoodyPOSTests.framework */,
 				4A6C1DBEB8360AEA42A6A11C /* Pods_FoodyPOSUITests.framework */,
@@ -221,6 +363,7 @@
 				04C8F985210956E6005DD9F2 /* Frameworks */,
 				04C8F986210956E6005DD9F2 /* Resources */,
 				74C1CD113511C9C44F0DF124 /* [CP] Embed Pods Frameworks */,
+				043DD8E6210DA087009B89C2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -423,12 +566,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04E84D87210C109600537500 /* ARSLineProgressProtocols.swift in Sources */,
+				04E84D81210C109600537500 /* ARSInfiniteLoader.swift in Sources */,
+				04E84D88210C109600537500 /* ARSLineProgressTypeAliases.swift in Sources */,
+				04E84D99210C27A300537500 /* ChangePasswordVC.swift in Sources */,
+				04E84D8E210C119300537500 /* LoginVC.swift in Sources */,
+				043DD8F1210DE8D5009B89C2 /* TopSaleCell.swift in Sources */,
+				04E84DE3210CF34000537500 /* LeftMenu.swift in Sources */,
+				04E84DDD210CF09000537500 /* LeftSlideMenu.swift in Sources */,
+				04E84DE1210CF1E100537500 /* LeftMenuCell.swift in Sources */,
+				04E84D84210C109600537500 /* ARSLineProgressCustomization.swift in Sources */,
+				04E84D8A210C109600537500 /* ARSStatus.swift in Sources */,
+				04E84DD3210CD87F00537500 /* UIColor.swift in Sources */,
 				04C8F9C1210957A9005DD9F2 /* DesignTextField.swift in Sources */,
-				04C8F98E210956E6005DD9F2 /* ViewController.swift in Sources */,
+				04E84D82210C109600537500 /* ARSLineProgress.swift in Sources */,
+				04E84D97210C26EF00537500 /* ForgotPasswordVC.swift in Sources */,
+				04E84D93210C13A300537500 /* SignUpVC.swift in Sources */,
+				04E84D91210C128600537500 /* Constant.swift in Sources */,
+				04E84D86210C109600537500 /* ARSLineProgressHelpers.swift in Sources */,
+				04E84DDB210CE7F200537500 /* Dashboard.swift in Sources */,
+				04E84D83210C109600537500 /* ARSLineProgressConstants.swift in Sources */,
 				04C8F9E421095D11005DD9F2 /* UIView.swift in Sources */,
+				04E84DD9210CE3DF00537500 /* DashboardVC.swift in Sources */,
+				043DD8EC210DBFAA009B89C2 /* KxMenu.m in Sources */,
 				04C8F98C210956E6005DD9F2 /* AppDelegate.swift in Sources */,
 				04C8F9C0210957A9005DD9F2 /* StoryboardConstant.swift in Sources */,
-				04C8F9BF210957A9005DD9F2 /* GradientView.swift in Sources */,
+				04E84D8C210C109600537500 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				04E84DD5210CE3A400537500 /* DashboardCell.swift in Sources */,
+				04E84D8B210C109600537500 /* TPKeyboardAvoidingScrollView.m in Sources */,
+				043DD8EF210DE88C009B89C2 /* TopSaleVC.swift in Sources */,
+				04E84DDF210CF0AE00537500 /* LeftMenuVC.swift in Sources */,
+				04E84DD7210CE3BB00537500 /* DashboardGraphCell.swift in Sources */,
+				04E84D85210C109600537500 /* ARSLineProgressExtensions.swift in Sources */,
+				04E84D89210C109600537500 /* ARSProgressLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,13 +774,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V5TAAW86C9;
-				INFOPLIST_FILE = FoodyPOS/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/FoodyPOS/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = tutist.FoodyPOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FoodyPOS/Helper/FoodyPOS-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -623,13 +798,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V5TAAW86C9;
-				INFOPLIST_FILE = FoodyPOS/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/FoodyPOS/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = tutist.FoodyPOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FoodyPOS/Helper/FoodyPOS-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

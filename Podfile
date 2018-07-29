@@ -6,7 +6,7 @@ target 'FoodyPOS' do
   use_frameworks!
  pod 'SwiftValidator', :git => 'https://github.com/jpotts18/SwiftValidator.git', :branch => 'swift-4.1'
   pod 'Alamofire'
- pod 'Fabric'
+  pod 'Fabric'
   pod 'Crashlytics'
 pod 'Toaster'
   # Pods for FoodyPOS
