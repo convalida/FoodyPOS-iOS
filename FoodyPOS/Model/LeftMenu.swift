@@ -10,8 +10,8 @@ import Foundation
 
 struct LeftMenu {
     
-    static let MainData = [Main(image: "", title: "Dashboard"),Main(image: "", title: "Orders"),Main(image: "", title: "Customer Details"),Main(image: "", title: "Reports")]
-    static let ProfileData = [Profile(image: "", title: "Employee"),Profile(image: "", title: "Change Password"),Profile(image: "", title: "Logout")]
+    static let MainData = [Main(image: #imageLiteral(resourceName: "home"), title: "Dashboard"),Main(image: #imageLiteral(resourceName: "icon1-3"), title: "Orders"),Main(image: #imageLiteral(resourceName: "orders"), title: "Customer Details"),Main(image: #imageLiteral(resourceName: "icon1-5"), title: "Reports")]
+    static let ProfileData = [Profile(image: #imageLiteral(resourceName: "icon1-6"), title: "Employee"),Profile(image: #imageLiteral(resourceName: "icon1-7"), title: "Change Password"),Profile(image: #imageLiteral(resourceName: "icon1-8"), title: "Logout")]
     
     struct CellIdentifier {
         static let headerCell = "headerCell"
@@ -19,12 +19,12 @@ struct LeftMenu {
     }
     
     struct  Main {
-        let image:String
+        let image:UIImage
         let title:String
     }
     
     struct Profile {
-        let image:String
+        let image:UIImage
         let title:String
     }
 }

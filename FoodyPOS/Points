@@ -1,0 +1,65 @@
+Development of application which includes:
+• Displaying splash screen as welcome screen.
+• Login screen includes email address and password to be filled by user, remember me
+checkbox, clickable forgot password text, sign in button, clickable signup text.
+• On click of sign in option, user should be taken to main screen of application if sign in is
+successful, else it should display message saying "Incorrect email id or password".
+• There should be checks in both email address and password for empty fields. Also check for
+invalid email address, i.e., it should display error message if email id is of incorrect format or
+any of fields is empty.
+• On click of sign up text, user will be landed to signup page which requires user to enter his
+name, email id, password, confirm password and select role(manager or employee), an add
+-------------------------------------------------------
+employee button (which will add details to database) and a reset button (which will reset to all
+fields entered by user to empty fields).
+-----------------------------------------------------------
+• On click of Forgot password text, dialog will appear which will require user to enter email
+address and submit button, also clickable login text (which will take user back to login
+screen). After verification, user will be taken to screen where password can be reset.
+• Once user enters email address and password and clicks on remember me in login page, next
+time user starts the application, login screen will not be displayed to user, i.e., after splash
+screen, user will be taken directly to main page of application.
+• Main page will display top sale, weekly sale, total orders, weekly orders, total customers,
+
+weekly customers and a graph which will display orders and sales on y axis and scale on x-
+axis (which depends on which button is clicked - week, month, year). Main page will also
+
+contain Top Sale, Order list and Best seller as bottom navigation.
+----------------------------------------------------------
+• Top sale: It will display top 3 sales in descending order of amounts of purchase, each row will
+display customer name, contact no., no. of orders and amount for each customer. On click of
+see all, it will display all sales of current week, along with option to select a date range and
+see sales within that range.
+• Order list: It will display orders of current week. It will also have option to select date range
+within which we want to see orders and also an option to search by order no. Each row in
+order list should display all the order details (pickup time, order no., price, customer name,
+email id, phone no. of customer) and details of all items in that order (individual price, add
+on, add on price, modifier, instruction, total price including tax).
+-------------------------------------------------------------
+• Bestsellers: Display weekly, monthly and yearly bestseller items.
+• Overflow menu will contain change password and logout option.
+• Main navigation bar will consist of Dashboard option, Order list, Customer details, Sales
+reports, Employee details, Change password and Logout.
+• Customer details will include all details of customer (including their name, contact no., no. of
+orders and amount). Also, there will be option to select date range within which we want to
+see customers.
+• Sales report will show sales of current week (daily basis) by default. But there will also be
+option to see daily, weekly or monthly report. Also, user can select a date range and see sales
+on daily, weekly or monthly basis.
+• Employee details will display all employees along with their name, mail id, role and active
+status. There will be option to edit employee role and active status. Also, option to add new
+employee.
+• Change password will provide option to reset password.
+• Push notifications: A notification should be there on user's phone each time a new order is
+placed.
+Testing of application which includes:
+
+• Testing application on all screen sizes of iPhone as well as iPad and on all versions currently
+popular.
+• Testing all functionalities of all sections and sub sections of application with all restaurants.
+• Test application in both modes - landscape and portrait.
+Deployment of application on app store.
+Any change in design after approval.
+Proposed apps would be targeting following environments:
+• Apple iPhone with iOS version – 11.x, 10.x, 9.x.
+• Apple iPad with iOS version – 11.x, 10.x, 9.x.

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04182C8E210FFD84001EA39F /* OrderListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04182C8D210FFD84001EA39F /* OrderListVC.swift */; };
 		043DD8E3210DA079009B89C2 /* Highcharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 043DD8E2210DA078009B89C2 /* Highcharts.framework */; };
 		043DD8E4210DA087009B89C2 /* Highcharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 043DD8E2210DA078009B89C2 /* Highcharts.framework */; };
 		043DD8E5210DA087009B89C2 /* Highcharts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 043DD8E2210DA078009B89C2 /* Highcharts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -35,19 +36,40 @@
 		04E84D8B210C109600537500 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E84D7E210C109600537500 /* TPKeyboardAvoidingScrollView.m */; };
 		04E84D8C210C109600537500 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E84D80210C109600537500 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		04E84D8E210C119300537500 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84D8D210C119300537500 /* LoginVC.swift */; };
-		04E84D91210C128600537500 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84D90210C128600537500 /* Constant.swift */; };
 		04E84D93210C13A300537500 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84D92210C13A300537500 /* SignUpVC.swift */; };
 		04E84D97210C26EF00537500 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84D96210C26EF00537500 /* ForgotPasswordVC.swift */; };
 		04E84D99210C27A300537500 /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84D98210C27A300537500 /* ChangePasswordVC.swift */; };
 		04E84DD3210CD87F00537500 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84DD2210CD87F00537500 /* UIColor.swift */; };
 		04E84DD5210CE3A400537500 /* DashboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84DD4210CE3A400537500 /* DashboardCell.swift */; };
-		04E84DD7210CE3BB00537500 /* DashboardGraphCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84DD6210CE3BB00537500 /* DashboardGraphCell.swift */; };
 		04E84DD9210CE3DF00537500 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84DD8210CE3DF00537500 /* DashboardVC.swift */; };
 		04E84DDB210CE7F200537500 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84DDA210CE7F200537500 /* Dashboard.swift */; };
 		04E84DDD210CF09000537500 /* LeftSlideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84DDC210CF09000537500 /* LeftSlideMenu.swift */; };
 		04E84DDF210CF0AE00537500 /* LeftMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84DDE210CF0AE00537500 /* LeftMenuVC.swift */; };
 		04E84DE1210CF1E100537500 /* LeftMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84DE0210CF1E100537500 /* LeftMenuCell.swift */; };
 		04E84DE3210CF34000537500 /* LeftMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84DE2210CF34000537500 /* LeftMenu.swift */; };
+		2B05FD3A2115606A00109889 /* Points in Resources */ = {isa = PBXBuildFile; fileRef = 2B05FD392115606A00109889 /* Points */; };
+		2B42C3A12116A0B90086FDB6 /* EmployeeDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B42C3A02116A0B90086FDB6 /* EmployeeDetailCell.swift */; };
+		2B931CE721157A9800927A0C /* DesignImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B931CE321157A8600927A0C /* DesignImageView.swift */; };
+		2B931CE821157A9800927A0C /* DesignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B931CE421157A9100927A0C /* DesignView.swift */; };
+		2B931CE921157A9800927A0C /* DesignLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B931CE521157A9500927A0C /* DesignLabel.swift */; };
+		2B931CEA21157A9800927A0C /* DesignButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B931CE621157A9700927A0C /* DesignButton.swift */; };
+		2B931CF421157F4E00927A0C /* SalesSellAllVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B931CF321157F4E00927A0C /* SalesSellAllVC.swift */; };
+		2B931CF6211583B200927A0C /* BestSellerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B931CF5211583B200927A0C /* BestSellerVC.swift */; };
+		2B931CF82115844F00927A0C /* BestSellerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B931CF72115844F00927A0C /* BestSellerCell.swift */; };
+		2B931CFA2115881100927A0C /* SalesReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B931CF92115881100927A0C /* SalesReportVC.swift */; };
+		2BDED6042112A1FE007C0AB5 /* OrderListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDED6032112A1FE007C0AB5 /* OrderListCell.swift */; };
+		2BF898CF21160C7C001161F2 /* SalesReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF898CE21160C7C001161F2 /* SalesReportCell.swift */; };
+		2BF898D12116105D001161F2 /* EmployeeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF898D02116105D001161F2 /* EmployeeDetailVC.swift */; };
+		2BFBC6D6211734BA00DF9A9D /* EditEmployeeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFBC6D5211734BA00DF9A9D /* EditEmployeeVC.swift */; };
+		2BFBC6D92117677000DF9A9D /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFBC6D72117675F00DF9A9D /* Validation.swift */; };
+		2BFBC6DA2117677000DF9A9D /* AppMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFBC6D82117677000DF9A9D /* AppMessages.swift */; };
+		2BFBC6DD21176A5E00DF9A9D /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFBC6DC21176A5E00DF9A9D /* APIConstants.swift */; };
+		2BFBC6E021176AB800DF9A9D /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFBC6DE21176AB700DF9A9D /* Constant.swift */; };
+		2BFBC6E121176AB800DF9A9D /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFBC6DF21176AB800DF9A9D /* Global.swift */; };
+		2BFBC6E321176BAC00DF9A9D /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFBC6E221176BAC00DF9A9D /* APIRouter.swift */; };
+		2BFBC6E521176CB400DF9A9D /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFBC6E421176CB400DF9A9D /* APIClient.swift */; };
+		2BFBC6E721176CF400DF9A9D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFBC6E621176CF400DF9A9D /* User.swift */; };
+		2BFBC6E92117E52B00DF9A9D /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFBC6E82117E52B00DF9A9D /* UIViewController.swift */; };
 		7014FAD9AE1C42B0D8A34449 /* Pods_FoodyPOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF69F29960234784FB0C5F0 /* Pods_FoodyPOS.framework */; };
 		B76D9C3991320F9A563531D3 /* Pods_FoodyPOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 442844A4622D4E29CD710497 /* Pods_FoodyPOSTests.framework */; };
 		D2419726B67DCA319FB1BA6E /* Pods_FoodyPOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6C1DBEB8360AEA42A6A11C /* Pods_FoodyPOSUITests.framework */; };
@@ -85,6 +107,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		04182C8D210FFD84001EA39F /* OrderListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListVC.swift; sourceTree = "<group>"; };
 		043DD8E2210DA078009B89C2 /* Highcharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Highcharts.framework; sourceTree = "<group>"; };
 		043DD8EA210DBFAA009B89C2 /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
 		043DD8EB210DBFAA009B89C2 /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
@@ -121,13 +144,11 @@
 		04E84D7F210C109600537500 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
 		04E84D80210C109600537500 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		04E84D8D210C119300537500 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
-		04E84D90210C128600537500 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		04E84D92210C13A300537500 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		04E84D96210C26EF00537500 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		04E84D98210C27A300537500 /* ChangePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
 		04E84DD2210CD87F00537500 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		04E84DD4210CE3A400537500 /* DashboardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCell.swift; sourceTree = "<group>"; };
-		04E84DD6210CE3BB00537500 /* DashboardGraphCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardGraphCell.swift; sourceTree = "<group>"; };
 		04E84DD8210CE3DF00537500 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 		04E84DDA210CE7F200537500 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 		04E84DDC210CF09000537500 /* LeftSlideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftSlideMenu.swift; sourceTree = "<group>"; };
@@ -135,6 +156,29 @@
 		04E84DE0210CF1E100537500 /* LeftMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuCell.swift; sourceTree = "<group>"; };
 		04E84DE2210CF34000537500 /* LeftMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenu.swift; sourceTree = "<group>"; };
 		2528BF695A4F3378450D4EEF /* Pods-FoodyPOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodyPOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodyPOSTests/Pods-FoodyPOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2B05FD392115606A00109889 /* Points */ = {isa = PBXFileReference; lastKnownFileType = text; path = Points; sourceTree = "<group>"; };
+		2B42C3A02116A0B90086FDB6 /* EmployeeDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailCell.swift; sourceTree = "<group>"; };
+		2B931CE321157A8600927A0C /* DesignImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignImageView.swift; sourceTree = "<group>"; };
+		2B931CE421157A9100927A0C /* DesignView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignView.swift; sourceTree = "<group>"; };
+		2B931CE521157A9500927A0C /* DesignLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignLabel.swift; sourceTree = "<group>"; };
+		2B931CE621157A9700927A0C /* DesignButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignButton.swift; sourceTree = "<group>"; };
+		2B931CF321157F4E00927A0C /* SalesSellAllVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesSellAllVC.swift; sourceTree = "<group>"; };
+		2B931CF5211583B200927A0C /* BestSellerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestSellerVC.swift; sourceTree = "<group>"; };
+		2B931CF72115844F00927A0C /* BestSellerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestSellerCell.swift; sourceTree = "<group>"; };
+		2B931CF92115881100927A0C /* SalesReportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesReportVC.swift; sourceTree = "<group>"; };
+		2BDED6032112A1FE007C0AB5 /* OrderListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListCell.swift; sourceTree = "<group>"; };
+		2BF898CE21160C7C001161F2 /* SalesReportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesReportCell.swift; sourceTree = "<group>"; };
+		2BF898D02116105D001161F2 /* EmployeeDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailVC.swift; sourceTree = "<group>"; };
+		2BFBC6D5211734BA00DF9A9D /* EditEmployeeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEmployeeVC.swift; sourceTree = "<group>"; };
+		2BFBC6D72117675F00DF9A9D /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		2BFBC6D82117677000DF9A9D /* AppMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppMessages.swift; sourceTree = "<group>"; };
+		2BFBC6DC21176A5E00DF9A9D /* APIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		2BFBC6DE21176AB700DF9A9D /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constant.swift; path = ../../../../../AutomobileFirst/AutomobileFirst/Resources/Constant.swift; sourceTree = "<group>"; };
+		2BFBC6DF21176AB800DF9A9D /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		2BFBC6E221176BAC00DF9A9D /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		2BFBC6E421176CB400DF9A9D /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		2BFBC6E621176CF400DF9A9D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2BFBC6E82117E52B00DF9A9D /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		442844A4622D4E29CD710497 /* Pods_FoodyPOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodyPOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A6C1DBEB8360AEA42A6A11C /* Pods_FoodyPOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodyPOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51897CD92FA4F180743F2624 /* Pods-FoodyPOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodyPOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodyPOSUITests/Pods-FoodyPOSUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -206,6 +250,7 @@
 				04C8F9BB21095735005DD9F2 /* Model */,
 				04C8F9BA21095733005DD9F2 /* View */,
 				04C8F9B92109572C005DD9F2 /* Controller */,
+				2B05FD392115606A00109889 /* Points */,
 			);
 			path = FoodyPOS;
 			sourceTree = "<group>";
@@ -238,6 +283,12 @@
 				04E84DD8210CE3DF00537500 /* DashboardVC.swift */,
 				04E84DDE210CF0AE00537500 /* LeftMenuVC.swift */,
 				043DD8EE210DE88C009B89C2 /* TopSaleVC.swift */,
+				04182C8D210FFD84001EA39F /* OrderListVC.swift */,
+				2B931CF321157F4E00927A0C /* SalesSellAllVC.swift */,
+				2B931CF5211583B200927A0C /* BestSellerVC.swift */,
+				2B931CF92115881100927A0C /* SalesReportVC.swift */,
+				2BF898D02116105D001161F2 /* EmployeeDetailVC.swift */,
+				2BFBC6D5211734BA00DF9A9D /* EditEmployeeVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -245,14 +296,15 @@
 		04C8F9BA21095733005DD9F2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2BDED6022112A164007C0AB5 /* Cell */,
 				04C8F98F210956E6005DD9F2 /* Main.storyboard */,
 				04C8F994210956E8005DD9F2 /* LaunchScreen.storyboard */,
 				04C8F9BE210957A9005DD9F2 /* DesignTextField.swift */,
+				2B931CE621157A9700927A0C /* DesignButton.swift */,
+				2B931CE321157A8600927A0C /* DesignImageView.swift */,
+				2B931CE521157A9500927A0C /* DesignLabel.swift */,
+				2B931CE421157A9100927A0C /* DesignView.swift */,
 				04C8F9BD210957A8005DD9F2 /* StoryboardConstant.swift */,
-				04E84DD4210CE3A400537500 /* DashboardCell.swift */,
-				04E84DD6210CE3BB00537500 /* DashboardGraphCell.swift */,
-				04E84DE0210CF1E100537500 /* LeftMenuCell.swift */,
-				043DD8F0210DE8D5009B89C2 /* TopSaleCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -262,6 +314,7 @@
 			children = (
 				04E84DDA210CE7F200537500 /* Dashboard.swift */,
 				04E84DE2210CF34000537500 /* LeftMenu.swift */,
+				2BFBC6E621176CF400DF9A9D /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -269,6 +322,7 @@
 		04C8F9E521095D19005DD9F2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				2BFBC6E82117E52B00DF9A9D /* UIViewController.swift */,
 				04C8F9E321095D11005DD9F2 /* UIView.swift */,
 				04E84DD2210CD87F00537500 /* UIColor.swift */,
 			);
@@ -319,12 +373,40 @@
 		04E84D8F210C126C00537500 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				04E84D90210C128600537500 /* Constant.swift */,
+				2BFBC6DB21176A3200DF9A9D /* API */,
+				2BFBC6D82117677000DF9A9D /* AppMessages.swift */,
+				2BFBC6D72117675F00DF9A9D /* Validation.swift */,
 				04C8F98B210956E6005DD9F2 /* AppDelegate.swift */,
+				2BFBC6DE21176AB700DF9A9D /* Constant.swift */,
+				2BFBC6DF21176AB800DF9A9D /* Global.swift */,
 				04C8F992210956E8005DD9F2 /* Assets.xcassets */,
 				04C8F997210956E8005DD9F2 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		2BDED6022112A164007C0AB5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				04E84DD4210CE3A400537500 /* DashboardCell.swift */,
+				04E84DE0210CF1E100537500 /* LeftMenuCell.swift */,
+				043DD8F0210DE8D5009B89C2 /* TopSaleCell.swift */,
+				2BDED6032112A1FE007C0AB5 /* OrderListCell.swift */,
+				2B931CF72115844F00927A0C /* BestSellerCell.swift */,
+				2BF898CE21160C7C001161F2 /* SalesReportCell.swift */,
+				2B42C3A02116A0B90086FDB6 /* EmployeeDetailCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		2BFBC6DB21176A3200DF9A9D /* API */ = {
+			isa = PBXGroup;
+			children = (
+				2BFBC6DC21176A5E00DF9A9D /* APIConstants.swift */,
+				2BFBC6E221176BAC00DF9A9D /* APIRouter.swift */,
+				2BFBC6E421176CB400DF9A9D /* APIClient.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		A560441C1ABC21488994E970 /* Pods */ = {
@@ -463,6 +545,7 @@
 				04C8F996210956E8005DD9F2 /* LaunchScreen.storyboard in Resources */,
 				04C8F993210956E8005DD9F2 /* Assets.xcassets in Resources */,
 				04C8F991210956E6005DD9F2 /* Main.storyboard in Resources */,
+				2B05FD3A2115606A00109889 /* Points in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,12 +574,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FoodyPOS/Pods-FoodyPOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CodableAlamofire/CodableAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftValidator/SwiftValidator.framework",
 				"${BUILT_PRODUCTS_DIR}/Toaster/Toaster.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CodableAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftValidator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toaster.framework",
 			);
@@ -568,37 +653,58 @@
 			files = (
 				04E84D87210C109600537500 /* ARSLineProgressProtocols.swift in Sources */,
 				04E84D81210C109600537500 /* ARSInfiniteLoader.swift in Sources */,
+				2BFBC6E92117E52B00DF9A9D /* UIViewController.swift in Sources */,
 				04E84D88210C109600537500 /* ARSLineProgressTypeAliases.swift in Sources */,
+				2B931CE921157A9800927A0C /* DesignLabel.swift in Sources */,
+				2BFBC6D6211734BA00DF9A9D /* EditEmployeeVC.swift in Sources */,
 				04E84D99210C27A300537500 /* ChangePasswordVC.swift in Sources */,
 				04E84D8E210C119300537500 /* LoginVC.swift in Sources */,
+				2B931CF82115844F00927A0C /* BestSellerCell.swift in Sources */,
 				043DD8F1210DE8D5009B89C2 /* TopSaleCell.swift in Sources */,
 				04E84DE3210CF34000537500 /* LeftMenu.swift in Sources */,
 				04E84DDD210CF09000537500 /* LeftSlideMenu.swift in Sources */,
+				2B931CE821157A9800927A0C /* DesignView.swift in Sources */,
 				04E84DE1210CF1E100537500 /* LeftMenuCell.swift in Sources */,
 				04E84D84210C109600537500 /* ARSLineProgressCustomization.swift in Sources */,
+				2BF898D12116105D001161F2 /* EmployeeDetailVC.swift in Sources */,
 				04E84D8A210C109600537500 /* ARSStatus.swift in Sources */,
 				04E84DD3210CD87F00537500 /* UIColor.swift in Sources */,
+				2BFBC6E021176AB800DF9A9D /* Constant.swift in Sources */,
+				2BDED6042112A1FE007C0AB5 /* OrderListCell.swift in Sources */,
 				04C8F9C1210957A9005DD9F2 /* DesignTextField.swift in Sources */,
 				04E84D82210C109600537500 /* ARSLineProgress.swift in Sources */,
+				2BFBC6E321176BAC00DF9A9D /* APIRouter.swift in Sources */,
+				2B931CF421157F4E00927A0C /* SalesSellAllVC.swift in Sources */,
+				2BFBC6DA2117677000DF9A9D /* AppMessages.swift in Sources */,
+				2B931CE721157A9800927A0C /* DesignImageView.swift in Sources */,
 				04E84D97210C26EF00537500 /* ForgotPasswordVC.swift in Sources */,
+				2BF898CF21160C7C001161F2 /* SalesReportCell.swift in Sources */,
 				04E84D93210C13A300537500 /* SignUpVC.swift in Sources */,
-				04E84D91210C128600537500 /* Constant.swift in Sources */,
+				2B42C3A12116A0B90086FDB6 /* EmployeeDetailCell.swift in Sources */,
+				04182C8E210FFD84001EA39F /* OrderListVC.swift in Sources */,
 				04E84D86210C109600537500 /* ARSLineProgressHelpers.swift in Sources */,
+				2BFBC6E721176CF400DF9A9D /* User.swift in Sources */,
+				2B931CFA2115881100927A0C /* SalesReportVC.swift in Sources */,
 				04E84DDB210CE7F200537500 /* Dashboard.swift in Sources */,
+				2BFBC6D92117677000DF9A9D /* Validation.swift in Sources */,
 				04E84D83210C109600537500 /* ARSLineProgressConstants.swift in Sources */,
 				04C8F9E421095D11005DD9F2 /* UIView.swift in Sources */,
 				04E84DD9210CE3DF00537500 /* DashboardVC.swift in Sources */,
+				2B931CEA21157A9800927A0C /* DesignButton.swift in Sources */,
 				043DD8EC210DBFAA009B89C2 /* KxMenu.m in Sources */,
 				04C8F98C210956E6005DD9F2 /* AppDelegate.swift in Sources */,
+				2BFBC6E521176CB400DF9A9D /* APIClient.swift in Sources */,
 				04C8F9C0210957A9005DD9F2 /* StoryboardConstant.swift in Sources */,
 				04E84D8C210C109600537500 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				04E84DD5210CE3A400537500 /* DashboardCell.swift in Sources */,
 				04E84D8B210C109600537500 /* TPKeyboardAvoidingScrollView.m in Sources */,
+				2BFBC6DD21176A5E00DF9A9D /* APIConstants.swift in Sources */,
+				2B931CF6211583B200927A0C /* BestSellerVC.swift in Sources */,
 				043DD8EF210DE88C009B89C2 /* TopSaleVC.swift in Sources */,
 				04E84DDF210CF0AE00537500 /* LeftMenuVC.swift in Sources */,
-				04E84DD7210CE3BB00537500 /* DashboardGraphCell.swift in Sources */,
 				04E84D85210C109600537500 /* ARSLineProgressExtensions.swift in Sources */,
 				04E84D89210C109600537500 /* ARSProgressLoader.swift in Sources */,
+				2BFBC6E121176AB800DF9A9D /* Global.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -772,19 +878,22 @@
 			baseConfigurationReference = A68143EF5EFF4E4FB3A9CEB6 /* Pods-FoodyPOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V5TAAW86C9;
+				DEVELOPMENT_TEAM = K8UU8WZKUP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/FoodyPOS/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = tutist.FoodyPOS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.convalida.FoodyPOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "FoodyPOS/Helper/FoodyPOS-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -796,19 +905,22 @@
 			baseConfigurationReference = 66AA15F50EA8A36FA4270E07 /* Pods-FoodyPOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V5TAAW86C9;
+				DEVELOPMENT_TEAM = K8UU8WZKUP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/FoodyPOS/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = tutist.FoodyPOS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.convalida.FoodyPOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "FoodyPOS/Helper/FoodyPOS-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

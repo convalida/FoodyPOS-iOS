@@ -1,22 +1,18 @@
 //
-//  DashboardGraphCell.swift
+//  SalesReportCell.swift
 //  FoodyPOS
 //
-//  Created by rajat on 28/07/18.
+//  Created by Tutist Dev on 04/08/18.
 //  Copyright © 2018 com.tutist. All rights reserved.
 //
 
 import UIKit
-import Highcharts
 
-class DashboardGraphCell: UITableViewCell {
+class SalesReportCell: UITableViewCell {
 
-    @IBOutlet weak var btnWeek: UIButton!
-    @IBOutlet weak var btnMonth: UIButton!
-    @IBOutlet weak var btnYear: UIButton!
-    @IBOutlet weak var btnSale: UIButton!
-    @IBOutlet weak var btnOrders: UIButton!
-    @IBOutlet weak var chartView: HIChartView!
+    @IBOutlet weak var lblDay: UILabel!
+    @IBOutlet weak var lblOrder: UILabel!
+    @IBOutlet weak var lblPrice: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

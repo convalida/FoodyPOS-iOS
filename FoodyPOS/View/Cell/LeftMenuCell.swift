@@ -1,5 +1,5 @@
 //
-//  TopSaleCell.swift
+//  LeftMenuCell.swift
 //  FoodyPOS
 //
 //  Created by rajat on 29/07/18.
@@ -8,14 +8,12 @@
 
 import UIKit
 
-class TopSaleCell: UITableViewCell {
+class LeftMenuCell: UITableViewCell {
 
-    @IBOutlet weak var lblLetter: UILabel!
-    @IBOutlet weak var lblName: UILabel!
-    @IBOutlet weak var btnPhone: UIButton!
-    @IBOutlet weak var lblOrder: UILabel!
-    @IBOutlet weak var lblPrice: UILabel!
-    @IBOutlet weak var btnSeeAll: UIButton!
+    @IBOutlet weak var lblHeader: UILabel!
+    @IBOutlet weak var imgIcon: UIImageView!
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var viewBorder: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

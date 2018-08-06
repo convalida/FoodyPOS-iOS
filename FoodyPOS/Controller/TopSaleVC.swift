@@ -14,7 +14,6 @@ class TopSaleVC: UIViewController {
     
     struct CellIdentifier {
         static let topSaleCell = "topSaleCell"
-        static let seeAllCell = "seeAllCell"
     }
     
     //MARK: ---------View Life Cycle---------
@@ -35,36 +34,29 @@ class TopSaleVC: UIViewController {
     @IBAction func btnBackDidClicked(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func btnSeeAllDidClicked(_ sender: UIButton) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.SalesSellAllVC) as! SalesSellAllVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 extension TopSaleVC:UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let totalRows = tableView.numberOfRows(inSection: 0)
-        if indexPath.row != totalRows-1 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.topSaleCell) as? TopSaleCell else {
                 return TopSaleCell()
             }
             return cell
-        }else {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.seeAllCell) as? TopSaleCell else {
-                return TopSaleCell()
-            }
-            return cell
-         }
     }
 }
 
 extension TopSaleVC:UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let totalRows = tableView.numberOfRows(inSection: 0)
-        if indexPath.row != totalRows-1 {
             return 150.0
-        }else {
-            return 71
-        }
     }
 }

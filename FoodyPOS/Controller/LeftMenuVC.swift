@@ -45,10 +45,10 @@ extension LeftMenuVC:UITableViewDataSource {
         
         if indexPath.section == 0 {
             cell.lblTitle.text = LeftMenu.MainData[indexPath.row].title
-            cell.imgIcon.image = UIImage(named: LeftMenu.MainData[indexPath.row].image)
+            cell.imgIcon.image =  LeftMenu.MainData[indexPath.row].image
         }else {
             cell.lblTitle.text = LeftMenu.ProfileData[indexPath.row].title
-            cell.imgIcon.image = UIImage(named: LeftMenu.ProfileData[indexPath.row].image)
+            cell.imgIcon.image =  LeftMenu.ProfileData[indexPath.row].image
         }
         
         return cell
@@ -61,7 +61,7 @@ extension LeftMenuVC:UITableViewDelegate {
         if section != 0 {
             return 50
         }
-        return 0
+        return 16
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -74,6 +74,7 @@ extension LeftMenuVC:UITableViewDelegate {
             headerCell.lblHeader.text = "Profile"
         default:
             headerCell.lblHeader.text = ""
+            headerCell.viewBorder.isHidden = true
         }
         return headerCell
     }
@@ -85,12 +86,22 @@ extension LeftMenuVC:UITableViewDelegate {
             switch indexPath.row {
             case 0:
                 parentVC?.leftSlideMenu.close()
+                
             case 1:
                 parentVC?.leftSlideMenu.close()
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.OrderListVC) as! OrderListVC
+                self.navigationController?.pushViewController(vc, animated: true)
+                
             case 2:
                 parentVC?.leftSlideMenu.close()
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.SalesSellAllVC) as! SalesSellAllVC
+                self.navigationController?.pushViewController(vc, animated: true)
+                
             case 3:
                 parentVC?.leftSlideMenu.close()
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.SalesReportVC) as! SalesReportVC
+                self.navigationController?.pushViewController(vc, animated: true)
+                
             default:
                 print("Default")
             }
@@ -98,7 +109,7 @@ extension LeftMenuVC:UITableViewDelegate {
         case 1:
             switch indexPath.row {
             case 0:
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.ChangePasswordVC) as! ChangePasswordVC
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.EmployeeDetailVC) as! EmployeeDetailVC
                 parentVC?.leftSlideMenu.close()
                 self.navigationController?.pushViewController(vc, animated: true)
             case 1:
