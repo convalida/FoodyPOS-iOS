@@ -168,17 +168,17 @@ class DashboardVC: UIViewController {
         let areaspline2 = HIAreaspline()
         areaspline2.name = "Order"
         areaspline2.data = orderData
-        if !isData {
-            areaspline2.marker = HIMarker()
-            areaspline2.marker.enabled = false
-            areaspline2.dataLabels = HIDataLabels()
-            areaspline2.dataLabels.enabled = false
-            tooltip.followPointer = false
-            tooltip.enabled = false
-            series.enableMouseTracking = false
-            plotoptions.areaspline.events = HIEvents()
-            plotoptions.areaspline.events.legendItemClick = HIFunction(jsFunction: "function() { return false; }")
-        }
+//        if !isData {
+//            areaspline2.marker = HIMarker()
+//            areaspline2.marker.enabled = false
+//            areaspline2.dataLabels = HIDataLabels()
+//            areaspline2.dataLabels.enabled = false
+//            tooltip.followPointer = false
+//            tooltip.enabled = false
+//            series.enableMouseTracking = false
+//            plotoptions.areaspline.events = HIEvents()
+//            plotoptions.areaspline.events.legendItemClick = HIFunction(jsFunction: "function() { return false; }")
+//        }
         
         options.chart = chart
         options.title = title
@@ -222,11 +222,11 @@ class DashboardVC: UIViewController {
             }
             xAxisData.append("")
             saleData.append(0.0.rounded())
-            if !isData {
-                orderData.append(1)
-            }else {
+//            if !isData {
+//                orderData.append(1)
+//            } else {
                 orderData.append(0)
-            }
+            //}
             xAxisData.reverse()
             saleData.reverse()
             orderData.reverse()
