@@ -135,6 +135,10 @@ class DashboardVC: UIViewController {
         yaxis.title = HITitle()
         yaxis.title.text = ""
         yaxis.min = 0
+        if !isData {
+            //if no data in chart then set maximum point value of y axis
+            yaxis.max = 2
+        }
         
         let tooltip = HITooltip()
         tooltip.shared = 1
