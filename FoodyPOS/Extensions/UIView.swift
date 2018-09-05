@@ -16,7 +16,7 @@ enum ViewBorder: String {
 
 extension UIView {
     
-    //Saurabh
+    /// Create editable corner radius of a view
     @IBInspectable var cornerRadii:CGFloat {
         set {
             self.layer.cornerRadius = newValue
@@ -26,6 +26,7 @@ extension UIView {
         }
     }
     
+    /// Create editable border color of a view
     @IBInspectable var borderColor:UIColor {
         set {
             self.layer.borderColor = newValue.cgColor
@@ -35,6 +36,7 @@ extension UIView {
         }
     }
     
+    /// Create editable border width of a view
     @IBInspectable var borderWidth:CGFloat {
         set {
             self.layer.borderWidth = newValue
@@ -44,6 +46,7 @@ extension UIView {
         }
     }
     
+    /// Create editable shadow of a view
     @IBInspectable
     public var shadowColor: UIColor? {
         get {
@@ -57,6 +60,7 @@ extension UIView {
         }
     }
     
+    /// Create editable shadow offset of a view
     @IBInspectable
     public var shadowOffset: CGSize {
         get {
@@ -67,6 +71,7 @@ extension UIView {
         }
     }
     
+    /// Create editable shadow opacity of a view
     @IBInspectable
     public var shadowOpacity: Double {
         get {
@@ -77,6 +82,7 @@ extension UIView {
         }
     }
     
+    /// Create editable shadow radius of a view
     @IBInspectable
     public var shadowRadius: CGFloat {
         get {
@@ -87,6 +93,7 @@ extension UIView {
         }
     }
     
+    /// Create editable shadow path of a view
     @IBInspectable
     public var shadowPath: CGPath? {
         get {
@@ -97,6 +104,7 @@ extension UIView {
         }
     }
     
+    /// Create editable shadow raster property of a view
     @IBInspectable
     public var shadowShouldRasterize: Bool {
         get {
@@ -107,6 +115,7 @@ extension UIView {
         }
     }
     
+    /// Create editable rasterizationScale of a view
     @IBInspectable
     public var shadowRasterizationScale: CGFloat {
         get {
@@ -117,6 +126,7 @@ extension UIView {
         }
     }
     
+    /// Create editable maskToBounds of a view
     @IBInspectable
     public var maskToBounds: Bool {
         get {
@@ -127,6 +137,7 @@ extension UIView {
         }
     }
     
+    /// applies a rectangular shadow of a view
     func rectShadow(offsetWidth:CGFloat = -1,offsetHeight:CGFloat = 1,opacity:Float = 0.5,radius:CGFloat = 1,color: CGColor = UIColor.black.cgColor) {
         
         self.layer.masksToBounds = false

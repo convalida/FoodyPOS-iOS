@@ -4,12 +4,9 @@
 target 'FoodyPOS' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
- pod 'SwiftValidator', :git => 'https://github.com/jpotts18/SwiftValidator.git', :branch => 'swift-4.1'
- #pod 'Alamofire'
- pod 'CodableAlamofire'
-  pod 'Fabric'
-  pod 'Crashlytics'
+  pod 'CodableAlamofire'
   pod 'Toaster'
+  pod 'PINRemoteImage'
   # Pods for FoodyPOS
 
   target 'FoodyPOSTests' do

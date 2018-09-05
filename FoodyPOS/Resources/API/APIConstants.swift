@@ -1,10 +1,11 @@
 //
 //  ViewController.swift
-//  Decodeble
+//  FoodyPOS
 //
-//  Created by Subhash Sharma on 25/06/18.
-//  Copyright © 2018 OctalSoftware. All rights reserved.
+//  Created by rajat on 26/07/18.
+//  Copyright © 2018 com.tutist. All rights reserved.
 //
+//  All constants which are used in the application is defined in this file
 
 import Foundation
 

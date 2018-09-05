@@ -1,9 +1,9 @@
 //
 //  DesignView.swift
-//  Ride Share
+//  FoodyPOS
 //
-//  Created by Saurabh on 14/12/17.
-//  Copyright © 2017 Aryavrat. All rights reserved.
+//  Created by rajat on 26/07/18.
+//  Copyright © 2018 com.tutist. All rights reserved.
 //
 
 import UIKit

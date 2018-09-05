@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		04182C8E210FFD84001EA39F /* OrderListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04182C8D210FFD84001EA39F /* OrderListVC.swift */; };
-		043DD8E3210DA079009B89C2 /* Highcharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 043DD8E2210DA078009B89C2 /* Highcharts.framework */; };
 		043DD8E4210DA087009B89C2 /* Highcharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 043DD8E2210DA078009B89C2 /* Highcharts.framework */; };
 		043DD8E5210DA087009B89C2 /* Highcharts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 043DD8E2210DA078009B89C2 /* Highcharts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		043DD8EC210DBFAA009B89C2 /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 043DD8EA210DBFAA009B89C2 /* KxMenu.m */; };
@@ -47,8 +46,15 @@
 		04E84DDF210CF0AE00537500 /* LeftMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84DDE210CF0AE00537500 /* LeftMenuVC.swift */; };
 		04E84DE1210CF1E100537500 /* LeftMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84DE0210CF1E100537500 /* LeftMenuCell.swift */; };
 		04E84DE3210CF34000537500 /* LeftMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84DE2210CF34000537500 /* LeftMenu.swift */; };
+		2B045FB5211CA870000AE1A7 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B045FB4211CA870000AE1A7 /* UserManager.swift */; };
 		2B05FD3A2115606A00109889 /* Points in Resources */ = {isa = PBXBuildFile; fileRef = 2B05FD392115606A00109889 /* Points */; };
+		2B18BDA521283AEF004F5A3A /* AddEmployee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B18BDA421283AEF004F5A3A /* AddEmployee.swift */; };
+		2B3FDA492119390B0001F933 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3FDA482119390B0001F933 /* Employee.swift */; };
+		2B3FDA4B21193A970001F933 /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3FDA4A21193A970001F933 /* ForgotPassword.swift */; };
 		2B42C3A12116A0B90086FDB6 /* EmployeeDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B42C3A02116A0B90086FDB6 /* EmployeeDetailCell.swift */; };
+		2B58EEF8212E6D2600FB7F30 /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B58EEF7212E6D2600FB7F30 /* ResetPasswordVC.swift */; };
+		2B58EEFA212E725100FB7F30 /* ResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B58EEF9212E725100FB7F30 /* ResetPassword.swift */; };
+		2B7A6F82213BF32D0031CB00 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7A6F80213BF32D0031CB00 /* MBProgressHUD.m */; };
 		2B931CE721157A9800927A0C /* DesignImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B931CE321157A8600927A0C /* DesignImageView.swift */; };
 		2B931CE821157A9800927A0C /* DesignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B931CE421157A9100927A0C /* DesignView.swift */; };
 		2B931CE921157A9800927A0C /* DesignLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B931CE521157A9500927A0C /* DesignLabel.swift */; };
@@ -57,7 +63,29 @@
 		2B931CF6211583B200927A0C /* BestSellerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B931CF5211583B200927A0C /* BestSellerVC.swift */; };
 		2B931CF82115844F00927A0C /* BestSellerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B931CF72115844F00927A0C /* BestSellerCell.swift */; };
 		2B931CFA2115881100927A0C /* SalesReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B931CF92115881100927A0C /* SalesReportVC.swift */; };
+		2B977463212DB20D00229095 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 2B977459212DB20C00229095 /* .gitkeep */; };
+		2B977464212DB20D00229095 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 2B97745B212DB20C00229095 /* .gitkeep */; };
+		2B977465212DB20D00229095 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B97745D212DB20C00229095 /* StringExtension.swift */; };
+		2B977466212DB20D00229095 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B97745E212DB20D00229095 /* UIViewExtension.swift */; };
+		2B977467212DB20D00229095 /* KWTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B97745F212DB20D00229095 /* KWTextFieldView.swift */; };
+		2B977468212DB20D00229095 /* KWTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B977460212DB20D00229095 /* KWTextFieldView.xib */; };
+		2B977469212DB20D00229095 /* KWVerificationCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B977461212DB20D00229095 /* KWVerificationCodeView.swift */; };
+		2B97746A212DB20D00229095 /* KWVerificationCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B977462212DB20D00229095 /* KWVerificationCodeView.xib */; };
+		2B97746C212DB4A000229095 /* OtpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B97746B212DB4A000229095 /* OtpVC.swift */; };
+		2BC7BB1C2122B7DF00AF1CA0 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC7BB1B2122B7DF00AF1CA0 /* Order.swift */; };
 		2BDED6042112A1FE007C0AB5 /* OrderListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDED6032112A1FE007C0AB5 /* OrderListCell.swift */; };
+		2BDFB172211BD1A1005B5B27 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDFB171211BD1A1005B5B27 /* Connectivity.swift */; };
+		2BDFB177211BD790005B5B27 /* BestSeller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDFB173211BD78F005B5B27 /* BestSeller.swift */; };
+		2BDFB178211BD790005B5B27 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDFB174211BD790005B5B27 /* Report.swift */; };
+		2BDFB179211BD790005B5B27 /* Customers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDFB175211BD790005B5B27 /* Customers.swift */; };
+		2BDFB17A211BD790005B5B27 /* Sale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDFB176211BD790005B5B27 /* Sale.swift */; };
+		2BE2B6C8212A6E7C008EBF2A /* OrderSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE2B6C7212A6E7C008EBF2A /* OrderSearch.swift */; };
+		2BEE1C3D2129A2540084BEC6 /* OrderDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE1C3C2129A2540084BEC6 /* OrderDetailCell.swift */; };
+		2BEE1C3F2129AB310084BEC6 /* AmountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE1C3E2129AB310084BEC6 /* AmountVC.swift */; };
+		2BF4E00B211DEAE1000D2899 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF4E00A211DEAE1000D2899 /* Date.swift */; };
+		2BF4E00D211DF09D000D2899 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF4E00C211DF09C000D2899 /* Alert.swift */; };
+		2BF4E85E212867AB0082E73A /* UpdateEmployee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF4E85D212867AB0082E73A /* UpdateEmployee.swift */; };
+		2BF518DD2125909400EA367D /* ChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF518DC2125909400EA367D /* ChangePassword.swift */; };
 		2BF898CF21160C7C001161F2 /* SalesReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF898CE21160C7C001161F2 /* SalesReportCell.swift */; };
 		2BF898D12116105D001161F2 /* EmployeeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF898D02116105D001161F2 /* EmployeeDetailVC.swift */; };
 		2BFBC6D6211734BA00DF9A9D /* EditEmployeeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFBC6D5211734BA00DF9A9D /* EditEmployeeVC.swift */; };
@@ -70,9 +98,10 @@
 		2BFBC6E521176CB400DF9A9D /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFBC6E421176CB400DF9A9D /* APIClient.swift */; };
 		2BFBC6E721176CF400DF9A9D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFBC6E621176CF400DF9A9D /* User.swift */; };
 		2BFBC6E92117E52B00DF9A9D /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFBC6E82117E52B00DF9A9D /* UIViewController.swift */; };
-		7014FAD9AE1C42B0D8A34449 /* Pods_FoodyPOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF69F29960234784FB0C5F0 /* Pods_FoodyPOS.framework */; };
-		B76D9C3991320F9A563531D3 /* Pods_FoodyPOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 442844A4622D4E29CD710497 /* Pods_FoodyPOSTests.framework */; };
-		D2419726B67DCA319FB1BA6E /* Pods_FoodyPOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6C1DBEB8360AEA42A6A11C /* Pods_FoodyPOSUITests.framework */; };
+		2BFD7E3C2126CA34005848DF /* OrderDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFD7E3B2126CA34005848DF /* OrderDetailVC.swift */; };
+		CFB358987535CA8B8518D6CC /* Pods_FoodyPOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5E5519135B4D66542A38D9A /* Pods_FoodyPOSUITests.framework */; };
+		E3918FC1AFB511AD213105CC /* Pods_FoodyPOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4813F1E36A8715B4BD52ACB /* Pods_FoodyPOSTests.framework */; };
+		EDBEF64FD9FB49FD8C572DB8 /* Pods_FoodyPOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DA38A93BD666426E48E9EEE /* Pods_FoodyPOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,9 +184,18 @@
 		04E84DDE210CF0AE00537500 /* LeftMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuVC.swift; sourceTree = "<group>"; };
 		04E84DE0210CF1E100537500 /* LeftMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuCell.swift; sourceTree = "<group>"; };
 		04E84DE2210CF34000537500 /* LeftMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenu.swift; sourceTree = "<group>"; };
-		2528BF695A4F3378450D4EEF /* Pods-FoodyPOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodyPOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodyPOSTests/Pods-FoodyPOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0DEA7D69013C977555AC4510 /* Pods-FoodyPOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodyPOSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodyPOSUITests/Pods-FoodyPOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2B045FB4211CA870000AE1A7 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		2B05FD392115606A00109889 /* Points */ = {isa = PBXFileReference; lastKnownFileType = text; path = Points; sourceTree = "<group>"; };
+		2B18BDA421283AEF004F5A3A /* AddEmployee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployee.swift; sourceTree = "<group>"; };
+		2B3FDA482119390B0001F933 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		2B3FDA4A21193A970001F933 /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
 		2B42C3A02116A0B90086FDB6 /* EmployeeDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailCell.swift; sourceTree = "<group>"; };
+		2B58EEF7212E6D2600FB7F30 /* ResetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC.swift; sourceTree = "<group>"; };
+		2B58EEF9212E725100FB7F30 /* ResetPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPassword.swift; sourceTree = "<group>"; };
+		2B6780C12129C9DC00D7EE4C /* FoodyPOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FoodyPOS.entitlements; sourceTree = "<group>"; };
+		2B7A6F80213BF32D0031CB00 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		2B7A6F81213BF32D0031CB00 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		2B931CE321157A8600927A0C /* DesignImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignImageView.swift; sourceTree = "<group>"; };
 		2B931CE421157A9100927A0C /* DesignView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignView.swift; sourceTree = "<group>"; };
 		2B931CE521157A9500927A0C /* DesignLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignLabel.swift; sourceTree = "<group>"; };
@@ -166,7 +204,30 @@
 		2B931CF5211583B200927A0C /* BestSellerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestSellerVC.swift; sourceTree = "<group>"; };
 		2B931CF72115844F00927A0C /* BestSellerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestSellerCell.swift; sourceTree = "<group>"; };
 		2B931CF92115881100927A0C /* SalesReportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesReportVC.swift; sourceTree = "<group>"; };
+		2B977459212DB20C00229095 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		2B97745B212DB20C00229095 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		2B97745D212DB20C00229095 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		2B97745E212DB20D00229095 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		2B97745F212DB20D00229095 /* KWTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWTextFieldView.swift; sourceTree = "<group>"; };
+		2B977460212DB20D00229095 /* KWTextFieldView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KWTextFieldView.xib; sourceTree = "<group>"; };
+		2B977461212DB20D00229095 /* KWVerificationCodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWVerificationCodeView.swift; sourceTree = "<group>"; };
+		2B977462212DB20D00229095 /* KWVerificationCodeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KWVerificationCodeView.xib; sourceTree = "<group>"; };
+		2B97746B212DB4A000229095 /* OtpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpVC.swift; sourceTree = "<group>"; };
+		2BC7BB1B2122B7DF00AF1CA0 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		2BDED6032112A1FE007C0AB5 /* OrderListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListCell.swift; sourceTree = "<group>"; };
+		2BDFB171211BD1A1005B5B27 /* Connectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
+		2BDFB173211BD78F005B5B27 /* BestSeller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestSeller.swift; sourceTree = "<group>"; };
+		2BDFB174211BD790005B5B27 /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
+		2BDFB175211BD790005B5B27 /* Customers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customers.swift; sourceTree = "<group>"; };
+		2BDFB176211BD790005B5B27 /* Sale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sale.swift; sourceTree = "<group>"; };
+		2BE2B6C7212A6E7C008EBF2A /* OrderSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSearch.swift; sourceTree = "<group>"; };
+		2BEC829D2127EAED00139629 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BEE1C3C2129A2540084BEC6 /* OrderDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailCell.swift; sourceTree = "<group>"; };
+		2BEE1C3E2129AB310084BEC6 /* AmountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountVC.swift; sourceTree = "<group>"; };
+		2BF4E00A211DEAE1000D2899 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		2BF4E00C211DF09C000D2899 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		2BF4E85D212867AB0082E73A /* UpdateEmployee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateEmployee.swift; sourceTree = "<group>"; };
+		2BF518DC2125909400EA367D /* ChangePassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassword.swift; sourceTree = "<group>"; };
 		2BF898CE21160C7C001161F2 /* SalesReportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesReportCell.swift; sourceTree = "<group>"; };
 		2BF898D02116105D001161F2 /* EmployeeDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailVC.swift; sourceTree = "<group>"; };
 		2BFBC6D5211734BA00DF9A9D /* EditEmployeeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEmployeeVC.swift; sourceTree = "<group>"; };
@@ -179,14 +240,15 @@
 		2BFBC6E421176CB400DF9A9D /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		2BFBC6E621176CF400DF9A9D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2BFBC6E82117E52B00DF9A9D /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
-		442844A4622D4E29CD710497 /* Pods_FoodyPOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodyPOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4A6C1DBEB8360AEA42A6A11C /* Pods_FoodyPOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodyPOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		51897CD92FA4F180743F2624 /* Pods-FoodyPOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodyPOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodyPOSUITests/Pods-FoodyPOSUITests.release.xcconfig"; sourceTree = "<group>"; };
-		66AA15F50EA8A36FA4270E07 /* Pods-FoodyPOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodyPOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodyPOS/Pods-FoodyPOS.release.xcconfig"; sourceTree = "<group>"; };
-		A68143EF5EFF4E4FB3A9CEB6 /* Pods-FoodyPOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodyPOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodyPOS/Pods-FoodyPOS.debug.xcconfig"; sourceTree = "<group>"; };
-		AE22DF519D415BA66598ED3C /* Pods-FoodyPOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodyPOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodyPOSTests/Pods-FoodyPOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		DCF69F29960234784FB0C5F0 /* Pods_FoodyPOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodyPOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FD630741266646E5C37BD85A /* Pods-FoodyPOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodyPOSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodyPOSUITests/Pods-FoodyPOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2BFD7E3B2126CA34005848DF /* OrderDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailVC.swift; sourceTree = "<group>"; };
+		3C405037B661A41201135CCA /* Pods-FoodyPOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodyPOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodyPOSTests/Pods-FoodyPOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		3D57576C31D07EA21C502FC8 /* Pods-FoodyPOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodyPOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodyPOS/Pods-FoodyPOS.release.xcconfig"; sourceTree = "<group>"; };
+		9DA38A93BD666426E48E9EEE /* Pods_FoodyPOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodyPOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2D4AAC451D2F02A93BEBB90 /* Pods-FoodyPOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodyPOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodyPOSTests/Pods-FoodyPOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A3A1C1371CC6964AB39A6FCB /* Pods-FoodyPOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodyPOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodyPOS/Pods-FoodyPOS.debug.xcconfig"; sourceTree = "<group>"; };
+		C4813F1E36A8715B4BD52ACB /* Pods_FoodyPOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodyPOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5E5519135B4D66542A38D9A /* Pods_FoodyPOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodyPOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F57BA99BE21094B31188D562 /* Pods-FoodyPOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodyPOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodyPOSUITests/Pods-FoodyPOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,8 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				043DD8E4210DA087009B89C2 /* Highcharts.framework in Frameworks */,
-				7014FAD9AE1C42B0D8A34449 /* Pods_FoodyPOS.framework in Frameworks */,
-				043DD8E3210DA079009B89C2 /* Highcharts.framework in Frameworks */,
+				EDBEF64FD9FB49FD8C572DB8 /* Pods_FoodyPOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,7 +265,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B76D9C3991320F9A563531D3 /* Pods_FoodyPOSTests.framework in Frameworks */,
+				E3918FC1AFB511AD213105CC /* Pods_FoodyPOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,7 +273,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2419726B67DCA319FB1BA6E /* Pods_FoodyPOSUITests.framework in Frameworks */,
+				CFB358987535CA8B8518D6CC /* Pods_FoodyPOSUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,8 +287,8 @@
 				04C8F99F210956E8005DD9F2 /* FoodyPOSTests */,
 				04C8F9AA210956E8005DD9F2 /* FoodyPOSUITests */,
 				04C8F989210956E6005DD9F2 /* Products */,
-				A560441C1ABC21488994E970 /* Pods */,
 				B90D81428A09ACC1DCB2B893 /* Frameworks */,
+				2653A62F0E1BFC5F8ABCBD74 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -244,6 +305,7 @@
 		04C8F98A210956E6005DD9F2 /* FoodyPOS */ = {
 			isa = PBXGroup;
 			children = (
+				2B6780C12129C9DC00D7EE4C /* FoodyPOS.entitlements */,
 				04E84D8F210C126C00537500 /* Resources */,
 				04E84D6F210C107400537500 /* Helper */,
 				04C8F9E521095D19005DD9F2 /* Extensions */,
@@ -289,6 +351,10 @@
 				2B931CF92115881100927A0C /* SalesReportVC.swift */,
 				2BF898D02116105D001161F2 /* EmployeeDetailVC.swift */,
 				2BFBC6D5211734BA00DF9A9D /* EditEmployeeVC.swift */,
+				2BFD7E3B2126CA34005848DF /* OrderDetailVC.swift */,
+				2BEE1C3E2129AB310084BEC6 /* AmountVC.swift */,
+				2B97746B212DB4A000229095 /* OtpVC.swift */,
+				2B58EEF7212E6D2600FB7F30 /* ResetPasswordVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -315,6 +381,19 @@
 				04E84DDA210CE7F200537500 /* Dashboard.swift */,
 				04E84DE2210CF34000537500 /* LeftMenu.swift */,
 				2BFBC6E621176CF400DF9A9D /* User.swift */,
+				2B3FDA482119390B0001F933 /* Employee.swift */,
+				2B3FDA4A21193A970001F933 /* ForgotPassword.swift */,
+				2BDFB173211BD78F005B5B27 /* BestSeller.swift */,
+				2BDFB175211BD790005B5B27 /* Customers.swift */,
+				2BDFB174211BD790005B5B27 /* Report.swift */,
+				2BDFB176211BD790005B5B27 /* Sale.swift */,
+				2B045FB4211CA870000AE1A7 /* UserManager.swift */,
+				2BC7BB1B2122B7DF00AF1CA0 /* Order.swift */,
+				2BF518DC2125909400EA367D /* ChangePassword.swift */,
+				2B18BDA421283AEF004F5A3A /* AddEmployee.swift */,
+				2BF4E85D212867AB0082E73A /* UpdateEmployee.swift */,
+				2BE2B6C7212A6E7C008EBF2A /* OrderSearch.swift */,
+				2B58EEF9212E725100FB7F30 /* ResetPassword.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -325,6 +404,7 @@
 				2BFBC6E82117E52B00DF9A9D /* UIViewController.swift */,
 				04C8F9E321095D11005DD9F2 /* UIView.swift */,
 				04E84DD2210CD87F00537500 /* UIColor.swift */,
+				2BF4E00A211DEAE1000D2899 /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -332,9 +412,12 @@
 		04E84D6F210C107400537500 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				2B977457212DB20C00229095 /* KWVerificationCodeView */,
 				043DD8EB210DBFAA009B89C2 /* KxMenu.h */,
 				043DD8EA210DBFAA009B89C2 /* KxMenu.m */,
 				04E84DDC210CF09000537500 /* LeftSlideMenu.swift */,
+				2B7A6F81213BF32D0031CB00 /* MBProgressHUD.h */,
+				2B7A6F80213BF32D0031CB00 /* MBProgressHUD.m */,
 				04E84D70210C109600537500 /* ARSInfinite */,
 				04E84D7B210C109600537500 /* Keyboard Avoid */,
 				043DD8ED210DC0AC009B89C2 /* FoodyPOS-Bridging-Header.h */,
@@ -379,10 +462,63 @@
 				04C8F98B210956E6005DD9F2 /* AppDelegate.swift */,
 				2BFBC6DE21176AB700DF9A9D /* Constant.swift */,
 				2BFBC6DF21176AB800DF9A9D /* Global.swift */,
+				2BF4E00C211DF09C000D2899 /* Alert.swift */,
 				04C8F992210956E8005DD9F2 /* Assets.xcassets */,
 				04C8F997210956E8005DD9F2 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		2653A62F0E1BFC5F8ABCBD74 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A3A1C1371CC6964AB39A6FCB /* Pods-FoodyPOS.debug.xcconfig */,
+				3D57576C31D07EA21C502FC8 /* Pods-FoodyPOS.release.xcconfig */,
+				A2D4AAC451D2F02A93BEBB90 /* Pods-FoodyPOSTests.debug.xcconfig */,
+				3C405037B661A41201135CCA /* Pods-FoodyPOSTests.release.xcconfig */,
+				0DEA7D69013C977555AC4510 /* Pods-FoodyPOSUITests.debug.xcconfig */,
+				F57BA99BE21094B31188D562 /* Pods-FoodyPOSUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2B977457212DB20C00229095 /* KWVerificationCodeView */ = {
+			isa = PBXGroup;
+			children = (
+				2B977458212DB20C00229095 /* Assets */,
+				2B97745A212DB20C00229095 /* Classes */,
+			);
+			path = KWVerificationCodeView;
+			sourceTree = "<group>";
+		};
+		2B977458212DB20C00229095 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				2B977459212DB20C00229095 /* .gitkeep */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		2B97745A212DB20C00229095 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				2B97745B212DB20C00229095 /* .gitkeep */,
+				2B97745C212DB20C00229095 /* Extensions */,
+				2B97745F212DB20D00229095 /* KWTextFieldView.swift */,
+				2B977460212DB20D00229095 /* KWTextFieldView.xib */,
+				2B977461212DB20D00229095 /* KWVerificationCodeView.swift */,
+				2B977462212DB20D00229095 /* KWVerificationCodeView.xib */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		2B97745C212DB20C00229095 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2B97745D212DB20C00229095 /* StringExtension.swift */,
+				2B97745E212DB20D00229095 /* UIViewExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		2BDED6022112A164007C0AB5 /* Cell */ = {
@@ -395,6 +531,7 @@
 				2B931CF72115844F00927A0C /* BestSellerCell.swift */,
 				2BF898CE21160C7C001161F2 /* SalesReportCell.swift */,
 				2B42C3A02116A0B90086FDB6 /* EmployeeDetailCell.swift */,
+				2BEE1C3C2129A2540084BEC6 /* OrderDetailCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -405,30 +542,19 @@
 				2BFBC6DC21176A5E00DF9A9D /* APIConstants.swift */,
 				2BFBC6E221176BAC00DF9A9D /* APIRouter.swift */,
 				2BFBC6E421176CB400DF9A9D /* APIClient.swift */,
+				2BDFB171211BD1A1005B5B27 /* Connectivity.swift */,
 			);
 			path = API;
-			sourceTree = "<group>";
-		};
-		A560441C1ABC21488994E970 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				A68143EF5EFF4E4FB3A9CEB6 /* Pods-FoodyPOS.debug.xcconfig */,
-				66AA15F50EA8A36FA4270E07 /* Pods-FoodyPOS.release.xcconfig */,
-				2528BF695A4F3378450D4EEF /* Pods-FoodyPOSTests.debug.xcconfig */,
-				AE22DF519D415BA66598ED3C /* Pods-FoodyPOSTests.release.xcconfig */,
-				FD630741266646E5C37BD85A /* Pods-FoodyPOSUITests.debug.xcconfig */,
-				51897CD92FA4F180743F2624 /* Pods-FoodyPOSUITests.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		B90D81428A09ACC1DCB2B893 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2BEC829D2127EAED00139629 /* Alamofire.framework */,
 				043DD8E2210DA078009B89C2 /* Highcharts.framework */,
-				DCF69F29960234784FB0C5F0 /* Pods_FoodyPOS.framework */,
-				442844A4622D4E29CD710497 /* Pods_FoodyPOSTests.framework */,
-				4A6C1DBEB8360AEA42A6A11C /* Pods_FoodyPOSUITests.framework */,
+				9DA38A93BD666426E48E9EEE /* Pods_FoodyPOS.framework */,
+				C4813F1E36A8715B4BD52ACB /* Pods_FoodyPOSTests.framework */,
+				C5E5519135B4D66542A38D9A /* Pods_FoodyPOSUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -440,12 +566,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04C8F9B0210956E8005DD9F2 /* Build configuration list for PBXNativeTarget "FoodyPOS" */;
 			buildPhases = (
-				F290178BEFD28E710327173B /* [CP] Check Pods Manifest.lock */,
+				25C4314F662EDAE959F493C3 /* [CP] Check Pods Manifest.lock */,
 				04C8F984210956E6005DD9F2 /* Sources */,
 				04C8F985210956E6005DD9F2 /* Frameworks */,
 				04C8F986210956E6005DD9F2 /* Resources */,
-				74C1CD113511C9C44F0DF124 /* [CP] Embed Pods Frameworks */,
 				043DD8E6210DA087009B89C2 /* Embed Frameworks */,
+				B9AF90E27FC09BAB37069394 /* [CP] Embed Pods Frameworks */,
+				2BFD7E3D2126DAB0005848DF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -460,7 +587,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04C8F9B3210956E8005DD9F2 /* Build configuration list for PBXNativeTarget "FoodyPOSTests" */;
 			buildPhases = (
-				75807D4C54065326C101F7B7 /* [CP] Check Pods Manifest.lock */,
+				3D8C677C1D1438B692DCD63D /* [CP] Check Pods Manifest.lock */,
 				04C8F998210956E8005DD9F2 /* Sources */,
 				04C8F999210956E8005DD9F2 /* Frameworks */,
 				04C8F99A210956E8005DD9F2 /* Resources */,
@@ -479,7 +606,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04C8F9B6210956E8005DD9F2 /* Build configuration list for PBXNativeTarget "FoodyPOSUITests" */;
 			buildPhases = (
-				87FF32ED592886A9A3B2FEEC /* [CP] Check Pods Manifest.lock */,
+				0997DC3FD4077D78A9D67433 /* [CP] Check Pods Manifest.lock */,
 				04C8F9A3210956E8005DD9F2 /* Sources */,
 				04C8F9A4210956E8005DD9F2 /* Frameworks */,
 				04C8F9A5210956E8005DD9F2 /* Resources */,
@@ -506,6 +633,11 @@
 				TargetAttributes = {
 					04C8F987210956E6005DD9F2 = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					04C8F99B210956E8005DD9F2 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -543,8 +675,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				04C8F996210956E8005DD9F2 /* LaunchScreen.storyboard in Resources */,
+				2B977468212DB20D00229095 /* KWTextFieldView.xib in Resources */,
 				04C8F993210956E8005DD9F2 /* Assets.xcassets in Resources */,
+				2B977463212DB20D00229095 /* .gitkeep in Resources */,
+				2B977464212DB20D00229095 /* .gitkeep in Resources */,
 				04C8F991210956E6005DD9F2 /* Main.storyboard in Resources */,
+				2B97746A212DB20D00229095 /* KWVerificationCodeView.xib in Resources */,
 				2B05FD3A2115606A00109889 /* Points in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -566,49 +702,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		74C1CD113511C9C44F0DF124 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FoodyPOS/Pods-FoodyPOS-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/CodableAlamofire/CodableAlamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftValidator/SwiftValidator.framework",
-				"${BUILT_PRODUCTS_DIR}/Toaster/Toaster.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CodableAlamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftValidator.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toaster.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FoodyPOS/Pods-FoodyPOS-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		75807D4C54065326C101F7B7 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FoodyPOSTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		87FF32ED592886A9A3B2FEEC /* [CP] Check Pods Manifest.lock */ = {
+		0997DC3FD4077D78A9D67433 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -626,7 +720,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F290178BEFD28E710327173B /* [CP] Check Pods Manifest.lock */ = {
+		25C4314F662EDAE959F493C3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -644,6 +738,65 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		2BFD7E3D2126DAB0005848DF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "APP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\n\n# This script loops through the frameworks embedded in the application and\n# removes unused architectures.\nfind \"$APP_PATH\" -name 'Highcharts.framework' -type d | while read -r FRAMEWORK\ndo\nFRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\nFRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\necho \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\n\nEXTRACTED_ARCHS=()\n\nfor ARCH in $ARCHS\ndo\necho \"Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME\"\nlipo -extract \"$ARCH\" \"$FRAMEWORK_EXECUTABLE_PATH\" -o \"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\"\nEXTRACTED_ARCHS+=(\"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\")\ndone\n\necho \"Merging extracted architectures: ${ARCHS}\"\nlipo -o \"$FRAMEWORK_EXECUTABLE_PATH-merged\" -create \"${EXTRACTED_ARCHS[@]}\"\nrm \"${EXTRACTED_ARCHS[@]}\"\n\necho \"Replacing original executable with thinned version\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_EXECUTABLE_PATH-merged\" \"$FRAMEWORK_EXECUTABLE_PATH\"\n\ndone";
+		};
+		3D8C677C1D1438B692DCD63D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FoodyPOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9AF90E27FC09BAB37069394 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FoodyPOS/Pods-FoodyPOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CodableAlamofire/CodableAlamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
+				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
+				"${BUILT_PRODUCTS_DIR}/PINRemoteImage/PINRemoteImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Toaster/Toaster.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CodableAlamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINRemoteImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toaster.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FoodyPOS/Pods-FoodyPOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -653,20 +806,29 @@
 			files = (
 				04E84D87210C109600537500 /* ARSLineProgressProtocols.swift in Sources */,
 				04E84D81210C109600537500 /* ARSInfiniteLoader.swift in Sources */,
+				2BDFB172211BD1A1005B5B27 /* Connectivity.swift in Sources */,
 				2BFBC6E92117E52B00DF9A9D /* UIViewController.swift in Sources */,
+				2B3FDA492119390B0001F933 /* Employee.swift in Sources */,
+				2BDFB178211BD790005B5B27 /* Report.swift in Sources */,
 				04E84D88210C109600537500 /* ARSLineProgressTypeAliases.swift in Sources */,
 				2B931CE921157A9800927A0C /* DesignLabel.swift in Sources */,
 				2BFBC6D6211734BA00DF9A9D /* EditEmployeeVC.swift in Sources */,
 				04E84D99210C27A300537500 /* ChangePasswordVC.swift in Sources */,
+				2B977465212DB20D00229095 /* StringExtension.swift in Sources */,
 				04E84D8E210C119300537500 /* LoginVC.swift in Sources */,
 				2B931CF82115844F00927A0C /* BestSellerCell.swift in Sources */,
 				043DD8F1210DE8D5009B89C2 /* TopSaleCell.swift in Sources */,
+				2B3FDA4B21193A970001F933 /* ForgotPassword.swift in Sources */,
 				04E84DE3210CF34000537500 /* LeftMenu.swift in Sources */,
 				04E84DDD210CF09000537500 /* LeftSlideMenu.swift in Sources */,
+				2BF4E00B211DEAE1000D2899 /* Date.swift in Sources */,
 				2B931CE821157A9800927A0C /* DesignView.swift in Sources */,
 				04E84DE1210CF1E100537500 /* LeftMenuCell.swift in Sources */,
 				04E84D84210C109600537500 /* ARSLineProgressCustomization.swift in Sources */,
+				2B58EEFA212E725100FB7F30 /* ResetPassword.swift in Sources */,
+				2B977467212DB20D00229095 /* KWTextFieldView.swift in Sources */,
 				2BF898D12116105D001161F2 /* EmployeeDetailVC.swift in Sources */,
+				2BEE1C3F2129AB310084BEC6 /* AmountVC.swift in Sources */,
 				04E84D8A210C109600537500 /* ARSStatus.swift in Sources */,
 				04E84DD3210CD87F00537500 /* UIColor.swift in Sources */,
 				2BFBC6E021176AB800DF9A9D /* Constant.swift in Sources */,
@@ -674,35 +836,52 @@
 				04C8F9C1210957A9005DD9F2 /* DesignTextField.swift in Sources */,
 				04E84D82210C109600537500 /* ARSLineProgress.swift in Sources */,
 				2BFBC6E321176BAC00DF9A9D /* APIRouter.swift in Sources */,
+				2BDFB177211BD790005B5B27 /* BestSeller.swift in Sources */,
 				2B931CF421157F4E00927A0C /* SalesSellAllVC.swift in Sources */,
+				2BF4E00D211DF09D000D2899 /* Alert.swift in Sources */,
 				2BFBC6DA2117677000DF9A9D /* AppMessages.swift in Sources */,
 				2B931CE721157A9800927A0C /* DesignImageView.swift in Sources */,
 				04E84D97210C26EF00537500 /* ForgotPasswordVC.swift in Sources */,
+				2B977466212DB20D00229095 /* UIViewExtension.swift in Sources */,
 				2BF898CF21160C7C001161F2 /* SalesReportCell.swift in Sources */,
+				2BEE1C3D2129A2540084BEC6 /* OrderDetailCell.swift in Sources */,
 				04E84D93210C13A300537500 /* SignUpVC.swift in Sources */,
 				2B42C3A12116A0B90086FDB6 /* EmployeeDetailCell.swift in Sources */,
 				04182C8E210FFD84001EA39F /* OrderListVC.swift in Sources */,
 				04E84D86210C109600537500 /* ARSLineProgressHelpers.swift in Sources */,
 				2BFBC6E721176CF400DF9A9D /* User.swift in Sources */,
 				2B931CFA2115881100927A0C /* SalesReportVC.swift in Sources */,
+				2B7A6F82213BF32D0031CB00 /* MBProgressHUD.m in Sources */,
 				04E84DDB210CE7F200537500 /* Dashboard.swift in Sources */,
 				2BFBC6D92117677000DF9A9D /* Validation.swift in Sources */,
 				04E84D83210C109600537500 /* ARSLineProgressConstants.swift in Sources */,
 				04C8F9E421095D11005DD9F2 /* UIView.swift in Sources */,
+				2BDFB179211BD790005B5B27 /* Customers.swift in Sources */,
 				04E84DD9210CE3DF00537500 /* DashboardVC.swift in Sources */,
 				2B931CEA21157A9800927A0C /* DesignButton.swift in Sources */,
+				2B58EEF8212E6D2600FB7F30 /* ResetPasswordVC.swift in Sources */,
 				043DD8EC210DBFAA009B89C2 /* KxMenu.m in Sources */,
 				04C8F98C210956E6005DD9F2 /* AppDelegate.swift in Sources */,
 				2BFBC6E521176CB400DF9A9D /* APIClient.swift in Sources */,
 				04C8F9C0210957A9005DD9F2 /* StoryboardConstant.swift in Sources */,
+				2BE2B6C8212A6E7C008EBF2A /* OrderSearch.swift in Sources */,
+				2B977469212DB20D00229095 /* KWVerificationCodeView.swift in Sources */,
+				2BF518DD2125909400EA367D /* ChangePassword.swift in Sources */,
+				2B18BDA521283AEF004F5A3A /* AddEmployee.swift in Sources */,
 				04E84D8C210C109600537500 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				2BF4E85E212867AB0082E73A /* UpdateEmployee.swift in Sources */,
 				04E84DD5210CE3A400537500 /* DashboardCell.swift in Sources */,
+				2BFD7E3C2126CA34005848DF /* OrderDetailVC.swift in Sources */,
 				04E84D8B210C109600537500 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				2BFBC6DD21176A5E00DF9A9D /* APIConstants.swift in Sources */,
+				2B045FB5211CA870000AE1A7 /* UserManager.swift in Sources */,
 				2B931CF6211583B200927A0C /* BestSellerVC.swift in Sources */,
+				2BDFB17A211BD790005B5B27 /* Sale.swift in Sources */,
 				043DD8EF210DE88C009B89C2 /* TopSaleVC.swift in Sources */,
+				2B97746C212DB4A000229095 /* OtpVC.swift in Sources */,
 				04E84DDF210CF0AE00537500 /* LeftMenuVC.swift in Sources */,
 				04E84D85210C109600537500 /* ARSLineProgressExtensions.swift in Sources */,
+				2BC7BB1C2122B7DF00AF1CA0 /* Order.swift in Sources */,
 				04E84D89210C109600537500 /* ARSProgressLoader.swift in Sources */,
 				2BFBC6E121176AB800DF9A9D /* Global.swift in Sources */,
 			);
@@ -875,9 +1054,10 @@
 		};
 		04C8F9B1210956E8005DD9F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A68143EF5EFF4E4FB3A9CEB6 /* Pods-FoodyPOS.debug.xcconfig */;
+			baseConfigurationReference = A3A1C1371CC6964AB39A6FCB /* Pods-FoodyPOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FoodyPOS/FoodyPOS.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K8UU8WZKUP;
@@ -902,9 +1082,10 @@
 		};
 		04C8F9B2210956E8005DD9F2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 66AA15F50EA8A36FA4270E07 /* Pods-FoodyPOS.release.xcconfig */;
+			baseConfigurationReference = 3D57576C31D07EA21C502FC8 /* Pods-FoodyPOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FoodyPOS/FoodyPOS.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K8UU8WZKUP;
@@ -929,7 +1110,7 @@
 		};
 		04C8F9B4210956E8005DD9F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2528BF695A4F3378450D4EEF /* Pods-FoodyPOSTests.debug.xcconfig */;
+			baseConfigurationReference = A2D4AAC451D2F02A93BEBB90 /* Pods-FoodyPOSTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -951,7 +1132,7 @@
 		};
 		04C8F9B5210956E8005DD9F2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AE22DF519D415BA66598ED3C /* Pods-FoodyPOSTests.release.xcconfig */;
+			baseConfigurationReference = 3C405037B661A41201135CCA /* Pods-FoodyPOSTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -973,7 +1154,7 @@
 		};
 		04C8F9B7210956E8005DD9F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD630741266646E5C37BD85A /* Pods-FoodyPOSUITests.debug.xcconfig */;
+			baseConfigurationReference = 0DEA7D69013C977555AC4510 /* Pods-FoodyPOSUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -994,7 +1175,7 @@
 		};
 		04C8F9B8210956E8005DD9F2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 51897CD92FA4F180743F2624 /* Pods-FoodyPOSUITests.release.xcconfig */;
+			baseConfigurationReference = F57BA99BE21094B31188D562 /* Pods-FoodyPOSUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

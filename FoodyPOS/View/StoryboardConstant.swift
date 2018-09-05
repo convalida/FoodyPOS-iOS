@@ -1,8 +1,8 @@
 //
 //  StoryboardConstant.swift
-//  AutomobileFirst
+//  FoodyPOS
 //
-//  Created by rajat on 17/07/18.
+//  Created by rajat on 26/07/18.
 //  Copyright © 2018 com.tutist. All rights reserved.
 //
 
@@ -23,4 +23,8 @@ struct StoryboardConstant {
     static let SalesReportVC = "SalesReportVC"
     static let EmployeeDetailVC = "EmployeeDetailVC"
     static let EditEmployeeVC = "EditEmployeeVC"
+    static let OrderDetailVC = "OrderDetailVC"
+    static let AmountVC = "AmountVC"
+    static let OtpVC = "OtpVC"
+    static let ResetPasswordVC = "ResetPasswordVC"
 }

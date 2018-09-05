@@ -10,6 +10,8 @@ import UIKit
 
 class OrderListCell: UITableViewCell {
     @IBOutlet weak var lblHeaderDate: UILabel!
+    @IBOutlet var lblHeaderOrder: UILabel!
+    @IBOutlet weak var lblHeaderPrice: UILabel!
     @IBOutlet weak var lblListNum: UILabel!
     @IBOutlet weak var btnListTIme: UIButton!
     @IBOutlet weak var lblListPrice: UILabel!

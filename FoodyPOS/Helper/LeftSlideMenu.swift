@@ -1,8 +1,8 @@
 //
 //  LeftSlideMenu.swift
-//  AutomobileFirst
+//  FoodyPOS
 //
-//  Created by rajat on 11/07/18.
+//  Created by rajat on 26/07/18.
 //  Copyright © 2018 com.tutist. All rights reserved.
 //
 
@@ -11,9 +11,15 @@ import UIKit
 
 open class LeftSlideMenu:UIViewController {
     
+    open override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     private var _mainVC:UIViewController!
     
-    let menuWidth:CGFloat = 300
+    var menuWidth:CGFloat {
+        return UIScreen.main.bounds.size.width * 0.80
+    }
     
     var isLeftMenuOpen:Bool = false
     
@@ -55,7 +61,7 @@ open class LeftSlideMenu:UIViewController {
     
     lazy var menuGestureView:UIView = {
         
-        let menuWidth:CGFloat = 300
+        //let menuWidth:CGFloat = UIScreen.main.bounds.size.width * 0.80
         
         //        let navbarHeight = self.navbar.frame.height
         
@@ -79,7 +85,7 @@ open class LeftSlideMenu:UIViewController {
         
         //let navbarHeight = navbar.frame.height
         
-        let frame = CGRect(x: -menuWidth, y: 0, width: menuWidth, height: self.mainVC.view.frame.height)
+        let frame = CGRect(x: -menuWidth, y: -20, width: menuWidth, height: self.mainVC.view.frame.height+20)
         //print(frame)
         
         if(!mainVC.childViewControllers.contains(menuVC)) {
@@ -221,6 +227,5 @@ open class LeftSlideMenu:UIViewController {
         }
         
     }
-    
 }
 

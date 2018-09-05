@@ -56,7 +56,12 @@ func ars_window() -> UIWindow? {
 	switch ars_config.backgroundViewStyle {
 	case .blur, .simple:
 		//backgroundView.frame = CGRect(x: center.x - sideLengths / 2, y: center.y - sideLengths / 2, width: sideLengths, height: sideLengths)
-        backgroundView.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT)
+        print(UIScreen.main.bounds.size.width)
+        if Global.isIpad {
+            backgroundView.frame = CGRect(x: 0, y: 100, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height-100)
+        }else {
+            backgroundView.frame = CGRect(x: 0, y: 70, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height-70)
+        }
 		//backgroundView.layer.cornerRadius = ars_config.backgroundViewCornerRadius
 	case .full:
 		backgroundView.frame = CGRect(x: bounds.minX, y: bounds.minY, width: bounds.width, height: bounds.height)
@@ -65,8 +70,8 @@ func ars_window() -> UIWindow? {
 	
 	//backgroundView.backgroundColor = UIColor(cgColor: ars_config.backgroundViewColor)
     
-    backgroundView.backgroundColor = UIColor.black
-    backgroundView.alpha = 0.60
+    backgroundView.backgroundColor = UIColor.white
+    backgroundView.alpha = 1.0
 	return true
 }
 

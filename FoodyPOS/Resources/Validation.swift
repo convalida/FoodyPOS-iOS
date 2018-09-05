@@ -1,17 +1,18 @@
 //
 //  Validation.swift
-//  Validation
+//  FoodyPOS
 //
-//  Created by Saurabh on 05/06/17.
-//  Copyright © 2017 Aryavrat Infotech. All rights reserved.
+//  Created by rajat on 26/07/18.
+//  Copyright © 2018 com.tutist. All rights reserved.
 //
+//  All Regular Expressions and Validation patterns are defined in this file for reusability
 
 import Foundation
 
 struct Regex {
     static let userNameRegex   = "^[a-zA-Z ]{3,30}$"
     static let phoneRegex      = "^[0-9]{6,15}$"
-    static let passwordRegex   = "^(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$" //"^{8,20}$"
+    static let passwordRegex   = "^.{8,15}$"//"^(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,15}$" 
     static let emailRegex      = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
     static let emailPhoneRegex = "^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}$|^([0-9]{10,13})$"
 }

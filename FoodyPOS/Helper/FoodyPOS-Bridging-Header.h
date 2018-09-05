@@ -10,5 +10,5 @@
 #define FoodyPOS_Bridging_Header_h_h
 
 #import "KxMenu.h"
-
+#import "MBProgressHUD.h"
 #endif /* FoodyPOS_Bridging_Header_h_h */

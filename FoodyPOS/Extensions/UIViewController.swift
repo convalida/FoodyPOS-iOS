@@ -6,6 +6,7 @@
 //  Copyright © 2017 rajatjain4061. All rights reserved.
 //  Fork this repo on Github: https://github.com/rajatjain4061/SwiftAmplifier
 //
+//  Class Extension for UI View Controller
 
 import Foundation
 import UIKit
@@ -13,6 +14,7 @@ import Toaster
 
 extension UIViewController {
     
+    /// Shows an alert over a view controller
     func showAlert(title:String,message:String,actions:[UIAlertAction]? = nil){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         if actions != nil {
@@ -26,6 +28,7 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    /// Show Toaster on view controller
     func showToast(_ text:String) {
         if let currentToast = ToastCenter.default.currentToast {
             currentToast.cancel()
@@ -33,6 +36,7 @@ extension UIViewController {
         Toast(text: text).show()
     }
     
+    /// Show Toast on view controller with custom duration
     func showToast(text:String,delay:TimeInterval,duration:TimeInterval) {
         if let currentToast = ToastCenter.default.currentToast {
             currentToast.cancel()
