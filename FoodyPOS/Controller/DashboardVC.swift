@@ -57,32 +57,33 @@ class DashboardVC: UIViewController {
         //enable left edge gesture
         leftSlideMenu.enableLeftEdgeGesture()
         
+        //Set the button default to button select
         btnSale.isSelected = true
         btnOrders.isSelected = true
 
+        //Set the default button background color
         btnWeek.backgroundColor = UIColor.themeColor
         
+        //Set the restaurent name
         if let rsName = UserManager.restaurentName {
             lblRestaurantName.text = rsName
         }else {
             lblRestaurantName.text = ""
         }
         
+        //initialize the white background hud view
         initHudView()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        //Get dashboard data from server when no data
         if dashboardData == nil {
             DispatchQueue.main.async {
                 self.callDashboardAPI()
             }
         }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        hudView.isHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -94,6 +95,7 @@ class DashboardVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //Initialize the hud view
     func initHudView() {
         hudView.backgroundColor = UIColor.white
         self.view.addSubview(hudView)
@@ -115,6 +117,7 @@ class DashboardVC: UIViewController {
         let chart = HIChart()
         chart.type = "areaspline"
         
+        //Set the zoom for x-axis
         chart.zoomType = "x"
         chart.panning = true
 
@@ -140,6 +143,7 @@ class DashboardVC: UIViewController {
             yaxis.max = 2
         }
         
+        //Initialize the tooltip for show data
         let tooltip = HITooltip()
         tooltip.shared = 1
         tooltip.valueSuffix = " units"
@@ -151,6 +155,7 @@ class DashboardVC: UIViewController {
         let exporting = HIExporting()
         exporting.enabled = false
         
+        //Set plot options to create SPLine
         let plotoptions = HIPlotOptions()
         plotoptions.areaspline = HIAreaspline()
         plotoptions.areaspline.fillOpacity = 0.5
@@ -159,26 +164,16 @@ class DashboardVC: UIViewController {
         
         let series = HISeries()
         plotoptions.series = series
-        //plotoptions.series.pointStart = 0
     
+        //Initialize the first area sales
         let areaspline1 = HIAreaspline()
         areaspline1.name = "Sales"
         areaspline1.data = saleData
         
+        //Initialize the second area orders
         let areaspline2 = HIAreaspline()
         areaspline2.name = "Order"
         areaspline2.data = orderData
-//        if !isData {
-//            areaspline2.marker = HIMarker()
-//            areaspline2.marker.enabled = false
-//            areaspline2.dataLabels = HIDataLabels()
-//            areaspline2.dataLabels.enabled = false
-//            tooltip.followPointer = false
-//            tooltip.enabled = false
-//            series.enableMouseTracking = false
-//            plotoptions.areaspline.events = HIEvents()
-//            plotoptions.areaspline.events.legendItemClick = HIFunction(jsFunction: "function() { return false; }")
-//        }
         
         options.chart = chart
         options.title = title
@@ -222,11 +217,7 @@ class DashboardVC: UIViewController {
             }
             xAxisData.append("")
             saleData.append(0.0.rounded())
-//            if !isData {
-//                orderData.append(1)
-//            } else {
-                orderData.append(0)
-            //}
+            orderData.append(0)
             xAxisData.reverse()
             saleData.reverse()
             orderData.reverse()
@@ -239,6 +230,7 @@ class DashboardVC: UIViewController {
         leftSlideMenu.open()
     }
     
+    //Show the options on click option three dot button
     @IBAction func btnOptionsDidClicked(_ sender: UIButton) {
         let settings = KxMenuItem.init("Settings", image: nil, target: self, action: #selector(pushMenuItem(sender:)))
         settings?.foreColor = UIColor.black
@@ -254,19 +246,23 @@ class DashboardVC: UIViewController {
         KxMenu.show(in: self.view, from: sender.frame, menuItems: menuItems)
     }
     
+    //Show the top sales data UI
     @IBAction func btnTopSaleDidClicked(_ sender: UIButton) {
         showSalesVC()
     }
     
+    //Show the order list data UI
     @IBAction func btnOrderListDidClicked(_ sender: UIButton) {
         showOrderVC()
     }
     
+    //Show the best seller data UI
     @IBAction func btnBestSellerDidClicked(_ sender: UIButton) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.BestSellerVC) as! BestSellerVC
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    //Show the sales graph
     @IBAction func btnSaleDidClicked(_ sender: UIButton) {
         if sender.isSelected {
             sender.isSelected = false
@@ -277,6 +273,7 @@ class DashboardVC: UIViewController {
         initChart()
     }
     
+    //Show the order graph
     @IBAction func btnOrdersDidClicked(_ sender: UIButton) {
         if sender.isSelected {
             sender.isSelected = false
@@ -287,6 +284,7 @@ class DashboardVC: UIViewController {
         initChart()
     }
     
+    //Show the week graph
     @IBAction func btnWeekDidClicked(_ sender: UIButton) {
         if sender.backgroundColor == UIColor.themeColor {
             return
@@ -294,6 +292,7 @@ class DashboardVC: UIViewController {
        initChartData()
     }
     
+    //Show the month graph
     @IBAction func btnMonthDidClicked(_ sender: UIButton) {
         if sender.backgroundColor == UIColor.themeColor {
             return
@@ -326,6 +325,7 @@ class DashboardVC: UIViewController {
         initChart()
     }
     
+    //Show the year graph
     @IBAction func btnYearDidClicked(_ sender: UIButton) {
         if sender.backgroundColor == UIColor.themeColor {
             return
@@ -395,6 +395,7 @@ class DashboardVC: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    //Get dashboard data from server
     @objc func callDashboardAPI() {
         hudView.isHidden = false
         guard let restaurentId = UserManager.restaurantID else {

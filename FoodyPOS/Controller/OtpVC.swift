@@ -88,7 +88,7 @@ class OtpVC: UIViewController {
             switch result {
             case .success(let data):
                 print(data.message)
-                self.showToast("Verification code sent to \(self.email!) email id")
+                self.showToast("Verification code sent to \(self.email!)")
                 
             case .failure(let error):
                 print(error.localizedDescription)

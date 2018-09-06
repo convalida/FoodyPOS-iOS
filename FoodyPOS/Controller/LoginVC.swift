@@ -57,6 +57,11 @@ class LoginVC: UIViewController {
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        hudView.isHidden = true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -99,12 +104,14 @@ class LoginVC: UIViewController {
         }
     }
     
+    //On click sign button
     @IBAction func btnSignInDidClicked(_ sender: UIButton) {
         txtEmail.resignFirstResponder()
         txtPassword.resignFirstResponder()
         let email = txtEmail.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         let password = txtPassword.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-        
+       
+        //Validate all the field
         if !(email.isEmpty) {
             if !(password.isEmpty) {
                 if (email.isValidEmailId) {
@@ -152,6 +159,7 @@ class LoginVC: UIViewController {
         }
     }
     
+    //On click sign up button --> hidden
     @IBAction func btnSignUpDidClicked(_ sender: UIButton) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.SignUpVC) as! SignUpVC
         self.view.addSubview(vc.view)

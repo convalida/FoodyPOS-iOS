@@ -195,7 +195,7 @@ class OrderListVC: UIViewController {
         self.view.endEditing(true)
         txtSearch.resignFirstResponder()
         if txtSearch.text == "" {
-            self.showToast("Please enter the order number")
+            self.showToast("Please enter an order number")
         }else {
             guard let restaurentId = UserManager.restaurantID else {
                 return
@@ -363,7 +363,7 @@ extension OrderListVC:UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         if textField.text == "" {
-            self.showToast("Please enter the order number")
+            self.showToast("Please enter an order number")
         }else {
             guard let restaurentId = UserManager.restaurantID else {
                 return false

@@ -123,6 +123,7 @@ class SalesReportVC: UIViewController {
     
     @IBAction func btnDailyDidClicked(_ sender: UIButton) {
         initDate()
+        setDayData()
         selection = .daily
         imgDaily.tintColor = UIColor.themeColor
         imgWeekly.tintColor = UIColor.black
@@ -135,6 +136,7 @@ class SalesReportVC: UIViewController {
     
     @IBAction func btnWeeklyDidClicked(_ sender: UIButton) {
         setStartDate()
+        setWeekData()
         selection = .weekly
         imgDaily.tintColor = UIColor.black
         imgWeekly.tintColor = UIColor.themeColor
@@ -147,6 +149,7 @@ class SalesReportVC: UIViewController {
     
     @IBAction func btnMonthlyDidClicked(_ sender: UIButton) {
         setStartDate()
+        setMonthData()
         selection = .monthly
         imgDaily.tintColor = UIColor.black
         imgWeekly.tintColor = UIColor.black
@@ -196,7 +199,7 @@ class SalesReportVC: UIViewController {
             switch result {
             case .success(let report):
                 self.reportData = report
-                self.setReportData()
+                self.setDayData()
                 self.reloadTable()
                 
             case .failure(let error):
@@ -215,7 +218,39 @@ class SalesReportVC: UIViewController {
         }
     }
     
-    func getReportCount() -> (String, String) {
+    func getDayCount() -> (String, String) {
+        var totalOrders = 0
+        var totalAmount = 0.0
+        if let reports = reportData {
+            for report in reports.day {
+                if let order = Int(report.totalsOrders) {
+                    totalOrders = totalOrders + order
+                }
+                if let amount = Double(report.totalsales) {
+                    totalAmount = totalAmount + amount
+                }
+            }
+        }
+        return ("\(totalOrders)","\(totalAmount)")
+    }
+    
+    func getWeekCount() -> (String, String) {
+        var totalOrders = 0
+        var totalAmount = 0.0
+        if let reports = reportData {
+            for report in reports.week {
+                if let order = Int(report.totalsOrders) {
+                    totalOrders = totalOrders + order
+                }
+                if let amount = Double(report.totalsales) {
+                    totalAmount = totalAmount + amount
+                }
+            }
+        }
+        return ("\(totalOrders)","\(totalAmount)")
+    }
+    
+    func getMonthCount() -> (String, String) {
         var totalOrders = 0
         var totalAmount = 0.0
         if let reports = reportData {
@@ -231,8 +266,20 @@ class SalesReportVC: UIViewController {
         return ("\(totalOrders)","\(totalAmount)")
     }
     
-    func setReportData() {
-        let report = getReportCount()
+    func setDayData() {
+        let report = getDayCount()
+        lblTotalOrder.text = report.0
+        lblTotalAmount.text = "$" + report.1
+    }
+    
+    func setWeekData() {
+        let report = getWeekCount()
+        lblTotalOrder.text = report.0
+        lblTotalAmount.text = "$" + report.1
+    }
+    
+    func setMonthData() {
+        let report = getMonthCount()
         lblTotalOrder.text = report.0
         lblTotalAmount.text = "$" + report.1
     }

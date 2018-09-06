@@ -97,7 +97,7 @@ extension BestSellerVC:UITableViewDataSource {
         
         let noDataLbl = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: tableView.bounds.height))
         if bestSellerData == nil {
-            noDataLbl.text = "No best seller found"
+            noDataLbl.text = "No bestsellers found"
         }else {
             noDataLbl.text = ""
         }
@@ -123,7 +123,7 @@ extension BestSellerVC:UITableViewDataSource {
         func setDefault() {
             cell.lblItem1.text = ""
             cell.lblValue1.text = ""
-            cell.lblItem2.text = "    Sorry, No data found"
+            cell.lblItem2.text = "       No Items"
             cell.lblItem2.textAlignment = .center
             cell.lblValue2.text = ""
             cell.lblItem3.text = ""
@@ -133,7 +133,7 @@ extension BestSellerVC:UITableViewDataSource {
         if let bestSellerData = bestSellerData {
             switch indexPath.row {
             case 0:
-                cell.lblTitle.text = "Weekly Bestsellers Item"
+                cell.lblTitle.text = "Weekly Bestseller Items"
                 if bestSellerData.weeklyBestsellersItem.count > 0 {
                     if bestSellerData.weeklyBestsellersItem.count >= 1 {
                         if let item1 = bestSellerData.weeklyBestsellersItem[0] {
@@ -170,7 +170,7 @@ extension BestSellerVC:UITableViewDataSource {
                 }
                 
             case 1:
-                cell.lblTitle.text = "Monthly Bestsellers Item"
+                cell.lblTitle.text = "Monthly Bestseller Items"
                 if bestSellerData.monthelyBestsellersItem.count > 0 {
                     if bestSellerData.monthelyBestsellersItem.count >= 1 {
                         if let item1 = bestSellerData.monthelyBestsellersItem[0] {
@@ -207,7 +207,7 @@ extension BestSellerVC:UITableViewDataSource {
                 }
                 
             case 2:
-                cell.lblTitle.text = "Yearly Bestsellers Item"
+                cell.lblTitle.text = "Yearly Bestseller Items"
                 if bestSellerData.yearlyBestsellersItem.count > 0 {
                     if bestSellerData.yearlyBestsellersItem.count >= 1 {
                         if let item1 = bestSellerData.yearlyBestsellersItem[0] {

@@ -11,6 +11,7 @@ import UIKit
 //@IBDesignable
 class DesignTextField: UITextField {
     
+    /// Overrides the default draw method of text field and set bottom color
     override func draw(_ rect: CGRect) {
         
         let path = UIBezierPath()
@@ -24,6 +25,7 @@ class DesignTextField: UITextField {
        
     }
     
+    
     override func leftViewRect(forBounds bounds: CGRect) -> CGRect {
         var textRect = super.leftViewRect(forBounds: bounds)
         textRect.origin.x += padding
@@ -36,12 +38,14 @@ class DesignTextField: UITextField {
         return textRect
     }
     
+    /// Sets TextField placeholder color
     @IBInspectable var placeHolderColor: UIColor = UIColor.gray {
         didSet {
              self.attributedPlaceholder = NSAttributedString(string:self.placeholder != nil ? self.placeholder! : "", attributes:[NSAttributedStringKey.foregroundColor: placeHolderColor])
         }
     }
     
+    /// Sets TextField BottomColor
     @IBInspectable var bottomColor:UIColor = UIColor.clear {
         didSet {
             self.borderStyle = .bezel
@@ -49,8 +53,10 @@ class DesignTextField: UITextField {
         }
     }
     
+    /// Sets TextField padding
     @IBInspectable var padding:CGFloat = 0
     
+    /// Sets image of a TextField
     @IBInspectable var image:UIImage? {
         didSet {
             if let img = image {

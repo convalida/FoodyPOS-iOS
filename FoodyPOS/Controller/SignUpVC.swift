@@ -82,6 +82,7 @@ class SignUpVC: UIViewController {
         }
     }
     
+    //For add employee
     @IBAction func btnAddEmployeeDidClicked(_ sender: UIButton) {
         resignText()
         if !(txtName.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).isEmpty)! {
@@ -119,6 +120,7 @@ class SignUpVC: UIViewController {
         }
     }
   
+    //Reset all the field to blank
     @IBAction func btnResetDidClicked(_ sender: UIButton) {
         
         txtName.text = ""
@@ -129,6 +131,7 @@ class SignUpVC: UIViewController {
         resignText()
     }
     
+    //Close the pop-up
     @IBAction func btnCloseDidClicked(_ sender: UIButton) {
         removeController()
     }
