@@ -99,14 +99,13 @@ class ResetPasswordVC: UIViewController {
             switch result {
             case .success(let data):
                 if data.resultCode == "1" {
-                    self.showToast(data.message)
+                    //self.showToast(data.message)
                         self.navigationController?.popToRootViewController(animated: true)
                 }else {
                     self.showToast(data.message)
                 }
             case .failure(let error):
-                print(error.localizedDescription)
-                self.showToast(AppMessages.msgFailed)
+                self.showAlert(title: kAppName, message: error.localizedDescription)
             }
         }
     }

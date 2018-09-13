@@ -110,8 +110,7 @@ class TopSaleVC: UIViewController {
                 self.reloadTable()
                 
             case .failure(let error):
-                print(error.localizedDescription)
-                self.showToast(AppMessages.msgFailed)
+                self.showAlert(title: kAppName, message: error.localizedDescription)
             }
         }
     }
@@ -119,14 +118,14 @@ class TopSaleVC: UIViewController {
     //Return all orders and sales count
     func getSaleCount() -> (String, String) {
         var totalOrders = 0
-        var totalAmount = 0.0
+        var totalAmount = 0.0.rounded(toPlaces: 2)
         if let sales = salesData {
             for sale in sales.topRestaurentSale {
                 if let order = Int(sale.totalOrder!) {
                     totalOrders = totalOrders + order
                 }
                 if let amount = Double(sale.totalAmount!) {
-                    totalAmount = totalAmount + amount
+                    totalAmount = totalAmount + amount.rounded(toPlaces: 2)
                 }
             }
         }
@@ -184,7 +183,9 @@ extension TopSaleVC:UITableViewDataSource {
             let topRestaurentData = salesData.topRestaurentSale[indexPath.row]
             cell.lblName.text = topRestaurentData.customerName
             cell.lblOrder.text = "Orders:" + topRestaurentData.totalOrder!
-            cell.lblPrice.text = "$" + topRestaurentData.totalAmount!
+            if let amt = Double(topRestaurentData.totalAmount!) {
+                cell.lblPrice.text = "$" + "\(amt.rounded(toPlaces: 2))"
+            }
             cell.btnPhone.setTitle(topRestaurentData.contactNumber, for: .normal)
             cell.lblLetter.text = String((topRestaurentData.customerName?.first)!)
         }
@@ -194,9 +195,13 @@ extension TopSaleVC:UITableViewDataSource {
 
 extension TopSaleVC:UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         if Global.isIpad {
-            return 200.0
+            return 220.0
         }
-            return 150.0
+        return 150.0
     }
 }

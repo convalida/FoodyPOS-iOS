@@ -109,8 +109,7 @@ class ForgotPasswordVC: UIViewController {
                     self.showToast(data.message)
                 }
             case .failure(let error):
-                print(error.localizedDescription)
-                self.showToast(AppMessages.msgFailed)
+                self.showAlert(title: kAppName, message: error.localizedDescription)
             }
         }
     }

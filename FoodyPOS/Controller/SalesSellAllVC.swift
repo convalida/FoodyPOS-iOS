@@ -137,8 +137,7 @@ class SalesSellAllVC: UIViewController {
                 self.reloadTable()
                 
             case .failure(let error):
-                print(error.localizedDescription)
-                self.showToast(AppMessages.msgFailed)
+                self.showAlert(title: kAppName, message: error.localizedDescription)
             }
         }
     }
@@ -161,8 +160,7 @@ class SalesSellAllVC: UIViewController {
                 self.reloadTable()
                 
             case .failure(let error):
-                print(error.localizedDescription)
-                self.showToast(AppMessages.msgFailed)
+                self.showAlert(title: kAppName, message: error.localizedDescription)
             }
         }
     }
@@ -177,14 +175,14 @@ class SalesSellAllVC: UIViewController {
     //Get total orders or amount of customer
     func getCustomerCount() -> (String, String) {
         var totalOrders = 0
-        var totalAmount = 0.0
+        var totalAmount = 0.0.rounded(toPlaces: 2)
         if let customers = customersData {
             for customer in customers.byDateSelected {
                 if let order = Int(customer.totalOrders) {
                     totalOrders = totalOrders + order
                 }
                 if let amount = Double(customer.totalamount) {
-                    totalAmount = totalAmount + amount
+                    totalAmount = totalAmount + amount.rounded(toPlaces: 2)
                 }
             }
         }
@@ -201,7 +199,7 @@ class SalesSellAllVC: UIViewController {
                     totalOrders = totalOrders + order
                 }
                 if let amount = Double(sale.totalAmount!) {
-                    totalAmount = totalAmount + amount
+                    totalAmount = totalAmount + amount.rounded(toPlaces: 2)
                 }
             }
         }
@@ -272,14 +270,18 @@ extension SalesSellAllVC:UITableViewDataSource {
             let topRestaurentData = salesData.allSales[indexPath.row]
             cell.lblName.text = topRestaurentData.customerName
             cell.lblOrder.text = "Orders:" + topRestaurentData.totalOrder!
-            cell.lblPrice.text = "$" + topRestaurentData.totalAmount!
+            if let amt = Double(topRestaurentData.totalAmount!) {
+                cell.lblPrice.text = "$" + "\(amt.rounded(toPlaces: 2))"
+            }
             cell.btnPhone.setTitle(topRestaurentData.contactNumber, for: .normal)
             cell.lblLetter.text = String((topRestaurentData.customerName?.first)!)
         } else if let customers = customersData {
             let customer = customers.byDateSelected[indexPath.row]
             cell.lblName.text = customer.customerName
             cell.lblOrder.text = "Orders:" + customer.totalOrders
-            cell.lblPrice.text = "$" + customer.totalamount
+            if let amt = Double(customer.totalamount) {
+                cell.lblPrice.text = "$" + "\(amt.rounded(toPlaces: 2))"
+            }
             cell.btnPhone.setTitle(customer.contactNo, for: .normal)
             cell.lblLetter.text = String((customer.customerName.first)!)
         }

@@ -118,9 +118,15 @@ extension OrderDetailVC:UITableViewDataSource {
                 cell.lblModifier.text = item.modifier
                 cell.lblAddOn.text = item.addOn
                 cell.lblInstruction.text = item.instruction
-                cell.lblPrice.text = "$" + item.price!
-                cell.lblAddOnPrice.text = "$" + item.addOnPrices!
-                cell.lblTotal.text = "$" + item.total!
+                if let price = Double(item.price!) {
+                    cell.lblPrice.text = "$" + "\(price.rounded(toPlaces: 2))"
+                }
+                if let addOnPrice = Double(item.addOnPrices!) {
+                    cell.lblAddOnPrice.text = "$" + "\(addOnPrice.rounded(toPlaces: 2))"
+                }
+                if let total = Double(item.total!) {
+                    cell.lblTotal.text = "$" + "\(total.rounded(toPlaces: 2))"
+                }
                 if item.subitemsNames == "" {
                     cell.stackSubitem.isHidden = true
                 }

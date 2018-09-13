@@ -203,8 +203,7 @@ class SalesReportVC: UIViewController {
                 self.reloadTable()
                 
             case .failure(let error):
-                print(error.localizedDescription)
-                self.showToast(AppMessages.msgFailed)
+                self.showAlert(title: kAppName, message: error.localizedDescription)
             }
         }
     }
@@ -220,14 +219,14 @@ class SalesReportVC: UIViewController {
     
     func getDayCount() -> (String, String) {
         var totalOrders = 0
-        var totalAmount = 0.0
+        var totalAmount = 0.0.rounded(toPlaces: 2)
         if let reports = reportData {
             for report in reports.day {
                 if let order = Int(report.totalsOrders) {
                     totalOrders = totalOrders + order
                 }
                 if let amount = Double(report.totalsales) {
-                    totalAmount = totalAmount + amount
+                    totalAmount = totalAmount + amount.rounded(toPlaces: 2)
                 }
             }
         }
@@ -243,7 +242,7 @@ class SalesReportVC: UIViewController {
                     totalOrders = totalOrders + order
                 }
                 if let amount = Double(report.totalsales) {
-                    totalAmount = totalAmount + amount
+                    totalAmount = totalAmount + amount.rounded(toPlaces: 2)
                 }
             }
         }
@@ -259,7 +258,7 @@ class SalesReportVC: UIViewController {
                     totalOrders = totalOrders + order
                 }
                 if let amount = Double(report.totalsales) {
-                    totalAmount = totalAmount + amount
+                    totalAmount = totalAmount + amount.rounded(toPlaces: 2)
                 }
             }
         }
@@ -361,21 +360,27 @@ extension SalesReportVC:UITableViewDataSource {
                 }else {
                     cell.lblOrder.text = day.totalsOrders + " orders"
                 }
-                cell.lblPrice.text = "$" + day.totalsales
+                if let amt = Double(day.totalsales) {
+                    cell.lblPrice.text = "$" + "\(amt.rounded(toPlaces: 2))"
+                }
             }
         case .weekly:
             if let report = reportData {
                 let week = report.week[indexPath.row]
                 cell.lblDay.text = week.week
                 cell.lblOrder.text = week.totalsOrders + " orders"
-                cell.lblPrice.text = "$" + week.totalsales
+                if let amt = Double(week.totalsales) {
+                    cell.lblPrice.text = "$" + "\(amt.rounded(toPlaces: 2))"
+                }
             }
         case .monthly:
             if let report = reportData {
                 let month = report.month[indexPath.row]
                 cell.lblDay.text = month.month
                 cell.lblOrder.text = month.totalsOrders + " orders"
-                cell.lblPrice.text = "$" + month.totalsales
+                if let amt = Double(month.totalsales) {
+                    cell.lblPrice.text = "$" + "\(amt.rounded(toPlaces: 2))"
+                }
             }
         }
         return cell

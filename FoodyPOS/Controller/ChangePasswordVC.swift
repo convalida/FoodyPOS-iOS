@@ -81,7 +81,7 @@ class ChangePasswordVC: UIViewController {
                                 switch result {
                                 case .success(let data):
                                     if data.resultCode == "1" {
-                                        self.showToast(data.message)
+                                      //  self.showToast(data.message)
                                         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
                                             if UserManager.isRemember {
                                                 Global.flushUserDefaults()
@@ -95,8 +95,7 @@ class ChangePasswordVC: UIViewController {
                                      self.showToast(data.message)
                                     }
                                 case .failure(let error):
-                                    print(error.localizedDescription)
-                                    self.showToast(AppMessages.msgFailed)
+                                    self.showAlert(title: kAppName, message: error.localizedDescription)
                                 }
                             }
                             

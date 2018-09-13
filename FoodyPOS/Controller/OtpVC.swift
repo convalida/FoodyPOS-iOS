@@ -91,8 +91,7 @@ class OtpVC: UIViewController {
                 self.showToast("Verification code sent to \(self.email!)")
                 
             case .failure(let error):
-                print(error.localizedDescription)
-                self.showToast(AppMessages.msgFailed)
+                self.showAlert(title: kAppName, message: error.localizedDescription)
             }
         }
     }
@@ -119,7 +118,7 @@ class OtpVC: UIViewController {
             switch result {
             case .success(let data):
                 if data.resultCode == "1" {
-                    self.showToast(data.message)
+                    //self.showToast(data.message)
                     let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.ResetPasswordVC) as! ResetPasswordVC
                     vc.otp = self.codeView.getVerificationCode()
                     self.view.addSubview(vc.view)
@@ -128,8 +127,7 @@ class OtpVC: UIViewController {
                     self.showToast(data.message)
                 }
             case .failure(let error):
-                print(error.localizedDescription)
-                self.showToast(AppMessages.msgFailed)
+                self.showAlert(title: kAppName, message: error.localizedDescription)
             }
         }
     }

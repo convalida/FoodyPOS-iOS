@@ -54,6 +54,7 @@ class SignUpVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //Initiallize the hud view
     func initHudView() {
         hudView.backgroundColor = UIColor.white
         self.view.addSubview(hudView)
@@ -185,8 +186,7 @@ class SignUpVC: UIViewController {
                 }
                 
             case .failure(let error):
-                print(error.localizedDescription)
-                self.showToast(AppMessages.msgFailed)
+                self.showAlert(title: kAppName, message: error.localizedDescription)
             }
         }
     }

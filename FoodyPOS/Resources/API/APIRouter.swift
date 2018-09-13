@@ -153,7 +153,7 @@ enum APIRouter: URLRequestConvertible {
         let url = try K.ProductionServer.baseURL.asURL()
         
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
-        
+        urlRequest.timeoutInterval = 60.0
         // HTTP Method
         urlRequest.httpMethod = method.rawValue
         

@@ -146,7 +146,7 @@ class DashboardVC: UIViewController {
         //Initialize the tooltip for show data
         let tooltip = HITooltip()
         tooltip.shared = 1
-        tooltip.valueSuffix = " units"
+        tooltip.valuePrefix = "$"
         tooltip.followTouchMove = false
         
         let credits = HICredits()
@@ -172,8 +172,10 @@ class DashboardVC: UIViewController {
         
         //Initialize the second area orders
         let areaspline2 = HIAreaspline()
-        areaspline2.name = "Order"
+        areaspline2.name = "Orders"
         areaspline2.data = orderData
+        areaspline2.tooltip = HITooltip()
+        areaspline2.tooltip.valuePrefix = ""
         
         options.chart = chart
         options.title = title
@@ -208,7 +210,7 @@ class DashboardVC: UIViewController {
             for week in dashboard.chart.week {
                 xAxisData.append(week.weekDay)
                 if let sales = Double(week.totalSale) {
-                    saleData.append(sales.rounded())
+                    saleData.append(sales.rounded(toPlaces: 2))
                 }
                 if let orders = Int(week.totalOrders) {
                     orderData.append(orders)
@@ -216,7 +218,7 @@ class DashboardVC: UIViewController {
                 isData = true
             }
             xAxisData.append("")
-            saleData.append(0.0.rounded())
+            saleData.append(0.0.rounded(toPlaces: 2))
             orderData.append(0)
             xAxisData.reverse()
             saleData.reverse()
@@ -308,7 +310,7 @@ class DashboardVC: UIViewController {
             for week in dashboard.chart.month {
                 xAxisData.append(week.daydate)
                 if let sales = Double(week.totalSale) {
-                    saleData.append(sales.rounded())
+                    saleData.append(sales.rounded(toPlaces: 2))
                 }
                 if let orders = Int(week.totalOrders) {
                     orderData.append(orders)
@@ -316,7 +318,7 @@ class DashboardVC: UIViewController {
                 isData = true
             }
             xAxisData.append("0")
-            saleData.append(0.0.rounded())
+            saleData.append(0.0.rounded(toPlaces: 2))
             orderData.append(0)
             xAxisData.reverse()
             saleData.reverse()
@@ -341,7 +343,7 @@ class DashboardVC: UIViewController {
             for week in dashboard.chart.year {
                 xAxisData.append(week.month)
                 if let sales = Double(week.totalSale) {
-                    saleData.append(sales.rounded())
+                    saleData.append(sales.rounded(toPlaces: 2))
                 }
                 if let orders = Int(week.totalOrders) {
                     orderData.append(orders)
@@ -349,7 +351,7 @@ class DashboardVC: UIViewController {
                 isData = true
             }
             xAxisData.append("")
-            saleData.append(0.0.rounded())
+            saleData.append(0.0.rounded(toPlaces: 2))
             orderData.append(0)
             xAxisData.reverse()
             saleData.reverse()
@@ -412,8 +414,7 @@ class DashboardVC: UIViewController {
                 self.reloadTable()
                 
             case .failure(let error):
-                print(error.localizedDescription)
-                self.showToast(AppMessages.msgFailed)
+                self.showAlert(title: kAppName, message: error.localizedDescription)
             }
         }
     }

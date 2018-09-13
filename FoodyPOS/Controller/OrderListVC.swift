@@ -163,8 +163,7 @@ class OrderListVC: UIViewController {
                 self.reloadTable()
                 
             case .failure(let error):
-                print(error.localizedDescription)
-                self.showToast(AppMessages.msgFailed)
+                self.showAlert(title: kAppName, message: error.localizedDescription)
             }
         }
     }
@@ -224,8 +223,7 @@ class OrderListVC: UIViewController {
                     }
                     
                 case .failure(let error):
-                    print(error.localizedDescription)
-                    self.showToast(AppMessages.msgFailed)
+                    self.showAlert(title: kAppName, message: error.localizedDescription)
                 }
             }
         }
@@ -233,10 +231,10 @@ class OrderListVC: UIViewController {
     
     //Get the total amount of order detail
     private func getTotalAmountOfOrders(orders:[OrderNumberDetail]) -> String {
-        var totalPrice = 0.0
+        var totalPrice = 0.0.rounded(toPlaces: 2)
         for order in orders {
             if let price = Double(order.totalPrices!) {
-                totalPrice = totalPrice + price
+                totalPrice = totalPrice + price.rounded(toPlaces: 2)
             }
         }
         return "\(totalPrice)"
@@ -314,7 +312,9 @@ extension OrderListVC:UITableViewDataSource {
                         }
                         cell.btnListTIme.setTitle(orderNumber[indexPath.row-1].pickupTime, for: .normal)
                         if let price = orderNumber[indexPath.row-1].totalPrices {
-                            cell.lblListPrice.text = "$" + price
+                            if let dPrice = Double(price) {
+                                cell.lblListPrice.text = "$" + "\(dPrice.rounded(toPlaces: 2))"
+                            }
                         }
                     }
                 }
@@ -379,8 +379,7 @@ extension OrderListVC:UITextFieldDelegate {
                     print(order)
                     
                 case .failure(let error):
-                    print(error.localizedDescription)
-                    self.showToast(AppMessages.msgFailed)
+                    self.showAlert(title: kAppName, message: error.localizedDescription)
                 }
             }
         }
