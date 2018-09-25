@@ -203,7 +203,11 @@ class SalesReportVC: UIViewController {
                 self.reloadTable()
                 
             case .failure(let error):
-                self.showAlert(title: kAppName, message: error.localizedDescription)
+                if error.localizedDescription == noDataMessage {
+                    self.showAlert(title: kAppName, message: AppMessages.msgFailed)
+                }else {
+                    self.showAlert(title: kAppName, message: error.localizedDescription)
+                }
             }
         }
     }
@@ -230,7 +234,7 @@ class SalesReportVC: UIViewController {
                 }
             }
         }
-        return ("\(totalOrders)","\(totalAmount)")
+        return ("\(totalOrders)","\(totalAmount.rounded(toPlaces: 2))")
     }
     
     func getWeekCount() -> (String, String) {
@@ -246,7 +250,7 @@ class SalesReportVC: UIViewController {
                 }
             }
         }
-        return ("\(totalOrders)","\(totalAmount)")
+        return ("\(totalOrders)","\(totalAmount.rounded(toPlaces: 2))")
     }
     
     func getMonthCount() -> (String, String) {
@@ -262,7 +266,7 @@ class SalesReportVC: UIViewController {
                 }
             }
         }
-        return ("\(totalOrders)","\(totalAmount)")
+        return ("\(totalOrders)","\(totalAmount.rounded(toPlaces: 2))")
     }
     
     func setDayData() {

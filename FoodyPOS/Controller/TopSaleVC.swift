@@ -110,7 +110,11 @@ class TopSaleVC: UIViewController {
                 self.reloadTable()
                 
             case .failure(let error):
-                self.showAlert(title: kAppName, message: error.localizedDescription)
+                if error.localizedDescription == noDataMessage {
+                    self.showAlert(title: kAppName, message: AppMessages.msgFailed)
+                }else {
+                    self.showAlert(title: kAppName, message: error.localizedDescription)
+                }
             }
         }
     }
@@ -129,7 +133,7 @@ class TopSaleVC: UIViewController {
                 }
             }
         }
-        return ("\(totalOrders)","\(totalAmount)")
+        return ("\(totalOrders)","\(totalAmount.rounded(toPlaces: 2))")
     }
     
     //Set the sales and orders
@@ -177,7 +181,7 @@ extension TopSaleVC:UITableViewDataSource {
                 return TopSaleCell()
             }
         if Global.isIpad {
-            cell.lblLetter.layer.cornerRadius = 52.5
+            cell.lblLetter.layer.cornerRadius = 45.0
         }
         if let salesData = salesData {
             let topRestaurentData = salesData.topRestaurentSale[indexPath.row]

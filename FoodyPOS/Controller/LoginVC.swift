@@ -141,7 +141,11 @@ class LoginVC: UIViewController {
 
                             case .failure(let error):
                                 self.hudView.isHidden = true
-                                self.showAlert(title: kAppName, message: error.localizedDescription)
+                                if error.localizedDescription == noDataMessage {
+                                    self.showAlert(title: kAppName, message: AppMessages.msgFailed)
+                                } else {
+                                    self.showAlert(title: kAppName, message: error.localizedDescription)
+                                }
                             }
                         }
                     } else {

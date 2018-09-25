@@ -137,7 +137,11 @@ class SalesSellAllVC: UIViewController {
                 self.reloadTable()
                 
             case .failure(let error):
-                self.showAlert(title: kAppName, message: error.localizedDescription)
+                if error.localizedDescription == noDataMessage {
+                    self.showAlert(title: kAppName, message: AppMessages.msgFailed)
+                }else {
+                    self.showAlert(title: kAppName, message: error.localizedDescription)
+                }
             }
         }
     }
@@ -160,7 +164,11 @@ class SalesSellAllVC: UIViewController {
                 self.reloadTable()
                 
             case .failure(let error):
-                self.showAlert(title: kAppName, message: error.localizedDescription)
+                if error.localizedDescription == noDataMessage {
+                    self.showAlert(title: kAppName, message: AppMessages.msgFailed)
+                }else {
+                    self.showAlert(title: kAppName, message: error.localizedDescription)
+                }
             }
         }
     }
@@ -186,13 +194,13 @@ class SalesSellAllVC: UIViewController {
                 }
             }
         }
-        return ("\(totalOrders)","\(totalAmount)")
+        return ("\(totalOrders)","\(totalAmount.rounded(toPlaces: 2))")
     }
     
     //Get total order or amount of sales
     func getSaleCount() -> (String, String) {
         var totalOrders = 0
-        var totalAmount = 0.0
+        var totalAmount = 0.0.rounded(toPlaces: 2)
         if let sales = salesData {
             for sale in sales.allSales {
                 if let order = Int(sale.totalOrder!) {
@@ -203,7 +211,7 @@ class SalesSellAllVC: UIViewController {
                 }
             }
         }
-        return ("\(totalOrders)","\(totalAmount)")
+        return ("\(totalOrders)","\(totalAmount.rounded(toPlaces: 2))")
     }
     
     //Set the order and amount
@@ -264,7 +272,7 @@ extension SalesSellAllVC:UITableViewDataSource {
             return TopSaleCell()
         }
         if Global.isIpad {
-            cell.lblLetter.layer.cornerRadius = 52.5
+            cell.lblLetter.layer.cornerRadius = 45.0
         }
         if let salesData = salesData {
             let topRestaurentData = salesData.allSales[indexPath.row]

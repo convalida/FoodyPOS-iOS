@@ -102,7 +102,11 @@ class EmployeeDetailVC: UIViewController {
                 self.reloadTable()
                 
             case .failure(let error):
-                self.showAlert(title: kAppName, message: error.localizedDescription)
+                if error.localizedDescription == noDataMessage {
+                    self.showAlert(title: kAppName, message: AppMessages.msgFailed)
+                }else {
+                    self.showAlert(title: kAppName, message: error.localizedDescription)
+                }
             }
         }
     }

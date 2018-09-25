@@ -45,6 +45,7 @@ class OrderListVC: UIViewController {
 
         initHudView()
 
+        // "Done" button settings on keyboard
         let keyboardDoneButtonView = UIToolbar.init()
         keyboardDoneButtonView.sizeToFit()
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneClicked(sender:)))
@@ -144,6 +145,9 @@ class OrderListVC: UIViewController {
         txtSearch.resignFirstResponder()
     }
     
+    /**
+        Fetch Orders from API
+     */
     func callOrderAPI() {
         guard let restaurentId = UserManager.restaurantID else {
             return
@@ -163,7 +167,11 @@ class OrderListVC: UIViewController {
                 self.reloadTable()
                 
             case .failure(let error):
-                self.showAlert(title: kAppName, message: error.localizedDescription)
+                if error.localizedDescription == noDataMessage {
+                    self.showAlert(title: kAppName, message: AppMessages.msgFailed)
+                }else {
+                    self.showAlert(title: kAppName, message: error.localizedDescription)
+                }
             }
         }
     }
@@ -223,7 +231,11 @@ class OrderListVC: UIViewController {
                     }
                     
                 case .failure(let error):
-                    self.showAlert(title: kAppName, message: error.localizedDescription)
+                    if error.localizedDescription == noDataMessage {
+                        self.showAlert(title: kAppName, message: AppMessages.msgFailed)
+                    }else {
+                        self.showAlert(title: kAppName, message: error.localizedDescription)
+                    }
                 }
             }
         }
@@ -237,7 +249,7 @@ class OrderListVC: UIViewController {
                 totalPrice = totalPrice + price.rounded(toPlaces: 2)
             }
         }
-        return "\(totalPrice)"
+        return "\(totalPrice.rounded(toPlaces: 2))"
     }
 }
 
@@ -379,7 +391,11 @@ extension OrderListVC:UITextFieldDelegate {
                     print(order)
                     
                 case .failure(let error):
-                    self.showAlert(title: kAppName, message: error.localizedDescription)
+                    if error.localizedDescription == noDataMessage {
+                        self.showAlert(title: kAppName, message: AppMessages.msgFailed)
+                    }else {
+                        self.showAlert(title: kAppName, message: error.localizedDescription)
+                    }
                 }
             }
         }

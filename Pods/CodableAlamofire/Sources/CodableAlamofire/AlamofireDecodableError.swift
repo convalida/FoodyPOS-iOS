@@ -21,8 +21,8 @@ extension AlamofireDecodableError: LocalizedError {
     
     public var errorDescription: String? {
         switch self {
-        case .invalidKeyPath:   return "Nested object doesn't exist by this keyPath."
-        case .emptyKeyPath:     return "KeyPath can not be empty."
+        case .invalidKeyPath:   return "Unable to connect to server. Please try after some time."
+        case .emptyKeyPath:     return "Unable to connect to server. Please try after some time."
         }
     }
 }
