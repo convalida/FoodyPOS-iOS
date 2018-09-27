@@ -149,6 +149,7 @@ enum APIRouter: URLRequestConvertible {
     }
     
     // MARK: - URLRequestConvertible
+    /// Create url request Globally
     func asURLRequest() throws -> URLRequest {
         let url = try K.ProductionServer.baseURL.asURL()
         

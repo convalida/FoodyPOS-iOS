@@ -39,18 +39,21 @@ extension Date {
         return Date()
     }
     
+    /// Find Next occourance of a weekday from current date
     func next(_ weekday: Weekday, considerToday: Bool = false) -> Date {
         return get(.Next,
                    weekday,
                    considerToday: considerToday)
     }
     
+    /// Find Previous occourance of a weekday from current date
     func previous(_ weekday: Weekday, considerToday: Bool = false) -> Date {
         return get(.Previous,
                    weekday,
                    considerToday: considerToday)
     }
     
+    /// Find next or previous occourance of a weekday from current or a particular date
     func get(_ direction: SearchDirection,
              _ weekDay: Weekday,
              considerToday consider: Bool = false) -> Date {
@@ -81,10 +84,13 @@ extension Date {
         return date!
     }
     
+    /// Get start date of current month
     static func startOfMonth() -> Date {
         return Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: Calendar.current.startOfDay(for: Date())))!
     }
     
+    
+    /// Get End date of current month
     static func endOfMonth() -> Date {
         return Calendar.current.date(byAdding: DateComponents(month: 1, day: -1), to: self.startOfMonth())!
     }
@@ -92,6 +98,7 @@ extension Date {
 
 // MARK: Helper methods
 extension Date {
+    /// Returns Sunday, Monday etc
     func getWeekDaysInEnglish() -> [String] {
         var calendar = Calendar(identifier: .gregorian)
         calendar.locale = Locale(identifier: "en_US_POSIX")

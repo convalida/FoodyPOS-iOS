@@ -50,3 +50,22 @@ class Global:NSObject {
     }
 
 }
+
+class DeviceLayoutConstraint:NSLayoutConstraint {
+    
+    @IBInspectable var isIphoneXValue:CGFloat = 0.0 {
+        didSet {
+            if UIDevice().userInterfaceIdiom == .phone {
+                if UIScreen.main.nativeBounds.height == 2436 {
+                    self.constant = isIphoneXValue
+                    layoutIfNeeded()
+                }
+            }
+        }
+    }
+    
+    open func layoutIfNeeded() {
+        self.firstItem?.layoutIfNeeded()
+        self.secondItem?.layoutIfNeeded()
+    }
+}

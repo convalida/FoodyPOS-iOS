@@ -19,10 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //set text field tint color
         UITextField.appearance().tintColor = UIColor.themeColor
-                
+        
+        // Show dashboard screen if user is already logged in
         if UserManager.isRemember && UserManager.isLogin {
             Global.showRootView(withIdentifier: StoryboardConstant.DashboardVC)
         }
+        
+        // Handling for push notifications
         registerForPushNotifications()
         return true
     }
@@ -52,6 +55,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate {
+    
+    /// Ask users for push notification permission and get cloud key
     func registerForPushNotifications() {
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) {
@@ -70,6 +75,7 @@ extension AppDelegate {
         }
     }
     
+    // called when user allows push notification
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         // 1. Convert device token to string
         let tokenParts = deviceToken.map { data -> String in
@@ -80,11 +86,15 @@ extension AppDelegate {
         print("Device Token: \(token)")
     }
     
+    
+    // called when user deny push notification
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         // 1. Print out error if PNs registration not successful
         print("Failed to register for remote notifications with error: \(error)")
     }
     
+    
+    // Called when a notification is received
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
         
     }

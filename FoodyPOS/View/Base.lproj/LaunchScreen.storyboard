@@ -27,7 +27,7 @@
                             <constraint firstItem="EeJ-n1-7IE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FE2-BJ-BI6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EeJ-n1-7IE" secondAttribute="trailing" id="fDB-96-U4y"/>
                             <constraint firstItem="EeJ-n1-7IE" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="qis-Qj-gsM"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EeJ-n1-7IE" secondAttribute="bottom" id="uxE-mx-WMS"/>
+                            <constraint firstAttribute="bottom" secondItem="EeJ-n1-7IE" secondAttribute="bottom" id="tNX-8q-zz6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

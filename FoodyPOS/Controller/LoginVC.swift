@@ -19,6 +19,7 @@ class LoginVC: UIViewController {
     var isRemember = false
     var hudView = UIView()
     
+    // Option to show hide status bar
     override var prefersStatusBarHidden: Bool {
         return false
     }
@@ -84,6 +85,8 @@ class LoginVC: UIViewController {
     }
     
     //MARK: ---------Button actions---------
+    
+    /// Called when user clicks on Forgot Password button
     @IBAction func btnForgotPasswordDidClicked(_ sender: UIButton) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.ForgotPasswordVC) as! ForgotPasswordVC
         self.view.addSubview(vc.view)
