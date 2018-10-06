@@ -41,6 +41,7 @@ class UserManager {
         }
     }
     
+    /// Get and Set userName
     public static var userName:String? {
         set(newValue) {
             UserDefaults.standard.setValue(newValue, forKey: "userName")
@@ -50,6 +51,7 @@ class UserManager {
         }
     }
     
+    /// Get and Set isActive
     public static var isActive:String? {
         set(newValue) {
             UserDefaults.standard.setValue(newValue, forKey: "isActive")
@@ -59,6 +61,7 @@ class UserManager {
         }
     }
 
+    /// Get and Set restaurantID
     public static var restaurantID:String? {
         set(newValue) {
             UserDefaults.standard.setValue(newValue, forKey: "restaurantID")
@@ -68,6 +71,7 @@ class UserManager {
         }
     }
     
+    /// Get and Set tax
     public static var tax:String? {
         set(newValue) {
             UserDefaults.standard.setValue(newValue, forKey: "tax")
@@ -77,6 +81,7 @@ class UserManager {
         }
     }
     
+    /// Get and Set restaurentName
     public static var restaurentName:String? {
         set(newValue) {
             UserDefaults.standard.setValue(newValue, forKey: "restaurentName")
@@ -86,6 +91,7 @@ class UserManager {
         }
     }
     
+    /// Get and Set role
     public static var role:String? {
         set(newValue) {
             UserDefaults.standard.setValue(newValue, forKey: "role")
@@ -95,6 +101,7 @@ class UserManager {
         }
     }
     
+    /// Get and Set isRemember
     public static var isRemember:Bool {
         set(newValue) {
             UserDefaults.standard.set(newValue, forKey: "isRemember")
@@ -104,6 +111,7 @@ class UserManager {
         }
     }
     
+    /// Get and Set email
     public static var email:String? {
         set(newValue) {
             UserDefaults.standard.setValue(newValue, forKey: "email")
@@ -113,6 +121,7 @@ class UserManager {
         }
     }
     
+    /// Get and Set password
     public static var password:String? {
         set(newValue) {
             UserDefaults.standard.setValue(newValue, forKey: "password")
@@ -122,6 +131,7 @@ class UserManager {
         }
     }
     
+    /// Get and Set isManager
     public static var isManager:Bool {
         set(newValue) {
             UserDefaults.standard.set(newValue, forKey: "isManager")
@@ -131,6 +141,7 @@ class UserManager {
         }
     }
     
+    /// Get and Set isLogin
     public static var isLogin:Bool {
         set(newValue) {
             UserDefaults.standard.set(newValue, forKey: "isLogin")

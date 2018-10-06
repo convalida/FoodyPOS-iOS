@@ -38,6 +38,7 @@ class TopSaleVC: UIViewController {
         tableView.delegate = self
         
         if Global.isIpad {
+            // manage height of "See All" button
             tableView.tableFooterView?.frame.size.height = 100
         }
         initHudView()
@@ -110,7 +111,7 @@ class TopSaleVC: UIViewController {
                 self.reloadTable()
                 
             case .failure(let error):
-                if error.localizedDescription == noDataMessage {
+                if error.localizedDescription == noDataMessage || error.localizedDescription == noDataMessage1 {
                     self.showAlert(title: kAppName, message: AppMessages.msgFailed)
                 }else {
                     self.showAlert(title: kAppName, message: error.localizedDescription)

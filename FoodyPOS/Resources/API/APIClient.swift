@@ -67,6 +67,7 @@ class APIClient {
         performRequest(route: APIRouter.forgotPassword(paramters), decoder: jsonDecoder, completion: completion)
     }
     
+    /// Call Employee list api and return Employee Object
     public static func employee(paramters:[String:Any], completion:@escaping (Result<Employee>) -> Void) {
         performRequest(route: APIRouter.employee(paramters), decoder: jsonDecoder, completion: completion)
     }

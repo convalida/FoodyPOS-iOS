@@ -32,7 +32,7 @@ struct AllSaleElement: Codable {
 }
 
 // MARK: Encode/decode helpers
-
+// TODO: To Be Explained Later:
 class JSONNull: Codable {
     public init() {}
     

@@ -142,6 +142,8 @@ class SignUpVC: UIViewController {
         removeController()
     }
     
+    
+    /// Hide Keyboard
     func resignText() {
         txtName.resignFirstResponder()
         txtEmail.resignFirstResponder()
@@ -149,6 +151,7 @@ class SignUpVC: UIViewController {
         txtConfirmPassword.resignFirstResponder()
     }
     
+    /// Removes a controller from superview and view
     func removeController() {
         self.view.removeFromSuperview()
         self.removeFromParentViewController()
@@ -181,12 +184,12 @@ class SignUpVC: UIViewController {
                     DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
                         self.removeController()
                     })
-                }else {
+                } else {
                     self.showToast(employee.result.message)
                 }
                 
             case .failure(let error):
-                if error.localizedDescription == noDataMessage {
+                if error.localizedDescription == noDataMessage || error.localizedDescription == noDataMessage1 {
                     self.showAlert(title: kAppName, message: AppMessages.msgFailed)
                 }else {
                     self.showAlert(title: kAppName, message: error.localizedDescription)

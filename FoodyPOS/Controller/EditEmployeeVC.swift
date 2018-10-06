@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 protocol EditEmployeeDelegate {
     func updateEmployee()
 }
@@ -108,6 +109,7 @@ class EditEmployeeVC: UIViewController {
                     self.showToast(result.message)
                     self.isUpdate = true
                     DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                        /// Hide Employee Form
                         self.removeController()
                     })
                 }else {
@@ -115,7 +117,7 @@ class EditEmployeeVC: UIViewController {
                 }
                 
             case .failure(let error):
-                if error.localizedDescription == noDataMessage {
+                if error.localizedDescription == noDataMessage || error.localizedDescription == noDataMessage1 {
                     self.showAlert(title: kAppName, message: AppMessages.msgFailed)
                 }else {
                     self.showAlert(title: kAppName, message: error.localizedDescription)
@@ -124,11 +126,12 @@ class EditEmployeeVC: UIViewController {
         }
     }
     
-    
+    /// Calls when user click on cancel button
     @IBAction func btnCancelDidClicked(_ sender: UIButton) {
         removeController()
     }
     
+    /// Show option to choose Role
     @IBAction func btnRoleTypeDidClicked(_ sender: UIButton) {
         var style:UIAlertControllerStyle = .actionSheet
         if Global.isIpad {
@@ -141,6 +144,7 @@ class EditEmployeeVC: UIViewController {
         }
     }
     
+    /// Remove controller when user clicks on any other part of screen
     @objc func hideOnTap(recognizer:UITapGestureRecognizer) {
         removeController()
     }

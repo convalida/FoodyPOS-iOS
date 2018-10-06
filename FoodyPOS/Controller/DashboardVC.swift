@@ -67,7 +67,7 @@ class DashboardVC: UIViewController {
         //Set the restaurent name
         if let rsName = UserManager.restaurentName {
             lblRestaurantName.text = rsName
-        }else {
+        } else {
             lblRestaurantName.text = ""
         }
         
@@ -80,6 +80,7 @@ class DashboardVC: UIViewController {
         
         //Get dashboard data from server when no data
         if dashboardData == nil {
+            // Call API on main thread
             DispatchQueue.main.async {
                 self.callDashboardAPI()
             }
@@ -129,9 +130,13 @@ class DashboardVC: UIViewController {
         if isData {
             xaxis.min = 0.5
         }
+        
+        // To fix starting point of charts
         xaxis.startOnTick = false
         xaxis.endOnTick = false
+        
         xaxis.tickInterval = 1
+        
         xaxis.maxPadding = 0
         
         let yaxis = HIYAxis()
@@ -185,11 +190,13 @@ class DashboardVC: UIViewController {
         options.credits = credits
         options.exporting = exporting
         options.plotOptions = plotoptions
+        
+        
         if Area.isAreaOne && Area.isAreaTwo {
             options.series = [areaspline1, areaspline2]
-        }else if Area.isAreaOne {
+        } else if Area.isAreaOne {
             options.series = [areaspline1]
-        }else if Area.isAreaTwo {
+        } else if Area.isAreaTwo {
             options.series = [areaspline2]
         }else {
             options.series = []
@@ -197,8 +204,8 @@ class DashboardVC: UIViewController {
         chartView.options = options
     }
     
-    //Initialize chart data when chart load
-    func initChartData() {
+    //Initialize weekly chart data when chart loaded first time
+    func initWeeklyChart() {
         isData = false
         xAxisData = []
         saleData = []
@@ -217,13 +224,17 @@ class DashboardVC: UIViewController {
                 }
                 isData = true
             }
+            
+            // Patches to fix graph issues
             xAxisData.append("")
             saleData.append(0.0.rounded(toPlaces: 2))
             orderData.append(0)
+            
             xAxisData.reverse()
             saleData.reverse()
             orderData.reverse()
         }
+        // show chart
         initChart()
     }
     //MARK: ---------Button actions---------
@@ -268,7 +279,7 @@ class DashboardVC: UIViewController {
     @IBAction func btnSaleDidClicked(_ sender: UIButton) {
         if sender.isSelected {
             sender.isSelected = false
-        }else {
+        } else {
             sender.isSelected = true
         }
         Area.isAreaOne = !Area.isAreaOne
@@ -279,7 +290,7 @@ class DashboardVC: UIViewController {
     @IBAction func btnOrdersDidClicked(_ sender: UIButton) {
         if sender.isSelected {
             sender.isSelected = false
-        }else {
+        } else {
             sender.isSelected = true
         }
         Area.isAreaTwo = !Area.isAreaTwo
@@ -291,7 +302,7 @@ class DashboardVC: UIViewController {
         if sender.backgroundColor == UIColor.themeColor {
             return
         }
-       initChartData()
+       initWeeklyChart()
     }
     
     //Show the month graph
@@ -320,10 +331,12 @@ class DashboardVC: UIViewController {
             xAxisData.append("0")
             saleData.append(0.0.rounded(toPlaces: 2))
             orderData.append(0)
+            
             xAxisData.reverse()
             saleData.reverse()
             orderData.reverse()
         }
+        // show chart
         initChart()
     }
     
@@ -360,7 +373,7 @@ class DashboardVC: UIViewController {
         initChart()
     }
     
-    //Show all the options when thee dot button pressed
+    /// Show all the options when three dot button pressed
     @objc func pushMenuItem(sender:KxMenuItem) {
         KxMenu.dismiss()
         switch sender.title {
@@ -376,6 +389,7 @@ class DashboardVC: UIViewController {
                 UserManager.isLogin = false
                 Global.showRootView(withIdentifier: StoryboardConstant.LoginVC)
             }else {
+                /// Clear all user data
                 Global.flushUserDefaults()
                 self.navigationController?.popToRootViewController(animated: true)
             }
@@ -409,14 +423,17 @@ class DashboardVC: UIViewController {
             switch result {
             case .success(let dashboard):
                 self.dashboardData = dashboard
+                ///display all total summary labels of dashboard
                 self.manageData()
-                self.initChartData()
+                
+                self.initWeeklyChart()
+                
                 self.reloadTable()
                 
             case .failure(let error):
-                if error.localizedDescription == noDataMessage {
+                if error.localizedDescription == noDataMessage || error.localizedDescription == noDataMessage1 {
                     self.showAlert(title: kAppName, message: AppMessages.msgFailed)
-                }else {
+                } else {
                     self.showAlert(title: kAppName, message: error.localizedDescription)
                 }
             }

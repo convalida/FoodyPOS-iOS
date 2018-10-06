@@ -159,6 +159,7 @@ extension LeftMenuVC:UITableViewDelegate {
         if !UserManager.isManager {
             if indexPath.section == 1 {
                 if indexPath.row == 0 {
+                    // to hide first row of second section
                     return 0
                 }
             }

@@ -52,7 +52,7 @@ class LoginVC: UIViewController {
             if let password = UserManager.password {
                 txtPassword.text = password
             }
-        }else {
+        } else {
             txtEmail.text = ""
             txtPassword.text = ""
         }
@@ -122,6 +122,8 @@ class LoginVC: UIViewController {
                         let parameterDic = ["email":email,
                                             "password":password] as [String:Any]
                         hudView.isHidden = false
+                        
+                        //Call Login API
                         APIClient.login(paramters: parameterDic) { (result) in
                             switch result {
                             case .success(let user):
@@ -132,8 +134,9 @@ class LoginVC: UIViewController {
                                         UserManager.isRemember = self.isRemember
                                         UserManager.isLogin = true
                                         UserManager.saveUserDataIntoDefaults(user: user)
+                                        //Launch Dashboard View Controller
                                         let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.DashboardVC) as! DashboardVC
-                                            self.navigationController?.pushViewController(vc, animated: true)
+                                        self.navigationController?.pushViewController(vc, animated: true)
                                     } else if let message = user.message {
                                         self.hudView.isHidden = true
                                         DispatchQueue.main.async {
@@ -144,7 +147,7 @@ class LoginVC: UIViewController {
 
                             case .failure(let error):
                                 self.hudView.isHidden = true
-                                if error.localizedDescription == noDataMessage {
+                                if error.localizedDescription == noDataMessage || error.localizedDescription == noDataMessage1 {
                                     self.showAlert(title: kAppName, message: AppMessages.msgFailed)
                                 } else {
                                     self.showAlert(title: kAppName, message: error.localizedDescription)

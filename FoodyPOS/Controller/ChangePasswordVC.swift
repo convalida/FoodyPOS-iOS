@@ -95,7 +95,7 @@ class ChangePasswordVC: UIViewController {
                                      self.showToast(data.message)
                                     }
                                 case .failure(let error):
-                                    if error.localizedDescription == noDataMessage {
+                                    if error.localizedDescription == noDataMessage || error.localizedDescription == noDataMessage1 {
                                         self.showAlert(title: kAppName, message: AppMessages.msgFailed)
                                     }else {
                                         self.showAlert(title: kAppName, message: error.localizedDescription)

@@ -72,20 +72,25 @@ class EmployeeDetailVC: UIViewController {
         
     }
     
+    /// Show Edit Employee Form
     @objc func btnEditDidClicked(sender:UIButton) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.EditEmployeeVC) as! EditEmployeeVC
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.EditEmployeeVC) as! EditEmployeeVC        
+        /// Delegate is user defined property in EditEmployeeVC
         vc.delegate = self
         vc.employeeDetail = employeeData?.employeeDetails[sender.tag]
         self.view.addSubview(vc.view)
         self.addChildViewController(vc)
     }
     
+    // Reload Employees list
     func reloadTable() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
     }
     
+    
+    /// Get employee details from WebService
     private func callEmployeeAPI() {
         guard let restaurentId = UserManager.restaurantID else {
             return
@@ -102,9 +107,9 @@ class EmployeeDetailVC: UIViewController {
                 self.reloadTable()
                 
             case .failure(let error):
-                if error.localizedDescription == noDataMessage {
+                if error.localizedDescription == noDataMessage || error.localizedDescription == noDataMessage1 {
                     self.showAlert(title: kAppName, message: AppMessages.msgFailed)
-                }else {
+                } else {
                     self.showAlert(title: kAppName, message: error.localizedDescription)
                 }
             }
@@ -113,6 +118,8 @@ class EmployeeDetailVC: UIViewController {
 }
 
 extension EmployeeDetailVC:UITableViewDataSource {
+    
+    ///How many sections are there in the tableview
     func numberOfSections(in tableView: UITableView) -> Int {
         let numberOfSection = 1
         
@@ -144,6 +151,8 @@ extension EmployeeDetailVC:UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "employeeDetailCell") as? EmployeeDetailCell else {
             return EmployeeDetailCell()
         }
+        
+        ///  add handler to perform on click action on edit button
         cell.btnEdit.addTarget(self, action: #selector(btnEditDidClicked(sender:)), for: .touchUpInside)
         cell.btnEdit.tag = indexPath.row
         

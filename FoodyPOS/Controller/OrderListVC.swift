@@ -167,7 +167,7 @@ class OrderListVC: UIViewController {
                 self.reloadTable()
                 
             case .failure(let error):
-                if error.localizedDescription == noDataMessage {
+                if error.localizedDescription == noDataMessage || error.localizedDescription == noDataMessage1 {
                     self.showAlert(title: kAppName, message: AppMessages.msgFailed)
                 }else {
                     self.showAlert(title: kAppName, message: error.localizedDescription)
@@ -231,7 +231,7 @@ class OrderListVC: UIViewController {
                     }
                     
                 case .failure(let error):
-                    if error.localizedDescription == noDataMessage {
+                    if error.localizedDescription == noDataMessage || error.localizedDescription == noDataMessage1 {
                         self.showAlert(title: kAppName, message: AppMessages.msgFailed)
                     }else {
                         self.showAlert(title: kAppName, message: error.localizedDescription)
@@ -391,7 +391,7 @@ extension OrderListVC:UITextFieldDelegate {
                     print(order)
                     
                 case .failure(let error):
-                    if error.localizedDescription == noDataMessage {
+                    if error.localizedDescription == noDataMessage || error.localizedDescription == noDataMessage1 {
                         self.showAlert(title: kAppName, message: AppMessages.msgFailed)
                     }else {
                         self.showAlert(title: kAppName, message: error.localizedDescription)

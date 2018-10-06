@@ -74,7 +74,7 @@ class OtpVC: UIViewController {
     codeView.resignFirstResponder()
         if codeView.hasValidCode() {
             callOtpAPI()
-        }else {
+        } else {
             self.showToast("Please enter the otp")
         }
     }
@@ -91,7 +91,7 @@ class OtpVC: UIViewController {
                 self.showToast("Verification code sent to \(self.email!)")
                 
             case .failure(let error):
-                if error.localizedDescription == noDataMessage {
+                if error.localizedDescription == noDataMessage || error.localizedDescription == noDataMessage1 {
                     self.showAlert(title: kAppName, message: AppMessages.msgFailed)
                 }else {
                     self.showAlert(title: kAppName, message: error.localizedDescription)
@@ -127,13 +127,13 @@ class OtpVC: UIViewController {
                     vc.otp = self.codeView.getVerificationCode()
                     self.view.addSubview(vc.view)
                     self.addChildViewController(vc)
-                }else {
+                } else {
                     self.showToast(data.message)
                 }
             case .failure(let error):
-                if error.localizedDescription == noDataMessage {
+                if error.localizedDescription == noDataMessage || error.localizedDescription == noDataMessage1 {
                     self.showAlert(title: kAppName, message: AppMessages.msgFailed)
-                }else {
+                } else {
                     self.showAlert(title: kAppName, message: error.localizedDescription)
                 }
             }
@@ -149,7 +149,7 @@ extension OtpVC:KWVerificationCodeViewDelegate {
             btnVerify.alpha = 1.0
             btnResend.isEnabled = false
             btnResend.alpha = 0.5
-        }else {
+        } else {
             btnVerify.isEnabled = false
             btnVerify.alpha = 0.5
             btnResend.isEnabled = true
