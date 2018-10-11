@@ -72,6 +72,7 @@
 		2B977469212DB20D00229095 /* KWVerificationCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B977461212DB20D00229095 /* KWVerificationCodeView.swift */; };
 		2B97746A212DB20D00229095 /* KWVerificationCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B977462212DB20D00229095 /* KWVerificationCodeView.xib */; };
 		2B97746C212DB4A000229095 /* OtpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B97746B212DB4A000229095 /* OtpVC.swift */; };
+		2BAC753C216FB78A00AA647F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC753B216FB78A00AA647F /* Constant.swift */; };
 		2BC7BB1C2122B7DF00AF1CA0 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC7BB1B2122B7DF00AF1CA0 /* Order.swift */; };
 		2BDED6042112A1FE007C0AB5 /* OrderListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDED6032112A1FE007C0AB5 /* OrderListCell.swift */; };
 		2BDFB172211BD1A1005B5B27 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDFB171211BD1A1005B5B27 /* Connectivity.swift */; };
@@ -93,7 +94,6 @@
 		2BFBC6D92117677000DF9A9D /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFBC6D72117675F00DF9A9D /* Validation.swift */; };
 		2BFBC6DA2117677000DF9A9D /* AppMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFBC6D82117677000DF9A9D /* AppMessages.swift */; };
 		2BFBC6DD21176A5E00DF9A9D /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFBC6DC21176A5E00DF9A9D /* APIConstants.swift */; };
-		2BFBC6E021176AB800DF9A9D /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFBC6DE21176AB700DF9A9D /* Constant.swift */; };
 		2BFBC6E121176AB800DF9A9D /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFBC6DF21176AB800DF9A9D /* Global.swift */; };
 		2BFBC6E321176BAC00DF9A9D /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFBC6E221176BAC00DF9A9D /* APIRouter.swift */; };
 		2BFBC6E521176CB400DF9A9D /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFBC6E421176CB400DF9A9D /* APIClient.swift */; };
@@ -214,6 +214,7 @@
 		2B977461212DB20D00229095 /* KWVerificationCodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KWVerificationCodeView.swift; sourceTree = "<group>"; };
 		2B977462212DB20D00229095 /* KWVerificationCodeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KWVerificationCodeView.xib; sourceTree = "<group>"; };
 		2B97746B212DB4A000229095 /* OtpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpVC.swift; sourceTree = "<group>"; };
+		2BAC753B216FB78A00AA647F /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		2BC7BB1B2122B7DF00AF1CA0 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		2BDED6032112A1FE007C0AB5 /* OrderListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListCell.swift; sourceTree = "<group>"; };
 		2BDFB171211BD1A1005B5B27 /* Connectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
@@ -236,7 +237,6 @@
 		2BFBC6D72117675F00DF9A9D /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		2BFBC6D82117677000DF9A9D /* AppMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppMessages.swift; sourceTree = "<group>"; };
 		2BFBC6DC21176A5E00DF9A9D /* APIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
-		2BFBC6DE21176AB700DF9A9D /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constant.swift; path = ../../../../../AutomobileFirst/AutomobileFirst/Resources/Constant.swift; sourceTree = "<group>"; };
 		2BFBC6DF21176AB800DF9A9D /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		2BFBC6E221176BAC00DF9A9D /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		2BFBC6E421176CB400DF9A9D /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
@@ -459,11 +459,11 @@
 		04E84D8F210C126C00537500 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2BAC753B216FB78A00AA647F /* Constant.swift */,
 				2BFBC6DB21176A3200DF9A9D /* API */,
 				2BFBC6D82117677000DF9A9D /* AppMessages.swift */,
 				2BFBC6D72117675F00DF9A9D /* Validation.swift */,
 				04C8F98B210956E6005DD9F2 /* AppDelegate.swift */,
-				2BFBC6DE21176AB700DF9A9D /* Constant.swift */,
 				2BFBC6DF21176AB800DF9A9D /* Global.swift */,
 				2BF4E00C211DF09C000D2899 /* Alert.swift */,
 				04C8F992210956E8005DD9F2 /* Assets.xcassets */,
@@ -637,6 +637,9 @@
 					04C8F987210956E6005DD9F2 = {
 						CreatedOnToolsVersion = 9.4.1;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -827,6 +830,7 @@
 				2BF4E00B211DEAE1000D2899 /* Date.swift in Sources */,
 				2B931CE821157A9800927A0C /* DesignView.swift in Sources */,
 				04E84DE1210CF1E100537500 /* LeftMenuCell.swift in Sources */,
+				2BAC753C216FB78A00AA647F /* Constant.swift in Sources */,
 				04E84D84210C109600537500 /* ARSLineProgressCustomization.swift in Sources */,
 				2B58EEFA212E725100FB7F30 /* ResetPassword.swift in Sources */,
 				2B977467212DB20D00229095 /* KWTextFieldView.swift in Sources */,
@@ -834,7 +838,6 @@
 				2BEE1C3F2129AB310084BEC6 /* AmountVC.swift in Sources */,
 				04E84D8A210C109600537500 /* ARSStatus.swift in Sources */,
 				04E84DD3210CD87F00537500 /* UIColor.swift in Sources */,
-				2BFBC6E021176AB800DF9A9D /* Constant.swift in Sources */,
 				2BDED6042112A1FE007C0AB5 /* OrderListCell.swift in Sources */,
 				04C8F9C1210957A9005DD9F2 /* DesignTextField.swift in Sources */,
 				04E84D82210C109600537500 /* ARSLineProgress.swift in Sources */,

@@ -11,7 +11,7 @@ import Foundation
 
 struct LeftMenu {
     
-    static let MainData = [
+    static let MainData = [        
         Main(image: #imageLiteral(resourceName: "home"), title: "Dashboard"),
         Main(image: #imageLiteral(resourceName: "orders"), title: "Orders"),
         Main(image: #imageLiteral(resourceName: "icon1-3"), title: "Customer Details"),

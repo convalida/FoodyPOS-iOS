@@ -84,6 +84,7 @@ extension AppDelegate {
         let token = tokenParts.joined()
         // 2. Print device token to use for PNs payloads
         print("Device Token: \(token)")
+        UserManager.token = token
     }
     
     

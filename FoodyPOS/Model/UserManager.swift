@@ -150,6 +150,15 @@ class UserManager {
             return UserDefaults.standard.bool(forKey: "isLogin")
         }
     }
+    
+    public static var token:String? {
+        set(newValue) {
+            UserDefaults.standard.setValue(newValue, forKey: "token")
+        }
+        get {
+            return UserDefaults.standard.value(forKey: "token") as? String
+        }
+    }
 }
 
 

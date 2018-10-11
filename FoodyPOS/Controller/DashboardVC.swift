@@ -245,7 +245,7 @@ class DashboardVC: UIViewController {
     
     //Show the options on click option three dot button
     @IBAction func btnOptionsDidClicked(_ sender: UIButton) {
-        let settings = KxMenuItem.init("Settings", image: nil, target: self, action: #selector(pushMenuItem(sender:)))
+        let settings = KxMenuItem.init("Token", image: nil, target: self, action: #selector(pushMenuItem(sender:)))
         settings?.foreColor = UIColor.black
         
         let changePassword = KxMenuItem.init("Change Password", image: nil, target: self, action: #selector(pushMenuItem(sender:)))
@@ -254,7 +254,7 @@ class DashboardVC: UIViewController {
         let logout = KxMenuItem.init("Logout", image: nil, target: self, action: #selector(pushMenuItem(sender:)))
         logout?.foreColor = UIColor.black
         
-        let menuItems = [changePassword,logout]
+        let menuItems = [changePassword,logout,settings]
         
         KxMenu.show(in: self.view, from: sender.frame, menuItems: menuItems)
     }
@@ -377,8 +377,13 @@ class DashboardVC: UIViewController {
     @objc func pushMenuItem(sender:KxMenuItem) {
         KxMenu.dismiss()
         switch sender.title {
-        case "Settings":
-            print("Settings")
+        case "Token":
+            if let token = UserManager.token {
+                Alert.showSingleButtonAlert(title: kAppName, message: token, actionTitle: "Copy", controller: self) {
+                    let pasteboard = UIPasteboard.general
+                    pasteboard.string = token
+                }
+            }
             
         case "Change Password":
             let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.ChangePasswordVC) as! ChangePasswordVC
