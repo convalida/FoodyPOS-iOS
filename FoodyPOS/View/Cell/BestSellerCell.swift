@@ -17,6 +17,7 @@ class BestSellerCell: UITableViewCell {
     @IBOutlet weak var lblValue1: UILabel!
     @IBOutlet weak var lblValue2: UILabel!
     @IBOutlet weak var lblValue3: UILabel!
+    @IBOutlet weak var btnAll: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

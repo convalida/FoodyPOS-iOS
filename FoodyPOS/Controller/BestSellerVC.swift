@@ -31,36 +31,16 @@ class BestSellerVC: UIViewController {
         // Do any additional setup after loading the view.
         tableView.dataSource = self
         tableView.delegate = self
-        
         initHudView()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        guard let restaurentId = UserManager.restaurantID else {
-            return
+        if bestSellerData == nil {
+            getBestSellerData()
         }
-        let prameterDic = ["RestaurantId":restaurentId]
-        
-        self.hudView.isHidden = false
-        APIClient.bestSellerItems(paramters: prameterDic) { (result) in
-            self.hudView.isHidden = true
-            switch result {
-            case .success(let bestSeller):
-                print(bestSeller)
-                self.bestSellerData = bestSeller
-                self.reloadTable()
-                
-            case .failure(let error):
-                if error.localizedDescription == noDataMessage || error.localizedDescription == noDataMessage1 {
-                    self.showAlert(title: kAppName, message: AppMessages.msgFailed)
-                }else {
-                    self.showAlert(title: kAppName, message: error.localizedDescription)
-                }
-            }
-        }
-       
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -90,6 +70,31 @@ class BestSellerVC: UIViewController {
     func reloadTable() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
+        }
+    }
+    
+    private func getBestSellerData() {
+        guard let restaurentId = UserManager.restaurantID else {
+            return
+        }
+        let prameterDic = ["RestaurantId":restaurentId]
+        
+        self.hudView.isHidden = false
+        APIClient.bestSellerItems(paramters: prameterDic) { (result) in
+            self.hudView.isHidden = true
+            switch result {
+            case .success(let bestSeller):
+                print(bestSeller)
+                self.bestSellerData = bestSeller
+                self.reloadTable()
+                
+            case .failure(let error):
+                if error.localizedDescription == noDataMessage || error.localizedDescription == noDataMessage1 {
+                    self.showAlert(title: kAppName, message: AppMessages.msgFailed)
+                }else {
+                    self.showAlert(title: kAppName, message: error.localizedDescription)
+                }
+            }
         }
     }
 }
@@ -250,7 +255,21 @@ extension BestSellerVC:UITableViewDataSource {
                 print("Default")
             }
         }
+        cell.btnAll.tag = indexPath.row
+        cell.btnAll.addTarget(self, action: #selector(btnAllDidClicked(sender:)), for: .touchUpInside)
         return cell
+    }
+    
+    @objc func btnAllDidClicked(sender:UIButton) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.AllBestSellerVC) as! AllBestSellerVC
+        if sender.tag == 0 {
+            vc.type = "week"
+        } else if sender.tag == 1 {
+            vc.type = "month"
+        } else if sender.tag == 2 {
+            vc.type = "year"
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

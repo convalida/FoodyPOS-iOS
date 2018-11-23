@@ -27,4 +27,7 @@ struct StoryboardConstant {
     static let AmountVC = "AmountVC"
     static let OtpVC = "OtpVC"
     static let ResetPasswordVC = "ResetPasswordVC"
+    static let CustomerDetailVC = "CustomerDetailVC"
+    static let DateVC = "DateVC"
+    static let AllBestSellerVC = "AllBestSellerVC"
 }

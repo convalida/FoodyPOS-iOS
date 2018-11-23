@@ -19,13 +19,14 @@ struct Customers: Codable {
 }
 
 struct ByDateSelected: Codable {
-    let customerName, contactNo, totalamount, totalOrders: String
+    let customerName, contactNo, totalamount, totalOrders, customerId: String
     
     enum CodingKeys: String, CodingKey {
         case customerName = "CustomerName"
         case contactNo = "ContactNo"
         case totalamount = "Totalamount"
         case totalOrders = "TotalOrders"
+        case customerId  = "CustomerId"
     }
 }
 

@@ -42,14 +42,10 @@ class SalesSellAllVC: UIViewController {
         tableView.delegate = self
         
         initHudView()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        
         let lastSun = Date.today().previous(.sunday)
         btnStartDate.setTitle(lastSun.getDateString(), for: .normal)
         btnEndDate.setTitle(Date.todayDate, for: .normal)
-        
         if salesData == nil {
             btnTitle.setTitle("Customers", for: .normal)
             callCustomersAPI()
@@ -57,6 +53,10 @@ class SalesSellAllVC: UIViewController {
         }else {
             setSaleData()
         }
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
     override func didReceiveMemoryWarning() {
@@ -307,5 +307,16 @@ extension SalesSellAllVC:UITableViewDelegate {
             return 220.0
         }
         return 150.0
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if isCustomer {
+            if let customers = customersData {
+                let customer = customers.byDateSelected[indexPath.row]
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.CustomerDetailVC) as! CustomerDetailVC
+                vc.customerId = customer.customerId
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
     }
 }

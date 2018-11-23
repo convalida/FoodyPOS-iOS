@@ -19,14 +19,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //set text field tint color
         UITextField.appearance().tintColor = UIColor.themeColor
+
+        // Handling for push notifications
+        registerForPushNotifications()
         
+        //killed app notificaltion handle
+//        if let notification = launchOptions?[.remoteNotification] as? [String: AnyObject] {
+//            if let apsDic = notification["aps"] as? NSDictionary {
+//                if let alert = apsDic.value(forKey: "alert") as? NSDictionary {
+//                        goToDetailVC(body: alert["body"] as! String)
+//                }
+//            }
+//        }
         // Show dashboard screen if user is already logged in
         if UserManager.isRemember && UserManager.isLogin {
             Global.showRootView(withIdentifier: StoryboardConstant.DashboardVC)
         }
-        
-        // Handling for push notifications
-        registerForPushNotifications()
         return true
     }
 
@@ -96,8 +104,35 @@ extension AppDelegate {
     
     
     // Called when a notification is received
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        print(userInfo)
         
+        if let apsDic = userInfo["aps"] as? NSDictionary {
+            if let alert = apsDic.value(forKey: "alert") as? NSDictionary {
+                if UIApplication.shared.applicationState == .active {
+                    goToDetailVC(body: alert["body"] as! String)
+                }else if (UIApplication.shared.applicationState == .background) || (UIApplication.shared.applicationState == .inactive) {
+                    goToDetailVC(body: alert["body"] as! String)
+                }
+                completionHandler(.newData)
+            }
+        }
     }
 }
 
+extension AppDelegate {
+    func goToDetailVC(body:String) {
+        guard let navVC = self.window?.rootViewController as? UINavigationController else {
+            return
+        }
+        if navVC.visibleViewController is OrderDetailVC {
+            let info = ["orderNo":body]
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: kOrderDetailNotification), object: nil, userInfo: info)
+        } else {
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: StoryboardConstant.OrderDetailVC) as! OrderDetailVC
+            vc.orderNo = body
+            navVC.pushViewController(vc, animated: true)
+        }
+    }
+}

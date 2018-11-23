@@ -24,6 +24,7 @@ class OrderDetailVC: UIViewController {
     var onClick:OnClick?
     var totalPrice:String?
     var hudView = UIView()
+    var orderNo = ""
     
     override var prefersStatusBarHidden: Bool {
         return false
@@ -37,16 +38,7 @@ class OrderDetailVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        if let onClick = onClick {
-            lblName.text = onClick.customerName
-            lblContact.text = onClick.contactNumber
-            lblEmail.text = onClick.email
-        }
-        
-        if let totalPrice = totalPrice {
-            lblTotalAmount.text = "$" + totalPrice
-        }
-        
+        initData()
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -58,11 +50,27 @@ class OrderDetailVC: UIViewController {
         if Global.isIpad {
             self.tableView.tableHeaderView?.frame.size.height = 200.0
         }
+        NotificationCenter.default.addObserver(self, selector: #selector(didReceiveOrderNumber(notification:)), name: NSNotification.Name(rawValue: kOrderDetailNotification), object: nil)
+        if orderNo != "" {
+            getOrderDetailByOrderNumber(number: orderNo)
+        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func initData() {
+        if let onClick = onClick {
+            lblName.text = onClick.customerName
+            lblContact.text = onClick.contactNumber
+            lblEmail.text = onClick.email
+        }
+        
+        if let totalPrice = totalPrice {
+            lblTotalAmount.text = "$" + totalPrice
+        }
     }
     
     func initHudView() {
@@ -91,6 +99,54 @@ class OrderDetailVC: UIViewController {
         }
         self.view.addSubview(vc.view)
         self.addChildViewController(vc)
+    }
+    
+    private func getOrderDetailByOrderNumber(number:String) {
+        guard let restaurentId = UserManager.restaurantID else {
+            return
+        }
+
+        let lastSun = Date.today().previous(.sunday)
+        
+        let prameterDic = ["RestaurantId":restaurentId,
+                           "startdate":lastSun.getDateString(),
+                           "enddate":Date.todayDate,
+                           "ordernumber":number] as [String : Any]
+        
+        self.hudView.isHidden = false
+        APIClient.orderSearch(paramters: prameterDic) { (result) in
+            self.hudView.isHidden = true
+            switch result {
+            case .success(let order):
+                if let resultCode = order.byOrderNumber.first?.resultCode {
+                    if resultCode == "0" {
+                        if let message = order.byOrderNumber.first?.message {
+                            self.showToast(message)
+                        }
+                    }
+                } else {
+                    self.onClick = order.byOrderNumber.first?.onClick
+                    self.totalPrice =  order.byOrderNumber.first?.totalPrices
+                    self.initData()
+                    self.tableView.reloadData()
+                }
+                
+            case .failure(let error):
+                if error.localizedDescription == noDataMessage || error.localizedDescription == noDataMessage1 {
+                    self.showAlert(title: kAppName, message: AppMessages.msgFailed)
+                }else {
+                    self.showAlert(title: kAppName, message: error.localizedDescription)
+                }
+            }
+        }
+    }
+    
+    @objc func didReceiveOrderNumber(notification:Notification) {
+        if let info = notification.userInfo as NSDictionary? {
+            if let orderNo = info["orderNo"] as? String {
+                getOrderDetailByOrderNumber(number: orderNo)
+            }
+        }
     }
 }
 

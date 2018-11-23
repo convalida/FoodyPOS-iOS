@@ -23,3 +23,5 @@ let kAppName = "FoodyPOS"
 
 let noDataMessage = "The data couldn’t be read because it is missing."
 let noDataMessage1 = "The data couldn’t be read because it isn’t in the correct format."
+
+let kOrderDetailNotification = "kOrderDetailsNotification"

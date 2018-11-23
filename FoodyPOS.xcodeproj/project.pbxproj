@@ -47,7 +47,12 @@
 		04E84DE1210CF1E100537500 /* LeftMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84DE0210CF1E100537500 /* LeftMenuCell.swift */; };
 		04E84DE3210CF34000537500 /* LeftMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E84DE2210CF34000537500 /* LeftMenu.swift */; };
 		2B045FB5211CA870000AE1A7 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B045FB4211CA870000AE1A7 /* UserManager.swift */; };
+		2B04691521A478F8002853AA /* CustomerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B04691421A478F8002853AA /* CustomerDetail.swift */; };
+		2B04691721A47FF9002853AA /* CustomerDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B04691621A47FF9002853AA /* CustomerDetailVC.swift */; };
 		2B05FD3A2115606A00109889 /* Points in Resources */ = {isa = PBXBuildFile; fileRef = 2B05FD392115606A00109889 /* Points */; };
+		2B08600B21A719990059BD29 /* AllBestSeller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B08600A21A719990059BD29 /* AllBestSeller.swift */; };
+		2B08600D21A724FF0059BD29 /* AllBestSellerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B08600C21A724FF0059BD29 /* AllBestSellerVC.swift */; };
+		2B08600F21A725490059BD29 /* AllBestSellerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B08600E21A725490059BD29 /* AllBestSellerCell.swift */; };
 		2B18BDA521283AEF004F5A3A /* AddEmployee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B18BDA421283AEF004F5A3A /* AddEmployee.swift */; };
 		2B3FDA492119390B0001F933 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3FDA482119390B0001F933 /* Employee.swift */; };
 		2B3FDA4B21193A970001F933 /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3FDA4A21193A970001F933 /* ForgotPassword.swift */; };
@@ -74,6 +79,7 @@
 		2B97746C212DB4A000229095 /* OtpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B97746B212DB4A000229095 /* OtpVC.swift */; };
 		2BAC753C216FB78A00AA647F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC753B216FB78A00AA647F /* Constant.swift */; };
 		2BC7BB1C2122B7DF00AF1CA0 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC7BB1B2122B7DF00AF1CA0 /* Order.swift */; };
+		2BD6599721A5D411005B7A7D /* DateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6599621A5D411005B7A7D /* DateVC.swift */; };
 		2BDED6042112A1FE007C0AB5 /* OrderListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDED6032112A1FE007C0AB5 /* OrderListCell.swift */; };
 		2BDFB172211BD1A1005B5B27 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDFB171211BD1A1005B5B27 /* Connectivity.swift */; };
 		2BDFB177211BD790005B5B27 /* BestSeller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDFB173211BD78F005B5B27 /* BestSeller.swift */; };
@@ -187,7 +193,12 @@
 		04E84DE2210CF34000537500 /* LeftMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenu.swift; sourceTree = "<group>"; };
 		0DEA7D69013C977555AC4510 /* Pods-FoodyPOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodyPOSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodyPOSUITests/Pods-FoodyPOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		2B045FB4211CA870000AE1A7 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		2B04691421A478F8002853AA /* CustomerDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetail.swift; sourceTree = "<group>"; };
+		2B04691621A47FF9002853AA /* CustomerDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailVC.swift; sourceTree = "<group>"; };
 		2B05FD392115606A00109889 /* Points */ = {isa = PBXFileReference; lastKnownFileType = text; path = Points; sourceTree = "<group>"; };
+		2B08600A21A719990059BD29 /* AllBestSeller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBestSeller.swift; sourceTree = "<group>"; };
+		2B08600C21A724FF0059BD29 /* AllBestSellerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBestSellerVC.swift; sourceTree = "<group>"; };
+		2B08600E21A725490059BD29 /* AllBestSellerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBestSellerCell.swift; sourceTree = "<group>"; };
 		2B18BDA421283AEF004F5A3A /* AddEmployee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployee.swift; sourceTree = "<group>"; };
 		2B3FDA482119390B0001F933 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		2B3FDA4A21193A970001F933 /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
@@ -216,6 +227,7 @@
 		2B97746B212DB4A000229095 /* OtpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpVC.swift; sourceTree = "<group>"; };
 		2BAC753B216FB78A00AA647F /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		2BC7BB1B2122B7DF00AF1CA0 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		2BD6599621A5D411005B7A7D /* DateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateVC.swift; sourceTree = "<group>"; };
 		2BDED6032112A1FE007C0AB5 /* OrderListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListCell.swift; sourceTree = "<group>"; };
 		2BDFB171211BD1A1005B5B27 /* Connectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
 		2BDFB173211BD78F005B5B27 /* BestSeller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestSeller.swift; sourceTree = "<group>"; };
@@ -357,6 +369,9 @@
 				2BEE1C3E2129AB310084BEC6 /* AmountVC.swift */,
 				2B97746B212DB4A000229095 /* OtpVC.swift */,
 				2B58EEF7212E6D2600FB7F30 /* ResetPasswordVC.swift */,
+				2B04691621A47FF9002853AA /* CustomerDetailVC.swift */,
+				2BD6599621A5D411005B7A7D /* DateVC.swift */,
+				2B08600C21A724FF0059BD29 /* AllBestSellerVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -396,6 +411,8 @@
 				2BF4E85D212867AB0082E73A /* UpdateEmployee.swift */,
 				2BE2B6C7212A6E7C008EBF2A /* OrderSearch.swift */,
 				2B58EEF9212E725100FB7F30 /* ResetPassword.swift */,
+				2B04691421A478F8002853AA /* CustomerDetail.swift */,
+				2B08600A21A719990059BD29 /* AllBestSeller.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -535,6 +552,7 @@
 				2BF898CE21160C7C001161F2 /* SalesReportCell.swift */,
 				2B42C3A02116A0B90086FDB6 /* EmployeeDetailCell.swift */,
 				2BEE1C3C2129A2540084BEC6 /* OrderDetailCell.swift */,
+				2B08600E21A725490059BD29 /* AllBestSellerCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -821,6 +839,7 @@
 				2BFBC6D6211734BA00DF9A9D /* EditEmployeeVC.swift in Sources */,
 				04E84D99210C27A300537500 /* ChangePasswordVC.swift in Sources */,
 				2B977465212DB20D00229095 /* StringExtension.swift in Sources */,
+				2B08600B21A719990059BD29 /* AllBestSeller.swift in Sources */,
 				04E84D8E210C119300537500 /* LoginVC.swift in Sources */,
 				2B931CF82115844F00927A0C /* BestSellerCell.swift in Sources */,
 				043DD8F1210DE8D5009B89C2 /* TopSaleCell.swift in Sources */,
@@ -854,6 +873,7 @@
 				04E84D93210C13A300537500 /* SignUpVC.swift in Sources */,
 				2B42C3A12116A0B90086FDB6 /* EmployeeDetailCell.swift in Sources */,
 				04182C8E210FFD84001EA39F /* OrderListVC.swift in Sources */,
+				2B04691721A47FF9002853AA /* CustomerDetailVC.swift in Sources */,
 				04E84D86210C109600537500 /* ARSLineProgressHelpers.swift in Sources */,
 				2BFBC6E721176CF400DF9A9D /* User.swift in Sources */,
 				2B931CFA2115881100927A0C /* SalesReportVC.swift in Sources */,
@@ -873,8 +893,10 @@
 				2BE2B6C8212A6E7C008EBF2A /* OrderSearch.swift in Sources */,
 				2BE6FB62214AD28800902255 /* Double.swift in Sources */,
 				2B977469212DB20D00229095 /* KWVerificationCodeView.swift in Sources */,
+				2B08600D21A724FF0059BD29 /* AllBestSellerVC.swift in Sources */,
 				2BF518DD2125909400EA367D /* ChangePassword.swift in Sources */,
 				2B18BDA521283AEF004F5A3A /* AddEmployee.swift in Sources */,
+				2BD6599721A5D411005B7A7D /* DateVC.swift in Sources */,
 				04E84D8C210C109600537500 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				2BF4E85E212867AB0082E73A /* UpdateEmployee.swift in Sources */,
 				04E84DD5210CE3A400537500 /* DashboardCell.swift in Sources */,
@@ -885,11 +907,13 @@
 				2B931CF6211583B200927A0C /* BestSellerVC.swift in Sources */,
 				2BDFB17A211BD790005B5B27 /* Sale.swift in Sources */,
 				043DD8EF210DE88C009B89C2 /* TopSaleVC.swift in Sources */,
+				2B08600F21A725490059BD29 /* AllBestSellerCell.swift in Sources */,
 				2B97746C212DB4A000229095 /* OtpVC.swift in Sources */,
 				04E84DDF210CF0AE00537500 /* LeftMenuVC.swift in Sources */,
 				04E84D85210C109600537500 /* ARSLineProgressExtensions.swift in Sources */,
 				2BC7BB1C2122B7DF00AF1CA0 /* Order.swift in Sources */,
 				04E84D89210C109600537500 /* ARSProgressLoader.swift in Sources */,
+				2B04691521A478F8002853AA /* CustomerDetail.swift in Sources */,
 				2BFBC6E121176AB800DF9A9D /* Global.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

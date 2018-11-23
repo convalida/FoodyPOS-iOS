@@ -87,5 +87,13 @@ class APIClient {
     public static func resetPassword(paramters:[String:Any], completion:@escaping (Result<ResetPassword>) -> Void) {
         performRequest(route: APIRouter.resetPasword(paramters), decoder: jsonDecoder, completion: completion)
     }
+    
+    public static func customerDetails(paramters:[String:Any], completion:@escaping (Result<CustomerDetail>) -> Void) {
+        performRequest(route: APIRouter.customerDetails(paramters), decoder: jsonDecoder, completion: completion)
+    }
+    
+    public static func getAllBestSeller(paramters:[String:Any], completion:@escaping (Result<AllBestSeller>) -> Void) {
+        performRequest(route: APIRouter.getAllBestSeller(paramters), decoder: jsonDecoder, completion: completion)
+    }
 }
 
