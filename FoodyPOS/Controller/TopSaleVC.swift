@@ -196,6 +196,17 @@ extension TopSaleVC:UITableViewDataSource {
         }
             return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let salesData = salesData {
+            let topRestaurentData = salesData.topRestaurentSale[indexPath.row]
+            if let customerId = topRestaurentData.customerId {
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.CustomerDetailVC) as! CustomerDetailVC
+                vc.customerId = customerId
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+    }
 }
 
 extension TopSaleVC:UITableViewDelegate {

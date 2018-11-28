@@ -317,6 +317,15 @@ extension SalesSellAllVC:UITableViewDelegate {
                 vc.customerId = customer.customerId
                 self.navigationController?.pushViewController(vc, animated: true)
             }
+        } else {
+            if let salesData = salesData {
+                let topRestaurentData = salesData.allSales[indexPath.row]
+                if let customerId = topRestaurentData.customerId {
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.CustomerDetailVC) as! CustomerDetailVC
+                    vc.customerId = customerId
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+            }
         }
     }
 }

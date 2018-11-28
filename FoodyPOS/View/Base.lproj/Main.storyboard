@@ -3839,10 +3839,15 @@
                                                     <action selector="btnRoleTypeDidClicked:" destination="mK6-mP-Bk8" eventType="touchUpInside" id="TNY-cg-EY0"/>
                                                 </connections>
                                             </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drop-down-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="4bQ-FW-7Ik">
+                                                <rect key="frame" x="323" y="99" width="12" height="12"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="pjK-2b-og9" firstAttribute="top" secondItem="RLw-gH-kUF" secondAttribute="bottom" constant="12" id="0Tl-v7-FQu"/>
+                                            <constraint firstAttribute="trailing" secondItem="4bQ-FW-7Ik" secondAttribute="trailing" constant="20" id="8oR-FJ-jxP"/>
+                                            <constraint firstItem="4bQ-FW-7Ik" firstAttribute="centerY" secondItem="ZP1-aX-JO2" secondAttribute="centerY" id="BkE-2Q-z8E"/>
                                             <constraint firstItem="Wfv-nv-17R" firstAttribute="top" secondItem="cRf-s1-8sg" secondAttribute="top" constant="30" id="D4M-rE-UsH"/>
                                             <constraint firstItem="pjK-2b-og9" firstAttribute="leading" secondItem="RLw-gH-kUF" secondAttribute="leading" id="DDg-E5-JJO"/>
                                             <constraint firstItem="Dka-0q-TGy" firstAttribute="centerY" secondItem="Wfv-nv-17R" secondAttribute="centerY" id="Eib-Gw-kQB"/>
@@ -3920,7 +3925,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b4h-1E-D24" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2874.4000000000001" y="783.05847076461771"/>
+            <point key="canvasLocation" x="2874.4000000000001" y="782.51231527093603"/>
         </scene>
         <!--Order DetailVC-->
         <scene sceneID="EHJ-J0-jbS">
@@ -4234,10 +4239,10 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="q5O-zQ-RH4">
-                                                                    <rect key="frame" x="0.0" y="58" width="335" height="34"/>
+                                                                    <rect key="frame" x="0.0" y="58" width="335" height="50"/>
                                                                     <subviews>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tcb-aQ-kPg">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="34"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modifier" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTh-02-OXL">
                                                                                     <rect key="frame" x="0.0" y="4" width="66.666666666666671" height="21.666666666666668"/>
@@ -4254,7 +4259,7 @@
                                                                                     </variation>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E76-Fn-SXL">
-                                                                                    <rect key="frame" x="74.666666666666657" y="4" width="260.33333333333337" height="26"/>
+                                                                                    <rect key="frame" x="74.666666666666657" y="4" width="260.33333333333337" height="42"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                                     <color key="textColor" red="1" green="0.35294117650000001" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
                                                                                     <nil key="highlightedColor"/>
@@ -4276,10 +4281,10 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CPS-OZ-k5b">
-                                                                    <rect key="frame" x="0.0" y="100" width="335" height="8"/>
+                                                                    <rect key="frame" x="0.0" y="116" width="335" height="34"/>
                                                                     <subviews>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="56b-lR-4ky">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="8"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="34"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add On" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yhT-Qz-c2m">
                                                                                     <rect key="frame" x="0.0" y="4" width="61" height="21.666666666666668"/>
@@ -4296,7 +4301,7 @@
                                                                                     </variation>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omU-1N-0RE">
-                                                                                    <rect key="frame" x="69" y="4" width="266" height="0.0"/>
+                                                                                    <rect key="frame" x="69" y="4" width="266" height="26"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                                     <color key="textColor" red="1" green="0.35294117650000001" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
                                                                                     <nil key="highlightedColor"/>
@@ -4318,7 +4323,7 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Opt-BT-CX3">
-                                                                    <rect key="frame" x="0.0" y="116" width="335" height="8"/>
+                                                                    <rect key="frame" x="0.0" y="158" width="335" height="8"/>
                                                                     <subviews>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BMr-3X-cyc">
                                                                             <rect key="frame" x="0.0" y="0.0" width="335" height="8"/>
@@ -4360,13 +4365,13 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vxy-oW-SJQ">
-                                                                    <rect key="frame" x="0.0" y="132" width="335" height="50"/>
+                                                                    <rect key="frame" x="0.0" y="174" width="335" height="8"/>
                                                                     <subviews>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oGA-Vr-6AD">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="8"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyw-fR-JHd">
-                                                                                    <rect key="frame" x="49" y="4" width="286" height="42"/>
+                                                                                    <rect key="frame" x="49" y="4" width="286" height="0.0"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                                     <color key="textColor" red="1" green="0.35294117650000001" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
                                                                                     <nil key="highlightedColor"/>
@@ -5086,6 +5091,7 @@
                         <outlet property="lblName" destination="a66-Gm-u2x" id="uEG-AX-K7a"/>
                         <outlet property="lblNumber" destination="nfw-3J-NNO" id="L5K-Uh-awW"/>
                         <outlet property="tableView" destination="GRB-uM-qHW" id="tKI-G3-C9e"/>
+                        <outlet property="viewTop" destination="wBN-F8-OMo" id="Ijz-in-mf7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SYe-eX-2Kx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -5554,7 +5560,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVH-E9-Gcp">
-                                                    <rect key="frame" x="356" y="11" width="11" height="22"/>
+                                                    <rect key="frame" x="340" y="11" width="11" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" red="1" green="0.35294117650000001" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -5567,7 +5573,7 @@
                                                 <constraint firstItem="C0E-fS-VEm" firstAttribute="centerY" secondItem="v1S-Wf-g2L" secondAttribute="centerY" id="0ni-G7-gLC"/>
                                                 <constraint firstItem="Hof-7I-xda" firstAttribute="leading" secondItem="v1S-Wf-g2L" secondAttribute="leading" id="1kg-Co-c5J"/>
                                                 <constraint firstAttribute="bottom" secondItem="Hof-7I-xda" secondAttribute="bottom" id="6PY-yd-YmJ"/>
-                                                <constraint firstAttribute="trailing" secondItem="WVH-E9-Gcp" secondAttribute="trailing" constant="8" id="OI1-jx-7AX"/>
+                                                <constraint firstAttribute="trailing" secondItem="WVH-E9-Gcp" secondAttribute="trailing" constant="24" id="OI1-jx-7AX"/>
                                                 <constraint firstItem="C0E-fS-VEm" firstAttribute="leading" secondItem="v1S-Wf-g2L" secondAttribute="leading" constant="8" id="UeJ-lT-wjd"/>
                                                 <constraint firstAttribute="trailing" secondItem="Hof-7I-xda" secondAttribute="trailing" id="ZaT-bO-SnE"/>
                                                 <constraint firstItem="WVH-E9-Gcp" firstAttribute="centerY" secondItem="v1S-Wf-g2L" secondAttribute="centerY" id="n3f-gI-kLx"/>
@@ -5599,6 +5605,7 @@
                         <viewLayoutGuide key="safeArea" id="oJj-Lz-vib"/>
                     </view>
                     <connections>
+                        <outlet property="btnBack" destination="F9g-qw-2eL" id="aG8-rP-Eig"/>
                         <outlet property="btnEndDate" destination="UPh-uA-MlH" id="DnW-Jz-zlf"/>
                         <outlet property="btnStartDate" destination="Gv9-XS-cQc" id="so7-Ya-3YM"/>
                         <outlet property="tableView" destination="v8g-n8-fD7" id="0LT-77-qrS"/>
@@ -5755,6 +5762,7 @@
         <image name="close" width="19.200000762939453" height="19.200000762939453"/>
         <image name="daily" width="36" height="36"/>
         <image name="down" width="19.200000762939453" height="19.200000762939453"/>
+        <image name="drop-down-arrow" width="12.800000190734863" height="12.800000190734863"/>
         <image name="edit" width="51.200000762939453" height="51.200000762939453"/>
         <image name="ic_attach_money_48pt" width="144" height="144"/>
         <image name="ic_restaurant_48pt" width="144" height="144"/>

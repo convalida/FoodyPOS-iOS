@@ -14,7 +14,8 @@ class AllBestSellerVC: UIViewController {
     @IBOutlet weak var btnEndDate: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var viewTop: UIView!
-
+    @IBOutlet weak var btnBack: UIButton!
+    
     var statusData = [Status]()
     var bestSellerData:AllBestSeller?
     var hudView = UIView()
@@ -36,9 +37,19 @@ class AllBestSellerVC: UIViewController {
         tableView.dataSource = self
         
         initHudView()
+        if type == "week" {
+            let lastSun = Date.today().previous(.sunday)
+            btnStartDate.setTitle(lastSun.getDateString(), for: .normal)
+            btnBack.setTitle("Weekly Bestseller items", for: .normal)
+        }else if type == "month" {
+            btnStartDate.setTitle(Date.startOfMonth().getDateString(), for: .normal)
+            btnBack.setTitle("Monthly Bestseller items", for: .normal)
+
+        }else if type == "year" {
+            btnBack.setTitle("Yearly Bestseller items", for: .normal)
+
+        }
         
-        let lastSun = Date.today().previous(.sunday)
-        btnStartDate.setTitle(lastSun.getDateString(), for: .normal)
         btnEndDate.setTitle(Date.todayDate, for: .normal)
     }
 
@@ -135,7 +146,7 @@ class AllBestSellerVC: UIViewController {
             if let dateSelection = data.by_DateSelection {
                 if type == "week" {
                     if let weeklyData = dateSelection.weeklyBestsellerItems {
-                        for i in 0...weeklyData.count {
+                        for i in 0..<weeklyData.count {
                             var status = Status()
                             status.isOpened = (i == 0) ? true : false
                             statusData.append(status)
@@ -144,7 +155,7 @@ class AllBestSellerVC: UIViewController {
                     }
                 } else if type == "month" {
                     if let monthData = dateSelection.monthlyBestsellerItems {
-                        for i in 0...monthData.count {
+                        for i in 0..<monthData.count {
                             var status = Status()
                             status.isOpened = (i == 0) ? true : false
                             statusData.append(status)
@@ -153,7 +164,7 @@ class AllBestSellerVC: UIViewController {
                     }
                 } else if type == "year" {
                     if let yearData = dateSelection.yearlyBestsellerItems {
-                        for i in 0...yearData.count {
+                        for i in 0..<yearData.count {
                             var status = Status()
                             status.isOpened = (i == 0) ? true : false
                             statusData.append(status)

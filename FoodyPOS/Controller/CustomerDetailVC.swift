@@ -14,6 +14,7 @@ class CustomerDetailVC: UIViewController {
     @IBOutlet weak var lblNumber: UILabel!
     @IBOutlet weak var lblEmail: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var viewTop: UIView!
     
     var hudView = UIView()
     var customerDetails:CustomerDetail?
@@ -33,6 +34,7 @@ class CustomerDetailVC: UIViewController {
 
         // Do any additional setup after loading the view.
         tableView.dataSource = self
+        tableView.delegate = self
         initHudView()
         getCustomerDetail()
     }
@@ -42,7 +44,7 @@ class CustomerDetailVC: UIViewController {
         self.view.addSubview(hudView)
         
         hudView.translatesAutoresizingMaskIntoConstraints = false
-        hudView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        hudView.topAnchor.constraint(equalTo: self.viewTop.bottomAnchor).isActive = true
         hudView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         hudView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         hudView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
@@ -135,6 +137,9 @@ extension CustomerDetailVC:UITableViewDataSource {
                     if let orderNo = order.orderNo {
                         lblNo.text = "#" + orderNo
                     }
+                    if let price = order.total {
+                        btnPrice.setTitle("$" + price, for: .normal)
+                    }
                 }
             }
         }
@@ -165,10 +170,14 @@ extension CustomerDetailVC:UITableViewDataSource {
     }
     
     @objc func btnDetailDidClicked(sender:UIButton) {
+        showOrderDetailForTag(tag: sender.tag)
+    }
+    
+    func showOrderDetailForTag(tag:Int) {
         if let customer = customerDetails {
             if let customerDetail = customer.customer_Details {
                 if let orderDetails = customerDetail.order_Details {
-                    let order = orderDetails[sender.tag]
+                    let order = orderDetails[tag]
                     if let orderNo = order.orderNo {
                         let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.OrderDetailVC) as! OrderDetailVC
                         vc.orderNo = orderNo
@@ -177,5 +186,11 @@ extension CustomerDetailVC:UITableViewDataSource {
                 }
             }
         }
+    }
+}
+
+extension CustomerDetailVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        showOrderDetailForTag(tag: indexPath.row)
     }
 }

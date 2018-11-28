@@ -21,9 +21,10 @@ struct Sale: Codable {
 }
 
 struct AllSaleElement: Codable {
-    let customerName, contactNumber, totalAmount, totalOrder: String?
+    let customerId, customerName, contactNumber, totalAmount, totalOrder: String?
     
     enum CodingKeys: String, CodingKey {
+        case customerId = "CustomerId"
         case customerName = "CustomerName"
         case contactNumber = "ContactNumber"
         case totalAmount = "TotalAmount"
