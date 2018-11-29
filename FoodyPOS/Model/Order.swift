@@ -48,6 +48,7 @@ struct OrderNumberDetail: Codable {
 }
 
 struct OnClick: Codable {
+    let customerId : String?
     let customerName : String?
     let email : String?
     let contactNumber : String?
@@ -59,7 +60,7 @@ struct OnClick: Codable {
     let orderItemDetails : [OrderItemDetail]?
     
     enum CodingKeys: String, CodingKey {
-        
+        case customerId = "CustomerId"
         case customerName = "CustomerName"
         case email = "Email"
         case contactNumber = "ContactNumber"

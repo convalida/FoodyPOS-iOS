@@ -101,6 +101,16 @@ class OrderDetailVC: UIViewController {
         self.addChildViewController(vc)
     }
     
+    @IBAction func btnCustomerDetailDidClicked(_ sender: UIButton) {
+         if let onClick = onClick {
+            if let customerId = onClick.customerId {
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.CustomerDetailVC) as! CustomerDetailVC
+                vc.customerId = customerId
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+    }
+    
     private func getOrderDetailByOrderNumber(number:String) {
         guard let restaurentId = UserManager.restaurantID else {
             return

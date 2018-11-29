@@ -94,6 +94,24 @@ extension Date {
     static func endOfMonth() -> Date {
         return Calendar.current.date(byAdding: DateComponents(month: 1, day: -1), to: self.startOfMonth())!
     }
+    
+    static func startOfYear() -> Date {
+        var currentYear = Date()
+        currentYear = Date()
+        let formatter1 = DateFormatter()
+        formatter1.dateFormat = "yyyy"
+        let currentYearString = formatter1.string(from: currentYear)
+        
+        //Get first date of current year
+        let firstDateString = "10 01-01-\(currentYearString)"
+        let formatter2 = DateFormatter()
+        formatter2.dateFormat = "hh dd-MM-yyyy"
+        var firstDate = Date()
+        if let aString = formatter2.date(from: firstDateString) {
+            firstDate = aString
+        }
+        return firstDate
+    }
 }
 
 // MARK: Helper methods

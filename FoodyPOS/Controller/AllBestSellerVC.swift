@@ -20,6 +20,7 @@ class AllBestSellerVC: UIViewController {
     var bestSellerData:AllBestSeller?
     var hudView = UIView()
     var type = ""
+    var isSearch:Bool = false
     
     override var prefersStatusBarHidden: Bool {
         return false
@@ -46,8 +47,8 @@ class AllBestSellerVC: UIViewController {
             btnBack.setTitle("Monthly Bestseller items", for: .normal)
 
         }else if type == "year" {
+             btnStartDate.setTitle(Date.startOfYear().getDateString(), for: .normal)
             btnBack.setTitle("Yearly Bestseller items", for: .normal)
-
         }
         
         btnEndDate.setTitle(Date.todayDate, for: .normal)
@@ -108,6 +109,7 @@ class AllBestSellerVC: UIViewController {
     
     @IBAction func btnSearchDidClicked(_ sender: UIButton) {
         if Date.getDate(fromString: (btnStartDate.titleLabel?.text)!)! <= Date.getDate(fromString: (btnEndDate.titleLabel?.text)!)! {
+            isSearch = true
             callAllBestSellerAPI()
         }else {
             self.showToast("Start date must be less than or equal to end date")
@@ -118,9 +120,17 @@ class AllBestSellerVC: UIViewController {
         guard let restaurentId = UserManager.restaurantID else {
             return
         }
-        let prameterDic = ["RestaurantId":restaurentId,
+        var prameterDic:[String:Any]
+        if isSearch {
+            prameterDic = ["RestaurantId":restaurentId,
                            "fromdate":(btnStartDate.titleLabel?.text)!,
                            "enddate":(btnEndDate.titleLabel?.text)!] as [String : Any]
+        }else {
+            prameterDic = ["RestaurantId":restaurentId,
+                           "fromdate":"null".replacingOccurrences(of: "\"", with: ""),
+                           "enddate":"null".replacingOccurrences(of: "\"", with: "")] as [String : Any]
+        }
+       
         
         self.hudView.isHidden = false
         APIClient.getAllBestSeller(paramters: prameterDic) { (result) in
@@ -142,6 +152,7 @@ class AllBestSellerVC: UIViewController {
     }
     
     func initData() {
+        statusData.removeAll()
         if let data = bestSellerData {
             if let dateSelection = data.by_DateSelection {
                 if type == "week" {
@@ -180,6 +191,9 @@ class AllBestSellerVC: UIViewController {
     func reloadTable() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
+            if self.tableView.numberOfRows(inSection: 0) > 0 {
+                self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+            }
         }
     }
 }
@@ -187,21 +201,51 @@ class AllBestSellerVC: UIViewController {
 extension AllBestSellerVC:UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
+        let noDataLbl = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: tableView.bounds.height))
         if let data = bestSellerData {
             if let dateSelection = data.by_DateSelection {
                 if type == "week" {
                     if let weeklyData = dateSelection.weeklyBestsellerItems {
+                        if weeklyData.count == 0 {
+                            noDataLbl.text = "No data found"
+                        }else {
+                            noDataLbl.text = ""
+                        }
+                        noDataLbl.textColor = UIColor.themeColor
+                        noDataLbl.textAlignment = .center
+                        tableView.backgroundView = noDataLbl
                         return weeklyData.count
                     }
                 } else if type == "month" {
                     if let monthData = dateSelection.monthlyBestsellerItems {
+                        if monthData.count == 0 {
+                            noDataLbl.text = "No data found"
+                        }else {
+                            noDataLbl.text = ""
+                        }
+                        noDataLbl.textColor = UIColor.themeColor
+                        noDataLbl.textAlignment = .center
+                        tableView.backgroundView = noDataLbl
                         return monthData.count
                     }
                 } else if type == "year" {
                     if let yearData = dateSelection.yearlyBestsellerItems {
+                        if yearData.count == 0 {
+                            noDataLbl.text = "No data found"
+                        }else {
+                            noDataLbl.text = ""
+                        }
+                        noDataLbl.textColor = UIColor.themeColor
+                        noDataLbl.textAlignment = .center
+                        tableView.backgroundView = noDataLbl
                         return yearData.count
                     }
                 }
+            }else {
+                noDataLbl.text = "No data found"
+                noDataLbl.textColor = UIColor.themeColor
+                noDataLbl.textAlignment = .center
+                tableView.backgroundView = noDataLbl
             }
         }
         return 0
