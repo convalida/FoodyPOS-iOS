@@ -39,10 +39,13 @@ class OrderDetailVC: UIViewController {
 
         // Do any additional setup after loading the view.
         initData()
+       
         tableView.dataSource = self
         tableView.delegate = self
-        
         initHudView()
+        if orderNo != "" {
+            getOrderDetailByOrderNumber(number: orderNo)
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -51,9 +54,6 @@ class OrderDetailVC: UIViewController {
             self.tableView.tableHeaderView?.frame.size.height = 200.0
         }
         NotificationCenter.default.addObserver(self, selector: #selector(didReceiveOrderNumber(notification:)), name: NSNotification.Name(rawValue: kOrderDetailNotification), object: nil)
-        if orderNo != "" {
-            getOrderDetailByOrderNumber(number: orderNo)
-        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -163,6 +163,33 @@ class OrderDetailVC: UIViewController {
 //MARK: ---------Table view datasorce---------
 
 extension OrderDetailVC:UITableViewDataSource {
+   
+    func numberOfSections(in tableView: UITableView) -> Int {
+        let noDataLbl = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: tableView.bounds.height))
+        if let onClick = onClick {
+            if let orderItems = onClick.orderItemDetails {
+                if orderItems.count == 0 {
+                    tableView.tableHeaderView?.isHidden = true
+                    noDataLbl.text = "No data found"
+                }else {
+                    tableView.tableHeaderView?.isHidden = false
+                    noDataLbl.text = ""
+                }
+                noDataLbl.textColor = UIColor.themeColor
+                noDataLbl.textAlignment = .center
+                tableView.backgroundView = noDataLbl
+                return 1
+            }
+        }else {
+            noDataLbl.text = "No data found"
+            noDataLbl.textColor = UIColor.themeColor
+            noDataLbl.textAlignment = .center
+            tableView.backgroundView = noDataLbl
+            tableView.tableHeaderView?.isHidden = true
+        }
+        return 0
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let onClick = onClick {
             if let orderItems = onClick.orderItemDetails {

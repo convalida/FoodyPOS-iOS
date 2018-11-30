@@ -15,6 +15,7 @@ class CustomerDetailVC: UIViewController {
     @IBOutlet weak var lblEmail: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var viewTop: UIView!
+    @IBOutlet weak var mainView: UIView!
     
     var hudView = UIView()
     var customerDetails:CustomerDetail?
@@ -102,6 +103,26 @@ class CustomerDetailVC: UIViewController {
 
 extension CustomerDetailVC:UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        let noDataLbl = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: tableView.bounds.height))
+        if let customer = customerDetails {
+            if let customerDetail = customer.customer_Details {
+                if let orderDetails = customerDetail.order_Details {
+                        if orderDetails.count == 0 {
+                            noDataLbl.text = "No data found"
+                        }else {
+                            noDataLbl.text = ""
+                        }
+                        noDataLbl.textColor = UIColor.themeColor
+                        noDataLbl.textAlignment = .center
+                        tableView.backgroundView = noDataLbl
+                        return 1
+                }
+            }
+        }
+        return 0
+    }
+        
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let customer = customerDetails {
             if let customerDetail = customer.customer_Details {
@@ -115,35 +136,36 @@ extension CustomerDetailVC:UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "orderCell") else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "orderCell") as? CustomerOrderCell else {
             return UITableViewCell()
         }
-        let lblNo = cell.contentView.viewWithTag(1) as! UILabel
-        let btnTime = cell.contentView.viewWithTag(2) as! UIButton
-        let btnPrice = cell.contentView.viewWithTag(3) as! UIButton
-        let btnDetail = cell.contentView.viewWithTag(4) as! UIButton
-        btnTime.tag = indexPath.row
-        btnPrice.tag = indexPath.row
-        btnDetail.tag = indexPath.row
+
+        cell.btnTime.tag = indexPath.row
+        cell.btnPrice.tag = indexPath.row
+        cell.btnDetail.tag = indexPath.row
         
-        btnDetail.addTarget(self, action: #selector(btnDetailDidClicked(sender:)), for: .touchUpInside)
-        btnPrice.addTarget(self, action: #selector(btnPriceDidClicked(sender:)), for: .touchUpInside)
-        btnTime.addTarget(self, action: #selector(btnTimeDidClicked(sender:)), for: .touchUpInside)
+        cell.btnDetail.addTarget(self, action: #selector(btnDetailDidClicked(sender:)), for: .touchUpInside)
+        cell.btnPrice.addTarget(self, action: #selector(btnPriceDidClicked(sender:)), for: .touchUpInside)
+        cell.btnTime.addTarget(self, action: #selector(btnTimeDidClicked(sender:)), for: .touchUpInside)
         
         if let customer = customerDetails {
             if let customerDetail = customer.customer_Details {
                 if let orderDetails = customerDetail.order_Details {
                     let order = orderDetails[indexPath.row]
                     if let orderNo = order.orderNo {
-                        lblNo.text = "#" + orderNo
+                        cell.lblNo.text = "#" + orderNo
                     }
                     if let price = order.total {
-                        btnPrice.setTitle("$" + price, for: .normal)
+                        cell.btnPrice.setTitle("$" + price, for: .normal)
                     }
                 }
             }
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44.0
     }
     
     @objc func btnTimeDidClicked(sender:UIButton) {
