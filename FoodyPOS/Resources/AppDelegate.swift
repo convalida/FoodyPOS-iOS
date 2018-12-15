@@ -136,3 +136,23 @@ extension AppDelegate {
         }
     }
 }
+
+extension UIApplication {
+    class var build: String? {
+        get {
+            return Bundle.main.infoDictionary?[kCFBundleVersionKey as String] as? String
+        }
+    }
+    
+    class var version: String? {
+        get {
+            return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        }
+    }
+    
+    class var appId: String? {
+        get {
+            return Bundle.main.infoDictionary?["CFBundleIdentifier"] as? String
+        }
+    }
+}

@@ -390,13 +390,41 @@ class DashboardVC: UIViewController {
             self.navigationController?.pushViewController(vc, animated: true)
             
         case "Logout":
-            if UserManager.isRemember {
-                UserManager.isLogin = false
-                Global.showRootView(withIdentifier: StoryboardConstant.LoginVC)
-            }else {
-                /// Clear all user data
-                Global.flushUserDefaults()
-                self.navigationController?.popToRootViewController(animated: true)
+            let parameterDic = ["deviceId":UserManager.token ?? ""]
+            self.hudView.isHidden = false
+            APIClient.logout(paramters: parameterDic) { (result) in
+                switch result {
+                case .success(let user):
+                    if let result = user.result {
+                        if result == "1" {
+                            if let message = user.message {
+                                DispatchQueue.main.async {
+                                    self.showToast(message)
+                                }
+                            }
+                            if UserManager.isRemember {
+                                UserManager.isLogin = false
+                                Global.showRootView(withIdentifier: StoryboardConstant.LoginVC)
+                            }else {
+                                Global.flushUserDefaults()
+                                self.navigationController?.popToRootViewController(animated: true)
+                            }
+                        } else if let message = user.message {
+                            self.hudView.isHidden = true
+                            DispatchQueue.main.async {
+                                self.showToast(message)
+                            }
+                        }
+                    }
+                    
+                case .failure(let error):
+                    self.hudView.isHidden = true
+                    if error.localizedDescription == noDataMessage || error.localizedDescription == noDataMessage1 {
+                        self.showAlert(title: kAppName, message: AppMessages.msgFailed)
+                    } else {
+                        self.showAlert(title: kAppName, message: error.localizedDescription)
+                    }
+                }
             }
 
         default:

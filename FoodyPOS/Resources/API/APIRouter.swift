@@ -28,11 +28,12 @@ enum APIRouter: URLRequestConvertible {
     case resetPasword([String:Any])
     case customerDetails([String:Any])
     case getAllBestSeller([String:Any])
+    case logout([String:Any])
     
     // MARK: - HTTPMethod
     private var method: HTTPMethod {
         switch self {
-   case .login,.bestselleritems,.sales,.orderList,.customers,.dashboard,.report,.addEmployee,.changePassword,.forgotPassword,.employee,.updateEmployee,.orderSearch,.resetPasword,.customerDetails, .getAllBestSeller:
+   case .login,.bestselleritems,.sales,.orderList,.customers,.dashboard,.report,.addEmployee,.changePassword,.forgotPassword,.employee,.updateEmployee,.orderSearch,.resetPasword,.customerDetails, .getAllBestSeller, .logout:
             return .get
         }
     }
@@ -46,7 +47,7 @@ enum APIRouter: URLRequestConvertible {
         switch self {
             // Post
         case .login:
-            return basePath + "/GetLogin"
+            return basePath + "/LoginByApp"
         case .bestselleritems:
             return basePath + "/bestselleritems"
         case .sales:
@@ -77,6 +78,8 @@ enum APIRouter: URLRequestConvertible {
             return basePath + "/CustomerDetails"
         case .getAllBestSeller:
             return basePath + "/GetAllBestselleritems"
+        case .logout:
+            return basePath + "/LogoutByApp"
         }
     }
     
@@ -145,6 +148,10 @@ enum APIRouter: URLRequestConvertible {
             return parameter
             
         case .getAllBestSeller(let parameter):
+            print(parameter)
+            return parameter
+            
+        case .logout(let parameter):
             print(parameter)
             return parameter
         }

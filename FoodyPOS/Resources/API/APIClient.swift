@@ -95,5 +95,9 @@ class APIClient {
     public static func getAllBestSeller(paramters:[String:Any], completion:@escaping (Result<AllBestSeller>) -> Void) {
         performRequest(route: APIRouter.getAllBestSeller(paramters), decoder: jsonDecoder, completion: completion)
     }
+    
+    public static func logout(paramters:[String:Any], completion:@escaping (Result<Logout>) -> Void) {
+        performRequest(route: APIRouter.logout(paramters), decoder: jsonDecoder, completion: completion)
+    }
 }
 

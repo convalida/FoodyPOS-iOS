@@ -122,8 +122,8 @@ class LoginVC: UIViewController {
                         let parameterDic = ["email":email,
                                             "password":password,
                                             "deviceId":UserManager.token ?? "",
-                                            "buildversion":"",
-                                            "AppId":""] as [String:Any]
+                                            "buildversion":UIApplication.version ?? "",
+                                            "AppId":UIApplication.appId ?? ""] as [String:Any]
                         hudView.isHidden = false
                         
                         //Call Login API

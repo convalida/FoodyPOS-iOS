@@ -11,7 +11,7 @@ import UIKit
 class LeftMenuVC: UIViewController {
     @IBOutlet weak var imgLogo: UIImageView!
     @IBOutlet weak var tableView: UITableView!
-    
+
     override var prefersStatusBarHidden: Bool {
         return false
     }
@@ -20,12 +20,15 @@ class LeftMenuVC: UIViewController {
         return .lightContent
     }
     
+    var hudView = UIView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         tableView.dataSource = self
         tableView.delegate = self
+        initHudView()
         
     }
 
@@ -39,6 +42,21 @@ class LeftMenuVC: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func initHudView() {
+        hudView.backgroundColor = UIColor.white
+        self.view.addSubview(hudView)
+        
+        hudView.translatesAutoresizingMaskIntoConstraints = false
+        hudView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        hudView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        hudView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+        hudView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
+        
+        MBProgressHUD.showAdded(to: hudView, animated: true)
+        
+        hudView.isHidden = true
     }
 }
 
@@ -139,14 +157,42 @@ extension LeftMenuVC:UITableViewDelegate {
                 self.navigationController?.pushViewController(vc, animated: true)
             case 2:
                 parentVC?.leftSlideMenu.close()
-                if UserManager.isRemember {
-                    UserManager.isLogin = false
-                    Global.showRootView(withIdentifier: StoryboardConstant.LoginVC)
-                }else {
-                    Global.flushUserDefaults()
-                    self.navigationController?.popToRootViewController(animated: true)
+                let parameterDic = ["deviceId":UserManager.token ?? ""]
+                parentVC?.hudView.isHidden = false
+                APIClient.logout(paramters: parameterDic) { (result) in
+                    switch result {
+                    case .success(let user):
+                        if let result = user.result {
+                            if result == "1" {
+                                if let message = user.message {
+                                    DispatchQueue.main.async {
+                                        self.showToast(message)
+                                    }
+                                }
+                                if UserManager.isRemember {
+                                    UserManager.isLogin = false
+                                    Global.showRootView(withIdentifier: StoryboardConstant.LoginVC)
+                                }else {
+                                    Global.flushUserDefaults()
+                                    self.navigationController?.popToRootViewController(animated: true)
+                                }
+                            } else if let message = user.message {
+                                parentVC?.hudView.isHidden = true
+                                DispatchQueue.main.async {
+                                    self.showToast(message)
+                                }
+                            }
+                        }
+                        
+                    case .failure(let error):
+                        parentVC?.hudView.isHidden = true
+                        if error.localizedDescription == noDataMessage || error.localizedDescription == noDataMessage1 {
+                            self.showAlert(title: kAppName, message: AppMessages.msgFailed)
+                        } else {
+                            self.showAlert(title: kAppName, message: error.localizedDescription)
+                        }
+                    }
                 }
-
             default:
                 print("default")
             }

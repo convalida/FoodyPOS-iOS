@@ -23,3 +23,7 @@ struct User:Codable {
         case role = "Role"
     }
 }
+
+struct Logout:Codable {
+    var message, result: String?
+}
