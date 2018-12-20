@@ -49,8 +49,8 @@ class OrderListVC: UIViewController {
         let keyboardDoneButtonView = UIToolbar.init()
         keyboardDoneButtonView.sizeToFit()
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneClicked(sender:)))
-        
-        keyboardDoneButtonView.items = [doneButton]
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        keyboardDoneButtonView.items = [flexibleSpace, doneButton]
         txtSearch.inputAccessoryView = keyboardDoneButtonView
 
         let lastSun = Date.today().previous(.sunday)
@@ -208,8 +208,8 @@ class OrderListVC: UIViewController {
                 return
             }
             let prameterDic = ["RestaurantId":restaurentId,
-                               "startdate":(btnStartDate.titleLabel?.text)!,
-                               "enddate":(btnEndDate.titleLabel?.text)!,
+                               "startdate":"",
+                               "enddate":"",
                                "ordernumber":txtSearch.text!] as [String : Any]
            
             self.hudView.isHidden = false
@@ -354,7 +354,10 @@ extension OrderListVC:UITableViewDelegate {
                 if let date = order.date {
                     if let orderNumber = date[indexPath.section].orderNumberDetails {
                         let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.OrderDetailVC) as! OrderDetailVC
-                        vc.onClick = orderNumber[indexPath.row - 1].onClick
+                       // vc.onClick = orderNumber[indexPath.row - 1].onClick
+                        vc.orderNo = orderNumber[indexPath.row - 1].orderNo!
+                        vc.startDate = btnStartDate.titleLabel?.text
+                        vc.endDate = btnEndDate.titleLabel?.text
                        vc.totalPrice =  orderNumber[indexPath.row - 1].totalPrices
                         self.navigationController?.pushViewController(vc, animated: true)
                     }

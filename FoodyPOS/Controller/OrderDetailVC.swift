@@ -25,6 +25,8 @@ class OrderDetailVC: UIViewController {
     var totalPrice:String?
     var hudView = UIView()
     var orderNo = ""
+    var startDate:String?
+    var endDate:String?
     
     override var prefersStatusBarHidden: Bool {
         return false
@@ -116,11 +118,11 @@ class OrderDetailVC: UIViewController {
             return
         }
 
-        let lastSun = Date.today().previous(.sunday)
+      //  let lastSun = Date.today().previous(.sunday)
         
         let prameterDic = ["RestaurantId":restaurentId,
-                           "startdate":lastSun.getDateString(),
-                           "enddate":Date.todayDate,
+                           "startdate":(startDate != nil) ? startDate! : "",
+                           "enddate":(endDate != nil) ? endDate! : "",
                            "ordernumber":number] as [String : Any]
         
         self.hudView.isHidden = false
