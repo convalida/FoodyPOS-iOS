@@ -116,11 +116,11 @@ class OrderDetailVC: UIViewController {
             return
         }
 
-        let lastSun = Date.today().previous(.sunday)
+      //  let lastSun = Date.today().previous(.sunday)
         
         let prameterDic = ["RestaurantId":restaurentId,
-                           "startdate":lastSun.getDateString(),
-                           "enddate":Date.todayDate,
+                           "startdate":"",
+                           "enddate":"",
                            "ordernumber":number] as [String : Any]
         
         self.hudView.isHidden = false
@@ -222,24 +222,38 @@ extension OrderDetailVC:UITableViewDataSource {
                 }
                 if item.subitemsNames == "" {
                     cell.stackSubitem.isHidden = true
+                }else {
+                    cell.stackSubitem.isHidden = false
                 }
                 if item.modifier == "" {
                     cell.stackModifier.isHidden = true
+                }else {
+                   cell.stackModifier.isHidden = false
                 }
                 if item.addOn == "" {
                     cell.stackAddOn.isHidden = true
+                }else {
+                    cell.stackAddOn.isHidden = false
                 }
                 if item.instruction == "" {
                     cell.stackInstruction.isHidden = true
+                }else {
+                    cell.stackInstruction.isHidden = false
                 }
                 if item.price == "0" {
                     cell.stackPrice.isHidden = true
+                }else {
+                    cell.stackPrice.isHidden = false
                 }
                 if item.addOnPrices == "0" {
                     cell.stackAddOnPrice.isHidden = true
+                }else {
+                    cell.stackAddOnPrice.isHidden = false
                 }
                 if item.total == "0" {
                     cell.stackTotal.isHidden = true
+                }else {
+                    cell.stackTotal.isHidden = false
                 }
             }
         }

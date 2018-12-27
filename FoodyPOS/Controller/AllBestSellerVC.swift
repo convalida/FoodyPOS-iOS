@@ -192,6 +192,9 @@ class AllBestSellerVC: UIViewController {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+            self.tableView.setContentOffset(.zero, animated: false)
+        })
     }
 }
 

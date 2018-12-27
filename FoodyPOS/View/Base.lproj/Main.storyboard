@@ -418,7 +418,7 @@
                                                     <action selector="btnSelectDidClicked:" destination="QEY-Y0-sF0" eventType="touchUpInside" id="1VZ-uQ-MAs"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OPJ-qY-5Q0">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drop-down-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="OPJ-qY-5Q0">
                                                 <rect key="frame" x="324" y="371.33333333333331" width="15" height="15"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="15" id="LSS-DG-a5K">
@@ -5563,7 +5563,7 @@
                                                         <constraint firstAttribute="height" constant="1" id="mYK-eK-IuU"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chicken Biryani" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0E-fS-VEm">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Chicken Biryani" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="C0E-fS-VEm">
                                                     <rect key="frame" x="7.9999999999999929" y="11" width="124.33333333333331" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
@@ -5572,8 +5572,11 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVH-E9-Gcp">
-                                                    <rect key="frame" x="340" y="11" width="11" height="22"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="3" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVH-E9-Gcp">
+                                                    <rect key="frame" x="140.33333333333337" y="11" width="210.66666666666663" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="11" id="60T-Oh-HiI"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" red="1" green="0.35294117650000001" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -5587,6 +5590,7 @@
                                                 <constraint firstItem="Hof-7I-xda" firstAttribute="leading" secondItem="v1S-Wf-g2L" secondAttribute="leading" id="1kg-Co-c5J"/>
                                                 <constraint firstAttribute="bottom" secondItem="Hof-7I-xda" secondAttribute="bottom" id="6PY-yd-YmJ"/>
                                                 <constraint firstAttribute="trailing" secondItem="WVH-E9-Gcp" secondAttribute="trailing" constant="24" id="OI1-jx-7AX"/>
+                                                <constraint firstItem="WVH-E9-Gcp" firstAttribute="leading" secondItem="C0E-fS-VEm" secondAttribute="trailing" constant="8" id="S1G-eg-zKw"/>
                                                 <constraint firstItem="C0E-fS-VEm" firstAttribute="leading" secondItem="v1S-Wf-g2L" secondAttribute="leading" constant="8" id="UeJ-lT-wjd"/>
                                                 <constraint firstAttribute="trailing" secondItem="Hof-7I-xda" secondAttribute="trailing" id="ZaT-bO-SnE"/>
                                                 <constraint firstItem="WVH-E9-Gcp" firstAttribute="centerY" secondItem="v1S-Wf-g2L" secondAttribute="centerY" id="n3f-gI-kLx"/>
