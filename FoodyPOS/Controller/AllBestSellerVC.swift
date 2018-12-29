@@ -376,4 +376,12 @@ extension AllBestSellerVC:UITableViewDelegate {
             tableView.reloadSections(sections, with: .none)
         }
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200.0
+    }
 }

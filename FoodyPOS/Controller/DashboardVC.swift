@@ -390,6 +390,27 @@ class DashboardVC: UIViewController {
             self.navigationController?.pushViewController(vc, animated: true)
             
         case "Logout":
+            if let token = UserManager.token {
+                if token.trim() == "" {
+                    if UserManager.isRemember {
+                        UserManager.isLogin = false
+                        Global.showRootView(withIdentifier: StoryboardConstant.LoginVC)
+                    }else {
+                        Global.flushUserDefaults()
+                        self.navigationController?.popToRootViewController(animated: true)
+                    }
+                    return
+                }
+            } else {
+                if UserManager.isRemember {
+                    UserManager.isLogin = false
+                    Global.showRootView(withIdentifier: StoryboardConstant.LoginVC)
+                }else {
+                    Global.flushUserDefaults()
+                    self.navigationController?.popToRootViewController(animated: true)
+                }
+                return
+            }
             let parameterDic = ["deviceId":UserManager.token ?? " "]
             self.hudView.isHidden = false
             APIClient.logout(paramters: parameterDic) { (result) in
