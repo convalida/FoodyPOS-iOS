@@ -49,8 +49,8 @@ class OrderListVC: UIViewController {
         let keyboardDoneButtonView = UIToolbar.init()
         keyboardDoneButtonView.sizeToFit()
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneClicked(sender:)))
-        
-        keyboardDoneButtonView.items = [doneButton]
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        keyboardDoneButtonView.items = [flexibleSpace, doneButton]
         txtSearch.inputAccessoryView = keyboardDoneButtonView
 
         let lastSun = Date.today().previous(.sunday)
@@ -356,6 +356,8 @@ extension OrderListVC:UITableViewDelegate {
                         let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.OrderDetailVC) as! OrderDetailVC
                        // vc.onClick = orderNumber[indexPath.row - 1].onClick
                         vc.orderNo = orderNumber[indexPath.row - 1].orderNo!
+                        vc.startDate = btnStartDate.titleLabel?.text
+                        vc.endDate = btnEndDate.titleLabel?.text
                        vc.totalPrice =  orderNumber[indexPath.row - 1].totalPrices
                         self.navigationController?.pushViewController(vc, animated: true)
                     }
