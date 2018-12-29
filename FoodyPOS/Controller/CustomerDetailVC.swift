@@ -40,6 +40,13 @@ class CustomerDetailVC: UIViewController {
         getCustomerDetail()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if Global.isIpad {
+            self.tableView.tableHeaderView?.frame.size.height = 140.0
+        }
+    }
+    
     func initHudView() {
         hudView.backgroundColor = UIColor.white
         self.view.addSubview(hudView)

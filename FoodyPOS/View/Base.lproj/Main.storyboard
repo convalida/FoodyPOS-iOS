@@ -1463,7 +1463,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="p8N-tZ-ZZT" secondAttribute="height" multiplier="1:1" id="EUa-JI-bGG"/>
                                     <constraint firstAttribute="width" constant="25" id="Pzf-RI-NNo">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="40"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="45"/>
                                     </constraint>
                                 </constraints>
                             </imageView>
@@ -1498,7 +1498,7 @@
                                 <rect key="frame" x="300" y="732.66666666666663" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="9Ch-iD-kPZ">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="40"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="45"/>
                                     </constraint>
                                     <constraint firstAttribute="width" secondItem="3Ha-gZ-ZSy" secondAttribute="height" multiplier="1:1" id="e9Y-wb-cjv"/>
                                 </constraints>
@@ -3511,7 +3511,7 @@
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="order@metropolisgrill.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogw-Gs-pvY">
-                                                            <rect key="frame" x="111" y="29.666666666666664" width="232" height="20.333333333333336"/>
+                                                            <rect key="frame" x="111" y="29.666666666666664" width="232" height="25"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="highlightedColor"/>
                                                             <variation key="heightClass=regular-widthClass=regular">
@@ -3525,8 +3525,8 @@
                                                                 <constraint firstAttribute="width" secondItem="G8e-hF-1lp" secondAttribute="height" multiplier="1:1" id="d0N-mt-Krq"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manager" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZL-Ae-ohz">
-                                                            <rect key="frame" x="78" y="58.666666666666679" width="67.666666666666686" height="20.333333333333336"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Manager" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZL-Ae-ohz">
+                                                            <rect key="frame" x="78" y="63.333333333333321" width="67.666666666666686" height="15.666666666666664"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="highlightedColor"/>
                                                             <variation key="heightClass=regular-widthClass=regular">
@@ -3573,6 +3573,7 @@
                                                         <constraint firstItem="PaA-y9-BxS" firstAttribute="trailing" secondItem="GgK-ok-Y2Y" secondAttribute="trailing" id="Yqp-rH-Yf5"/>
                                                         <constraint firstItem="ogw-Gs-pvY" firstAttribute="trailing" secondItem="lAK-TE-T9i" secondAttribute="trailing" id="YzO-q4-RL0"/>
                                                         <constraint firstItem="qFd-41-Lue" firstAttribute="leading" secondItem="h6t-fT-pl4" secondAttribute="leading" constant="8" id="ZR8-wz-QIc"/>
+                                                        <constraint firstItem="G8e-hF-1lp" firstAttribute="bottom" secondItem="ogw-Gs-pvY" secondAttribute="bottom" id="aR4-7R-B8q"/>
                                                         <constraint firstAttribute="trailing" secondItem="lAK-TE-T9i" secondAttribute="trailing" constant="8" id="c8s-6X-yHp"/>
                                                         <constraint firstItem="Ddw-nK-70F" firstAttribute="leading" secondItem="qFd-41-Lue" secondAttribute="leading" id="cLi-Oi-Hxg"/>
                                                         <constraint firstItem="rZL-Ae-ohz" firstAttribute="top" secondItem="ogw-Gs-pvY" secondAttribute="bottom" constant="8.5" id="eom-du-Ljh"/>

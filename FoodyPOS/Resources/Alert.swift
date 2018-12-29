@@ -101,12 +101,8 @@ class Alert: NSObject {
     }
 
     /// display datepicker for date inputs
-    public static func showDatePicker(dataPicker:UIDatePicker, controller:UIViewController, hander:((Date)->Void)?) {
-        var style:UIAlertControllerStyle = .actionSheet
-        if Global.isIpad {
-            style = .alert
-        }
-        let alert = UIAlertController(title: "\n\n\n\n\n\n\n\n\n", message: nil, preferredStyle: style)
+    public static func showDatePicker(dataPicker:UIDatePicker, controller:UIViewController, viewRect:UIView, hander:((Date)->Void)?) {
+        let alert = UIAlertController(title: "\n\n\n\n\n\n\n\n\n", message: nil, preferredStyle: .actionSheet)
         alert.view.addSubview(dataPicker)
         let ok = UIAlertAction(title: "OK", style: .default) { (action) in
             if let hand = hander {
@@ -117,6 +113,11 @@ class Alert: NSObject {
         
         alert.addAction(ok)
         alert.addAction(cancel)
+        if Global.isIpad {
+         let popover = alert.popoverPresentationController
+            popover?.sourceView = viewRect
+            popover?.sourceRect = viewRect.bounds
+        }
         controller.present(alert, animated: true, completion: nil)
     }
 }

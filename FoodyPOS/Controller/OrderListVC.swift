@@ -102,7 +102,7 @@ class OrderListVC: UIViewController {
         if let date = Date.getDate(fromString: (sender.titleLabel?.text)!) {
             datePicker.date = date
         }
-        Alert.showDatePicker(dataPicker: datePicker, controller: self) { (date) in
+        Alert.showDatePicker(dataPicker: datePicker, controller: self, viewRect: sender) { (date) in
             sender.setTitle(date.getDateString(), for: .normal)
         }
     }
@@ -114,7 +114,7 @@ class OrderListVC: UIViewController {
         if let date = Date.getDate(fromString: (sender.titleLabel?.text)!) {
             datePicker.date = date
         }
-        Alert.showDatePicker(dataPicker: datePicker, controller: self) { (date) in
+        Alert.showDatePicker(dataPicker: datePicker, controller: self, viewRect: sender) { (date) in
             sender.setTitle(date.getDateString(), for: .normal)
         }
     }
