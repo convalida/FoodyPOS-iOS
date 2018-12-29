@@ -157,7 +157,7 @@ extension LeftMenuVC:UITableViewDelegate {
                 self.navigationController?.pushViewController(vc, animated: true)
             case 2:
                 parentVC?.leftSlideMenu.close()
-                let parameterDic = ["deviceId":UserManager.token ?? ""]
+                let parameterDic = ["deviceId":UserManager.token ?? " "]
                 parentVC?.hudView.isHidden = false
                 APIClient.logout(paramters: parameterDic) { (result) in
                     switch result {

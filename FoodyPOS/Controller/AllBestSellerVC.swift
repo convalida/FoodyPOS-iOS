@@ -121,15 +121,15 @@ class AllBestSellerVC: UIViewController {
             return
         }
         var prameterDic:[String:Any]
-        if isSearch {
+      //  if isSearch {
             prameterDic = ["RestaurantId":restaurentId,
                            "fromdate":(btnStartDate.titleLabel?.text)!,
                            "enddate":(btnEndDate.titleLabel?.text)!] as [String : Any]
-        }else {
-            prameterDic = ["RestaurantId":restaurentId,
-                           "fromdate":"null".replacingOccurrences(of: "\"", with: ""),
-                           "enddate":"null".replacingOccurrences(of: "\"", with: "")] as [String : Any]
-        }
+//        }else {
+//            prameterDic = ["RestaurantId":restaurentId,
+//                           "fromdate":"null".replacingOccurrences(of: "\"", with: ""),
+//                           "enddate":"null".replacingOccurrences(of: "\"", with: "")] as [String : Any]
+//        }
        
         
         self.hudView.isHidden = false

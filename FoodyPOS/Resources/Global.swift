@@ -49,6 +49,29 @@ class Global:NSObject {
         UserDefaults.standard.synchronize()
     }
 
+    static func callLoginApi() {
+        //Validate all the field
+        let parameterDic = ["email":UserManager.email ?? "",
+                            "password":UserManager.password ?? "",
+                            "deviceId":UserManager.token ?? "",
+                            "buildversion":UIApplication.version ?? "",
+                            "AppId":UIApplication.appId ?? ""] as [String:Any]
+        
+        //Call Login API
+        APIClient.login(paramters: parameterDic) { (result) in
+            switch result {
+            case .success(let user):
+                if let result = user.result {
+                    if result == "1" {
+                        UserManager.saveUserDataIntoDefaults(user: user)
+                    }
+                }
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
 }
 
 class DeviceLayoutConstraint:NSLayoutConstraint {

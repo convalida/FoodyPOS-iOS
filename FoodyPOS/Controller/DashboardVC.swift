@@ -390,7 +390,7 @@ class DashboardVC: UIViewController {
             self.navigationController?.pushViewController(vc, animated: true)
             
         case "Logout":
-            let parameterDic = ["deviceId":UserManager.token ?? ""]
+            let parameterDic = ["deviceId":UserManager.token ?? " "]
             self.hudView.isHidden = false
             APIClient.logout(paramters: parameterDic) { (result) in
                 switch result {

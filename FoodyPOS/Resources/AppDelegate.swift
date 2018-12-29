@@ -93,6 +93,11 @@ extension AppDelegate {
         // 2. Print device token to use for PNs payloads
         print("Device Token: \(token)")
         UserManager.token = token
+        if token.trim() != "" {
+            DispatchQueue.global().async {
+                Global.callLoginApi()
+            }
+        }
     }
     
     
