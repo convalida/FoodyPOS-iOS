@@ -38,6 +38,7 @@ class SignUpVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.btnAddEmployee.titleLabel?.textAlignment = .center
         let tap = UITapGestureRecognizer(target: self, action: #selector(hideOnTap(recognizer:)))
         tap.delegate = self
         self.view.addGestureRecognizer(tap)
@@ -46,10 +47,6 @@ class SignUpVC: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        btnAddEmployee.titleLabel?.numberOfLines = 1
-        btnAddEmployee.titleLabel?.adjustsFontSizeToFitWidth = true
-        btnAddEmployee.titleLabel?.lineBreakMode = .byWordWrapping
-        btnAddEmployee.titleEdgeInsets = UIEdgeInsetsMake(0, 4, 0, 4)
         self.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
     }
     
