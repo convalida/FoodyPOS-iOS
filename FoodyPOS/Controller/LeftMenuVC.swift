@@ -159,6 +159,7 @@ extension LeftMenuVC:UITableViewDelegate {
                 parentVC?.leftSlideMenu.close()
                 if let token = UserManager.token {
                     if token.trim() == "" {
+                        self.showToast("You are successfully logged out")
                         if UserManager.isRemember {
                             UserManager.isLogin = false
                             Global.showRootView(withIdentifier: StoryboardConstant.LoginVC)
@@ -169,6 +170,7 @@ extension LeftMenuVC:UITableViewDelegate {
                         return
                     }
                 } else {
+                    self.showToast("You are successfully logged out")
                     if UserManager.isRemember {
                         UserManager.isLogin = false
                         Global.showRootView(withIdentifier: StoryboardConstant.LoginVC)
@@ -185,11 +187,7 @@ extension LeftMenuVC:UITableViewDelegate {
                     case .success(let user):
                         if let result = user.result {
                             if result == "1" {
-                                if let message = user.message {
-                                    DispatchQueue.main.async {
-                                        self.showToast(message)
-                                    }
-                                }
+                                self.showToast("You are successfully logged out")
                                 if UserManager.isRemember {
                                     UserManager.isLogin = false
                                     Global.showRootView(withIdentifier: StoryboardConstant.LoginVC)
