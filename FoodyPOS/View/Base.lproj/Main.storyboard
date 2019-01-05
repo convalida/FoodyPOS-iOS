@@ -1149,7 +1149,7 @@
                                     <constraint firstAttribute="height" constant="70" id="TVv-V7-DgJ" customClass="DeviceLayoutConstraint" customModule="FoodyPOS" customModuleProvider="target">
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="isIphoneXValue">
-                                                <real key="value" value="90"/>
+                                                <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <variation key="heightClass=regular-widthClass=regular" constant="100"/>

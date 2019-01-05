@@ -79,7 +79,7 @@ class DeviceLayoutConstraint:NSLayoutConstraint {
     @IBInspectable var isIphoneXValue:CGFloat = 0.0 {
         didSet {
             if UIDevice().userInterfaceIdiom == .phone {
-                if UIScreen.main.nativeBounds.height == 2436 {
+                if UIScreen.main.nativeBounds.height == 2436 || UIScreen.main.nativeBounds.height == 2688 || UIScreen.main.nativeBounds.height == 1792 {
                     self.constant = isIphoneXValue
                     layoutIfNeeded()
                 }
