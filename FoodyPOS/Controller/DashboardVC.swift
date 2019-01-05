@@ -254,7 +254,7 @@ class DashboardVC: UIViewController {
         let logout = KxMenuItem.init("Logout", image: nil, target: self, action: #selector(pushMenuItem(sender:)))
         logout?.foreColor = UIColor.black
         
-        let menuItems = [changePassword,logout,settings]
+        let menuItems = [changePassword,logout]
         
         KxMenu.show(in: self.view, from: sender.frame, menuItems: menuItems)
     }
@@ -377,13 +377,6 @@ class DashboardVC: UIViewController {
     @objc func pushMenuItem(sender:KxMenuItem) {
         KxMenu.dismiss()
         switch sender.title {
-        case "Token":
-            if let token = UserManager.token {
-                Alert.showSingleButtonAlert(title: kAppName, message: token, actionTitle: "Copy", controller: self) {
-                    let pasteboard = UIPasteboard.general
-                    pasteboard.string = token
-                }
-            }
             
         case "Change Password":
             let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.ChangePasswordVC) as! ChangePasswordVC
