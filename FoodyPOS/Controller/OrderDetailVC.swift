@@ -94,6 +94,16 @@ class OrderDetailVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func viewAmountDidClicked(_ sender: UITapGestureRecognizer) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.AmountVC) as! AmountVC
+        if let onClick = onClick {
+            vc.onClick = onClick
+        }
+        self.view.addSubview(vc.view)
+        self.addChildViewController(vc)        
+    }
+    
+    
     @IBAction func btnAmountDidClicked(_ sender: UIButton) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.AmountVC) as! AmountVC
         if let onClick = onClick {
