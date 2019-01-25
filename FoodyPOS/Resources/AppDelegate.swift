@@ -54,6 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        application.applicationIconBadgeNumber = 0;
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
@@ -116,9 +117,19 @@ extension AppDelegate {
         if let apsDic = userInfo["aps"] as? NSDictionary {
             if let alert = apsDic.value(forKey: "alert") as? NSDictionary {
                 if UIApplication.shared.applicationState == .active {
-                    goToDetailVC(body: alert["body"] as! String)
-                }else if (UIApplication.shared.applicationState == .background) || (UIApplication.shared.applicationState == .inactive) {
-                    goToDetailVC(body: alert["body"] as! String)
+                    //goToDetailVC(body: alert["body"] as! String)
+                    if let alertBody = alert["body"] as? String {
+                        let localNotification = UILocalNotification()
+                        localNotification.userInfo = userInfo
+                        localNotification.soundName = UILocalNotificationDefaultSoundName
+                        localNotification.alertBody = alertBody
+                        localNotification.fireDate = Date()
+                        UIApplication.shared.scheduleLocalNotification(localNotification)
+                    }
+                } else if (UIApplication.shared.applicationState == .background) || (UIApplication.shared.applicationState == .inactive) {
+                    if let orderId = userInfo["order_id"] as? String {
+                        goToDetailVC(body: orderId)
+                    }
                 }
                 completionHandler(.newData)
             }
