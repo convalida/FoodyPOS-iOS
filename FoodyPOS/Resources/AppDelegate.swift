@@ -78,6 +78,7 @@ extension AppDelegate {
                     UIApplication.shared.registerForRemoteNotifications()
                 }
             }
+            UNUserNotificationCenter.current().delegate = self
         } else {
             UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.sound, .alert, .badge], categories: nil))
             UIApplication.shared.registerForRemoteNotifications()
@@ -118,14 +119,14 @@ extension AppDelegate {
             if let alert = apsDic.value(forKey: "alert") as? NSDictionary {
                 if UIApplication.shared.applicationState == .active {
                     //goToDetailVC(body: alert["body"] as! String)
-                    if let alertBody = alert["body"] as? String {
-                        let localNotification = UILocalNotification()
-                        localNotification.userInfo = userInfo
-                        localNotification.soundName = UILocalNotificationDefaultSoundName
-                        localNotification.alertBody = alertBody
-                        localNotification.fireDate = Date()
-                        UIApplication.shared.scheduleLocalNotification(localNotification)
-                    }
+//                    if let alertBody = alert["body"] as? String {
+//                        let localNotification = UILocalNotification()
+//                        localNotification.userInfo = userInfo
+//                        localNotification.soundName = UILocalNotificationDefaultSoundName
+//                        localNotification.alertBody = alertBody
+//                        localNotification.fireDate = Date()
+//                        UIApplication.shared.scheduleLocalNotification(localNotification)
+//                    }
                 } else if (UIApplication.shared.applicationState == .background) || (UIApplication.shared.applicationState == .inactive) {
                     if let orderId = userInfo["order_id"] as? String {
                         goToDetailVC(body: orderId)
@@ -170,5 +171,12 @@ extension UIApplication {
         get {
             return Bundle.main.infoDictionary?["CFBundleIdentifier"] as? String
         }
+    }
+}
+
+extension AppDelegate:UNUserNotificationCenterDelegate {
+    @available(iOS 10.0, *)
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler(.alert)
     }
 }
