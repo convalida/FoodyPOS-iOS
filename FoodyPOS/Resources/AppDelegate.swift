@@ -114,26 +114,9 @@ extension AppDelegate {
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         print(userInfo)
-        
-        if let apsDic = userInfo["aps"] as? NSDictionary {
-            if let alert = apsDic.value(forKey: "alert") as? NSDictionary {
-                if UIApplication.shared.applicationState == .active {
-                    //goToDetailVC(body: alert["body"] as! String)
-//                    if let alertBody = alert["body"] as? String {
-//                        let localNotification = UILocalNotification()
-//                        localNotification.userInfo = userInfo
-//                        localNotification.soundName = UILocalNotificationDefaultSoundName
-//                        localNotification.alertBody = alertBody
-//                        localNotification.fireDate = Date()
-//                        UIApplication.shared.scheduleLocalNotification(localNotification)
-//                    }
-                } else if (UIApplication.shared.applicationState == .background) || (UIApplication.shared.applicationState == .inactive) {
-                    if let orderId = userInfo["order_id"] as? String {
-                        goToDetailVC(body: orderId)
-                    }
-                }
-                completionHandler(.newData)
-            }
+        if let orderId = userInfo["order_id"] as? String {
+            goToDetailVC(body: orderId)
+            completionHandler(.newData)
         }
     }
 }
@@ -149,6 +132,7 @@ extension AppDelegate {
         } else {
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: StoryboardConstant.OrderDetailVC) as! OrderDetailVC
             vc.orderNo = body
+            UIApplication.shared.applicationIconBadgeNumber = 0;
             navVC.pushViewController(vc, animated: true)
         }
     }
@@ -177,6 +161,6 @@ extension UIApplication {
 extension AppDelegate:UNUserNotificationCenterDelegate {
     @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler(.alert)
+        completionHandler([.alert,.sound,.badge])
     }
 }
