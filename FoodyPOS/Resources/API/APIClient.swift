@@ -35,6 +35,10 @@ class APIClient {
         performRequest(route: APIRouter.login(paramters), decoder: jsonDecoder, completion: completion)
     }
     
+    public static func readNotification(paramters:[String:Any], completion:@escaping (Result<User>) -> Void) {
+        performRequest(route: APIRouter.readNotification(paramters), decoder: jsonDecoder, completion: completion)
+    }
+    
     public static func bestSellerItems(paramters:[String:Any], completion:@escaping (Result<BestSeller>) -> Void) {
         performRequest(route: APIRouter.bestselleritems(paramters), decoder: jsonDecoder, completion: completion)
     }

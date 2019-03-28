@@ -116,6 +116,7 @@ extension AppDelegate {
         print(userInfo)
         if let orderId = userInfo["order_id"] as? String {
             goToDetailVC(body: orderId)
+            Global.callReadNotificationApi(orderId)
             completionHandler(.newData)
         }
     }

@@ -72,6 +72,30 @@ class Global:NSObject {
             }
         }
     }
+    
+    static func callReadNotificationApi(_ orderNo:String) {
+        //Validate all the field
+        let parameterDic = [
+                            "deviceid":UserManager.token ?? "",
+                            "orderno":orderNo,
+                            ] as [String:Any]
+        
+        //Call Read Notification API
+        APIClient.readNotification(paramters: parameterDic) { (result) in
+            switch result {
+            case .success(let user):
+                if let result = user.result {
+                    if result == "1" {
+                        //UserManager.saveUserDataIntoDefaults(user: user)
+                        UIApplication.shared.applicationIconBadgeNumber = 0
+                    }
+                }
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
 }
 
 class DeviceLayoutConstraint:NSLayoutConstraint {
