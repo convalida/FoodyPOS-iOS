@@ -51,6 +51,9 @@ class Global:NSObject {
 
     static func callLoginApi() {
         //Validate all the field
+        if UserManager.email == nil && UserManager.password == nil {
+            return
+        }
         let parameterDic = ["email":UserManager.email ?? "",
                             "password":UserManager.password ?? "",
                             "deviceId":UserManager.token ?? "",

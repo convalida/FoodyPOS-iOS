@@ -35,6 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if UserManager.isRemember && UserManager.isLogin {
             Global.showRootView(withIdentifier: StoryboardConstant.DashboardVC)
         }
+
         return true
     }
 
