@@ -153,10 +153,11 @@ extension UIApplication {
     
     class var appId: String? {
         get {
-            return Bundle.main.infoDictionary?["CFBundleIdentifier"] as? String
+        //    return Bundle.main.infoDictionary?["CFBundleIdentifier"] as? String
+            return ""
         }
     }
-}
+    }
 
 extension AppDelegate:UNUserNotificationCenterDelegate {
     @available(iOS 10.0, *)

@@ -55,7 +55,7 @@ class Global:NSObject {
                             "password":UserManager.password ?? "",
                             "deviceId":UserManager.token ?? "",
                             "buildversion":UIApplication.version ?? "",
-                            "AppId":UIApplication.appId ?? ""] as [String:Any]
+                            "DeviceType":UIApplication.appId ?? ""] as [String:Any]
         
         //Call Login API
         APIClient.login(paramters: parameterDic) { (result) in

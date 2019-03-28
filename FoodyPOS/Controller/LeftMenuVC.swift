@@ -165,7 +165,9 @@ extension LeftMenuVC:UITableViewDelegate {
                             Global.showRootView(withIdentifier: StoryboardConstant.LoginVC)
                         }else {
                             Global.flushUserDefaults()
-                            self.navigationController?.popToRootViewController(animated: true)
+                            //self.navigationController?.popToRootViewController(animated: true)
+                            let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.LoginVC) as! LoginVC
+                            self.navigationController?.pushViewController(vc, animated: true)
                         }
                         return
                     }
@@ -176,7 +178,9 @@ extension LeftMenuVC:UITableViewDelegate {
                         Global.showRootView(withIdentifier: StoryboardConstant.LoginVC)
                     }else {
                         Global.flushUserDefaults()
-                        self.navigationController?.popToRootViewController(animated: true)
+                       // self.navigationController?.popToRootViewController(animated: true)
+                        let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.LoginVC) as! LoginVC
+                        self.navigationController?.pushViewController(vc, animated: true)
                     }
                     return
                 }
@@ -193,7 +197,9 @@ extension LeftMenuVC:UITableViewDelegate {
                                     Global.showRootView(withIdentifier: StoryboardConstant.LoginVC)
                                 }else {
                                     Global.flushUserDefaults()
-                                    self.navigationController?.popToRootViewController(animated: true)
+                                   // self.navigationController?.popToRootViewController(animated: true)
+                                    let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.LoginVC) as! LoginVC
+                                    self.navigationController?.pushViewController(vc, animated: true)
                                 }
                             } else if let message = user.message {
                                 parentVC?.hudView.isHidden = true
