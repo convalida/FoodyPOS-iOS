@@ -51,6 +51,9 @@ class Global:NSObject {
 
     static func callLoginApi() {
         //Validate all the field
+        if UserManager.email == nil && UserManager.password == nil {
+            return
+        }
         let parameterDic = ["email":UserManager.email ?? "",
                             "password":UserManager.password ?? "",
                             "deviceId":UserManager.token ?? "",
@@ -64,6 +67,30 @@ class Global:NSObject {
                 if let result = user.result {
                     if result == "1" {
                         UserManager.saveUserDataIntoDefaults(user: user)
+                    }
+                }
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    static func callReadNotificationApi(_ orderNo:String) {
+        //Validate all the field
+        let parameterDic = [
+                            "deviceid":UserManager.token ?? "",
+                            "orderno":orderNo,
+                            ] as [String:Any]
+        
+        //Call Read Notification API
+        APIClient.readNotification(paramters: parameterDic) { (result) in
+            switch result {
+            case .success(let user):
+                if let result = user.result {
+                    if result == "1" {
+                        //UserManager.saveUserDataIntoDefaults(user: user)
+                        UIApplication.shared.applicationIconBadgeNumber = 0
                     }
                 }
                 

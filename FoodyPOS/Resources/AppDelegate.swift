@@ -35,6 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if UserManager.isRemember && UserManager.isLogin {
             Global.showRootView(withIdentifier: StoryboardConstant.DashboardVC)
         }
+
         return true
     }
 
@@ -116,6 +117,7 @@ extension AppDelegate {
         print(userInfo)
         if let orderId = userInfo["order_id"] as? String {
             goToDetailVC(body: orderId)
+            Global.callReadNotificationApi(orderId)
             completionHandler(.newData)
         }
     }

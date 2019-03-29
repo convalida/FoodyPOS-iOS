@@ -13,6 +13,7 @@ enum APIRouter: URLRequestConvertible {
     
     
     case login([String:Any])
+    case readNotification([String:Any])
     case bestselleritems([String:Any])
     case sales([String:Any])
     case orderList([String:Any])
@@ -33,7 +34,7 @@ enum APIRouter: URLRequestConvertible {
     // MARK: - HTTPMethod
     private var method: HTTPMethod {
         switch self {
-   case .login,.bestselleritems,.sales,.orderList,.customers,.dashboard,.report,.addEmployee,.changePassword,.forgotPassword,.employee,.updateEmployee,.orderSearch,.resetPasword,.customerDetails, .getAllBestSeller, .logout:
+   case .login,.readNotification,.bestselleritems,.sales,.orderList,.customers,.dashboard,.report,.addEmployee,.changePassword,.forgotPassword,.employee,.updateEmployee,.orderSearch,.resetPasword,.customerDetails, .getAllBestSeller, .logout:
             return .get
         }
     }
@@ -48,6 +49,8 @@ enum APIRouter: URLRequestConvertible {
             // Post
         case .login:
             return basePath + "/LoginByApp"
+        case .readNotification:
+            return basePath + "/ReadNotificationByUser"
         case .bestselleritems:
             return basePath + "/bestselleritems"
         case .sales:
@@ -88,6 +91,10 @@ enum APIRouter: URLRequestConvertible {
         switch self {
             // Post
         case .login(let parameter):
+            print(parameter)
+            return parameter
+            
+        case .readNotification(let parameter):
             print(parameter)
             return parameter
             
