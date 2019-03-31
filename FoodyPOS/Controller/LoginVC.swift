@@ -35,6 +35,8 @@ class LoginVC: UIViewController {
 
         // Do any additional setup after loading the view.
         initHudView()
+       // btnChecked.isSelected = true
+        UserManager.isRemember=true
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -46,12 +48,12 @@ class LoginVC: UIViewController {
         if UserManager.isRemember {
             isRemember = true
             btnChecked.isSelected = true
-            if let email = UserManager.email {
+         /**   if let email = UserManager.email {
                 txtEmail.text = email
             }
             if let password = UserManager.password {
                 txtPassword.text = password
-            }
+            }**/
         } else {
             txtEmail.text = ""
             txtPassword.text = ""
@@ -123,7 +125,7 @@ class LoginVC: UIViewController {
                                             "password":password,
                                             "deviceId":UserManager.token ?? "",
                                             "buildversion":UIApplication.version ?? "",
-                                            "AppId":UIApplication.appId ?? ""] as [String:Any]
+                                            "DeviceType":UIApplication.appId ?? ""] as [String:Any]
                         hudView.isHidden = false
                         
                         //Call Login API

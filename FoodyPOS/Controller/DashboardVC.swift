@@ -397,7 +397,9 @@ class DashboardVC: UIViewController {
                         Global.showRootView(withIdentifier: StoryboardConstant.LoginVC)
                     }else {
                         Global.flushUserDefaults()
-                        self.navigationController?.popToRootViewController(animated: true)
+                      //  self.navigationController?.popToRootViewController(animated: true)
+                        let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.LoginVC) as! LoginVC
+                        self.navigationController?.pushViewController(vc, animated: true)
                     }
                     return
                 }
@@ -408,7 +410,9 @@ class DashboardVC: UIViewController {
                     Global.showRootView(withIdentifier: StoryboardConstant.LoginVC)
                 }else {
                     Global.flushUserDefaults()
-                    self.navigationController?.popToRootViewController(animated: true)
+                   // self.navigationController?.popToRootViewController(animated: true)
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.LoginVC) as! LoginVC
+                    self.navigationController?.pushViewController(vc, animated: true)
                 }
                 return
             }
@@ -425,7 +429,9 @@ class DashboardVC: UIViewController {
                                 Global.showRootView(withIdentifier: StoryboardConstant.LoginVC)
                             }else {
                                 Global.flushUserDefaults()
-                                self.navigationController?.popToRootViewController(animated: true)
+                               // self.navigationController?.popToRootViewController(animated: true)
+                                let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.LoginVC) as! LoginVC
+                                self.navigationController?.pushViewController(vc, animated: true)
                             }
                         } else if let message = user.message {
                             self.hudView.isHidden = true
