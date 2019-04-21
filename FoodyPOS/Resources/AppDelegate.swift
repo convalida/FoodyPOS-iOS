@@ -23,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Handling for push notifications
         registerForPushNotifications()
         
+        Global.callReadNotificationApi("1234")
+        
         //killed app notificaltion handle
 //        if let notification = launchOptions?[.remoteNotification] as? [String: AnyObject] {
 //            if let apsDic = notification["aps"] as? NSDictionary {

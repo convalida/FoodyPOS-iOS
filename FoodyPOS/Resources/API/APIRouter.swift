@@ -179,7 +179,11 @@ enum APIRouter: URLRequestConvertible {
     // MARK: - URLRequestConvertible
     /// Create url request Globally
     func asURLRequest() throws -> URLRequest {
-        let url = try K.ProductionServer.baseURL.asURL()
+        var url = try K.ProductionServer.baseURL.asURL()
+        print(path)
+        if path == "/App/Api.asmx/ReadNotificationByUser" {
+            url = try K.ProductionServer.baseURL_2.asURL()
+        }
         
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
         urlRequest.timeoutInterval = 60.0

@@ -12,6 +12,7 @@ import Foundation
 struct K {
     struct ProductionServer {
         static let baseURL = "http://business.foodypos.com"
+        static let baseURL_2 = "http://demo.metropolisgrill.com"
     }
 }
 
