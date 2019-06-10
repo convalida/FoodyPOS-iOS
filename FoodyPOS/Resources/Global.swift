@@ -85,8 +85,10 @@ class Global:NSObject {
         
         //Call Read Notification API
         APIClient.readNotification(paramters: parameterDic) { (result) in
+            print(result)
             switch result {
             case .success(let user):
+                print("Read Notification API Called")
                 if let result = user.result {
                     if result == "1" {
                         //UserManager.saveUserDataIntoDefaults(user: user)
