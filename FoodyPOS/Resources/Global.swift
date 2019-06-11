@@ -76,12 +76,14 @@ class Global:NSObject {
         }
     }
     
-    static func callReadNotificationApi(_ orderNo:String) {
+    static func callReadNotificationApi(_ orderNo:String?) {
         //Validate all the field
-        let parameterDic = [
-                            "deviceid":UserManager.token ?? "",
-                            "orderno":orderNo,
+        var parameterDic = [
+                            "deviceid":UserManager.token ?? ""
                             ] as [String:Any]
+        if(orderNo != nil){
+            parameterDic["orderno"] = orderNo!
+        }
         
         //Call Read Notification API
         APIClient.readNotification(paramters: parameterDic) { (result) in
@@ -91,7 +93,6 @@ class Global:NSObject {
                 print("Read Notification API Called")
                 if let result = user.result {
                     if result == "1" {
-                        //UserManager.saveUserDataIntoDefaults(user: user)
                         UIApplication.shared.applicationIconBadgeNumber = 0
                     }
                 }
