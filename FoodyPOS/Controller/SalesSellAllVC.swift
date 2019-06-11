@@ -43,7 +43,7 @@ class SalesSellAllVC: UIViewController {
         
         initHudView()
         
-        let lastSun = Date.today().previous(.sunday)
+        let lastSun = Date.today().previous(.monday)
         btnStartDate.setTitle(lastSun.getDateString(), for: .normal)
         btnEndDate.setTitle(Date.todayDate, for: .normal)
         if salesData == nil {

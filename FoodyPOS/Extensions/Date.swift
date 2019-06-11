@@ -47,7 +47,7 @@ extension Date {
     }
     
     /// Find Previous occourance of a weekday from current date
-    func previous(_ weekday: Weekday, considerToday: Bool = false) -> Date {
+    func previous(_ weekday: Weekday, considerToday: Bool = true) -> Date {
         return get(.Previous,
                    weekday,
                    considerToday: considerToday)

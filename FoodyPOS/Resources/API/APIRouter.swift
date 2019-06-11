@@ -179,11 +179,12 @@ enum APIRouter: URLRequestConvertible {
     // MARK: - URLRequestConvertible
     /// Create url request Globally
     func asURLRequest() throws -> URLRequest {
-        var url = try K.ProductionServer.baseURL.asURL()
+       // var url = try K.ProductionServer.baseURL.asURL()
+         let url = try K.ProductionServer.baseURL_2.asURL()
         print(path)
-        if path == "/App/Api.asmx/ReadNotificationByUser" {
+       /** if path == "/App/Api.asmx/ReadNotificationByUser" || path=="/App/Api.asmx/ReadNotificationByUser" || path=="/App/Api.asmx/ReadNotificationByUser" {
             url = try K.ProductionServer.baseURL_2.asURL()
-        }
+        }**/
         
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
         urlRequest.timeoutInterval = 60.0

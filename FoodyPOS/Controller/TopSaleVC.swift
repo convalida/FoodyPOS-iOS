@@ -96,7 +96,7 @@ class TopSaleVC: UIViewController {
         guard let restaurentId = UserManager.restaurantID else {
             return
         }
-        let lastSun = Date.today().previous(.sunday)
+        let lastSun = Date.today().previous(.monday)
     
         let prameterDic = ["RestaurantId":restaurentId,
                            "startdate":lastSun.getDateString(),

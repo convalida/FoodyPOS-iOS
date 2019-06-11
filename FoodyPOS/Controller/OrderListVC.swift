@@ -53,7 +53,11 @@ class OrderListVC: UIViewController {
         keyboardDoneButtonView.items = [flexibleSpace, doneButton]
         txtSearch.inputAccessoryView = keyboardDoneButtonView
 
-        let lastSun = Date.today().previous(.sunday)
+        let lastSun = Date.today().previous(.monday)
+      /** if(Date.today() != (.monday)){
+         
+            let lastSun=Date.today().previous(.monday)-7
+        }**/
         btnStartDate.setTitle(lastSun.getDateString(), for: .normal)
         btnEndDate.setTitle(Date.todayDate, for: .normal)
     }
