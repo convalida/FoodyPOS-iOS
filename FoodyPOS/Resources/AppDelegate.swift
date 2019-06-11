@@ -22,22 +22,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Handling for push notifications
         registerForPushNotifications()
-        
-        Global.callReadNotificationApi("1234")
-        
-        //killed app notificaltion handle
-//        if let notification = launchOptions?[.remoteNotification] as? [String: AnyObject] {
-//            if let apsDic = notification["aps"] as? NSDictionary {
-//                if let alert = apsDic.value(forKey: "alert") as? NSDictionary {
-//                        goToDetailVC(body: alert["body"] as! String)
-//                }
-//            }
-//        }
         // Show dashboard screen if user is already logged in
         if UserManager.isRemember && UserManager.isLogin {
             Global.showRootView(withIdentifier: StoryboardConstant.DashboardVC)
         }
-
+        
+        
+        //Global.callReadNotificationApi("1234")
+        
         return true
     }
 
@@ -57,7 +49,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        application.applicationIconBadgeNumber = 0;
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
@@ -114,12 +105,12 @@ extension AppDelegate {
     
     
     // Called when a notification is received
-    
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         print(userInfo)
         if let orderId = userInfo["order_id"] as? String {
             goToDetailVC(body: orderId)
             Global.callReadNotificationApi(orderId)
+            application.applicationIconBadgeNumber = 0
             completionHandler(.newData)
         }
     }
