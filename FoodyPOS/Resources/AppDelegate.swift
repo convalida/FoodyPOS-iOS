@@ -27,9 +27,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Global.showRootView(withIdentifier: StoryboardConstant.DashboardVC)
         }
         
-        Global.callReadNotificationApi(nil)
-        
         return true
+    }
+    
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        var badgeCount = application.applicationIconBadgeNumber;
+        if(badgeCount > 0){
+            Global.callReadNotificationApi(nil)
+        }
     }
 
 }
