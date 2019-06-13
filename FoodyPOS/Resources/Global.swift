@@ -83,6 +83,8 @@ class Global:NSObject {
                             ] as [String:Any]
         if(orderNo != nil){
             parameterDic["orderno"] = orderNo!
+        } else {
+            parameterDic["orderno"] = ""
         }
         
         //Call Read Notification API
