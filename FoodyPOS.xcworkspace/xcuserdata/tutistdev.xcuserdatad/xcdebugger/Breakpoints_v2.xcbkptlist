@@ -193,53 +193,6 @@
             endingLineNumber = "92"
             landmarkName = "callReadNotificationApi(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.Result&lt;FoodyPOS.User&gt;) -&gt; () in static FoodyPOS.Global.callReadNotificationApi(Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
-                  moduleName = "FoodyPOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Resources/Global.swift"
-                  timestampString = "582048092.259794"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "92"
-                  endingLineNumber = "92"
-                  offsetFromSymbolStart = "292">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.Result&lt;FoodyPOS.User&gt;) -&gt; () in static FoodyPOS.Global.callReadNotificationApi(Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
-                  moduleName = "FoodyPOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Resources/Global.swift"
-                  timestampString = "582048092.2614551"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "92"
-                  endingLineNumber = "92"
-                  offsetFromSymbolStart = "320">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.Result&lt;FoodyPOS.User&gt;) -&gt; () in static FoodyPOS.Global.callReadNotificationApi(Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
-                  moduleName = "FoodyPOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Resources/Global.swift"
-                  timestampString = "582048092.26309"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "92"
-                  endingLineNumber = "92"
-                  offsetFromSymbolStart = "824">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -256,38 +209,6 @@
             endingLineNumber = "88"
             landmarkName = "callReadNotificationApi(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static FoodyPOS.Global.callReadNotificationApi(Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
-                  moduleName = "FoodyPOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Resources/Global.swift"
-                  timestampString = "582048092.268304"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "89"
-                  endingLineNumber = "89"
-                  offsetFromSymbolStart = "884">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.Result&lt;FoodyPOS.User&gt;) -&gt; () in static FoodyPOS.Global.callReadNotificationApi(Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
-                  moduleName = "FoodyPOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Resources/Global.swift"
-                  timestampString = "582048092.27008"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "90"
-                  endingLineNumber = "90"
-                  offsetFromSymbolStart = "96">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
