@@ -18,7 +18,11 @@ open class LeftSlideMenu:UIViewController {
     private var _mainVC:UIViewController!
     
     var menuWidth:CGFloat {
-        return UIScreen.main.bounds.size.width * 0.80
+        if UIScreen.main.bounds.size.width > UIScreen.main.bounds.size.height {
+            return UIScreen.main.bounds.size.height
+        } else {
+            return UIScreen.main.bounds.size.width * 0.80
+        }
     }
     
     var isLeftMenuOpen:Bool = false
@@ -144,6 +148,8 @@ open class LeftSlideMenu:UIViewController {
             
             menuVC.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             
+            menuVC.view.layoutIfNeeded()
+            
         }
         
         // Notify Child View Controller
@@ -153,11 +159,11 @@ open class LeftSlideMenu:UIViewController {
             
             self.menuVC.view.frame.origin.x = 0
             
-            self.updateUI()
-            
             UIView.animate(withDuration: 0.2, animations: {
                 
                 self.menuGestureView.alpha = 0.1
+                
+                self.updateUI()
                 
             })
             

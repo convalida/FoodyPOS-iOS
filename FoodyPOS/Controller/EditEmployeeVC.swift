@@ -45,6 +45,7 @@ class EditEmployeeVC: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.view.layoutIfNeeded()
         self.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         
         if let employeeDetail = employeeDetail {
