@@ -8,28 +8,39 @@
 
 import UIKit
 
+///View controller class for login screen
 class LoginVC: UIViewController {
 
+    ///Outlet for email text field
     @IBOutlet weak var txtEmail: DesignTextField!
+    ///Outlet for password text field
     @IBOutlet weak var txtPassword: DesignTextField!
+    ///Outlet for Remember me checkbox
     @IBOutlet weak var btnChecked: UIButton!
+    ///Outlet for navigation bar
     @IBOutlet weak var viewTop: UIView!
     
     //Check the remember status
+    ///Set isRemember to false globally
     var isRemember = false
+    ///Instantiate hud view
     var hudView = UIView()
     
     // Option to show hide status bar
+    ///Display status bar
     override var prefersStatusBarHidden: Bool {
         return false
     }
     
-    //set light color status bar
+    ///Set light color status bar
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
     //MARK: ---------View Life Cycle---------
+    /**
+ Life cycle method called after view is loaded. Initialize hud view and set boolean value of is remember to true by default which will keep the remember me checkbox checked by default
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
 

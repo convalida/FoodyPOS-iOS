@@ -10,18 +10,23 @@
 import Foundation
 import UIKit
 
-//MARK: UIConstant values
+/// Constant values for screen width
 let SCREEN_WIDTH = UIScreen.main.bounds.size.width
+/// Constant values for screen width
 let SCREEN_HEIGHT = UIScreen.main.bounds.size.height
 
-//MARK: File instance
+///File instance for app delegate class
 let appDelegate = UIApplication.shared.delegate as! AppDelegate
-
+///Instantiate storyboard
 let Storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
 
+///Constant for app name
 let kAppName = "FoodyPOS"
 
+///Message received from web services if there is any error.
 let noDataMessage = "The data couldn’t be read because it is missing."
+///Message received from web services if there is any error.
 let noDataMessage1 = "The data couldn’t be read because it isn’t in the correct format."
 
+///Constant for Order detail notification
 let kOrderDetailNotification = "kOrderDetailsNotification"
