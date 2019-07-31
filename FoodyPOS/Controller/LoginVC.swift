@@ -49,7 +49,9 @@ class LoginVC: UIViewController {
        // btnChecked.isSelected = true
         UserManager.isRemember=true
     }
-
+/**
+ Called before the view is loaded. If value of isRemember is true, then set check box to selected else set email and password text field to null.
+     */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //txtEmail.text = "ravinandan.kumar@convalidatech.com"
@@ -71,17 +73,21 @@ class LoginVC: UIViewController {
         }
     }
     
+    /**
+ Called when the view is about to disappear. Hide hud view
+     */
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         hudView.isHidden = true
     }
     
+    /// Dispose off any resources that can be recreated.
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-    //initialize activity indicator
+    ///Initialize activity indicator or hud view
     func initHudView() {
         hudView.backgroundColor = UIColor.white
         self.view.addSubview(hudView)
@@ -99,7 +105,9 @@ class LoginVC: UIViewController {
     
     //MARK: ---------Button actions---------
     
-    /// Called when user clicks on Forgot Password button
+    /**
+     Called when user clicks on Forgot Password button. Forgot password VC is added as sub view
+  */
     @IBAction func btnForgotPasswordDidClicked(_ sender: UIButton) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.ForgotPasswordVC) as! ForgotPasswordVC
         self.view.addSubview(vc.view)
@@ -110,6 +118,9 @@ class LoginVC: UIViewController {
     /// Check already login or not
     ///
     /// - Parameter sender: button
+    /**
+ Check if remember me check box is not selcted, then set boolean value of isRemember to false else set boolean value of isRemeber to true. Rajat ji please check if this is correct or already added comment is correct.
+     */
     @IBAction func btnCheckedDidClcked(_ sender: UIButton) {
         if sender.isSelected {
             sender.isSelected = false
@@ -120,7 +131,13 @@ class LoginVC: UIViewController {
         }
     }
     
-    //On click sign button
+    /**On click of sign button, remove the highlight from a email text field and password text field selection, trim characters of email and password text field. If trimmed email text field and password has characters, check if email id and password is valid, pass paramaters email and password from respective text fields, device id from UserManager class, buildversion and Device type from AppDelegate class.
+     Display hud view.
+     Pass the parameters to APIClient class.
+     If api hit is successful and result key in response is 1, set email, password and isRemember value in UserManager class, set isLogin to true in UserManager class, call saveUserDataIntoDefaults in UserManager class which saves data into UserDefaults. Instantiate DashboardVC.
+     If result key in response is not 1, hide hud view, and set value of message key to toast. If api hit is not successful, if error message is noDataMessage or noDataMessage1 in Constants.swift, display message msgFailed in AppMessages.swift in dialog else display error message in dialog.
+     If password is not valid, display msgPasswordLength in AppMessages in toast. If email id is not valid, then display msgValidEmail in AppMessages in toast. If password text field is empty, display msgPasswordRequired in AppMessages in toast. If email id text field is empty, display msgEmailRequired in AppMessages in toast.
+ */
     @IBAction func btnSignInDidClicked(_ sender: UIButton) {
         txtEmail.resignFirstResponder()
         txtPassword.resignFirstResponder()
@@ -185,6 +202,7 @@ class LoginVC: UIViewController {
     }
     
     //On click sign up button --> hidden
+    ///This button is hidden and not used in project
     @IBAction func btnSignUpDidClicked(_ sender: UIButton) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.SignUpVC) as! SignUpVC
         self.view.addSubview(vc.view)

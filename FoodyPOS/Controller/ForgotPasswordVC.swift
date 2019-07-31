@@ -8,23 +8,33 @@
 
 import UIKit
 
+///View controller class for Forgot password dialog
 class ForgotPasswordVC: UIViewController {
 
+    ///Outlet for email text field
     @IBOutlet weak var txtEmail: DesignTextField!
+    ///Outlet for main view- dialog view. Rajat ji please check
     @IBOutlet weak var mainView: UIView!
     
+    ///Display status bar
     override var prefersStatusBarHidden: Bool {
         return false
     }
     
+    ///Set light color of status bar
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
+    ///Instantiate hud view
     var hudView = UIView()
     
     //MARK: ---------View Life Cycle---------
     
+    /**
+ Life cycle method called after view is loaded. Remove the controller, on tap of view using UITapGestureRecognizer which is a pre defined class and call addGestureRecognizer which is a pre defined method.
+    Add delegate of tap to self. Initalize hud view
+ */
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,18 +45,22 @@ class ForgotPasswordVC: UIViewController {
         
         initHudView()
     }
-
+/**
+    Called before the view is loaded. Set opacity of dialog background. (Area behind the alert dialog, covering the screen)
+ */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
        // txtEmail.text = "ravinandan.kumar@convalidatech.com"
         self.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
     }
     
+    /// Dispose off any resources that can be recreated.
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+     ///Initialize the hud view and hide it by default
     func initHudView() {
         hudView.backgroundColor = UIColor.white
         self.view.addSubview(hudView)
@@ -63,6 +77,9 @@ class ForgotPasswordVC: UIViewController {
     }
     
     //MARK: ---------Button actions---------
+    /**
+ Submit button clicked. Hide selection from email text field. If email field is empty and email is valid, call funtion callForgotPasswordAPI. If email id is not valid, display msgValidEmail from AppMessages in toast. If email id after trimming characters is empty, display msgEmailRequired from AppMessages in toast.
+     */
     @IBAction func btnSubmitDidClicked(_ sender: UIButton) {
         txtEmail.resignFirstResponder()
         let email = txtEmail.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
@@ -77,15 +94,22 @@ class ForgotPasswordVC: UIViewController {
         }
     }
     
+    /**
+ Login button (text) is clicked, remove the controller
+     */
     @IBAction func btnLoginDidClicked(_ sender: UIButton) {
         removeController()
     }
 
     //MARK: ---------Other functions---------
+    /**
+     On tap, controller is removed using UITapGestureRecognizer which is a pre defined class
+     */
     @objc func hideOnTap(recognizer:UITapGestureRecognizer) {
         removeController()
     }
     
+    /// Removes a controller from superview and parent view controller.
     func removeController() {
         self.view.removeFromSuperview()
         self.removeFromParentViewController()
