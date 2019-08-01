@@ -10,6 +10,7 @@
 import Foundation
 import UIKit
 
+///Class with common methods that are used throughout the project.
 class Global:NSObject {
     
     /// Check if the device is iPad
@@ -35,7 +36,9 @@ class Global:NSObject {
         }
     }
     
-    /// Display Root View controller for application
+    /**
+ Display root view controller for application. Hide navigation bar from navigation controller. Set window declared in AppDelegate to root view controller. Rajat ji please check if last two lines are correct as places where it is called, navigation bar is visible
+ */
     static func showRootView(withIdentifier identifier:String) {
         let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: identifier)
         let navVC = UINavigationController.init(rootViewController: vc)
@@ -49,6 +52,10 @@ class Global:NSObject {
         UserDefaults.standard.synchronize()
     }
 
+    /**
+ Call login api. If email id and password in UserManager is empty, return. Pass parameters email id, password, device id from  UserManager class, build version and app id from AppDelegate to APIClient. If api hit is successful and result code is 1, call saveUserDataIntoDefaults in UserManager class. 
+     In case of error, print error in logs. Login api is also called in LoginVC, purpose of calling method here  - Rajat ji please update
+     */
     static func callLoginApi() {
         //Validate all the field
         if UserManager.email == nil && UserManager.password == nil {
@@ -76,6 +83,9 @@ class Global:NSObject {
         }
     }
     
+    /**
+ Call read notification api. Take parameter device id UserManager class token, if order no. is not null, then take order no. else take order no. as empty and pass parameters to ApiClient readNotification method. If api hit is successful and result is 1, set badge no. on app icon 0. In case of failure, print error message in logs.
+     */
     static func callReadNotificationApi(_ orderNo:String?) {
         //Validate all the field
         var parameterDic = [
@@ -106,8 +116,10 @@ class Global:NSObject {
     }
 }
 
+///For layout constraint
 class DeviceLayoutConstraint:NSLayoutConstraint {
     
+    ///Set the value according to iPhoneX
     @IBInspectable var isIphoneXValue:CGFloat = 0.0 {
         didSet {
             if UIDevice().userInterfaceIdiom == .phone {
@@ -119,7 +131,8 @@ class DeviceLayoutConstraint:NSLayoutConstraint {
         }
     }
     
-    open func layoutIfNeeded() {
+        ///This is a common method and it depends on the object of the class. FirstItem and second Item are the children of NSLayoutConstraint
+    open func layoutIfNeeded() {// inflate 2 items at a time
         self.firstItem?.layoutIfNeeded()
         self.secondItem?.layoutIfNeeded()
     }

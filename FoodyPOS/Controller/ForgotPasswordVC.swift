@@ -115,6 +115,9 @@ class ForgotPasswordVC: UIViewController {
         self.removeFromParentViewController()
     }
     
+    /**
+ Call forgot password api. Take parameter email address from email text field. Display hud view. Pass parameter email address. If api hit is successful, and result code is 1, display message in toast, intantiate OtpVC, pass email address to parameter, push OtpVC and remove current controller. If result code is not 1, display message from response in toast. If api hit is not successful, if error message is noDataMessage or noDataMessage1 in Constants.swift, display message msgFailed in AppMessages.swift in dialog else display error message in dialog.
+     */
     func callForgotPasswordAPI() {
         let parameter = ["EmailAddress":txtEmail.text!]
         
@@ -144,6 +147,9 @@ class ForgotPasswordVC: UIViewController {
 }
 
 extension ForgotPasswordVC:UIGestureRecognizerDelegate {
+    /**
+     To disable touch effect on alert dialog background area
+     */
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         if self.mainView.frame.contains(touch.location(in: self.view)) {
             return false
