@@ -9,42 +9,68 @@
 import UIKit
 import Highcharts
 
+///Class for dashboard view controller
 class DashboardVC: UIViewController {
 
+    ///Outlet for table view
     @IBOutlet weak var tableView: UITableView!
+    ///Instantaite LeftSlideMenu class
     var leftSlideMenu:LeftSlideMenu!
+    ///Instantiate Dashboard1 structure with label values and chart array values
     var dashboardData:Dashboard1?
 
+    ///Outlet for week button of graph
     @IBOutlet weak var btnWeek: UIButton!
+    ///Outlet for month button of graph
     @IBOutlet weak var btnMonth: UIButton!
+    ///Outlet for year button of graph
     @IBOutlet weak var btnYear: UIButton!
+    ///Outlet for sale button (check box) of graph
     @IBOutlet weak var btnSale: UIButton!
+    ///Outlet for orders button (check box) of graph
     @IBOutlet weak var btnOrders: UIButton!
+    ///Outlet for Earning graph text
     @IBOutlet weak var lblGraph: UILabel!
+    ///Outlet for chart view
     @IBOutlet weak var chartView: HIChartView!
+    ///Outlet for restaurant name text
     @IBOutlet weak var lblRestaurantName: UILabel!
+    ///Outlet for action bar
     @IBOutlet weak var viewTop: UIView!
     
+    ///Instantiate array for x axis values of graph
     var xAxisData = [String]()
+    ///Instantiate array for sales data of graph
     var saleData = [Double]()
+    ///Instantiate array of orders data of graph
     var orderData = [Int]()
+    ///Initialize boolean indicating if graph has data
     var isData = false
+    ///Instantiate hud view
     var hudView = UIView()
     
+    ///Rajat ji kindly update this
     struct Area {
+        ///Initalize isAreaOne to true indicating sales area in graph to show sales in graph
         static var isAreaOne = true
+          ///Initalize isAreaTwo to true indicating orders area in graph to show orders in graph
         static var isAreaTwo = true
     }
 
+    ///Display status bar
     override var prefersStatusBarHidden: Bool {
         return false
     }
     
+    ///Set light color of status bar
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
     //MARK: ---------View Life Cycle---------
+    /**
+     Life cycle method called after view is loaded. Set data source and delegate of table view to self. Initialize LeftSlideMenu class with view controller parameter. Enable left gesture by call enableLeftGesture method of LeftSlideMenu class. Set sale button and order button to be selected by default. Set week button background color to theme color. If UserManager class has restaurentName, then set text to that restaurant name else set set restaurant name text to null. Initalize hud view
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -75,6 +101,9 @@ class DashboardVC: UIViewController {
         initHudView()
     }
 
+      /**
+ Called before the view is loaded. If dashboard does not have label values and graph values call callDashboardAPI method
+ */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -87,16 +116,20 @@ class DashboardVC: UIViewController {
         }
     }
     
+///Notifies the view controller that its view was added to a view hierarchy.
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
     
+    ///Dispose off any resources that can be recreated.
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    //Initialize the hud view
+    /**
+ Initialize the hud view with white background, add constraints from all sides. Add the hud view and hide the hud view
+ */
     func initHudView() {
         hudView.backgroundColor = UIColor.white
         self.view.addSubview(hudView)
@@ -113,6 +146,10 @@ class DashboardVC: UIViewController {
     }
     
     //Initialize the high chart
+    /**
+ Initialize chart of type areaspline with general options for chart. Set zoom for x-axis. Set panning (dragging) in chart to true. Instantiate title for chart and set text to null. Instantiate x axis values and set values from xAxisData array. If graph has data, set the minimum value of x axis to 0.5 (to start graph from 0 of x axis). Do not force x axis to start and end on tick (at an interval). Set interval of the tick marks in axis units. Set padding of the max value relative to the length of the x-axis. Instantiate Y axis of chart. Instantate chart's main axis and set text in title as null. Set minimum value of y axis to 0. If there is no data in chart, set maximum point value of y axis to 2 (to display of graph at 0 of y axis).
+     Initialize tootip (a form of box on user interface that appears when pointed at a value of chart showing orders and sales of that day). The tooltip is shared, the entire plot area will capture mouse movement or touch events. Prefix each value of y axis with $ (later for orders, it is set to null). Tooltip should not follow the finger as it moves on a touch device. Instantiate high chart credits. Highchart by default puts a credits label in the lower right corner of the chart and set enabled credits to 0. Initialize HIExpeorting. Options for the exporting module. Set it to be disabled. Instantiate HIPlotOptions which is is a wrapper object for config objects for each series type to instantiate plot options. Instantiate HIAreaspline, set opacity to 0.5. Instantiate HIDataLabels - options for the series data labels, appearing next to each data point and set it enabled. Instantiate HISeries and set series which are general options for all series types. Initailize first area of graph as Sale, set its text to Sale and set data to saleData array. Initailize second area of graph as Orders, set its text to Orders and set data to orderData array. Instantaite tooltip for second area and set prefix for its y value as null. Set chart, title, tooltip, x axis values, y axis values, tooltip, credits, exporting and plot options for chart. If isAreaOne and isAreaTwo is true (true by default), show both sales and orders graph. If isAreaOne is true, set Sales graph. If isAreaTwo is true, set Orders graph. If isAreaOne and isAreaTwo is false, set empty graph and set the options on chart.
+     */
     func initChart() {
         let options = HIOptions()
         let chart = HIChart()
@@ -204,7 +241,9 @@ class DashboardVC: UIViewController {
         chartView.options = options
     }
     
-    //Initialize weekly chart data when chart loaded first time
+    /**
+     Initialize weekly chart data when chart loaded first time. Set value of isData to false by default. Initialize x axis data, saleData and orderData array. Set background color of week button to theme color and background color of month button and year button to greyish color. If dashboard has label values and chart values put week array's value in week and append week day values in xAxisData array values, if week has sales value set week's sale values to saleData array values rounded to 2 decimal places. If week has orders values, set week's orders values to orderData array rounded to 2 decimal places. Append x axis data array to empty string values, saleData array values to 0.0 to round off to 2 places and order data array to 0 to fix some graph issues. Reverse the values of xAxisData, saleData and orderData arrayas value passed in json are in opposite order to displayed values and initalize the chart.
+     */
     func initWeeklyChart() {
         isData = false
         xAxisData = []
@@ -237,13 +276,17 @@ class DashboardVC: UIViewController {
         // show chart
         initChart()
     }
+    
     //MARK: ---------Button actions---------
-
+///When menu button is clicked, call open method of LeftSlideMenu
     @IBAction func btnMenuDidClicked(_ sender: UIButton) {
         leftSlideMenu.open()
     }
     
-    //Show the options on click option three dot button
+    //Show the options on click option three dot button.
+    /**
+ On click option button (three dot button). Using KxMenu library, display text Change Password, Logout text, token text (temprarily), image null, target self, call pushMenuItem method on selection and set text color to black. Push the values to menu items array and display them.
+     */
     @IBAction func btnOptionsDidClicked(_ sender: UIButton) {
         let settings = KxMenuItem.init("Token", image: nil, target: self, action: #selector(pushMenuItem(sender:)))
         settings?.foreColor = UIColor.black
@@ -260,22 +303,34 @@ class DashboardVC: UIViewController {
     }
     
     //Show the top sales data UI
+    /**
+ Top sale button clicked. Call showSalesVC method which instantiates TopSaleVC
+     */
     @IBAction func btnTopSaleDidClicked(_ sender: UIButton) {
         showSalesVC()
     }
     
     //Show the order list data UI
+    /**
+ Orderlist button clicked. Call showOrderVC method which instantiates OrderListVC
+     */
     @IBAction func btnOrderListDidClicked(_ sender: UIButton) {
         showOrderVC()
     }
     
     //Show the best seller data UI
+    /**
+ Bestseller button clicked. Instantiate Bestseller vc and push the vc
+     */
     @IBAction func btnBestSellerDidClicked(_ sender: UIButton) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.BestSellerVC) as! BestSellerVC
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     //Show the sales graph
+    /**
+ Sale button (check box) on graph is clicked. If it was checked by default, set it to unchecked else set it to checked. After that Rajat ji kindly update and initialize the chart.
+     */
     @IBAction func btnSaleDidClicked(_ sender: UIButton) {
         if sender.isSelected {
             sender.isSelected = false
@@ -287,6 +342,9 @@ class DashboardVC: UIViewController {
     }
     
     //Show the order graph
+    /**
+     Orders button (check box) on graph is clicked. If it was checked by default, set it to unchecked else set it to checked. After that Rajat ji kindly update and initialize the chart.
+     */
     @IBAction func btnOrdersDidClicked(_ sender: UIButton) {
         if sender.isSelected {
             sender.isSelected = false
@@ -298,6 +356,9 @@ class DashboardVC: UIViewController {
     }
     
     //Show the week graph
+    /**
+ Week button on graph clicked. If background color of button is theme color, return. Call initWeeklyChart method which shows week graph
+     */
     @IBAction func btnWeekDidClicked(_ sender: UIButton) {
         if sender.backgroundColor == UIColor.themeColor {
             return
@@ -306,6 +367,9 @@ class DashboardVC: UIViewController {
     }
     
     //Show the month graph
+    /**
+ Month button clicked. If background color of month button is theme color, then return. Set boolean isData value to false. Initalize xAxisData, saleData and orderData array. Set background color of of month button to theme color. Set week button and year button to greyish color to show as unselected.  If dashboard has label values and chart values, put month array's value in week and append week's daydate (month) values in xAxisData array values, if week (month in this case) has sales value set week's (month's) sale values to saleData array values rounded to 2 decimal places. If week has orders values, set week's orders values to orderData array rounded to 2 decimal places. Set isData to true. Append x axis data array to empty string values, saleData array values to 0.0 to round off to 2 places and order data array to 0 to fix some graph issues. Reverse the values of xAxisData, saleData and orderData arrayas value passed in json are in opposite order to displayed values and initalize the chart.
+     */
     @IBAction func btnMonthDidClicked(_ sender: UIButton) {
         if sender.backgroundColor == UIColor.themeColor {
             return
@@ -341,6 +405,10 @@ class DashboardVC: UIViewController {
     }
     
     //Show the year graph
+    /**
+     Year button clicked. If background color of year button is theme color, then return. Set boolean isData value to false. Initalize xAxisData, saleData and orderData array. Set background color of of year button to theme color. Set week button and month button to greyish color to show as unselected.
+     If dashboard has label values and chart values, put year array's value in week and append week's month (year) values in xAxisData array values, if week (year in this case) has sales value set week's (year's) sale values to saleData array values rounded to 2 decimal places. If week (year) has orders values, set week's (year's) orders values to orderData array rounded to 2 decimal places. Set isData to true. Append x axis data array to empty string values, saleData array values to 0.0 to round off to 2 places and order data array to 0 to fix some graph issues. Reverse the values of xAxisData, saleData and orderData arrayas value passed in json are in opposite order to displayed values and initalize the chart.
+     */
     @IBAction func btnYearDidClicked(_ sender: UIButton) {
         if sender.backgroundColor == UIColor.themeColor {
             return
@@ -374,6 +442,14 @@ class DashboardVC: UIViewController {
     }
     
     /// Show all the options when three dot button pressed
+    /**
+     This method is called when user selects an item from menu (three dots). Firstly, clear the menu.
+     If token value is selected, if UserManager class has token value, show alert with title app name, message as token value and action title as copy. Create object of UIPasteboard which is a pre defined class which helps a user share data from one place to another within your app, and from your app to other apps and set token value as string of pasteboard object. This will be removed in final verion of app.
+     If Change Password is selected, instantitate ChangePasswordVC and push the VC.
+     If Logout was selected, if UserManager class has token value, fetch that value and after trimming it, if it returns null string, display in toast a message that user is looged out. If isRemember value in UserManager class is true, then set isLogin value in UserManager class to false and display root view controller with identifier LoginVC. If isRemember value in UserManager class is false, call flushUserDefaults method in Global class which clears all user default data. Instantaite LoginVC and push vc. Return in both cases if isRemember value is UserManager is true or false. The same steps are followed in case UserManager class does not has token value.
+     Take token from UserManager class, and assign it deviceId parameter. Display hud view. Call logout method in APIClient class. If api hit is successful and result code is 1, if isRemember value in UserManager class is true, then set isLogin value in UserManager class to false and display root view controller with identifier LoginVC. If isRemember value in UserManager class is false, call flushUserDefaults method in Global class which clears all user default data. Instantaite LoginVC and push vc. If result code is not 1, display message in response in toast. If api hit is not successful, if error message is noDataMessage or noDataMessage1 in Constants.swift, display message msgFailed in AppMessages.swift in dialog else display error message in dialog.
+     In default case, print default in logs.
+ */
     @objc func pushMenuItem(sender:KxMenuItem) {
         KxMenu.dismiss()
         switch sender.title {
