@@ -533,18 +533,27 @@ class DashboardVC: UIViewController {
     }
     
     //Method for show sales UI
+    /**
+ Method called when top sale button was clicked. Instantiate TopSaleVC and push vc
+     */
     private func showSalesVC() {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.TopSaleVC) as! TopSaleVC
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     //Method for show order UI
+    /**
+ Method called when oreder list button was clicked. Instantiate OrderListVC and push vc
+     */
     private func showOrderVC() {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.OrderListVC) as! OrderListVC
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     //Get dashboard data from server
+    /**
+ Method called in viewWillAppear. Display hud view. If UserManager class does not has restaurant id, then return. Take parameter restaurant id and pass in dashboard method of APIClient class. Hide hud view. If api hit is successful, then put data thus obtained in dasboardData where all data is stored. Call manageData method which displays all total summary labels of dashboard. If api hit is not successful, if error message is noDataMessage or noDataMessage1 in Constants.swift, display message msgFailed in AppMessages.swift in dialog else display error message in dialog.
+     */
     @objc func callDashboardAPI() {
         hudView.isHidden = false
         guard let restaurentId = UserManager.restaurantID else {
@@ -574,6 +583,9 @@ class DashboardVC: UIViewController {
     }
     
     //Initialize starting data
+    /**
+ Method called if dashboard api hit is successful, to display dashboard labels data. If dashboardData is assigned to dashboard, put the values in titleArray (containing title, subtitle and icon) of Dashboard struct. Set data in dashboard struct with title Total Sale, subtitle as value of labelValues totalSale and icon. Similarly, set title, subtitle (value) and icon for Weekly Sale, Total Orders, Weekly Orders, Total Customers, Weekly Customers
+     */
     func manageData() {
         if let dashboard = dashboardData {
             Dashboard.titleArray = [Dashboard.Data(title: "Total Sale", subtitle: dashboard.labelValues.totalSale, icon: #imageLiteral(resourceName: "icon1")),
@@ -586,6 +598,9 @@ class DashboardVC: UIViewController {
     }
     
     //Reload the table when new data arrive
+    /**
+ Reload the table. Called inside callDashboardAPI method
+     */
     func reloadTable() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -594,6 +609,10 @@ class DashboardVC: UIViewController {
 }
 
 extension DashboardVC:UITableViewDataSource {
+    /**
+ This method asks the data source to return the number of sections in the table view. Set no. of sections to 1. Set no data label to width and height of table view. After that Rajat ji please update  let _ = dashboardData {.
+     Set no dataLbl text color to theme color, its text alignment to centre and set background view of table view to noDataLbl and return no. of sections.
+     */
     func numberOfSections(in tableView: UITableView) -> Int {
         let numberOfSection = 1
         
@@ -612,6 +631,10 @@ extension DashboardVC:UITableViewDataSource {
         return numberOfSection
     }
     
+    /**
+ This method returns no. of rows in section. Rajat ji please update let _ = dashboardData {.
+     If condition is satisfied, return count of items in titleArray, i.e., Data struct (contiaing title, subtitle and icon). Return count 0 by default
+     **/
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let _ = dashboardData {
             return Dashboard.titleArray.count
@@ -619,6 +642,11 @@ extension DashboardVC:UITableViewDataSource {
         return 0
     }
     
+    /**
+ This method asks the data source for a cell to insert in a particular location of the table view.
+     Set cell value to DashboardCell with color, title, value, icon else return DashboardCell. Rajat ji please check and correct this.
+     From title array of dashoboard containing title, subtitle and icon, set value of data's title to lblTitle text field, data's subtitle to lblValue text field, data's icon to imgIcon text field and return cell
+     */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
             guard let cell = tableView.dequeueReusableCell(withIdentifier: Dashboard.CellIdentifier.dashboardCell) as? DashboardCell else {
@@ -632,6 +660,9 @@ extension DashboardVC:UITableViewDataSource {
             return cell
     }
     
+    /**
+     This method asks the delegate for the height to use for a row in a specified location. The method returns value 145 for iPad, 115 otherwise.
+     */
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if Global.isIpad {
             return 145
@@ -639,6 +670,9 @@ extension DashboardVC:UITableViewDataSource {
         return 115
     }
     
+    /**
+ Tells the delegate that the specified row is now selected. If index of row is 0, 1, 2 or 3 instantate SalesReportVC and push vc. If index of row is 4 or 5, instantiate SalesSellAllVC and push vc. In default case, print default in logs.
+     */
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         
