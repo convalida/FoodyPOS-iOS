@@ -267,7 +267,7 @@ enum APIRouter: URLRequestConvertible {
              ///If request is of type get, return URLEncoding instance with a .queryString destination
         case .get:
             return URLEncoding.queryString
-            ///If request is of type post, return JSONEncoding instance with a .default destination. Rajat ji please check this
+            ///If request is of type post, return JSONEncoding instance with a .default destination. 
         case .post:
             return JSONEncoding.default
            
