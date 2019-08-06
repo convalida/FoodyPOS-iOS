@@ -53,9 +53,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate {
     
     /**
+     Ask users for push notification permission and get cloud key.
      If available device version is iOS 10 or greater, request authorization to interact with the user when local and remote notifications are delivered to the user's device with ability to display alert, play sounds and update app's badge. If permission is granted, display in logs, else return. Register device to receive push notification. Retrieve the shared notification center object for your app.
      If available device version is less than 10, register your preferred options for notifying the user with ability to display alert, play sounds and update app's badge. Register device to receive push notification. Retrieve the shared notification center object for your app. UIUserNotificationSettings was deprecated in iOS 10 so alternative method is used
-     Ask users for push notification permission and get cloud key.
  */
     func registerForPushNotifications() {
         if #available(iOS 10.0, *) {
@@ -77,9 +77,9 @@ extension AppDelegate {
     }
     
     /**
-     This method is called when user allows push notification. This method tells the delegate that the app successfully registered with Apple Push Notification service (APNs). This is a delegate method of app which gives us the device token to use it further and Convert hexadecimal token to String.
+     This method is called when user allows push notification. This method tells the delegate that the app successfully registered with Apple Push Notification service (APNs). This is a delegate method of app which gives us the device token to use it further and convert hexadecimal token to string.
      Return a new string by concatenating the elements of the sequence in token, adding the given separator between each element. Print token in logs. Set token value to UserManager token
-     Call callLoginApi method from Global class. This method is called when user allows push notification. So, as soon as user allowed push notification, login web service should be called to update device token only on server.
+     Call callLoginApi method from Global class. So, as soon as user allowed push notification, login web service is called to update device token only on server as other fields of UserManager are empty. 
      */
     // called when user allows push notification
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
