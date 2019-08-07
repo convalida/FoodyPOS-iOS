@@ -53,9 +53,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate {
     
     /**
+     Ask users for push notification permission and get cloud key.
      If available device version is iOS 10 or greater, request authorization to interact with the user when local and remote notifications are delivered to the user's device with ability to display alert, play sounds and update app's badge. If permission is granted, display in logs, else return. Register device to receive push notification. Retrieve the shared notification center object for your app.
      If available device version is less than 10, register your preferred options for notifying the user with ability to display alert, play sounds and update app's badge. Register device to receive push notification. Retrieve the shared notification center object for your app. UIUserNotificationSettings was deprecated in iOS 10 so alternative method is used
-     Ask users for push notification permission and get cloud key.
  */
     func registerForPushNotifications() {
         if #available(iOS 10.0, *) {
@@ -77,9 +77,11 @@ extension AppDelegate {
     }
     
     /**
-     This method is called when user allows push notification. This method tells the delegate that the app successfully registered with Apple Push Notification service (APNs). This is a delegate method of app which gives us the device token to use it further and Convert hexadecimal token to String.
+    This method is called when user allows push notification. This method tells the delegate that the app successfully registered with Apple Push Notification service (APNs). This is a delegate method of app which gives us the device token to use it further and convert hexadecimal token to string.
      Return a new string by concatenating the elements of the sequence in token, adding the given separator between each element. Print token in logs. Set token value to UserManager token
-     Call callLoginApi method from Global class. This method is called when user allows push notification. So, as soon as user allowed push notification, login web service should be called to update device token only on server.
+     If value of token after trimming is not null, call callLoginApi method from Global class. This method will return if value of email and password is null in UserManager class (in case of alert to allow push notification).
+     This method will call login api in case user allows push notification (or token is abtained) after login. Rajat ji please check 
+    
      */
     // called when user allows push notification
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
@@ -111,7 +113,7 @@ extension AppDelegate {
     
     // Called when a notification is received
     /**
-     Tells the app that a remote notification arrived that indicates there is data to be fetched. The system calls this method when your app is running in the foreground or background. UserInfo consists data (text) of notification. Get order id from notification. Call goToOrderDetailVC method which opens OrderDetailVC. This method is called when any notification is received, so in this method app will open OrderDetailVC.
+    Tells the app that a remote notification arrived that indicates there is data to be fetched. The system calls this method when your app is running in the foreground or background. This method is called when the user taps on notification. Rajat ji please check this. UserInfo consists data (text) of notification. Get order id from notification. Call goToOrderDetailVC method which opens OrderDetailVC. 
      Call callReadNotificationApi method from Global class which sets the badge on app icon to 0
      */
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
@@ -127,9 +129,10 @@ extension AppDelegate {
 
 extension AppDelegate {
     /**
-     If navVC is rootViewController, return. If notification is received when visible view controller is rootViewController (LoginVC as per my understanding), then return.
-     If currently visible view controller is already OrderDetailVC, get orderNo from body and to show order detail, a post notification is sent to OrderDetailVC with order no. from notification body.
-     Set badge no. on app icon to 0.
+     If navVC is rootViewController,i.e., user is on Login screen, i.e., if user is logged out, then return. Rajat ji please check this.
+     If view controller is not root view controller, then return, i.e., if app is not running, then return, i.e., this method is not called if app is not running. Rajat ji please check which out of two is correct.
+     If currently visible view controller is already OrderDetailVC, get orderNo. from body and to show order detail, a post notification is sent to OrderDetailVC with order no. from notification body.
+     If visible view controller is some view controller other than OrderDetailVC, instantiate OrderDetailVC, pass body of notification to view controller, set badge no. on app icon to 0 and push the vc. Rajat ji please check this.
      */
     func goToDetailVC(body:String) {
         guard let navVC = self.window?.rootViewController as? UINavigationController else {
@@ -149,12 +152,12 @@ extension AppDelegate {
 
 extension UIApplication {
     class var build: String? {
-        ///Get version no. of bundle. //Not in use
+        //Not in use
         get {
             return Bundle.main.infoDictionary?[kCFBundleVersionKey as String] as? String
         }
     }
-    ///Not In use
+    ///Used in LoginVC to pass as parameter. It returns version of application fetched from application bundle
     class var version: String? {
         get {
             return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String

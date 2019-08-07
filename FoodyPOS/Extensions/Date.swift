@@ -7,10 +7,11 @@
 //
 
 import Foundation
+///Format of date
 let dateFormat = "MM/dd/yyyy"
 extension Date {
     
-    /// Get Today's date
+    /// Get today's date in proper date format in MM/dd/yyyy"
     static var todayDate:String {
         let date = Date()
         let formatter = DateFormatter()
@@ -25,7 +26,7 @@ extension Date {
         return formatter.string(from: self)
     }
     
-    /// Get formated date from string
+    /// Get formated date from string in format MM/dd/yyyy
     static func getDate(fromString string:String, format:String = dateFormat) -> Date? {
         let formatter = DateFormatter()
         formatter.dateFormat = format
@@ -34,26 +35,27 @@ extension Date {
 }
 
 extension Date {
-    
+
+///Rajat ji please update this
     static func today() -> Date {
         return Date()
     }
     
-    /// Find Next occourance of a weekday from current date
+    /// Find next occourance of a weekday from current date without considering today's date
     func next(_ weekday: Weekday, considerToday: Bool = false) -> Date {
         return get(.Next,
                    weekday,
                    considerToday: considerToday)
     }
     
-    /// Find Previous occourance of a weekday from current date
+    /// Find previous occourance of a weekday from current date without considering today's date
     func previous(_ weekday: Weekday, considerToday: Bool = true) -> Date {
         return get(.Previous,
                    weekday,
                    considerToday: considerToday)
     }
     
-    /// Find next or previous occourance of a weekday from current or a particular date
+    /// Find next or previous occourance of a weekday from current or a particular date. 
     func get(_ direction: SearchDirection,
              _ weekDay: Weekday,
              considerToday consider: Bool = false) -> Date {

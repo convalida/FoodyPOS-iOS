@@ -9,6 +9,7 @@
 
 import UIKit
 
+///Class to dispaly different types of alerts.
 class Alert: NSObject {
     
     /// Display a basic alert
