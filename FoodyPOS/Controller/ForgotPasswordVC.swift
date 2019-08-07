@@ -13,7 +13,7 @@ class ForgotPasswordVC: UIViewController {
 
     ///Outlet for email text field
     @IBOutlet weak var txtEmail: DesignTextField!
-    ///Outlet for main view- dialog view. Rajat ji please check
+    ///Outlet for main view- dialog view.
     @IBOutlet weak var mainView: UIView!
     
     ///Display status bar

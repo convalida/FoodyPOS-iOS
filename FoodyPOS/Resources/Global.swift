@@ -37,8 +37,8 @@ class Global:NSObject {
     }
     
     /**
- Display root view controller for application. Hide navigation bar from navigation controller. Set window declared in AppDelegate to root view controller. Rajat ji please check if last two lines are correct as places where it is called, navigation bar is visible
- */
+     Display root view controller for application. Hide navigation bar from navigation controller. Set window declared in AppDelegate to root view controller. When we set the rootViewController then we do not require the navigation bar like on DashboardVC, LoginVC etc.
+     */
     static func showRootView(withIdentifier identifier:String) {
         let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: identifier)
         let navVC = UINavigationController.init(rootViewController: vc)
@@ -53,8 +53,8 @@ class Global:NSObject {
     }
 
     /**
- Call login api. If email id and password in UserManager is empty, return. Pass parameters email id, password, device id from  UserManager class, build version and app id from AppDelegate to APIClient. If api hit is successful and result code is 1, call saveUserDataIntoDefaults in UserManager class. 
-     In case of error, print error in logs. Login api is also called in LoginVC, purpose of calling method here  - Rajat ji please update
+     Call login api. If email id and password in UserManager is empty, return. Pass parameters email id, password, device id from  UserManager class, build version and app id from AppDelegate to APIClient. If api hit is successful and result code is 1, call saveUserDataIntoDefaults in UserManager class.
+     In case of error, print error in logs. Login api is also called in LoginVC through this method only
      */
     static func callLoginApi() {
         //Validate all the field

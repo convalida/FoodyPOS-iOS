@@ -115,11 +115,8 @@ class LoginVC: UIViewController {
 
     }
     
-    /// Check already login or not
-    ///
-    /// - Parameter sender: button
     /**
- Check if remember me check box is not selcted, then set boolean value of isRemember to false else set boolean value of isRemeber to true. Rajat ji please check if this is correct or already added comment is correct.
+     Toggle method for the RememberMe Checkbox. If remember me check box is not selcted, then set boolean value of isRemember to false else set boolean value of isRemeber to true.
      */
     @IBAction func btnCheckedDidClcked(_ sender: UIButton) {
         if sender.isSelected {
@@ -131,7 +128,8 @@ class LoginVC: UIViewController {
         }
     }
     
-    /**On click of sign button, remove the highlight from a email text field and password text field selection, trim characters of email and password text field. If trimmed email text field and password has characters, check if email id and password is valid, pass paramaters email and password from respective text fields, device id from UserManager class, buildversion and Device type from AppDelegate class.
+    /**\
+     On click of sign button, remove the highlight from a email text field and password text field selection, trim characters of email and password text field. If trimmed email text field and password has characters, check if email id and password is valid, pass paramaters email and password from respective text fields, device id from UserManager class, buildversion and Device type from AppDelegate class.
      Display hud view.
      Pass the parameters to APIClient class.
      If api hit is successful and result key in response is 1, set email, password and isRemember value in UserManager class, set isLogin to true in UserManager class, call saveUserDataIntoDefaults in UserManager class which saves data into UserDefaults. Instantiate DashboardVC.
