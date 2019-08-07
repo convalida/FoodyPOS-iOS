@@ -151,8 +151,7 @@ extension LeftMenuVC:UITableViewDelegate {
 
 /**
 This method gets called if row of table view is selected. Set DashboardVC as parentVC. If selected section 
-is section 0, if row 0 of section 0 is selected, then close left slide menu of parentVC. Rajat ji please 
-check this. If row 1 of section 0 is selected, close left slide menu, instantiate OrderListVC and push VC. 
+is section 0, if row 0 of section 0 is selected, then close left slide menu of parentVC. If row 1 of section 0 is selected, close left slide menu, instantiate OrderListVC and push VC.
 If row 2 of section 0 is selected, close left slide menu, instantiate SalesSellAllVC and push vc. If row 3 
 of section 0 is selected, close left slide menu, instantiate SalesReportVC and push vc. In default case, 
 print Default in logs. In case of section 1, if row 0 of section 1 is selected, instantiate EmployeeDetailVC, close left slide menu, and push vc.

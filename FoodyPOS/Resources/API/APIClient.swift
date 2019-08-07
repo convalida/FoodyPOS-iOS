@@ -34,7 +34,7 @@ class APIClient {
         return jsonDecoder
     }
     
-    ///Route to login method in APIRouter class. Rajat ji please check this.
+    ///Route to login method in APIRouter class which will perform the API calling.
     public static func login(paramters:[String:Any], completion:@escaping (Result<User>) -> Void) {
         performRequest(route: APIRouter.login(paramters), decoder: jsonDecoder, completion: completion)
     }
@@ -84,7 +84,7 @@ class APIClient {
         performRequest(route: APIRouter.forgotPassword(paramters), decoder: jsonDecoder, completion: completion)
     }
     
-    /// Call Employee list api and return Employee Object. Rajat ji please check if this is correct or above comments were correct as this comment was already there
+    /// Route to Employee list api method in APIRouter class. This returns Employee Object.
     public static func employee(paramters:[String:Any], completion:@escaping (Result<Employee>) -> Void) {
         performRequest(route: APIRouter.employee(paramters), decoder: jsonDecoder, completion: completion)
     }
