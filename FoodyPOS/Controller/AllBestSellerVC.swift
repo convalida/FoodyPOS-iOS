@@ -8,13 +8,20 @@
 
 import UIKit
 
+///View controller class for AllBestSellerVC
 class AllBestSellerVC: UIViewController {
 
+    ///Outlet for start date 
     @IBOutlet weak var btnStartDate: UIButton!
+    ///Outlet for end date
     @IBOutlet weak var btnEndDate: UIButton!
+    ///Outlet for table view
     @IBOutlet weak var tableView: UITableView!
+    ///Outlet for top view - navigation bar
     @IBOutlet weak var viewTop: UIView!
+    ///Outlet for back button
     @IBOutlet weak var btnBack: UIButton!
+    
     
     var statusData = [Status]()
     var bestSellerData:AllBestSeller?

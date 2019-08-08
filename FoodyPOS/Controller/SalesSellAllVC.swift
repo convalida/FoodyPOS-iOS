@@ -8,32 +8,54 @@
 
 import UIKit
 
+///View controller class for Sales 
 class SalesSellAllVC: UIViewController {
+    ///Outlet for table view
     @IBOutlet weak var tableView: UITableView!
+    ///Outlet for start date
     @IBOutlet weak var btnStartDate: UIButton!
+    ///Outlet for end date
     @IBOutlet weak var btnEndDate: UIButton!
+    ///Outlet for title on action bar. Rajat ji please check this.
     @IBOutlet weak var btnTitle: UIButton!
+    ///Outlet for total orders
     @IBOutlet weak var lblTotalOrders: UILabel!
+    ///Outlet for total amount
     @IBOutlet weak var lblTotalAmounts: UILabel!
+    ///Outlet for top view - navigation bar
     @IBOutlet weak var viewTop: UIView!
 
+    ///Structure for Sales instantiated
     var salesData:Sale?
+    ///Structure of Customers instantiated
     var customersData:Customers?
+    ///Set boolean isCustomer value to false by default
     var isCustomer = false
+    ///Instantiate hud view
     var hudView = UIView()
     
+    ///Structure for cell identifier for topSaleCell
     struct CellIdentifier {
+        ///Initialize topSaleCell identifier
         static let topSaleCell = "topSaleCell"
     }
     
+    ///Set status bar to visible 
     override var prefersStatusBarHidden: Bool {
         return false
     }
     
+    ///Set light content of status bar
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
+    /**
+    Life cycle method called after view is loaded. Set data source and delegate of table view to self.
+    Call initHudView method. Set start date to occurance of Monday of current week. Set end date to today's date.
+    If saleData is null, set title on action bar to Customers, (Rajat ji please check this), call method callCustomersAPI and set isCustomer vlaue to true.
+    Else call setSaleData method
+    */
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -55,15 +77,19 @@ class SalesSellAllVC: UIViewController {
         }
     }
 
+    ///Called before the view is loaded.
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
-    
+
+    ///Sent to the view controller when the app receives a memory warning.
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+/**
+    Initialize hud view. Set background color to white and hud view as sub view. Set constraints to top, left, bottom and right of hud view, add hud view and hide it.
+*/
     func initHudView() {
         hudView.backgroundColor = UIColor.white
         self.view.addSubview(hudView)
@@ -78,7 +104,12 @@ class SalesSellAllVC: UIViewController {
         
         hudView.isHidden = true
     }
-    
+
+    /**
+    Start date is clicked. Instantiate date picker. Set date picker mode to date. Set maximum date to today's date.
+    If there is date in fromDate, then set date in datepicker to date in from string. Show date picker in alert.
+    Set title of from string to date selected in date picker. Rajat ji please check this. 
+    */
     @IBAction func btnDateStartDidClicked(_ sender: UIButton) {
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
@@ -91,6 +122,11 @@ class SalesSellAllVC: UIViewController {
         }
     }
     
+    /**
+    End date is clicked. Instantiate date picker. Set date picker mode to date. Set maximum date to today's date.
+    If there is date in endDate, then set date in datepicker to date in from string. Rajat ji please check this. Show date picker in alert.
+    Set title of end string to date selected in date picker. 
+    */
     @IBAction func btnDateEndDidClicked(_ sender: UIButton) {
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
@@ -103,6 +139,10 @@ class SalesSellAllVC: UIViewController {
         }
     }
     
+    /**
+    Button search is clicked. If date in btnStartDate is less than or equal to date in btnEndDate. If isCustomer value is false call method callSalesAPI else call method call customersAPI
+    If date in startBtnDate is greater than date in endBtnDate, then display start date must be less than or equal to end date in toast.
+    */
     @IBAction func btnSearchDidClicked(_ sender: UIButton) {
         if Date.getDate(fromString: (btnStartDate.titleLabel?.text)!)! <= Date.getDate(fromString: (btnEndDate.titleLabel?.text)!)! {
             if !isCustomer {
@@ -114,11 +154,15 @@ class SalesSellAllVC: UIViewController {
             self.showToast("Start date must be less than or equal to end date")
         }
     }
-    
+
+    /**
+     When back button is clicked, pop the top view controller from navigation stack and update the display.
+     */
     @IBAction func btnBackDidClicked(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
-    
+
+   
     private func callSalesAPI() {
         guard let restaurentId = UserManager.restaurantID else {
             return
