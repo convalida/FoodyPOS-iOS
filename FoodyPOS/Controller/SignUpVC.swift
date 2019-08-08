@@ -7,9 +7,9 @@
 //
 
 import UIKit
-///Defining deligate of current class. Minakshi ji Please refer to Delegate and Protocols for ios
+///Protocol for defining delegate of current class. This is used to show employee details in EmployeeDetailVC after employee is successfully added. Rajat ji please check this
 protocol EmployeeDetailDelegate {
-    ///abstract method for EmployeeDetailDelegate protocol
+    ///Abstract method for EmployeeDetailDelegate protocol
     func showDetail(detail:[EmployeeDetail])
 }
 
@@ -34,7 +34,7 @@ class SignUpVC: UIViewController {
     
     ///Structure for Employee Details instantiated
     var employeeDetails:[EmployeeDetail]?
-    ///Defining deligate of current class. Minakshi ji Please refer to Delegate and Protocols for ios
+    ///Set delegate of SignUpVC to EmployeeDetailDelegate
     var delegate:EmployeeDetailDelegate!
     ///Instantiate hud view
     var hudView = UIView()
@@ -183,7 +183,7 @@ On tap, controller is removed using UITapGestureRecognizer which is a pre define
     
     
     /**
-     Remove selection from name text field, email text field, password text field, confirm password text field and hide keyboard also. This also hides keyboard when user loses focus from the input fields
+     Remove selection from name text field, email text field, password text field, confirm password text field. This also hides keyboard when user loses focus from the input fields
      */
     func resignText() {
         txtName.resignFirstResponder()
@@ -192,7 +192,9 @@ On tap, controller is removed using UITapGestureRecognizer which is a pre define
         txtConfirmPassword.resignFirstResponder()
     }
     
-    /// Removes a controller from superview and parent view controller. If this controller is used to add an employee then this method shows the employee list after removing itself.
+    /**
+ Removes a controller from superview and parent view controller. If this controller is used to add an employee then this method shows the employee list after removing itself.
+ */
     func removeController() {
         self.view.removeFromSuperview()
         self.removeFromParentViewController()
@@ -202,7 +204,7 @@ On tap, controller is removed using UITapGestureRecognizer which is a pre define
     }
     
     /**
-     Call add employee api. Remove selection from all text fields. If restaurant id is not equal to restaurant id in UserManager, return. Pass restaurant id and email from UserManager class, name, email address, role type and password from respective text fields. Display hud view. If api hit is successful and result code is 1, set employee details of the employee added to employee details in Employee section.
+     Call add employee api. Remove selection from all text fields and hide keyboard. If restaurant id is not equal to restaurant id in UserManager, return. Pass restaurant id and email from UserManager class, name, email address, role type and password from respective text fields. Display hud view. If api hit is successful and result code is 1, set employee details of the employee added to employee details in Employee section.
      Show message from response in toast and remove the controller. If result key in response is not 1, set value of message key to toast.If api hit is not successful, if error message is noDataMessage or noDataMessage1 in Constants.swift, display message msgFailed in AppMessages.swift in dialog else display error message in dialog.
      */
     func callAddEmployeeAPI() {

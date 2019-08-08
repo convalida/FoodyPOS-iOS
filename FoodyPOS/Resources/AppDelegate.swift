@@ -112,7 +112,7 @@ extension AppDelegate {
     
     // Called when a notification is received
     /**
-    Tells the app that a remote notification arrived that indicates there is data to be fetched. The system calls this method when your app is running in the foreground or background. This method is called when the user taps on notification. UserInfo consists data (text) of notification. Get order id from notification. Call goToOrderDetailVC method which opens OrderDetailVC.
+    Tells the app that a remote notification arrived that indicates there is data to be fetched. The system calls this method when your app is running in the foreground or background. If the user opens your app from the system-displayed alert (notification), the system may call this method again when your app is about to enter the foreground so that you can update your user interface and display information pertaining to the notification. This method is called when the user taps on notification. UserInfo consists data (text) of notification. Get order id from notification. Call goToOrderDetailVC method which opens OrderDetailVC.
      Call callReadNotificationApi method from Global class which sets the badge on app icon to 0
      */
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {

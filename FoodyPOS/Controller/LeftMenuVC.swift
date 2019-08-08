@@ -95,7 +95,7 @@ extension LeftMenuVC:UITableViewDataSource {
     }
     
     /**
-     Asks the data source for a cell to insert in a particular location of the table view. Set cell of LeftMenu as LeftMenuCell if CellIdentifier is menuCell (displaying items - child of header items) declared in LeftMenu struct else also return LeftMenuCell as previous. Minakshi ji, this is correct
+     Asks the data source for a cell to insert in a particular location of the table view. Set cell of LeftMenu as LeftMenuCell if CellIdentifier is menuCell (displaying items - child of header items) declared in LeftMenu struct else also return LeftMenuCell as previous.
      For 0th section, set lblTitle text to MainData array row's title, imgIcon as image in MainData array's row image. For zeroth row, set text color to theme color.
      For other section, set lblTitle text to ProfileData array row's title, imgIcon as image in ProfileData array's row image and return cell
      */
@@ -131,7 +131,7 @@ extension LeftMenuVC:UITableViewDelegate {
     }
     
     /**
-     Asks the delegate for a view object to display in the header of the specified section (Eg - Profile) of the table view. Set cell of LeftMenu as LeftMenuCell if CellIdentifier is headerCell declared in LeftMenu struct else also return LeftMenuCell as previous. Minakshi Ji this is correct.
+     Asks the delegate for a view object to display in the header of the specified section (Eg - Profile) of the table view. Set cell of LeftMenu as LeftMenuCell if CellIdentifier is headerCell declared in LeftMenu struct else also return LeftMenuCell as previous.
      For section 1, set heading of menu items to Profile, by default, set heading of menu items to null and hide border. Return header cell. For section 1, border is visble, set in storyboard.
      */
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

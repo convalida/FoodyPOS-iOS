@@ -116,7 +116,7 @@ class LoginVC: UIViewController {
     }
     
     /**
-     Toggle method for the RememberMe Checkbox. If remember me check box is not selcted, then set boolean value of isRemember to false else set boolean value of isRemeber to true.
+     Toggle method for the RememberMe checkbox. If remember me check box is not selected, then set boolean value of isRemember to false else set boolean value of isRemeber to true.
      */
     @IBAction func btnCheckedDidClcked(_ sender: UIButton) {
         if sender.isSelected {
@@ -128,7 +128,7 @@ class LoginVC: UIViewController {
         }
     }
     
-    /**\
+    /**
      On click of sign button, remove the highlight from a email text field and password text field selection, trim characters of email and password text field. If trimmed email text field and password has characters, check if email id and password is valid, pass paramaters email and password from respective text fields, device id from UserManager class, buildversion and Device type from AppDelegate class.
      Display hud view.
      Pass the parameters to APIClient class.
