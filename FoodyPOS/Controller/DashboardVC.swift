@@ -49,7 +49,7 @@ class DashboardVC: UIViewController {
     ///Instantiate hud view
     var hudView = UIView()
     
-    ///Rajat ji kindly update this
+    ///Struct defination for Sales and Orders Area on graph
     struct Area {
         ///Initalize isAreaOne to true indicating sales area in graph to show sales in graph
         static var isAreaOne = true
@@ -147,7 +147,7 @@ class DashboardVC: UIViewController {
     
     //Initialize the high chart
     /**
- Initialize chart of type areaspline with general options for chart. Set zoom for x-axis. Set panning (dragging) in chart to true. Instantiate title for chart and set text to null. Instantiate x axis values and set values from xAxisData array. If graph has data, set the minimum value of x axis to 0.5 (to start graph from 0 of x axis). Do not force x axis to start and end on tick (at an interval). Set interval of the tick marks in axis units. Set padding of the max value relative to the length of the x-axis. Instantiate Y axis of chart. Instantate chart's main axis and set text in title as null. Set minimum value of y axis to 0. If there is no data in chart, set maximum point value of y axis to 2 (to display of graph at 0 of y axis).
+     Initialize chart of type areaspline with general options for chart. Set zoom for x-axis. Set panning (dragging) in chart to true. Instantiate title for chart and set text to null. Instantiate x axis values and set values from xAxisData array. If graph has data, set the minimum value of x axis to 0.5 (to start graph from 0 of x axis). Do not force x axis to start and end on tick (at an interval). Set interval of the tick marks in axis units. Set padding of the max value relative to the length of the x-axis. Instantiate Y axis of chart. Instantate chart's main axis and set text in title as null. Set minimum value of y axis to 0. If there is no data in chart, set maximum point value of y axis to 2 (to display of graph at 0 of y axis).
      Initialize tootip (a form of box on user interface that appears when pointed at a value of chart showing orders and sales of that day). The tooltip is shared, the entire plot area will capture mouse movement or touch events. Prefix each value of y axis with $ (later for orders, it is set to null). Tooltip should not follow the finger as it moves on a touch device. Instantiate high chart credits. Highchart by default puts a credits label in the lower right corner of the chart and set enabled credits to 0. Initialize HIExpeorting. Options for the exporting module. Set it to be disabled. Instantiate HIPlotOptions which is is a wrapper object for config objects for each series type to instantiate plot options. Instantiate HIAreaspline, set opacity to 0.5. Instantiate HIDataLabels - options for the series data labels, appearing next to each data point and set it enabled. Instantiate HISeries and set series which are general options for all series types. Initailize first area of graph as Sale, set its text to Sale and set data to saleData array. Initailize second area of graph as Orders, set its text to Orders and set data to orderData array. Instantaite tooltip for second area and set prefix for its y value as null. Set chart, title, tooltip, x axis values, y axis values, tooltip, credits, exporting and plot options for chart. If isAreaOne and isAreaTwo is true (true by default), show both sales and orders graph. If isAreaOne is true, set Sales graph. If isAreaTwo is true, set Orders graph. If isAreaOne and isAreaTwo is false, set empty graph and set the options on chart.
      */
     func initChart() {

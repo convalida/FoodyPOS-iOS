@@ -80,8 +80,7 @@ extension AppDelegate {
     This method is called when user allows push notification. This method tells the delegate that the app successfully registered with Apple Push Notification service (APNs). This is a delegate method of app which gives us the device token to use it further and convert hexadecimal token to string.
      Return a new string by concatenating the elements of the sequence in token, adding the given separator between each element. Print token in logs. Set token value to UserManager token
      If value of token after trimming is not null, call callLoginApi method from Global class. This method will return if value of email and password is null in UserManager class (in case of alert to allow push notification).
-     This method will call login api in case user allows push notification (or token is abtained) after login. Rajat ji please check 
-    
+     This method will call login api in case user allows push notification (or token is abtained) after login.
      */
     // called when user allows push notification
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
@@ -113,7 +112,7 @@ extension AppDelegate {
     
     // Called when a notification is received
     /**
-    Tells the app that a remote notification arrived that indicates there is data to be fetched. The system calls this method when your app is running in the foreground or background. This method is called when the user taps on notification. Rajat ji please check this. UserInfo consists data (text) of notification. Get order id from notification. Call goToOrderDetailVC method which opens OrderDetailVC. 
+    Tells the app that a remote notification arrived that indicates there is data to be fetched. The system calls this method when your app is running in the foreground or background. If the user opens your app from the system-displayed alert (notification), the system may call this method again when your app is about to enter the foreground so that you can update your user interface and display information pertaining to the notification. This method is called when the user taps on notification. UserInfo consists data (text) of notification. Get order id from notification. Call goToOrderDetailVC method which opens OrderDetailVC.
      Call callReadNotificationApi method from Global class which sets the badge on app icon to 0
      */
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
@@ -129,10 +128,9 @@ extension AppDelegate {
 
 extension AppDelegate {
     /**
-     If navVC is rootViewController,i.e., user is on Login screen, i.e., if user is logged out, then return. Rajat ji please check this.
-     If view controller is not root view controller, then return, i.e., if app is not running, then return, i.e., this method is not called if app is not running. Rajat ji please check which out of two is correct.
+     Check if current root view controller is UINaviationController by casting it as UINavigationController,if not then do nothing.
      If currently visible view controller is already OrderDetailVC, get orderNo. from body and to show order detail, a post notification is sent to OrderDetailVC with order no. from notification body.
-     If visible view controller is some view controller other than OrderDetailVC, instantiate OrderDetailVC, pass body of notification to view controller, set badge no. on app icon to 0 and push the vc. Rajat ji please check this.
+     If visible view controller is some view controller other than OrderDetailVC, instantiate OrderDetailVC, pass body of notification to view controller, set badge no. on app icon to 0 and push the vc.
      */
     func goToDetailVC(body:String) {
         guard let navVC = self.window?.rootViewController as? UINavigationController else {
