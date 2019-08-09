@@ -7,40 +7,66 @@
 //
 
 import UIKit
+///Enum for daily, weekly and monthly selection
 enum Selection {
+    ///Case if daily tab was selected
     case daily
+    ///Case if weekly tab was selected
     case weekly
+    ///Case if monthly tab was selected
     case monthly
 }
 
+///Class for sales report view controller
 class SalesReportVC: UIViewController {
 
+    ///Outlet for table view
     @IBOutlet weak var tableView: UITableView!
+    ///Outlet for daily image view
     @IBOutlet weak var imgDaily: UIImageView!
+    ///Outlet for weeky image view
     @IBOutlet weak var imgWeekly: UIImageView!
+    ///Outlet for monthly image view 
     @IBOutlet weak var imgMonthly: UIImageView!
+    ///Outlet for daily label
     @IBOutlet weak var lblDaily: UILabel!
+    ///Outlet for weekly label
     @IBOutlet weak var lblWeekly: UILabel!
+    ///Outlet for monthly label
     @IBOutlet weak var lblMonthly: UILabel!
+    ///Outlet for start date
     @IBOutlet weak var btnStartDate: UIButton!
+    ///Outlet for end date
     @IBOutlet weak var btnEndDate: UIButton!
+    ///Outlet for total amount text
     @IBOutlet weak var lblTotalAmount: UILabel!
+    ///Outlet for total orders text
     @IBOutlet weak var lblTotalOrder: UILabel!
+    ///Outlet for top view or navigation bar
     @IBOutlet weak var viewTop: UIView!
 
+    ///Structure for reports instantiated
     var reportData:Report?
+    ///Set selection to be daily by default
     var selection:Selection = .daily
+    ///Instantiate hud view
     var hudView = UIView()
+    ///Set isSearch value to false by default
     var isSearch = false
     
+    ///Set status bar to visible
     override var prefersStatusBarHidden: Bool {
         return false
     }
     
+     ///Set light content of status bar
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
+    /**
+    Life cycle method called after view is loaded. Set data source and delegate of table view to self. Call initHudView and callSalesAPI method
+    */
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,6 +77,10 @@ class SalesReportVC: UIViewController {
         initHudView()
     }
 
+    /**
+     Called before the view is loaded. Call initDate method. Set tint color of daily image and daily label to theme color.
+     Set tint color of weekly image, monthly image, weekly button and monthly button to black. Call callReportAPI method.
+    */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         initDate()
@@ -65,11 +95,15 @@ class SalesReportVC: UIViewController {
         callReportAPI()
     }
     
+    ///Sent to the view controller when the app receives a memory warning.
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
+   /**
+   Called inside viewWillAppear, daily button clicked. If isSearch value is false, set start date to Monday of current week by finding previous occurance of Monday considering today's date and end date to today's date.
+   */ 
     func initDate() {
         if !isSearch {
             let lastSun = Date.today().previous(.monday)
@@ -78,6 +112,9 @@ class SalesReportVC: UIViewController {
         }
     }
     
+    /**
+    Initialize hud. Set background color to white and hud view as sub view. Set constraints to top, left, bottom and right of hud view, add hud view and hide it.
+ */
     func initHudView() {
         hudView.backgroundColor = UIColor.white
         self.view.addSubview(hudView)
@@ -93,10 +130,18 @@ class SalesReportVC: UIViewController {
         hudView.isHidden = true
     }
     
+    /**
+     When back button is clicked, pop the top view controller from navigation stack and update the display.
+     */
+
     @IBAction func btnBackDidClicked(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
-    
+
+    /**
+    Start date button clicked. Instantiate DatePicker. Set date picker mode to date. Set maximum date of datepicker to today's date. 
+    Set date in date picker to date passed in from string. Show date picker alert and set text in from field equal to alert's date. 
+    */
     @IBAction func btnStartDateDidClicked(_ sender: UIButton) {
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
@@ -109,6 +154,10 @@ class SalesReportVC: UIViewController {
         }
     }
     
+    /**
+    End sate button clicked. Instantiate DatePicker. Set date picker mode to date. Set maximum date of datepicker to today's date. 
+    Set date in date picker to date passed in from string. Show date picker alert and set text in from field equal to alert's date.   
+    */
     @IBAction func btnEndDidClicked(_ sender: UIButton) {
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
@@ -121,6 +170,11 @@ class SalesReportVC: UIViewController {
         }
     }
     
+    /**
+    Daily button was clicked. It is used to show daily reports. Call initDate method to initialize dates to Monday of current week. 
+    Call setDayData method which displays total orders and total amount. Set selection value to daily.
+    Set tint color of weekly image, monthly image, weekly button and monthly button to black. Call reloadTable method to reload the table.
+    */
     @IBAction func btnDailyDidClicked(_ sender: UIButton) {
         initDate()
         setDayData()
@@ -134,6 +188,10 @@ class SalesReportVC: UIViewController {
         reloadTable()
     }
     
+    /**
+    Call setStartDate method which sets start date to first date of current month. Call setWeekData which displays total orders and total amount.
+    Set tint color of weekly image, monthly image, weekly button and monthly button to black. Call reloadTable method to reload the table.
+    */
     @IBAction func btnWeeklyDidClicked(_ sender: UIButton) {
         setStartDate()
         setWeekData()
@@ -147,6 +205,10 @@ class SalesReportVC: UIViewController {
         reloadTable()
     }
     
+     /**
+    Call setStartDate method which sets start date to first date of current month. Call setMonthData which displays total orders and total amount of month.
+    Set tint color of weekly image, monthly image, weekly button and monthly button to black. Call reloadTable method to reload the table.
+    */
     @IBAction func btnMonthlyDidClicked(_ sender: UIButton) {
         setStartDate()
         setMonthData()
@@ -159,7 +221,11 @@ class SalesReportVC: UIViewController {
         lblMonthly.textColor = UIColor.themeColor
         reloadTable()
     }
-    
+
+    /**
+    Search button clicked. If date in btnStartDate is less than or equal to date in btnEndDate. Set isSearch to true. Call method callReportAPI method.
+    If date in btnStartDate is greater than date in btnEndDate, show toast message Start date must be less than or equal to end date
+    */    
     @IBAction func btnSearchDidClicked(_ sender: UIButton) {
         if Date.getDate(fromString: (self.btnStartDate.titleLabel?.text)!)! <= Date.getDate(fromString: (self.btnEndDate.titleLabel?.text)!)! {
             self.isSearch = true
@@ -169,6 +235,10 @@ class SalesReportVC: UIViewController {
         }
     }
     
+    /**
+    Called when weekly or monthly section is clicked. If isSearch value is false, i.e., search button has not been clicked yet.
+    Set start date to first date of current month. Set end date to today's date
+    */
     private func setStartDate() {
         if !isSearch {
             let startDate = Date.startOfMonth()
@@ -177,6 +247,13 @@ class SalesReportVC: UIViewController {
         }
     }
     
+    /**
+    If restaurant id is not null in UserManager, return. If isSearch value is true, i.e., search button is clicked, parameters will contain
+    restaurant id from UserManager, fromDate from btnStartDate text, endDate from btnEndDate text.
+    If isSearch value is false, i.e., search button is not clicked, i.e., by default, parameters will contain restaurant id from UserManager, start date and ens date parameters as null.
+    Display hud view. Pass paramters to ApiClient class. Hide hud view. If api hit is successful, set response to reportData. Call setDayData method which sets total orders and total amount of days.
+    Call reloadtable method which reloads the data. If api hit is not successful, if error message is noDataMessage or noDataMessage1 in Constants.swift, display message msgFailed in AppMessages.swift in dialog else display error message in dialog.
+    */
     private func callReportAPI() {
         guard let restaurentId = UserManager.restaurantID else {
             return
@@ -212,6 +289,9 @@ class SalesReportVC: UIViewController {
         }
     }
     
+    /**
+    Call reloadData method on table view. If no. of rows in section 0 is greater than 0, scroll the view to 0th row of table view. Rajat ji please check this.
+    */
     func reloadTable() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -222,7 +302,7 @@ class SalesReportVC: UIViewController {
     }
     
     func getDayCount() -> (String, String) {
-        var totalOrders = 0
+           var totalOrders = 0
         var totalAmount = 0.0.rounded(toPlaces: 2)
         if let reports = reportData {
             for report in reports.day {

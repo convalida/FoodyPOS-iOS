@@ -54,7 +54,7 @@ class SalesSellAllVC: UIViewController {
     Life cycle method called after view is loaded. Set data source and delegate of table view to self.
     Call initHudView method. Set start date to occurance of Monday of current week. Set end date to today's date.
     If saleData is null, set title on action bar to Customers, (Rajat ji please check this), call method callCustomersAPI and set isCustomer vlaue to true.
-    Else call setSaleData method
+    Else call setSaleData method. 
     */
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -162,7 +162,13 @@ class SalesSellAllVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
 
-   
+
+    /**
+    This method is responsible for hitting sales web service. If UserManager class does not have restaurant id, return.
+    Take parameters restaurant id from UserManager, start date and end date from start date button and end date button resp.
+    Display hud view. Pass parameter to sales method using APIClient class. Hide hud view. If api hit is successful, set reponse to salesData, call setSaleData method and reloadTable method.
+    If api hit is not successful, if error message is noDataMessage or noDataMessage1 in Constants.swift, display message msgFailed in AppMessages.swift in dialog else display error message in dialog.
+    */
     private func callSalesAPI() {
         guard let restaurentId = UserManager.restaurantID else {
             return
@@ -190,6 +196,12 @@ class SalesSellAllVC: UIViewController {
         }
     }
     
+    /**
+    This method is responsible for hitting customers web service. If UserManager class does not have restaurant id, return.
+    Take parameters restaurant id from UserManager, start date and end date from start date button and end date button resp.
+    Display hud view. Pass parameter to customers method using APIClient class. Hide hud view. If api hit is successful, set response to customersData, call setCustomersData method and reloadTable method.
+    If api hit is not successful, if error message is noDataMessage or noDataMessage1 in Constants.swift, display message msgFailed in AppMessages.swift in dialog else display error message in dialog.
+    */
     func callCustomersAPI() {
         guard let restaurentId = UserManager.restaurantID else {
             return
@@ -217,14 +229,18 @@ class SalesSellAllVC: UIViewController {
         }
     }
     
-    //Reload the table when new data come
+    ///Reload the table
     func reloadTable() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
     }
     
-    //Get total orders or amount of customer
+    //Get total orders or amount of 
+    /**
+    Called inside setCustomerData method. Initialize total orders and total amount. If customersData has data, for all customers in selected date range,
+    If Customer response has totalOrders, sum the no. of orders. If Customer response has totalAmount, then total of amounts and roundoff to 2 decimal places and return totalOrders and totalAmount. 
+    */
     func getCustomerCount() -> (String, String) {
         var totalOrders = 0
         var totalAmount = 0.0.rounded(toPlaces: 2)
@@ -242,6 +258,10 @@ class SalesSellAllVC: UIViewController {
     }
     
     //Get total order or amount of sales
+    /**
+    Called inside setSaleData method. Initialize total orders and total amount. If setSaleData has data, for all sales in allSales range (response),
+    If Sale response has totalOrders, sum the no. of orders. If Sale response has totalAmount, then total of amounts and roundoff to 2 decimal places and return totalOrders and totalAmount. 
+    */
     func getSaleCount() -> (String, String) {
         var totalOrders = 0
         var totalAmount = 0.0.rounded(toPlaces: 2)
@@ -259,6 +279,9 @@ class SalesSellAllVC: UIViewController {
     }
     
     //Set the order and amount
+    /**
+    Method displays total orders and total amount for Sales. Call getSaleCount method to calculate total no. of orders and total amount. Set total no. of orders and total amount to corresponding text fields 
+    */
     func setSaleData() {
         let sale = getSaleCount()
         lblTotalOrders.text = sale.0
@@ -266,6 +289,9 @@ class SalesSellAllVC: UIViewController {
     }
     
     //Set the order and amount
+    /**
+    Method displays total orders and total amount for Customers. Call getCustomerCount method to calculate total no. of orders and total amount. Set total no. of orders and total amount to corresponding text fields 
+    */
     func setCustomerData() {
         let customer = getCustomerCount()
         lblTotalOrders.text = customer.0
@@ -275,6 +301,13 @@ class SalesSellAllVC: UIViewController {
 
 extension SalesSellAllVC:UITableViewDataSource {
    
+   /**
+   Method returns no. of sections of table view. Initialize no. of sections to 1. Set noDataLbl width and height to width and height of table view.
+   If saleData has data, if count of allSales is 0, set noDataLbl text to No sales found else noDataLbl to null.
+    If customerData has data, if count of byDateSelected is 0, set noDataLbl text to No customers found else noDataLbl to null.
+    Else set noDataLbl text to No customers found. Set noDataLbl text color to theme color, text alignment to centre and set background of table view to noDataLbl.
+    Return no. of sections.
+   */
     func numberOfSections(in tableView: UITableView) -> Int {
         let numberOfSection = 1
         
@@ -301,6 +334,10 @@ extension SalesSellAllVC:UITableViewDataSource {
         return numberOfSection
     }
     
+    /**
+    This method returns no. of rows in section of table view. If saleData has data, return count of allSales.
+    If customerData has data, return count of byDateSelected. Return 0 by default.    
+    */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             if let salesData = salesData {
                 return salesData.allSales.count
@@ -311,6 +348,15 @@ extension SalesSellAllVC:UITableViewDataSource {
         return 0
     }
     
+    /**
+    This method asks the data source for a cell to insert in a particular location of the table view. Set cell to TopSaleCell if cell identifier is topSaleCell, else set cell to TopSaleCell. Rajat ji please check and update this. 
+     If device is iPad, set corner radius of letter text field to 45. If saleData has data, set row at particular index.
+     Set name text to name for a particular row. Set order to total order. Set amount to price text rounded to 2 decimal places.
+     Set contactNo. to corresponding text field of row. Set letter text to first character of customer name.
+     If cuastomerData has data, set row at particular index. Set name text to name for a particular row. Set order to total order. Set amount to price text rounded to 2 decimal places.
+     Set contactNo. to corresponding text field of row. Set letter text to first character of customer name
+    Return cell.
+    */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.topSaleCell) as? TopSaleCell else {
             return TopSaleCell()
@@ -342,10 +388,16 @@ extension SalesSellAllVC:UITableViewDataSource {
 }
 
 extension SalesSellAllVC:UITableViewDelegate {
+    /**
+     Asks the delegate for the height to use for a row in a specified location.
+    */
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
     
+    /**
+     Asks the delegate for the estimated height of a row in a specified location. If device is iPad, estimated height is 220, by defualt estimated height is 150
+     */
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         if Global.isIpad {
             return 220.0
@@ -353,6 +405,12 @@ extension SalesSellAllVC:UITableViewDelegate {
         return 150.0
     }
     
+    /**
+     Tells the delegate that the specified row is now selected. If isCustomer is true, If customerData contains a value, get row of customer in selected date range,
+     instantiate CustomerDetailVC, take customerId from customer and pass it in vc and push vc.
+    If isCustomer is false, if saleData contains a value, get row of salesData in allSales,
+     instantiate CustomerDetailVC, take customerId from customer and pass it in vc and push vc.
+     */
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if isCustomer {
             if let customers = customersData {
