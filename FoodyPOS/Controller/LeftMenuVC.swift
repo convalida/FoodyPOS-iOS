@@ -149,29 +149,29 @@ extension LeftMenuVC:UITableViewDelegate {
         return headerCell
     }
 
-/**
-This method gets called if row of table view is selected. Set DashboardVC as parentVC. If selected section 
-is section 0, if row 0 of section 0 is selected, then close left slide menu of parentVC. If row 1 of section 0 is selected, close left slide menu, instantiate OrderListVC and push VC.
-If row 2 of section 0 is selected, close left slide menu, instantiate SalesSellAllVC and push vc. If row 3 
-of section 0 is selected, close left slide menu, instantiate SalesReportVC and push vc. In default case, 
-print Default in logs. In case of section 1, if row 0 of section 1 is selected, instantiate EmployeeDetailVC, close left slide menu, and push vc.
-If row 1 of section 1 is selected, instantiate ChangePasswordVC, close left slide menu and push vc.
-If row 2 of section 1 is selected, close left slide menu, if UserManager class has token value, fetch that 
-value and after trimming it, if it returns null string, display in toast a message that user is looged out. If isRemember value in UserManager class is true, then set isLogin value in UserManager class to false and display root view controller with identifier LoginVC. If isRemember value in UserManager class is false, call flushUserDefaults method in Global class which clears all user default data. Instantaite LoginVC and push vc. Return in both cases if isRemember value is UserManager is true or false. The same steps are followed in case UserManager class does not has token value.
-If isRemember value in UserManager class is true, then set isLogin value in UserManager class to false and 
-display root view controller with identifier LoginVC. If isRemember value in UserManager class is false, 
-call flushUserDefaults method in Global class which clears all user default data. Instantaite LoginVC and 
-push vc. Return in both cases if isRemember value in UserManager is true or false. The same steps are 
-followed in case UserManager class does not has token value. Take token from UserManager class, and assign 
-it deviceId parameter. Display hud view. Call logout method in APIClient class. If api hit is successful 
-and result code is 1, then show message in toast that user logged out, if isRemember value in UserManager 
-class is true, then set isLogin value in UserManager class to false and display root view controller with 
-identifier LoginVC. If isRemember value in UserManager class is false, call flushUserDefaults method in 
-Global class which clears all user default data. Instantaite LoginVC and push vc. If result code is not 1, 
-display message in response in toast. If api hit is not successful, if error message is noDataMessage or 
-noDataMessage1 in Constants.swift, display message msgFailed in AppMessages.swift in dialog else display 
-error message in dialog. In default case, print default in logs.
-*/
+    /**
+    This method gets called if row of table view is selected. Set DashboardVC as parentVC. If selected section
+    is section 0, if row 0 of section 0 is selected, then close left slide menu of parentVC. If row 1 of section 0 is selected, close left slide menu, instantiate OrderListVC and push VC.
+    If row 2 of section 0 is selected, close left slide menu, instantiate SalesSellAllVC and push vc. If row 3
+    of section 0 is selected, close left slide menu, instantiate SalesReportVC and push vc. In default case,
+    print Default in logs. In case of section 1, if row 0 of section 1 is selected, instantiate EmployeeDetailVC, close left slide menu, and push vc.
+    If row 1 of section 1 is selected, instantiate ChangePasswordVC, close left slide menu and push vc.
+    If row 2 of section 1 is selected, close left slide menu, if UserManager class has token value, fetch that
+    value and after trimming it, if it returns null string, display in toast a message that user is looged out. If isRemember value in UserManager class is true, then set isLogin value in UserManager class to false and display root view controller with identifier LoginVC. If isRemember value in UserManager class is false, call flushUserDefaults method in Global class which clears all user default data. Instantaite LoginVC and push vc. Return in both cases if isRemember value is UserManager is true or false. The same steps are followed in case UserManager class does not has token value.
+    If isRemember value in UserManager class is true, then set isLogin value in UserManager class to false and
+    display root view controller with identifier LoginVC. If isRemember value in UserManager class is false,
+    call flushUserDefaults method in Global class which clears all user default data. Instantaite LoginVC and
+    push vc. Return in both cases if isRemember value in UserManager is true or false. The same steps are
+    followed in case UserManager class does not has token value. Take token from UserManager class, and assign
+    it deviceId parameter. Display hud view. Call logout method in APIClient class. If api hit is successful
+    and result code is 1, then show message in toast that user logged out, if isRemember value in UserManager
+    class is true, then set isLogin value in UserManager class to false and display root view controller with
+    identifier LoginVC. If isRemember value in UserManager class is false, call flushUserDefaults method in
+    Global class which clears all user default data. Instantaite LoginVC and push vc. If result code is not 1,
+    display message in response in toast. If api hit is not successful, if error message is noDataMessage or
+    noDataMessage1 in Constants.swift, display message msgFailed in AppMessages.swift in dialog else display
+    error message in dialog. In default case, print default in logs.
+     */
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let parentVC = self.parent as? DashboardVC
 //        let cell = tableView.cellForRow(at: indexPath) as! LeftMenuCell

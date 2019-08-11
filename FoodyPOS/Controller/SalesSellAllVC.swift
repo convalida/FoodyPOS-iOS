@@ -16,7 +16,7 @@ class SalesSellAllVC: UIViewController {
     @IBOutlet weak var btnStartDate: UIButton!
     ///Outlet for end date
     @IBOutlet weak var btnEndDate: UIButton!
-    ///Outlet for title on action bar. Rajat ji please check this.
+    ///Outlet for title button.
     @IBOutlet weak var btnTitle: UIButton!
     ///Outlet for total orders
     @IBOutlet weak var lblTotalOrders: UILabel!
@@ -51,10 +51,9 @@ class SalesSellAllVC: UIViewController {
     }
     
     /**
-    Life cycle method called after view is loaded. Set data source and delegate of table view to self.
-    Call initHudView method. Set start date to occurance of Monday of current week. Set end date to today's date.
-    If saleData is null, set title on action bar to Customers, (Rajat ji please check this), call method callCustomersAPI and set isCustomer vlaue to true.
-    Else call setSaleData method. 
+     Life cycle method called after view is loaded. Set data source and delegate of table view to self.
+     Call initHudView method. Set start date to occurance of Monday of current week. Set end date to today's date.
+     If saleData is null, set title on action bar to Customers, call method callCustomersAPI and set isCustomer vlaue to true else call setSaleData method.
     */
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,7 +71,7 @@ class SalesSellAllVC: UIViewController {
             btnTitle.setTitle("Customers", for: .normal)
             callCustomersAPI()
             isCustomer = true
-        }else {
+        } else {
             setSaleData()
         }
     }
@@ -106,9 +105,9 @@ class SalesSellAllVC: UIViewController {
     }
 
     /**
-    Start date is clicked. Instantiate date picker. Set date picker mode to date. Set maximum date to today's date.
+    Called when start date is clicked. Instantiate date picker. Set date picker mode to date. Set maximum date to today's date.
     If there is date in fromDate, then set date in datepicker to date in from string. Show date picker in alert.
-    Set title of from string to date selected in date picker. Rajat ji please check this. 
+    Set title of from string to date selected in date picker.
     */
     @IBAction func btnDateStartDidClicked(_ sender: UIButton) {
         let datePicker = UIDatePicker()
@@ -124,7 +123,7 @@ class SalesSellAllVC: UIViewController {
     
     /**
     End date is clicked. Instantiate date picker. Set date picker mode to date. Set maximum date to today's date.
-    If there is date in endDate, then set date in datepicker to date in from string. Rajat ji please check this. Show date picker in alert.
+    If there is date in endDate, then set date in datepicker to date in from string. Show date picker in alert.
     Set title of end string to date selected in date picker. 
     */
     @IBAction func btnDateEndDidClicked(_ sender: UIButton) {
@@ -349,7 +348,7 @@ extension SalesSellAllVC:UITableViewDataSource {
     }
     
     /**
-    This method asks the data source for a cell to insert in a particular location of the table view. Set cell to TopSaleCell if cell identifier is topSaleCell, else set cell to TopSaleCell. Rajat ji please check and update this. 
+    This method asks the data source for a cell to insert in a particular location of the table view. Set cell to TopSaleCell if cell identifier is topSaleCell, else set cell to TopSaleCell (default case which happens rarely).
      If device is iPad, set corner radius of letter text field to 45. If saleData has data, set row at particular index.
      Set name text to name for a particular row. Set order to total order. Set amount to price text rounded to 2 decimal places.
      Set contactNo. to corresponding text field of row. Set letter text to first character of customer name.

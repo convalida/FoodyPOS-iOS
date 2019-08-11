@@ -34,7 +34,7 @@ class APIClient {
         return jsonDecoder
     }
     
-    ///Route to login method in APIRouter class which will perform the API calling. This returns User object. Rajat ji please check this
+    ///Route to login method in APIRouter class which will perform the API calling. This returns User object.
     public static func login(paramters:[String:Any], completion:@escaping (Result<User>) -> Void) {
         performRequest(route: APIRouter.login(paramters), decoder: jsonDecoder, completion: completion)
     }

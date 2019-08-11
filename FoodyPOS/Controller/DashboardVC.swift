@@ -329,7 +329,7 @@ class DashboardVC: UIViewController {
     
     //Show the sales graph
     /**
- Sale button (check box) on graph is clicked. If it was checked by default, set it to unchecked else set it to checked. After that Rajat ji kindly update and initialize the chart.
+     Sale button (check box) on graph is clicked. If it was checked by default, set it to unchecked else set it to checked. After that toggle the value of Sales Chart when user click on Sales Checkbox and initialize the chart.
      */
     @IBAction func btnSaleDidClicked(_ sender: UIButton) {
         if sender.isSelected {
@@ -337,13 +337,14 @@ class DashboardVC: UIViewController {
         } else {
             sender.isSelected = true
         }
+        ///The below line is to toggle the value of Sales Chart when user click on Sales button
         Area.isAreaOne = !Area.isAreaOne
         initChart()
     }
     
     //Show the order graph
     /**
-     Orders button (check box) on graph is clicked. If it was checked by default, set it to unchecked else set it to checked. After that Rajat ji kindly update and initialize the chart.
+     Orders button (check box) on graph is clicked. If it was checked by default, set it to unchecked else set it to checked. After that toggle the value of Orders Chart when user click on Orders Checkbox and initialize the chart.
      */
     @IBAction func btnOrdersDidClicked(_ sender: UIButton) {
         if sender.isSelected {
@@ -610,7 +611,7 @@ class DashboardVC: UIViewController {
 
 extension DashboardVC:UITableViewDataSource {
     /**
- This method asks the data source to return the number of sections in the table view. Set no. of sections to 1. Set no data label to width and height of table view. After that Rajat ji please update  let _ = dashboardData {.
+     This method asks the data source to return the number of sections in the table view. Set no. of sections to 1. Set no data label to width and height of table view. After that check if dashboardData is not nil, if nil then show No data found label else show dashboard data.
      Set no dataLbl text color to theme color, its text alignment to centre and set background view of table view to noDataLbl and return no. of sections.
      */
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -620,7 +621,7 @@ extension DashboardVC:UITableViewDataSource {
         if let _ = dashboardData {
             tableView.tableFooterView?.isHidden = false
             noDataLbl.text = ""
-        }else {
+        } else {
             tableView.tableFooterView?.isHidden = true
             noDataLbl.text = "No data found"
         }
@@ -632,7 +633,7 @@ extension DashboardVC:UITableViewDataSource {
     }
     
     /**
- This method returns no. of rows in section. Rajat ji please update let _ = dashboardData {.
+     This method returns no. of rows in section. Check if dashboardData is not nil, if nil then return 0 else return count of Dashboard.titleArray.
      If condition is satisfied, return count of items in titleArray, i.e., Data struct (contiaing title, subtitle and icon). Return count 0 by default
      **/
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -643,8 +644,8 @@ extension DashboardVC:UITableViewDataSource {
     }
     
     /**
- This method asks the data source for a cell to insert in a particular location of the table view.
-     Set cell value to DashboardCell with color, title, value, icon else return DashboardCell. Rajat ji please check and correct this.
+     This method asks the data source for a cell to insert in a particular location of the table view.
+     Set cell value to DashboardCell with color, title, value, icon else return empty DashboardCell (this happens very rarely).
      From title array of dashoboard containing title, subtitle and icon, set value of data's title to lblTitle text field, data's subtitle to lblValue text field, data's icon to imgIcon text field and return cell
      */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

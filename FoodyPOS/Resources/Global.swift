@@ -37,7 +37,7 @@ class Global:NSObject {
     }
     
     /**
-     Display root view controller for application. Hide navigation bar from navigation controller. Set window declared in AppDelegate to root view controller. Navigation bar is explicitly set in all required controllers. Rajat ji please check this
+     Display root view controller for application. Hide navigation bar from navigation controller. Set window declared in AppDelegate to root view controller. Navigation bar is explicitly set in all required controllers. Navbar is not shown on some controllers like loginVC.
      */
     static func showRootView(withIdentifier identifier:String) {
         let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: identifier)

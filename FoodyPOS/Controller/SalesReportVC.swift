@@ -290,7 +290,7 @@ class SalesReportVC: UIViewController {
     }
     
     /**
-    Call reloadData method on table view. If no. of rows in section 0 is greater than 0, scroll the view to 0th row of table view. Rajat ji please check this.
+    Call reloadData method on table view. If no. of rows in section 0 is greater than 0, scroll the view to 0th row of table view. This scrolls to the top of table view.
     */
     func reloadTable() {
         DispatchQueue.main.async {

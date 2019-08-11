@@ -219,7 +219,7 @@ extension TopSaleVC:UITableViewDataSource {
     }
     
     /**
-     This method asks the data source for a cell to insert in a particular location of the table view. Set cell to TopSaleCell if cell identifier is topSaleCell, else set cell to TopSaleCell. Rajat ji please check and update this.
+     This method asks the data source for a cell to insert in a particular location of the table view. Set cell to TopSaleCell if cell identifier is topSaleCell, else set cell to an empty TopSaleCell (this happens very rarely).
      If device is iPad, set corner radius of letter text field to 45. Set saleData to saleData. Get row of topRestaurantSale, set customer name, and order to specified text field, amount rounded to amount text field, phone no. to corresponding text field and first element of customer name to letter text field and return cell.
      */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
