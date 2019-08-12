@@ -290,7 +290,7 @@ class SalesReportVC: UIViewController {
     }
     
     /**
-    Call reloadData method on table view. If no. of rows in section 0 is greater than 0, scroll the view to 0th row of table view. This scrolls to the top of table view.
+    Call reloadData method on table view. If no. of rows in section 0 is greater than 0, scroll the view to 0th row of table view or top of table view.
     */
     func reloadTable() {
         DispatchQueue.main.async {
@@ -301,6 +301,11 @@ class SalesReportVC: UIViewController {
         }
     }
     
+    /**
+    This method calculates total no. of orders, and total amount when daily button is pressed. Initalize total orders and total amount.
+    If reports has day data, if orders are not nil, total the no. of orders. If amount is not nil, total the amount of orders and round off to two places.
+    Return total no. of orders and total amount rounded to two decimal places.  
+    */
     func getDayCount() -> (String, String) {
            var totalOrders = 0
         var totalAmount = 0.0.rounded(toPlaces: 2)
@@ -316,7 +321,12 @@ class SalesReportVC: UIViewController {
         }
         return ("\(totalOrders)","\(totalAmount.rounded(toPlaces: 2))")
     }
-    
+
+    /**
+    This method calculates total no. of orders, and total amount when weekly button is pressed. Initalize total orders and total amount.
+    If reports has week data, if orders are not nil, total the no. of orders. If amount is not nil, total the amount of orders and round off to two places.
+    Return total no. of orders and total amount rounded to two decimal places.  
+    */
     func getWeekCount() -> (String, String) {
         var totalOrders = 0
         var totalAmount = 0.0
@@ -333,6 +343,11 @@ class SalesReportVC: UIViewController {
         return ("\(totalOrders)","\(totalAmount.rounded(toPlaces: 2))")
     }
     
+     /**
+    This method calculates total no. of orders, and total amount when monthly button is pressed. Initalize total orders and total amount.
+    If reports has month data, if orders are not nil, total the no. of orders. If amount is not nil, total the amount of orders and round off to two places.
+    Return total no. of orders and total amount rounded to two decimal places.  
+    */
     func getMonthCount() -> (String, String) {
         var totalOrders = 0
         var totalAmount = 0.0
@@ -349,18 +364,27 @@ class SalesReportVC: UIViewController {
         return ("\(totalOrders)","\(totalAmount.rounded(toPlaces: 2))")
     }
     
+     /**
+    This method is called, when daily button is clicked and by default when reports are loaded. Call getDayCount method and set total no. of orders and total amount to corresponding text fields.
+    */
     func setDayData() {
         let report = getDayCount()
         lblTotalOrder.text = report.0
         lblTotalAmount.text = "$" + report.1
     }
     
+    /**
+    This method is called, when weekly button is clicked. Call getWeekCount method and set total no. of orders and total amount to corresponding text fields.
+    */
     func setWeekData() {
         let report = getWeekCount()
         lblTotalOrder.text = report.0
         lblTotalAmount.text = "$" + report.1
     }
     
+    /**
+    This method is called, when monthly button is clicked. Call getDayCount method and set total no. of orders and total amount to corresponding text fields.
+    */
     func setMonthData() {
         let report = getMonthCount()
         lblTotalOrder.text = report.0
@@ -369,6 +393,13 @@ class SalesReportVC: UIViewController {
 }
 
 extension SalesReportVC:UITableViewDataSource {
+    /**
+    This method returns no. of sections. Initialized no. of sections to 1. Set width and height of noDataLbl to width and height of table view.
+    If daily selection is selected, if reports data has value, and count of days is 0, set noDataLbl text to No daily data found else set noDataLbl text to null. If reportData has nil value, set noDataLbl text to No daily data found.
+    If weekly section is selected, if reports data has value, and count of weeks is 0, set noDataLbl text to No weekly data found else set noDataLbl text to null. If reportData has nil value, set noDataLbl text to No weekly data found.
+     If monthly section is selected, if reports data has value, and count of months is 0, set noDataLbl text to No onthly data found else set noDataLbl text to null. If reportData has nil value, set noDataLbl text to No monthly data found.
+    For noDataLbl, set text color to theme color, text alignment to centre. Set background of table view to noDataLbl. Return no. of sections.     
+    */
     func numberOfSections(in tableView: UITableView) -> Int {
         let numberOfSection = 1
         
@@ -412,6 +443,11 @@ extension SalesReportVC:UITableViewDataSource {
         return numberOfSection
     }
     
+    /**
+    This method returns no. of rows in section. If daily button is selected, return count of days in reportData.
+    If weekly button is selected, return count of weeks in reportData. If monthly button is selected, return count of months in reportData.
+    Return 0 by default.
+    */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch selection {
         case .daily:
@@ -430,6 +466,13 @@ extension SalesReportVC:UITableViewDataSource {
         return 0
     }
     
+    /**
+    This method asks the data source for a cell to insert in a particular location of the table view. Set cell to SalesReportCell if cell identifier is salesReportCell, else set cell to an empty SalesReportCell (this happens very rarely).
+    If daily was selected, if reportData has data, for each row index in daily, set order count and amount rounded to 2 decimal places in corresponding text field. In case of single order, the concatenated string is order else orders.
+    If weekly was selected, if reportData has data, for each row index in weekly, set order count and amount rounded to 2 decimal places in corresponding text field. 
+    If monthly was selected, if reportData has data, for each row index in monthly, set order count and amount rounded to 2 decimal places in corresponding text field. 
+    Return the cell.
+    */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "salesReportCell") as? SalesReportCell else {
             return SalesReportCell()
@@ -472,6 +515,9 @@ extension SalesReportVC:UITableViewDataSource {
 }
 
 extension SalesReportVC:UITableViewDelegate {
+    /**
+     Asks the delegate for the height to use for a row in a specified location. If device is iPad, return height 140 else return 90
+    */
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if Global.isIpad {
             return 140.0

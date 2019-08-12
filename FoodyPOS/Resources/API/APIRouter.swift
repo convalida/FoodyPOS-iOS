@@ -292,7 +292,7 @@ enum APIRouter: URLRequestConvertible {
         }**/
         
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
-        urlRequest.timeoutInterval = 60.0
+        urlRequest.timeoutInterval = 90.0
         // HTTP Method
         urlRequest.httpMethod = method.rawValue
         

@@ -16,7 +16,7 @@ class SalesSellAllVC: UIViewController {
     @IBOutlet weak var btnStartDate: UIButton!
     ///Outlet for end date
     @IBOutlet weak var btnEndDate: UIButton!
-    ///Outlet for title button.
+    ///Outlet for title button. Rajat ji please update which button's outlet this is referring
     @IBOutlet weak var btnTitle: UIButton!
     ///Outlet for total orders
     @IBOutlet weak var lblTotalOrders: UILabel!
@@ -348,7 +348,7 @@ extension SalesSellAllVC:UITableViewDataSource {
     }
     
     /**
-    This method asks the data source for a cell to insert in a particular location of the table view. Set cell to TopSaleCell if cell identifier is topSaleCell, else set cell to TopSaleCell (default case which happens rarely).
+    This method asks the data source for a cell to insert in a particular location of the table view. Set cell to TopSaleCell if cell identifier is topSaleCell, else set cell to empty TopSaleCell (default case which happens rarely). TopSaleCell is reused here.
      If device is iPad, set corner radius of letter text field to 45. If saleData has data, set row at particular index.
      Set name text to name for a particular row. Set order to total order. Set amount to price text rounded to 2 decimal places.
      Set contactNo. to corresponding text field of row. Set letter text to first character of customer name.

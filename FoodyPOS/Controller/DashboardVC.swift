@@ -329,7 +329,7 @@ class DashboardVC: UIViewController {
     
     //Show the sales graph
     /**
-     Sale button (check box) on graph is clicked. If it was checked by default, set it to unchecked else set it to checked. After that toggle the value of Sales Chart when user click on Sales Checkbox and initialize the chart.
+     Sale button (check box) on graph is clicked. If it was checked by default, set it to unchecked else set it to checked. Toggle the value of Sales Chart (i.e., if graph is showing sales data, hide it, if it is visble, hide it) when user click on Sales Checkbox and initialize the chart.
      */
     @IBAction func btnSaleDidClicked(_ sender: UIButton) {
         if sender.isSelected {
@@ -344,7 +344,7 @@ class DashboardVC: UIViewController {
     
     //Show the order graph
     /**
-     Orders button (check box) on graph is clicked. If it was checked by default, set it to unchecked else set it to checked. After that toggle the value of Orders Chart when user click on Orders Checkbox and initialize the chart.
+     Orders button (check box) on graph is clicked. If it was checked by default, set it to unchecked else set it to checked. Toggle the value of Orders Chart, (i.e., if graph is showing orders data, hide it, if it is visble, hide it) when user click on Orders Checkbox and initialize the chart.
      */
     @IBAction func btnOrdersDidClicked(_ sender: UIButton) {
         if sender.isSelected {
@@ -611,7 +611,7 @@ class DashboardVC: UIViewController {
 
 extension DashboardVC:UITableViewDataSource {
     /**
-     This method asks the data source to return the number of sections in the table view. Set no. of sections to 1. Set no data label to width and height of table view. After that check if dashboardData is not nil, if nil then show No data found label else show dashboard data.
+     This method asks the data source to return the number of sections in the table view. Set no. of sections to 1. Set no data label to width and height of table view. Check if dashboardData is not nil, if nil then show No data found label and hide footer view else show dashboard data (display footer view and noDataLbl to empty).
      Set no dataLbl text color to theme color, its text alignment to centre and set background view of table view to noDataLbl and return no. of sections.
      */
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -633,8 +633,7 @@ extension DashboardVC:UITableViewDataSource {
     }
     
     /**
-     This method returns no. of rows in section. Check if dashboardData is not nil, if nil then return 0 else return count of Dashboard.titleArray.
-     If condition is satisfied, return count of items in titleArray, i.e., Data struct (contiaing title, subtitle and icon). Return count 0 by default
+     This method returns no. of rows in section. Check if dashboardData is not nil then return count of items in titleArray, i.e., Data struct (contiaing title, subtitle and icon). Return count 0 by default.
      **/
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let _ = dashboardData {
