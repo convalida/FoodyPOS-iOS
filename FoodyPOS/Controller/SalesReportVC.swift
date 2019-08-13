@@ -140,7 +140,7 @@ class SalesReportVC: UIViewController {
 
     /**
     Start date button clicked. Instantiate DatePicker. Set date picker mode to date. Set maximum date of datepicker to today's date. 
-    Set date in date picker to date passed in from string. Show date picker alert and set text in from field equal to alert's date. 
+    Set date in date picker equal to date in button which is clicked. Show date picker alert and set text in from field equal to alert's date. 
     */
     @IBAction func btnStartDateDidClicked(_ sender: UIButton) {
         let datePicker = UIDatePicker()
@@ -156,7 +156,7 @@ class SalesReportVC: UIViewController {
     
     /**
     End sate button clicked. Instantiate DatePicker. Set date picker mode to date. Set maximum date of datepicker to today's date. 
-    Set date in date picker to date passed in from string. Show date picker alert and set text in from field equal to alert's date.   
+    Set date in date picker equal to date in button which is clicked. Show date picker alert and set text in from field equal to alert's date.   
     */
     @IBAction func btnEndDidClicked(_ sender: UIButton) {
         let datePicker = UIDatePicker()

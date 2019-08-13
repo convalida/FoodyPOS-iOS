@@ -106,7 +106,7 @@ class SalesSellAllVC: UIViewController {
 
     /**
     Called when start date is clicked. Instantiate date picker. Set date picker mode to date. Set maximum date to today's date.
-    If there is date in fromDate, then set date in datepicker to date in from string. Show date picker in alert.
+    If there is date in fromDate, then set date in datepicker equal to date in button which is clicked. Show date picker in alert.
     Set title of from string to date selected in date picker.
     */
     @IBAction func btnDateStartDidClicked(_ sender: UIButton) {
@@ -123,7 +123,7 @@ class SalesSellAllVC: UIViewController {
     
     /**
     End date is clicked. Instantiate date picker. Set date picker mode to date. Set maximum date to today's date.
-    If there is date in endDate, then set date in datepicker to date in from string. Show date picker in alert.
+    If there is date in endDate, then set date in datepicker equal to date in button which is clicked. Show date picker in alert.
     Set title of end string to date selected in date picker. 
     */
     @IBAction func btnDateEndDidClicked(_ sender: UIButton) {
