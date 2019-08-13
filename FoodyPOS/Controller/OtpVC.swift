@@ -8,28 +8,44 @@
 
 import UIKit
 
+///View controller class for OTP screen
 class OtpVC: UIViewController {
 
+    ///Outlet for email id text
     @IBOutlet weak var lblEmail: UILabel!
+    ///Outlet for vertification code fields. Rajat ji please check this. 
     @IBOutlet weak var codeView: KWVerificationCodeView!
+    ///Outlet for timer. Not used currently. Rajat ji please confirm this
     @IBOutlet weak var lblTimer: UILabel!
+    ///Outlet for verify button
     @IBOutlet weak var btnVerify: UIButton!
+    ///Outlet for resend button
     @IBOutlet weak var btnResend: UIButton!
+    ///Outlet for navigation bar. Rajat ji please check this
     @IBOutlet weak var viewTop: UIView!
 
+    ///Declare email string 
     var email:String!
+    ///Instantiate timer
     var timer = Timer()
+    ///Initlialize seconds value to 30
     var seconds = 30
+    ///Instantiate hud view
     var hudView = UIView()
     
+     ///Display status bar
     override var prefersStatusBarHidden: Bool {
         return false
     }
     
+    ///Set light color of status bar
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
+    /**
+    Life cycle method called after view is loaded. Set delegate of code view (verification code view. Rajat ji please check this) to self. Initialize hud view.
+    */
     override func viewDidLoad() {
         super.viewDidLoad()
         codeView.delegate = self
@@ -37,6 +53,11 @@ class OtpVC: UIViewController {
         initHudView()
     }
 
+    /**
+     Called before the view is loaded. Set email id passed from ForgotPasswordVC to email text field. Rajat ji please check this.
+    Set timer text to 30 sec. This is not used currently. Rajat ji please confirm if it is hidden in storyboard. Set verify button to be disabled by default 
+    and set alpha value to 0.5
+    */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         lblEmail.text = email
@@ -46,11 +67,15 @@ class OtpVC: UIViewController {
         btnVerify.alpha = 0.5
     }
     
+    ///Sent to the view controller when the app receives a memory warning.
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    /**
+    Initialize hud view. Set background color to white and hud view as sub view. Set constraints to top, left, bottom and right of hud view, add hud view and hide it.
+*/
     func initHudView() {
         hudView.backgroundColor = UIColor.white
         self.view.addSubview(hudView)
@@ -66,10 +91,17 @@ class OtpVC: UIViewController {
         hudView.isHidden = true
     }
     
+    /**
+     When back button is clicked, pop the top view controller from navigation stack and update the display.
+     */
     @IBAction func btnBackDidClicked(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
     
+    /**
+    Method called when submit button is clicked. Remove focus and keyboard from code view. If entered code (otp) is valid (Rajat ji please check this), call method callOtpAPI which hits otp web service
+    else show toast Please enter otp
+    */
     @IBAction func btnSubmitDidClicked(_ sender: UIButton) {
     codeView.resignFirstResponder()
         if codeView.hasValidCode() {
@@ -79,6 +111,11 @@ class OtpVC: UIViewController {
         }
     }
     
+    /**
+    Method called when Resend Otp button is clicked. Set parameter email which is passed from ForgotPasswordVC. Rajat ji please check this.
+    Display hud view. Pass parameter to forgotPassword method in APIClient classHide hud view. If api hit is successful, print message in reponse in logs, 
+    and show toast message Verfication code sent to email id which is passed. If api hit is not successful, if error message is noDataMessage or noDataMessage1 in Constants.swift, display message msgFailed in AppMessages.swift in dialog else display error message in dialog.
+    */
     @IBAction func btnResendDidClicked(_ sender: UIButton) {
         let parameter = ["EmailAddress":email!]
         
@@ -100,10 +137,12 @@ class OtpVC: UIViewController {
         }
     }
     
+    ///Not used
     func runTimer() {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(OtpVC.updateTimer)), userInfo: nil, repeats: true)
     }
     
+    ///Not used
     @objc func updateTimer() {
         seconds -= 1
         lblTimer.text = "\(seconds) s"
@@ -112,6 +151,12 @@ class OtpVC: UIViewController {
         }
     }
     
+    /**
+    Method called when submit button is clicked after entering otp. Take parameter otp from code view if it exists and convert it to string
+    and password as null. Rajat ji please check the paramters. Hide hud view. If api hit is successful and result code is 1, instantiate ResetPasswordVC,
+    get otp and pass it to vc and add view as sub view of view controller and add view controller as child view controller. Rajat ji please check this.
+    If result code is not 1, show message in reponse as toast. If api hit is not successful, if error message is noDataMessage or noDataMessage1 in Constants.swift, display message msgFailed in AppMessages.swift in dialog else display error message in dialog.
+    */
     private func callOtpAPI() {
         let parameter = ["Otp":codeView.getVerificationCode(),
                          "password":"null".replacingOccurrences(of: "\"", with: "")]
@@ -143,6 +188,11 @@ class OtpVC: UIViewController {
 }
 
 extension OtpVC:KWVerificationCodeViewDelegate {
+/**
+Notifies that the text in KWVerificationCodeView has been changed. This is especially useful in situations where you have to enable the submit button only if the verification code is valid. 
+If entered verification code is valid, set verify button to enabled, its alpha value to 1, resend button as disabled and its alpha to 0.5,
+else verify button to disabled, its alpha value to 0.5 and resend button to enabled and its alpha value to 1 
+*/
     func didChangeVerificationCode() {
         if codeView.hasValidCode() {
             btnVerify.isEnabled = true

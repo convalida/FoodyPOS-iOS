@@ -7,25 +7,41 @@
 //
 
 import UIKit
+///Structure for OrderDetail. Rajat ji please mention its use
 struct OrderDetail {
+    ///Instantiate key. Rajat ji please mention its use 
     let key:String
+    ///Instantiate value. Rajat ji please mention its use
     let value:String
 }
 
+///View controller class for Order Details screen
 class OrderDetailVC: UIViewController {
 
+    ///Outlet for table view
     @IBOutlet weak var tableView: UITableView!
+    ///Outlet for name label
     @IBOutlet weak var lblName: UILabel!
+    ///Outlet for contact no. label
     @IBOutlet weak var lblContact: UILabel!
+    ///Outlet for email label
     @IBOutlet weak var lblEmail: UILabel!
+    ///Outlet for total amount label
     @IBOutlet weak var lblTotalAmount: UILabel!
+    ///Outlet for navigation bar
     @IBOutlet weak var viewTop: UIView!
 
+    ///Instantiate variable for on click. Rajat ji please check this.
     var onClick:OnClick?
+    ///Declare total price string
     var totalPrice:String?
+    ///Instantiate hud view
     var hudView = UIView()
+    ///Declare order no.
     var orderNo = ""
+    ///Declare start date string 
     var startDate:String?
+    ///Declare end date string
     var endDate:String?
     
     override var prefersStatusBarHidden: Bool {

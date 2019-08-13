@@ -7,7 +7,7 @@
 //
 
 import UIKit
-///Protocol for defining delegate of current class. This is used to show employee details in EmployeeDetailVC after employee is successfully added. Minakshi ji, this is correct.
+///Protocol for defining delegate of current class. This is used to show employee details in EmployeeDetailVC after employee is successfully added.
 protocol EmployeeDetailDelegate {
     ///Abstract method for EmployeeDetailDelegate protocol
     func showDetail(detail:[EmployeeDetail])
