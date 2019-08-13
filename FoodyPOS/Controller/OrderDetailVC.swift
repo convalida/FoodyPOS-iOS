@@ -31,7 +31,7 @@ class OrderDetailVC: UIViewController {
     ///Outlet for navigation bar
     @IBOutlet weak var viewTop: UIView!
 
-    ///Instantiate variable for on click. Rajat ji please check this.
+    ///Declare variable for onClick.
     var onClick:OnClick?
     ///Declare total price string
     var totalPrice:String?

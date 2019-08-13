@@ -13,15 +13,15 @@ class OtpVC: UIViewController {
 
     ///Outlet for email id text
     @IBOutlet weak var lblEmail: UILabel!
-    ///Outlet for vertification code fields. Rajat ji please check this. 
+    ///Outlet for vertification code field.
     @IBOutlet weak var codeView: KWVerificationCodeView!
-    ///Outlet for timer. Not used currently. Rajat ji please confirm this
+    ///Outlet for timer. Not used currently.
     @IBOutlet weak var lblTimer: UILabel!
     ///Outlet for verify button
     @IBOutlet weak var btnVerify: UIButton!
     ///Outlet for resend button
     @IBOutlet weak var btnResend: UIButton!
-    ///Outlet for navigation bar. Rajat ji please check this
+    ///Outlet for navigation bar.
     @IBOutlet weak var viewTop: UIView!
 
     ///Declare email string 
@@ -44,7 +44,7 @@ class OtpVC: UIViewController {
     }
     
     /**
-    Life cycle method called after view is loaded. Set delegate of code view (verification code view. Rajat ji please check this) to self. Initialize hud view.
+    Life cycle method called after view is loaded. Set delegate of code view (verification code input field) to self. Initialize hud view.
     */
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,9 +54,8 @@ class OtpVC: UIViewController {
     }
 
     /**
-     Called before the view is loaded. Set email id passed from ForgotPasswordVC to email text field. Rajat ji please check this.
-    Set timer text to 30 sec. This is not used currently. Rajat ji please confirm if it is hidden in storyboard. Set verify button to be disabled by default 
-    and set alpha value to 0.5
+     Called before the view is loaded. Set email id passed from ForgotPasswordVC to email text field.
+    Set timer text to 30 sec. This is not used currently. This is hidden in storyboard. Set verify button to be disabled by default and set alpha value to 0.5
     */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -99,7 +98,7 @@ class OtpVC: UIViewController {
     }
     
     /**
-    Method called when submit button is clicked. Remove focus and keyboard from code view. If entered code (otp) is valid (Rajat ji please check this), call method callOtpAPI which hits otp web service
+    Method called when submit button is clicked. Remove focus and keyboard from code view. If entered code (otp) is valid, call method callOtpAPI which hits otp web service
     else show toast Please enter otp
     */
     @IBAction func btnSubmitDidClicked(_ sender: UIButton) {
@@ -112,7 +111,7 @@ class OtpVC: UIViewController {
     }
     
     /**
-    Method called when Resend Otp button is clicked. Set parameter email which is passed from ForgotPasswordVC. Rajat ji please check this.
+    Method called when Resend Otp button is clicked. Set parameter email which is passed from ForgotPasswordVC.
     Display hud view. Pass parameter to forgotPassword method in APIClient classHide hud view. If api hit is successful, print message in reponse in logs, 
     and show toast message Verfication code sent to email id which is passed. If api hit is not successful, if error message is noDataMessage or noDataMessage1 in Constants.swift, display message msgFailed in AppMessages.swift in dialog else display error message in dialog.
     */
@@ -153,8 +152,8 @@ class OtpVC: UIViewController {
     
     /**
     Method called when submit button is clicked after entering otp. Take parameter otp from code view if it exists and convert it to string
-    and password as null. Rajat ji please check the paramters. Hide hud view. If api hit is successful and result code is 1, instantiate ResetPasswordVC,
-    get otp and pass it to vc and add view as sub view of view controller and add view controller as child view controller. Rajat ji please check this.
+    and password as null. Hide hud view. If api hit is successful and result code is 1, instantiate ResetPasswordVC,
+    get otp and pass it to vc and add view as sub view of view controller and add ResetPasswordVC as child view controller.
     If result code is not 1, show message in reponse as toast. If api hit is not successful, if error message is noDataMessage or noDataMessage1 in Constants.swift, display message msgFailed in AppMessages.swift in dialog else display error message in dialog.
     */
     private func callOtpAPI() {

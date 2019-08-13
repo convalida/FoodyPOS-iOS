@@ -8,7 +8,7 @@
 
 import UIKit
 
-///Rajat ji, please update this 
+///Structure for Order Status
 struct Status {
     ///Boolean for Rajat ji please update this
     var isOpened = Bool()
@@ -28,11 +28,11 @@ class OrderListVC: UIViewController {
     @IBOutlet weak var btnStartDate: UIButton!
     ///Outlet for end date
     @IBOutlet weak var btnEndDate: UIButton!
-    ///Rajat ji please update this
+    ///Outlet for text field to search order by order no.
     @IBOutlet weak var txtSearch: UITextField!
-    ///Rajat ji please update this id this is search button followed by start date and end date order no. search button (microscope)
+    ///search button for Filtering orders by Start date and End date
     @IBOutlet weak var btnSearch: UIButton!
-    ///Outlet for top view or navigation bar. Rajat ji please check this
+    ///Outlet for top view or navigation bar.
     @IBOutlet weak var viewTop: UIView!
 
     //Rajat ji please update this

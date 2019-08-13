@@ -116,7 +116,7 @@ class ResetPasswordVC: UIViewController {
     
     /**
     Method responsible for hitting web service when reset password button is tapped. Remove focus from password and confirm password text fields and hide keyboard.
-    Take parameter Otp (passed from OtpVC) (Rajat ji please check this) and password from password text field. Display hud view. 
+    Take parameter Otp (passed from OtpVC) and password from password text field. Display hud view. 
     Pass parameters to resetPassword method of APIClient class. Hide hud view. If api hit is successful, and result code is 1, pop the view controller.
     If result code is not 1, show message in response in toast. If api hit is not successful, if error message is noDataMessage or noDataMessage1 in Constants.swift, display message msgFailed in AppMessages.swift in dialog else display error message in dialog.
     */ 
