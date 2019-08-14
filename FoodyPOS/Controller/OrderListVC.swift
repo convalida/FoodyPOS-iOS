@@ -8,7 +8,7 @@
 
 import UIKit
 
-///Structure for Order Status
+///Structure for Order Status. Rajat ji order status is not shown in orderlist. Kindly check and update.
 struct Status {
     ///Boolean for Rajat ji please update this
     var isOpened = Bool()
@@ -30,7 +30,7 @@ class OrderListVC: UIViewController {
     @IBOutlet weak var btnEndDate: UIButton!
     ///Outlet for text field to search order by order no.
     @IBOutlet weak var txtSearch: UITextField!
-    ///search button for Filtering orders by Start date and End date
+    ///Search button for filtering orders by start date and end date
     @IBOutlet weak var btnSearch: UIButton!
     ///Outlet for top view or navigation bar.
     @IBOutlet weak var viewTop: UIView!

@@ -8,15 +8,24 @@
 
 import UIKit
 
+///Protocol for defining delegate of current class. This is used to update the employee details in EmployeeDetailVC. Rajat ji please check this.
 protocol EditEmployeeDelegate {
     func updateEmployee()
 }
 
+/**
+View controller class for Edit employee dialog
+*/
 class EditEmployeeVC: UIViewController {
+    ///Outlet for main view/ complete dialog. Rajat ji please check this. 
     @IBOutlet weak var mainView: UIView!
+    ///Outlet for user name label
     @IBOutlet weak var lblUserName: UILabel!
+    ///Outlet for email id label
     @IBOutlet weak var lblEmailId: UILabel!
+    ///Outlet for role type button/spinner
     @IBOutlet weak var lblRoleType: UIButton!
+    ///Outlet for active status button/check box
     @IBOutlet weak var btnActive: UIButton!
     
     var employeeDetail:EmployeeDetail?

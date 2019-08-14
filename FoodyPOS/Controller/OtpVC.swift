@@ -55,7 +55,7 @@ class OtpVC: UIViewController {
 
     /**
      Called before the view is loaded. Set email id passed from ForgotPasswordVC to email text field.
-    Set timer text to 30 sec. This is not used currently. This is hidden in storyboard. Set verify button to be disabled by default and set alpha value to 0.5
+    Set timer text to 30 sec. This is not used currently and is hidden in Storyboard. This is hidden in storyboard. Set verify button to be disabled by default and set alpha value to 0.5
     */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

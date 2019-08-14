@@ -31,7 +31,7 @@ class OrderDetailVC: UIViewController {
     ///Outlet for navigation bar
     @IBOutlet weak var viewTop: UIView!
 
-    ///Declare variable for onClick.
+    ///Declare variable for onClick structure.
     var onClick:OnClick?
     ///Declare total price string
     var totalPrice:String?
@@ -44,14 +44,21 @@ class OrderDetailVC: UIViewController {
     ///Declare end date string
     var endDate:String?
     
+    ///Display status bar
     override var prefersStatusBarHidden: Bool {
         return false
     }
     
+     ///Set light content of status bar
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
+    /**
+     Life cycle method called after view is loaded. Call method initData which displays customer name, contact no. and email id.
+     Set data source and delegate of table view to self. Call initHudView method which initializes the hud view.
+    If order no. is not null, call method getOrderDetailByOrderNumber passing order no. in it which hits order detail web service.
+    */
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -66,6 +73,10 @@ class OrderDetailVC: UIViewController {
         }
     }
 
+    /**
+    Called before the view is loaded. If device is iPad, set height of table header view to 200. Here header view is section for user name, contact no., email address. Rajat ji please check this. 
+    Post notification to didReceiveOrderNumber which hits orderdetail web service if order no. is not null. This is used in case of push notification. Rajat ji please check id this is correct.
+    */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if Global.isIpad {
@@ -74,11 +85,16 @@ class OrderDetailVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(didReceiveOrderNumber(notification:)), name: NSNotification.Name(rawValue: kOrderDetailNotification), object: nil)
     }
     
+      ///Sent to the view controller when the app receives a memory warning.
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    /**
+    This method is called inside viewDidLoad and if order detail web service hit is successful. If onClick struct is not,
+    set customer name, contact no. and email to corresponding text fields. If total price is not null, set amount concatenated with $ sign. 
+    */
     func initData() {
         if let onClick = onClick {
             lblName.text = onClick.customerName
@@ -91,6 +107,9 @@ class OrderDetailVC: UIViewController {
         }
     }
     
+    /**
+    Initialize hud view. Set background color to white and hud view as sub view. Set constraints to top, left, bottom and right of hud view, add hud view and hide it.
+    */
     func initHudView() {
         hudView.backgroundColor = UIColor.white
         self.view.addSubview(hudView)
@@ -106,10 +125,17 @@ class OrderDetailVC: UIViewController {
         hudView.isHidden = true
     }
     
+    /**
+     When back button is clicked, pop the top view controller from navigation stack and update the display.
+     */
     @IBAction func btnBackDidClicked(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
     
+    /**
+    Method called when amount view is clicked. Instantiate AmountVC, if onClick is not null, pass onClick to vc.
+    Add view as sub view of view controller and add AmountVC as child view controller
+    */
     @IBAction func viewAmountDidClicked(_ sender: UITapGestureRecognizer) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.AmountVC) as! AmountVC
         if let onClick = onClick {
@@ -120,6 +146,11 @@ class OrderDetailVC: UIViewController {
     }
     
     
+    /**
+    Method called when amount view is clicked. Instantiate AmountVC, if onClick is not null, pass onClick to vc.
+    Add view as sub view of view controller and add AmountVC as child view controller. This method is exactly identical to viewAmounDidClicked,
+    Rajat ji please mention the requirement of two methods for same purpose. 
+    */
     @IBAction func btnAmountDidClicked(_ sender: UIButton) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.AmountVC) as! AmountVC
         if let onClick = onClick {
@@ -129,6 +160,10 @@ class OrderDetailVC: UIViewController {
         self.addChildViewController(vc)
     }
     
+    /**
+    Method called when customer detail button is clicked. Customer name is set on label outlet or button, Rajat ji please confirm this.
+    If onClick is not null, if customer id in onClick is not null, instantiate CustomerDetailVC, pass customer id and push vc.
+    */
     @IBAction func btnCustomerDetailDidClicked(_ sender: UIButton) {
          if let onClick = onClick {
             if let customerId = onClick.customerId {
@@ -139,6 +174,17 @@ class OrderDetailVC: UIViewController {
         }
     }
     
+
+    /**
+    This method is responsible for hitting web service. If restaurant id in UserManager class is null, then return.
+    Take parameter restaurant id from UserManager class, start date and end date if they are not null. Start date and end dates are passed in case view controller is launched by clicking on particular order no. in OrderlistVC. Rajat ji please check this. 
+    Order no. is passed in the method when it is called. Display hud view. Pass parameters to orderSearch method of APIClient class.
+    Hide hud view. If api hit is successful, if byOrderNumber structure's first element has result code, Rajat ji please check this.
+    if result code is 0, if byOrderNumber structure's first element has message, show message in toast.
+    If byOrderNumber structure's first element does not have result code, set byOrderNumber structure's first element's on click and total prices. Rajat ji please check this.
+    Call initData method which sets name, email and contact no. Call reload data method on table view which reloads the rows and sections of table view.
+    If api hit is not successful, if error message is noDataMessage or noDataMessage1 in Constants.swift, display message msgFailed in AppMessages.swift in dialog else display error message in dialog.
+    */
     private func getOrderDetailByOrderNumber(number:String) {
         guard let restaurentId = UserManager.restaurantID else {
             return
@@ -179,6 +225,11 @@ class OrderDetailVC: UIViewController {
         }
     }
     
+    /**
+    This method is called inside viewWillAppear. If user information dictionary associated with the notification is not null,
+    If orderNo in user information dictionary is String and not null, call method getOrderDetailByOrderNumber and pass order no. which hits order detail web service
+    Rajat ji please check this and that if it used in case of push notification.
+    */
     @objc func didReceiveOrderNumber(notification:Notification) {
         if let info = notification.userInfo as NSDictionary? {
             if let orderNo = info["orderNo"] as? String {
@@ -192,6 +243,15 @@ class OrderDetailVC: UIViewController {
 
 extension OrderDetailVC:UITableViewDataSource {
    
+   /**
+    Method returns no. of sections of table view. Set width and height of noDataLbl to width and height of table view. If onClick is not null,
+    If onClick has orderItemDetails, and its count is 0, hide header view of table and set noDataLbl text to No data found. Header view section is the sction containing name, contact no. and email address. Rajat ji please check this.
+    If onClick has orderItemDetails and its count is not 0, display header view of table view and noDataLbl text to null.
+    Set noDataLbl's text color to theme color, alignment to center. Set background view of table view to noDataLbl. 
+    Return no. of sections to 1.
+    If onClick is null, set noDataLbl text to No data found, text color to theme color, alignment to center. Set background view of table view to noDataLbl.
+   Hide header view of table view, return no. of sections to 0.
+   */
     func numberOfSections(in tableView: UITableView) -> Int {
         let noDataLbl = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: tableView.bounds.height))
         if let onClick = onClick {
@@ -218,6 +278,10 @@ extension OrderDetailVC:UITableViewDataSource {
         return 0
     }
     
+    /**
+    This method returns no. of rows in section of table view. If onClick is not null, if onClick has orderItemDetails, return count of items in orderItemDetails.
+    Return 0 by default.
+    */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let onClick = onClick {
             if let orderItems = onClick.orderItemDetails {
@@ -227,6 +291,18 @@ extension OrderDetailVC:UITableViewDataSource {
         return 0
     }
     
+    /**
+    This method asks the data source for a cell to insert in a particular location of the table view. 
+    Set cell to OrderDetailCell if cell identifier is detailCell, else return empty OrderDetailCell (default case which happens rarely).
+    If onClick is not null, if onClick has orderItemDetails, set items at specified index. Set sub item name, modifier, add on, instruction to corresponding text fields at specified index. Rajat ji please check this.
+    If price's double value price is not null, set price to corresponding text field, concatenated with $ and rounded to 2 decimal places.
+    If total's double value is not null, set total to corresponding text field, concatenated with $ and rounded to 2 decimal places.
+    If at particular position, if sub item name is null, hide stackSubItem outlet, else display stackSubItem outlet in OrderDetailCell,
+    if modifier is null, hide stackModifier outlet, else display stackModifier outlet in OrderDetailCell, if add on is null, hide stackAddOn outlet, else display stackAddOn outlet in OrderDetailCell,
+    if instruction is null, hide stackInstruction outlet, else display stackSubItem outlet in OrderDetailCell, if price is 0, hide stackPrice outlet, else display stackPrice outlet in OrderDetailCell,
+    if addOnPrice is 0, hide stackAddOnPrice outlet, else display stackAddOnPrice outlet in OrderDetailCell, if total is 0, hide stackTotal outlet, else display stackTotal outlet in OrderDetailCell.
+    Return cell
+    */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell") as? OrderDetailCell else {
@@ -291,6 +367,10 @@ extension OrderDetailVC:UITableViewDataSource {
 }
 
 extension OrderDetailVC:UITableViewDelegate {
+    /**
+    Asks the delegate for a view object to display in the header of the specified section of the table view.
+    If there is cell with identifier headerCell, then return that cell else return empty UITableViewCell. Rajat ji please check this and also if the idenfier is passed Storyboard, or some other place, please mention that.
+    */
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "headerCell") else {
             return UITableViewCell()
@@ -298,14 +378,23 @@ extension OrderDetailVC:UITableViewDelegate {
         return cell
     }
     
+    /**
+     Asks the delegate for the height to use for a row in a specified location.
+    */
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
     
+    /**
+     Asks the delegate for the estimated height of a row in a specified location. Estimated height is 220.
+     */
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 220.0
     }
     
+    /**
+    Asks the delegate for the height to use for the header of a particular section. The height returned is 60
+    */
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 60.0
     }
