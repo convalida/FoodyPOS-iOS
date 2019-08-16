@@ -100,7 +100,7 @@ class EmployeeDetailVC: UIViewController {
     // Show Edit Employee Form
     /**
     Method called when Edit employee button clicked. Instantiate EditEmployeeVC, set its delegate to self in view controller.
-    If employeeData has employeeDetails, get its id and pass it in vc. Rajat ji please check this.
+    If employeeData has employeeDetails, get its id and pass it in vc.
     Add view as sub view of view controller and add EditEmployeeVC as child view controller. 
     */
     @objc func btnEditDidClicked(sender:UIButton) {
@@ -124,7 +124,7 @@ class EmployeeDetailVC: UIViewController {
     /** 
     Get employee details from web service. If UserManager class does not has restautant id, then return.
     Take parameter restaurant id from UserManager class. Display hud view. Call employee method from APIClient class and pass parameters.
-    Hide hud view. If api hit is successful, pass the response to employeeData. Rajat ji please check this. Call reloadTable method which reloads rows and sections of table view.
+    Hide hud view. If api hit is successful, pass the response to employeeData. Call reloadTable method which reloads rows and sections of table view.
     If api hit is not successful, if error message is noDataMessage or noDataMessage1 in Constants.swift, display message msgFailed in AppMessages.swift in dialog else display error message in dialog.
     */
     private func callEmployeeAPI() {
@@ -241,7 +241,7 @@ extension EmployeeDetailVC:UITableViewDelegate {
 
 extension EmployeeDetailVC:EmployeeDetailDelegate {
     /**
-    When this method is called and what this method does, Rajat ji please update this.
+    This method is called after updating or adding Employee and this also reloads the table data.
     */
     func showDetail(detail: [EmployeeDetail]) {
             employeeData?.employeeDetails = detail
@@ -251,7 +251,7 @@ extension EmployeeDetailVC:EmployeeDetailDelegate {
 
 extension EmployeeDetailVC:EditEmployeeDelegate {
     /**
-    When this method is called, Rajat ji please update this. Call method callEmployeeAPI which hits Employee web service 
+    This method is called when user wants to update any employee data. This also calls the api to update data on server.
     */
     func updateEmployee() {
         callEmployeeAPI()

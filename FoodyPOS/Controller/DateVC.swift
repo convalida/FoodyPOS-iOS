@@ -11,11 +11,11 @@ import UIKit
 ///View controller class for date and time dialog called in CustomerDetailVC
 class DateVC: UIViewController {
 
-    ///Outlet for date button/text. Rajat ji please check if it is button or label
+    ///Outlet for date button which is displayed as text.
     @IBOutlet weak var btnDate: UIButton!
-    ///Outlet for time button/text. Rajat ji please check if it is button or label
+    ///Outlet for time button which is displayed as text
     @IBOutlet weak var btnTime: UIButton!
-    ///Outlet for main view, i.e., complete dialog. Rajat ji please check
+    ///Outlet for main view, i.e., complete dialog.
     @IBOutlet weak var mainView: UIView!
     
     ///Instantiate date variable to null
@@ -35,7 +35,7 @@ class DateVC: UIViewController {
     
     /**
     Life cycle method called after view is loaded. Remove the controller, on tap of view using UITapGestureRecognizer which is a pre defined class and call addGestureRecognizer which is a pre defined method.
-     Add delegate of tap to self. Set title of date button and time button to date and time resp. passed in CustomerDetailVC. Rajat ji please check this.
+     Add delegate of tap to self. Set title of date button and time button to date and time resp. passed in CustomerDetailVC.
     */
     override func viewDidLoad() {
         super.viewDidLoad()

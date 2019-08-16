@@ -16,7 +16,7 @@ class SalesSellAllVC: UIViewController {
     @IBOutlet weak var btnStartDate: UIButton!
     ///Outlet for end date
     @IBOutlet weak var btnEndDate: UIButton!
-    ///Outlet for title button. Rajat ji please update which button's outlet this is referring
+    ///Outlet for title button which is displayed as text
     @IBOutlet weak var btnTitle: UIButton!
     ///Outlet for total orders
     @IBOutlet weak var lblTotalOrders: UILabel!

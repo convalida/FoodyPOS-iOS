@@ -22,7 +22,7 @@ class AllBestSellerVC: UIViewController {
     ///Outlet for back button
     @IBOutlet weak var btnBack: UIButton!
     
-    ///Rajat ji please update this
+    ///For open/close status of collapsible groups
     var statusData = [Status]()
     ///Declare variable for AllBestSeller structure 
     var bestSellerData:AllBestSeller?
@@ -45,12 +45,12 @@ class AllBestSellerVC: UIViewController {
     
     /**
     Life cycle method called after view is loaded. Set delegate and data source of table view to self.
-    Call initHudView method which initializes the hud view. If value of type is week, where this value is set, Rajat ji kindly mention that.
+    Call initHudView method which initializes the hud view. If value of type is week, where this value is set, This value is set on clicking one out of the three icons in the list.
     If type value is week, set start date to previous occurance of Monday in current week, considering today's date.
-    Set title of back button to Weekly Bestseller items. Rajat ji please check and confirm this if back button has title.
+    Set title of back button to Weekly Bestseller items.
      If type value is month, set start date to first date of current month.
     Set title of back button to Monthly Bestseller items. 
-     If type value is year, set start date to first date of current year. Rajat ji please check this.
+     If type value is year, set start date to first date of current year.
     Set title of back button to Yearly Bestseller items. Set end date to today's date   
     */
     override func viewDidLoad() {
@@ -78,7 +78,7 @@ class AllBestSellerVC: UIViewController {
     }
 
     /**
-    Called before the view is loaded. If bestSellerData is null, i.e., it is called for first time. Rajat ji please check this.
+    Called before the view is loaded. If bestSellerData is null, i.e., it is called for first time.
     Call method callAllBestSellerAPI method which hits getAllBestSellerAPI method.
     */
     override func viewWillAppear(_ animated: Bool) {

@@ -7,13 +7,6 @@
 //
 
 import UIKit
-///Structure for OrderDetail. Rajat ji please mention its use
-struct OrderDetail {
-    ///Instantiate key. Rajat ji please mention its use 
-    let key:String
-    ///Instantiate value. Rajat ji please mention its use
-    let value:String
-}
 
 ///View controller class for Order Details screen
 class OrderDetailVC: UIViewController {
