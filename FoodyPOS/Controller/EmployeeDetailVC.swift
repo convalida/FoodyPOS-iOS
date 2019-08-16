@@ -17,7 +17,7 @@ class EmployeeDetailVC: UIViewController {
     ///Outlet for navigation bar
     @IBOutlet weak var viewTop: UIView!
 
-    ///Declare varaible Employee structure
+    ///Declare variable Employee structure
     var employeeData:Employee?
     ///Instantiate hud view
     var hudView = UIView()

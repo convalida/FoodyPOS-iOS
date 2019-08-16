@@ -17,26 +17,42 @@ class AllBestSellerVC: UIViewController {
     @IBOutlet weak var btnEndDate: UIButton!
     ///Outlet for table view
     @IBOutlet weak var tableView: UITableView!
-    ///Outlet for top view - navigation bar
+    ///Outlet for top view or navigation bar
     @IBOutlet weak var viewTop: UIView!
     ///Outlet for back button
     @IBOutlet weak var btnBack: UIButton!
     
-    
+    ///Rajat ji please update this
     var statusData = [Status]()
+    ///Declare variable for AllBestSeller structure 
     var bestSellerData:AllBestSeller?
+    ///Instantiate hud view
     var hudView = UIView()
+    ///Initialize variable type to null
     var type = ""
+    ///Initialize boolean variable isSearch to false
     var isSearch:Bool = false
     
+    ///Set status bar to visible 
     override var prefersStatusBarHidden: Bool {
         return false
     }
     
+     ///Set light content of status bar
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
+    /**
+    Life cycle method called after view is loaded. Set delegate and data source of table view to self.
+    Call initHudView method which initializes the hud view. If value of type is week, where this value is set, Rajat ji kindly mention that.
+    If type value is week, set start date to previous occurance of Monday in current week, considering today's date.
+    Set title of back button to Weekly Bestseller items. Rajat ji please check and confirm this if back button has title.
+     If type value is month, set start date to first date of current month.
+    Set title of back button to Monthly Bestseller items. 
+     If type value is year, set start date to first date of current year. Rajat ji please check this.
+    Set title of back button to Yearly Bestseller items. Set end date to today's date   
+    */
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -61,6 +77,10 @@ class AllBestSellerVC: UIViewController {
         btnEndDate.setTitle(Date.todayDate, for: .normal)
     }
 
+    /**
+    Called before the view is loaded. If bestSellerData is null, i.e., it is called for first time. Rajat ji please check this.
+    Call method callAllBestSellerAPI method which hits getAllBestSellerAPI method.
+    */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
@@ -70,6 +90,9 @@ class AllBestSellerVC: UIViewController {
         }
     }
     
+    /**
+    Initialize hud view. Set background color to white and hud view as sub view. Set constraints to top, left, bottom and right of hud view, add hud view and hide it.
+    */
     func initHudView() {
         hudView.backgroundColor = UIColor.white
         self.view.addSubview(hudView)
@@ -86,6 +109,11 @@ class AllBestSellerVC: UIViewController {
     }
     
     //MARK: ---------Button actions---------
+    /**
+    Method called when start date button is clicked. Instantiate date picker. Set date picker mode to date. Set maximum date to today's date.
+    If there is date in fromDate, then set date in datepicker equal to date in button which is clicked. Show date picker in alert.
+    Set title of from string to date selected in date picker.
+    */
     @IBAction func btnDateStartDidClicked(_ sender: UIButton) {
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
@@ -98,6 +126,11 @@ class AllBestSellerVC: UIViewController {
         }
     }
     
+     /**
+    Method called when end date is clicked. Instantiate date picker. Set date picker mode to date. Set maximum date to today's date.
+    If there is date in endDate, then set date in datepicker equal to date in button which is clicked. Show date picker in alert.
+    Set title of end string to date selected in date picker. 
+    */
     @IBAction func btnDateEndDidClicked(_ sender: UIButton) {
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
