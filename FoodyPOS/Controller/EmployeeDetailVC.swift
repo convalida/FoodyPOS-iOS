@@ -241,7 +241,8 @@ extension EmployeeDetailVC:UITableViewDelegate {
 
 extension EmployeeDetailVC:EmployeeDetailDelegate {
     /**
-    This method is called after updating or adding Employee and this also reloads the table data.
+    This method is called after updating or adding Employee and this method takes EmployeeDetail and reloads the table data.
+    Rajat ji, please mention if this method is called automatically in case of Edit and Add Employee or it is called somewhere through code.
     */
     func showDetail(detail: [EmployeeDetail]) {
             employeeData?.employeeDetails = detail
@@ -252,6 +253,8 @@ extension EmployeeDetailVC:EmployeeDetailDelegate {
 extension EmployeeDetailVC:EditEmployeeDelegate {
     /**
     This method is called when user wants to update any employee data. This also calls the api to update data on server.
+    Rajat ji, please mention if this method is called automatically in case of Edit Employee or it is called somewhere through code.
+    Also, Rajat ji please mention the use of this method as showDetail method is called in case of update employee as mentioned.
     */
     func updateEmployee() {
         callEmployeeAPI()

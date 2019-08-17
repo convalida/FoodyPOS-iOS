@@ -16,7 +16,7 @@ class SalesSellAllVC: UIViewController {
     @IBOutlet weak var btnStartDate: UIButton!
     ///Outlet for end date
     @IBOutlet weak var btnEndDate: UIButton!
-    ///Outlet for title button which is displayed as text
+    ///Outlet for title button which is displayed as text.
     @IBOutlet weak var btnTitle: UIButton!
     ///Outlet for total orders
     @IBOutlet weak var lblTotalOrders: UILabel!
@@ -53,7 +53,8 @@ class SalesSellAllVC: UIViewController {
     /**
      Life cycle method called after view is loaded. Set data source and delegate of table view to self.
      Call initHudView method. Set start date to occurance of Monday of current week. Set end date to today's date.
-     If saleData is null, set title on action bar to Customers, call method callCustomersAPI and set isCustomer vlaue to true else call setSaleData method.
+     If saleData is null, set title on action bar to Customers, call method callCustomersAPI and set isCustomer vlaue to true else call setSaleData method,
+    the title in this case (isCustomer=false) is set in StoryBoard. Rajat ji please check and confirm this.
     */
     override func viewDidLoad() {
         super.viewDidLoad()

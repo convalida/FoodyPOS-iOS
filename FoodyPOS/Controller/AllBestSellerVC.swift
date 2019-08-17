@@ -22,7 +22,7 @@ class AllBestSellerVC: UIViewController {
     ///Outlet for back button
     @IBOutlet weak var btnBack: UIButton!
     
-    ///For open/close status of collapsible groups
+    ///Declare variable for open/close status of collapsible groups
     var statusData = [Status]()
     ///Declare variable for AllBestSeller structure 
     var bestSellerData:AllBestSeller?
@@ -45,9 +45,9 @@ class AllBestSellerVC: UIViewController {
     
     /**
     Life cycle method called after view is loaded. Set delegate and data source of table view to self.
-    Call initHudView method which initializes the hud view. If value of type is week, where this value is set, This value is set on clicking one out of the three icons in the list.
+    Call initHudView method which initializes the hud view. If value of type is week. This value is set depending on value passed in vc when called from BestSellerVC based on view more is clicked from weekly, monthly or yearly section. Rajat ji kindly check this.
     If type value is week, set start date to previous occurance of Monday in current week, considering today's date.
-    Set title of back button to Weekly Bestseller items.
+    Set title of back button to Weekly Bestseller items. Rajat ji please confirm if back button has a title which displays weekly/monthly/yearly bestseller items.
      If type value is month, set start date to first date of current month.
     Set title of back button to Monthly Bestseller items. 
      If type value is year, set start date to first date of current year.
@@ -143,10 +143,17 @@ class AllBestSellerVC: UIViewController {
         }
     }
     
+    ///Back button clicked. Pop the top view controller from stack
     @IBAction func btnBackDidClicked(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     
+    /**
+    Method called when search button is clicked after selecting start date and end date. 
+    If date in btnStartDate is less than or equal to date in btnEndDate. Set isSearch to true. Call method callAllBestSellerAPI method.
+    If date in btnStartDate is greater than date in btnEndDate, show toast message Start date must be less than or equal to end date
+
+    */
     @IBAction func btnSearchDidClicked(_ sender: UIButton) {
         if Date.getDate(fromString: (btnStartDate.titleLabel?.text)!)! <= Date.getDate(fromString: (btnEndDate.titleLabel?.text)!)! {
             isSearch = true
@@ -156,6 +163,13 @@ class AllBestSellerVC: UIViewController {
         }
     }
     
+    /**
+    Method called in viewWillAppear and when search button is clicked. If UserManager does not have restaurant id, then return.
+    Take parameter restaurant id from UserManager class, start date and end dates from btnStartDate and btnEndDate resp.
+    Display hud view. Call getAllBestSeller method from APIClient class and pass parameters. Hide hud view.
+    If api hit is successful, set response to bestSellerData. Call method initData which sets the status for all sections in weekly, monthly and yearly bestseller items.
+    Call reloadTable method which reloads the table. If api hit is not successful, if error message is noDataMessage or noDataMessage1 in Constants.swift, display message msgFailed in AppMessages.swift in dialog else display error message in dialog.
+    */
     private func callAllBestSellerAPI() {
         guard let restaurentId = UserManager.restaurantID else {
             return
@@ -191,6 +205,19 @@ class AllBestSellerVC: UIViewController {
         }
     }
     
+    /**
+    This method is called when allBestSeller api hit is successful. Remove all elements from statusData array.
+    If bestSellerData is not null, if by_DateSelection in bestSellerData is not null, if type of selection is week,
+    if weeklyBestsellerItems in by_DateSelection is not null, for all elements from 0 to no. of elements in weeklyBestseller items,
+    instantiate Status. For 0th item, set status of row to opened, for other items, set status of row to closed.
+    Append status of all rows to statusData array.
+    If type selected is month, if monthlyBestsellerItems in by_DateSelection is not null, for all elements from 0 to no. of elements in monthlyBestseller items,
+    instantiate Status. For 0th item, set status of row to opened, for other items, set status of row to closed.
+    Append status of all rows to statusData array.
+    If type selected is year, if yearlyBestsellerItems in by_DateSelection is not null, for all elements from 0 to no. of elements in yearlyBestseller items,
+    instantiate Status. For 0th item, set status of row to opened, for other items, set status of row to closed.
+    Append status of all rows to statusData array. 
+    */
     func initData() {
         statusData.removeAll()
         if let data = bestSellerData {
@@ -228,6 +255,10 @@ class AllBestSellerVC: UIViewController {
     }
     
     //Reload the table
+    /**
+    Method called when allBestseller api hit is successful. Reload rows and sections of table view. 
+    Call method scrollToTop which scrolls the list to top without animation. Rajat ji please check this. 
+    */
     func reloadTable() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -240,6 +271,19 @@ class AllBestSellerVC: UIViewController {
 
 extension AllBestSellerVC:UITableViewDataSource {
     
+    /**
+    This method returns no. of sections. Set width and height of noDataLbl to width and height of table view. If bestsellerData is not null,
+    if by_DateSelection in bestSellerData is is not null, if type of selection is week, if weeklyBestSellerItems in by_DateSelection is not null,
+    if count of items in weeklyBestsellerItems is 0, set noDataLbl text to No data found else set noDataLbl text to null.
+    Set noDataLbl text color to theme color, its alignment to center, set background to tableview to noDataLbl. Return no. of items in weeklyBestseller items.
+    If type of selection is month, if monthlyBestSellerItems in by_DateSelection is not null,
+    if count of items in monthlyBestsellerItems is 0, set noDataLbl text to No data found else set noDataLbl text to null.
+    Set noDataLbl text color to theme color, its alignment to center, set background to tableview to noDataLbl. Return no. of items in monthlyBestseller items.
+    If type of selection is year, if yealyBestSellerItems in by_DateSelection is not null,
+    if count of items in yearlyBestsellerItems is 0, set noDataLbl text to No data found else set noDataLbl text to null.
+    Set noDataLbl text color to theme color, its alignment to center, set background to tableview to noDataLbl. Return no. of items in yearlyBestseller items.
+    Return 0 in default case.
+    */
     func numberOfSections(in tableView: UITableView) -> Int {
         let noDataLbl = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: tableView.bounds.height))
         if let data = bestSellerData {
@@ -291,6 +335,16 @@ extension AllBestSellerVC:UITableViewDataSource {
         return 0
     }
     
+    /**
+     This method returns no. of rows in section. If status of particular section is opened, if bestSellerData is not null,
+     if type is week, if weeklyBestsellerItems in byDateSelection is not null, if item_Details in weeklyBestseller items is not null,
+     return no. of items in item_Details+1 including header row. Rajat ji please check this
+     If type is month, if monthlyBestsellerItems in byDateSelection is not null, if item_Details in monthlyBestseller items is not null,
+     return no. of items in item_Details+1 including header row. 
+     If type is year, if yearlyBestsellerItems in byDateSelection is not null, if item_Details in yearlyBestseller items is not null,
+     return no. of items in item_Details+1 including header row. 
+     Return 1 by default.
+    */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if statusData[section].isOpened {
             if let data = bestSellerData {

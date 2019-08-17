@@ -8,7 +8,7 @@
 
 import UIKit
 
-///Structure defination for Status of collapsible list grouped by date.
+///Structure defination for status of collapsible list grouped by date.
 struct Status {
     ///Boolean for collapsible list item, if it is opened or not
     var isOpened = Bool()
@@ -35,7 +35,7 @@ class OrderListVC: UIViewController {
     ///Outlet for top view or navigation bar.
     @IBOutlet weak var viewTop: UIView!
 
-    //Array to store status of all Orders displayed in the list
+    //Array to store status of all orders displayed in the list to determine which header rows containing dates are opened. Rajat ji please check this.
     var statusData = [Status]()
     ///Structure of Order instantiated
     var orderData:Order?
@@ -86,7 +86,7 @@ class OrderListVC: UIViewController {
 
     /**
     Called before the view is loaded. Hide search view. Set delegate of search text to self. 
-    If orderData is null, i.e., it is called for first time, call method callOrderAPI method which hits the orders web service.
+    If orderData is null, i.e., it is called for first time, call method callOrderAPI, method which hits the orders web service.
     */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -203,7 +203,7 @@ class OrderListVC: UIViewController {
     
     /**
     This method is called when the search button after From Date and To Date is clicked.
-    Hide search view, hide selection from search text and hide keyboard.
+    Hide search view, hide selection from search text and hide keyboard. Rajat ji please check this as the fuctionality says to hide search view and keyboard. Kindly recheck and confirm.
     */
     @IBAction func btnSearchDidClicked(_ sender: UIButton) {
         viewSearch.isHidden = true
@@ -211,11 +211,10 @@ class OrderListVC: UIViewController {
     }
     
     /**
-       This method is used to fetch Orders from API. If UserManager class does not have Restaurant id, return.
+       This method is used to fetch orders from API. If UserManager class does not have Restaurant id, return.
        Take paramters restaurant id from UserManager class, start date and end date from btnStartDate and btnEndDate resp., order no. as null.
        Display hud view. Call method order from APIClient class and pass the paramters. Hide hud view. If api hit is successful,
-       set response to orderData.
-       Call iniData method which displays total order and total amount. Call reloadTable method which reloads the table.
+       set response to orderData. Call iniData method which displays total order and total amount. Call reloadTable method which reloads the table.
        If api hit is not successful, if error message is noDataMessage or noDataMessage1 in Constants.swift, display message msgFailed in AppMessages.swift in dialog else display error message in dialog.
      */
     func callOrderAPI() {
@@ -256,7 +255,8 @@ class OrderListVC: UIViewController {
     //Initialize the data when UI Load
     /**
     This method is called on successful hit orderlist web service. If orderData is not null, set total orders and total amount to corresponding text fields.
-    If date in orderData is not null, after that set isOpened to false for all orders grouped by date.
+    If date in orderData is not null, for all elements from 0 to count of elements in date, instantiate status, set status to false and append all the status, i.e., 
+    by default all row headers with dates will be closed. Rajat ji please check this.
     */
     func initData() {
         if let order = orderData {
@@ -274,13 +274,13 @@ class OrderListVC: UIViewController {
     
     /**
     This method is called when done button on keyboard is clicked after order no. search button was clicked.
-    End editing is called on this controller's main view.
+    End editing is called on this controller's main view which is search view in this case, Rajat ji please check this.
     Remove selection from search text field and hide keyboard.  If search tyext field is empty, show message Please enter order no. in toast
     else if restaurant id is not in UserManager class, return. Take restaurant id from UserManager class, start date and end date as empty parameters and order no. from search text.
     Display hud view. Pass the parameters to orderSearch method of APIClient class. Hide hud view. If api hit is successful,
-    If first result code in byOrderNumber array is not null and If result code is 0,
-     and If first message in byOrderNumber array is not null, show message obtained in response in toast.
-    If first result code in byOrderNumber array is null, instantiate OrderDetailVC. Pass first value of onClick in byOrderNumber array to vc.
+    If in byOrderNumber array, first element is resultCode and if result code is 0, Rajat ji please check this
+     and if first message in byOrderNumber array is not null, show message obtained in response in toast.
+    If in byOrderNumber array, first element is not resultCode, instantiate OrderDetailVC. Rajat ji please check this, Pass first value of onClick in byOrderNumber array to vc.
     Pass first value of totalPrices in byOrderNumber array to vc and push vc.
     If api hit is not successful, if error message is noDataMessage or noDataMessage1 in Constants.swift, display message msgFailed in AppMessages.swift in dialog else display error message in dialog.
     */
@@ -377,8 +377,11 @@ extension OrderListVC:UITableViewDataSource {
     }
     
     /**
-    This method returns no. of rows in section of table view. 1 row is for header cell and another rows are for all the orders which are grouped by date.
-    Return no. of rows 1 by default.
+    This method returns no. of rows in section of table view. 
+    1 row is for header cell and another rows are for all the orders which are grouped by date.
+    If header row containing date is opened, if orderData is not null, if date in orderData is not null,
+    if orderNumberDetails in date is not null, return the count of elements in orderNumberDetails+1 (for parent row and children row) Rajat ji please check this.
+    Return 1 by default for parent row. Rajat ji please check this.
     */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if statusData[section].isOpened {
@@ -395,15 +398,17 @@ extension OrderListVC:UITableViewDataSource {
     
     /**
     This method asks the data source for a cell to insert in a particular location of the table view. For 0th row, set cell to OrderListCell if cell identifier is headerCell, else set cell to empty OrderListCell (default case which happens rarely)
-    If orderData is not null, if order has date array, check if the collapsed section is opened or not then set the arrow icon accordingly.
-    In date array, set orderDate to corresponding text field at particular index of section.
+    If orderData is not null, if order has date array, check if the section is opened or not then set the arrow 
+    icon (in parent row/section depicting the section is opened or closed - Rajat ji please check this) accordingly in both cases it is opened or closed.
+    In date array, set orderDate to corresponding text field in section at particular index. Rajat ji please check this.
     If in date array, orderNumberDetails is not null, set count of items in orderNumberDetail to lblHeaderOrder text field and value returned from method getTotalAmountOfOrders in lblHeaderPrice text field at particular index of section.
     0th row will always be the header in the table view section to show details of orders on a particular date.
-    For row other than 0th row, set cell to OrderListCell if cell identifier is headerCell, else set cell to empty OrderListCell (default case which happens rarely)
-    If orderData is not null, if order has date, if in date array, if orderNumberDetails at particular row of particular section is not null, then show the details of order.
-    Set order no. at lblListItem text field concatenated with #.
-    Set pickup time at index of current item in orders array.
-    Get price of current order to be displayed in the list cel and converting it to double and is not null, set double price rounded to 2 decimal places to lblList price text field and return cell.
+    For row other than 0th row, set cell to OrderListCell if cell identifier is listCell, else set cell to empty OrderListCell (default case which happens rarely)
+    For both parent row/ section and children rows, same cell, i.e., OrderListCell is reused with different identifiers - headerCell and listCell. Rajat ji please check this.
+    If orderData is not null, if order has date, if in date array, if orderNumberDetails at particular section is not null, then show the details of order.
+    If order no. at index of row-1 of particular section is not null, Rajat ji please check this. set order no. at lblListItem text field concatenated with #.
+    Set pickup time at index of row -1 of particular section (as json response starts from 0 and first row is at position 1 - header row+1) current item in orders array. Rajat ji please check this, it is for my personal understanding of code.
+    If totalPrice at index of row -1 of particular section is not null, get price of current order to be displayed in the list cell and converting it to double and is not null, set double price rounded to 2 decimal places to lblList price text field and return cell.
     */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
@@ -452,9 +457,11 @@ extension OrderListVC:UITableViewDataSource {
 //MARK: ---------Table view delegate---------
 extension OrderListVC:UITableViewDelegate {
     /**
-    Tells the delegate that the specified row is now selected. if user clicks on 0th row then we will expand the collapsed section of tableview
-    For rows other than 0, if orderData is not null, if order has date array, if position of index of particular section is not null, Then show order details of the order and instantiate OrderDetailVC, pass order no. to vc
-    pass start date and end date from btnStartDate and btnEndDate resp., pass price to vc
+    Tells the delegate that the specified row is now selected. If user clicks on 0th row then if status of section is isOpened, then set isOpened to false, else if isOpened is false, set isOpened
+    to true, i.e, toggle the status of section, get all sections of table view and reload the sections. Rajat ji kindly check this.
+    If row other than 0 is selected, if orderData is not null, if order has date array, if orderNumberDetails at particular position of date arry is not null, Then show order details of the order and instantiate OrderDetailVC,
+     pass order no. from section's row-1 position to vc. Rajat ji please check this
+    pass start date and end date from btnStartDate and btnEndDate resp., pass price from section's row-1 position to vc
     Push vc 
     */
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -498,13 +505,15 @@ extension OrderListVC:UITableViewDelegate {
 
 extension OrderListVC:UITextFieldDelegate {
     /**
-    The text field calls this method whenever the user taps the return button. This method is called when user clicks on Done button on keyboard.
+    The text field calls this method whenever the user taps the return button. This method is called when user clicks on Done button on keyboard. 
+    Rajat ji kindly go through the two sentences above and confirm if method is called when user presses done button or return button. 
      Dismiss the keyboard. If text field is empty, show toast message Please enter an order no. If text field is not empty,
      if UserManager class does not have restaurant id, return. Take parameter restaurant id from UserManager class, start date and end date from btnStartDate and btnEndDate resp.,
     and order no. from text field. Call orderSearch method from APIClient class and pass the parameters. On successful hit of web service,
-     print response in logs. OrderDetailVc is not launched in case of success earlier. Then we are returning true from this function and then the doneClicked(:sender) method is called further
+     print response in logs. OrderDetailVc is not launched in case of success earlier. 
+     Rajat ji kindly mention the use of this function as doneClicked is aleady called previously which is reponsible for same thing, and on api hit success, we are not doing anything, just printing success in logs.
     If api hit is not successful, if error message is noDataMessage or noDataMessage1 in Constants.swift, display message msgFailed in AppMessages.swift in dialog else display error message in dialog.
-    Return true, i.e., the text field should implement its default behavior for the return button.
+    Return true, i.e., the text field should implement its default behavior for the return button and doneClicked method is called.
     */
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
