@@ -67,8 +67,8 @@ class OrderDetailVC: UIViewController {
     }
 
     /**
-    Called before the view is loaded. If device is iPad, set height of table header view to 200. Here header view is section for user name, contact no., email address. Rajat ji please check this. 
-    Post notification to didReceiveOrderNumber which hits orderdetail web service if order no. is not null. This is used in case of push notification. Rajat ji please check id this is correct.
+    Called before the view is loaded. If device is iPad, set height of table header view to 200. Here header view is section for user name, contact no., email address.
+    Add observer for notification to didReceiveOrderNumber which hits orderdetail web service if order no. is not null. This is used in case of push notification.
     */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -141,8 +141,7 @@ class OrderDetailVC: UIViewController {
     
     /**
     Method called when amount view is clicked. Instantiate AmountVC, if onClick is not null, pass onClick to vc.
-    Add view as sub view of view controller and add AmountVC as child view controller. This method is exactly identical to viewAmounDidClicked,
-    Rajat ji please mention the requirement of two methods for same purpose. 
+    Add view as sub view of view controller and add AmountVC as child view controller. This method is exactly identical to viewAmounDidClicked because user can click either on view or on button.
     */
     @IBAction func btnAmountDidClicked(_ sender: UIButton) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.AmountVC) as! AmountVC
@@ -154,7 +153,7 @@ class OrderDetailVC: UIViewController {
     }
     
     /**
-    Method called when customer detail button is clicked. Customer name is set on label outlet or button, Rajat ji please confirm this.
+    Method called when customer detail button is clicked. Customer name is set on label outlet or button.
     If onClick is not null, if customer id in onClick is not null, instantiate CustomerDetailVC, pass customer id and push vc.
     */
     @IBAction func btnCustomerDetailDidClicked(_ sender: UIButton) {
@@ -170,11 +169,11 @@ class OrderDetailVC: UIViewController {
 
     /**
     This method is responsible for hitting web service. If restaurant id in UserManager class is null, then return.
-    Take parameter restaurant id from UserManager class, start date and end date if they are not null. Start date and end dates are passed in case view controller is launched by clicking on particular order no. in OrderlistVC. Rajat ji please check this. 
+    Take parameter restaurant id from UserManager class, start date and end date if they are not null. Start date and end dates are passed in case view controller is launched by clicking on particular order no. in OrderlistVC.
     Order no. is passed in the method when it is called. Display hud view. Pass parameters to orderSearch method of APIClient class.
-    Hide hud view. If api hit is successful, if byOrderNumber structure's first element has result code, Rajat ji please check this.
+    Hide hud view. If api hit is successful, if byOrderNumber structure's first element has result code.
     if result code is 0, if byOrderNumber structure's first element has message, show message in toast.
-    If byOrderNumber structure's first element does not have result code, set byOrderNumber structure's first element's on click and total prices. Rajat ji please check this.
+    If byOrderNumber structure's first element does not have result code, set byOrderNumber structure's first element's on click and total prices.
     Call initData method which sets name, email and contact no. Call reload data method on table view which reloads the rows and sections of table view.
     If api hit is not successful, if error message is noDataMessage or noDataMessage1 in Constants.swift, display message msgFailed in AppMessages.swift in dialog else display error message in dialog.
     */
@@ -219,9 +218,8 @@ class OrderDetailVC: UIViewController {
     }
     
     /**
-    This method is called inside viewWillAppear. If user information dictionary associated with the notification is not null,
-    If orderNo in user information dictionary is String and not null, call method getOrderDetailByOrderNumber and pass order no. which hits order detail web service
-    Rajat ji please check this and that if it used in case of push notification.
+    This method is called inside viewWillAppear. If user information dictionary associated with the notification is not null.
+    If orderNo in user information dictionary is String and not null, call method getOrderDetailByOrderNumber and pass order no. which hits order detail web service.
     */
     @objc func didReceiveOrderNumber(notification:Notification) {
         if let info = notification.userInfo as NSDictionary? {
@@ -238,7 +236,7 @@ extension OrderDetailVC:UITableViewDataSource {
    
    /**
     Method returns no. of sections of table view. Set width and height of noDataLbl to width and height of table view. If onClick is not null,
-    If onClick has orderItemDetails, and its count is 0, hide header view of table and set noDataLbl text to No data found. Header view section is the sction containing name, contact no. and email address. Rajat ji please check this.
+    If onClick has orderItemDetails, and its count is 0, hide header view of table and set noDataLbl text to No data found. Header view section is the sction containing name, contact no. and email address.
     If onClick has orderItemDetails and its count is not 0, display header view of table view and noDataLbl text to null.
     Set noDataLbl's text color to theme color, alignment to center. Set background view of table view to noDataLbl. 
     Return no. of sections to 1.
@@ -287,7 +285,7 @@ extension OrderDetailVC:UITableViewDataSource {
     /**
     This method asks the data source for a cell to insert in a particular location of the table view. 
     Set cell to OrderDetailCell if cell identifier is detailCell, else return empty OrderDetailCell (default case which happens rarely).
-    If onClick is not null, if onClick has orderItemDetails, set items at specified index. Set sub item name, modifier, add on, instruction to corresponding text fields at specified index. Rajat ji please check this.
+    If onClick is not null, if onClick has orderItemDetails, set items at specified index. Set sub item name, modifier, add on, instruction to corresponding text fields at specified index.
     If price's double value price is not null, set price to corresponding text field, concatenated with $ and rounded to 2 decimal places.
     If total's double value is not null, set total to corresponding text field, concatenated with $ and rounded to 2 decimal places.
     If at particular position, if sub item name is null, hide stackSubItem outlet, else display stackSubItem outlet in OrderDetailCell,
@@ -362,7 +360,7 @@ extension OrderDetailVC:UITableViewDataSource {
 extension OrderDetailVC:UITableViewDelegate {
     /**
     Asks the delegate for a view object to display in the header of the specified section of the table view.
-    If there is cell with identifier headerCell, then return that cell else return empty UITableViewCell. Rajat ji please check this and also if the idenfier is passed Storyboard, or some other place, please mention that.
+    If there is cell with identifier headerCell, then return that cell else return empty UITableViewCell. The idenfier is passed in the Storyboard.
     */
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "headerCell") else {

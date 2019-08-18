@@ -45,9 +45,9 @@ class AllBestSellerVC: UIViewController {
     
     /**
     Life cycle method called after view is loaded. Set delegate and data source of table view to self.
-    Call initHudView method which initializes the hud view. If value of type is week. This value is set depending on value passed in vc when called from BestSellerVC based on view more is clicked from weekly, monthly or yearly section. Rajat ji kindly check this.
+    Call initHudView method which initializes the hud view. If value of type is week. This value is set depending on value passed in vc when called from BestSellerVC based on view more is clicked from weekly, monthly or yearly section.
     If type value is week, set start date to previous occurance of Monday in current week, considering today's date.
-    Set title of back button to Weekly Bestseller items. Rajat ji please confirm if back button has a title which displays weekly/monthly/yearly bestseller items.
+    Set title of back button to Weekly Bestseller items. Yes Minakshi Ji, back button has a title which displays weekly/monthly/yearly bestseller items in the navigation bar.
      If type value is month, set start date to first date of current month.
     Set title of back button to Monthly Bestseller items. 
      If type value is year, set start date to first date of current year.
@@ -257,7 +257,7 @@ class AllBestSellerVC: UIViewController {
     //Reload the table
     /**
     Method called when allBestseller api hit is successful. Reload rows and sections of table view. 
-    Call method scrollToTop which scrolls the list to top without animation. Rajat ji please check this. 
+    Call method scrollToTop which scrolls the list to top without animation.
     */
     func reloadTable() {
         DispatchQueue.main.async {
@@ -338,7 +338,7 @@ extension AllBestSellerVC:UITableViewDataSource {
     /**
      This method returns no. of rows in section. If status of particular section is opened, if bestSellerData is not null,
      if type is week, if weeklyBestsellerItems in byDateSelection is not null, if item_Details in weeklyBestseller items is not null,
-     return no. of items in item_Details+1 including header row. Rajat ji please check this
+     return no. of items in item_Details+1 including header row.
      If type is month, if monthlyBestsellerItems in byDateSelection is not null, if item_Details in monthlyBestseller items is not null,
      return no. of items in item_Details+1 including header row. 
      If type is year, if yearlyBestsellerItems in byDateSelection is not null, if item_Details in yearlyBestseller items is not null,

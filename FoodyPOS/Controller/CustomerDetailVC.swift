@@ -8,8 +8,9 @@
 
 import UIKit
 
-/**View controller class for Customer details or customer history section called when customer name is clicked in TopSaleVC, SalesSellAllVC, OrderDetailVC. 
-Rajat ji please check this and also if it is called from some other controller also 
+/**
+ View controller class for Customer details or customer history section called when customer name is clicked in TopSaleVC, SalesSellAllVC, OrderDetailVC.
+    This is a generic Controller which is called from various places where customer name is displayed
 */
 class CustomerDetailVC: UIViewController {
 
@@ -58,7 +59,7 @@ class CustomerDetailVC: UIViewController {
     }
 
     /**
-    Called before the view is loaded. If device is iPad, set height of table header view to 140. Header view is the section for name, contact and email id. Rajat ji please check this.
+     Called before the view is loaded. If device is iPad, set height of table header view to 140. Header view is the section for name, contact and email id.
     */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -108,9 +109,8 @@ class CustomerDetailVC: UIViewController {
     
     /**
     Method called in viewDidLoad method and is reponsible for hitting customer details web service. If UserManager class does not have restaurant id, return.
-    Take parameter restaurant id from UserManager class, customer id from controller which is calling CustomerDetailVC like SalesSellVC, OrderDetailVC and TopSaleVC. Rajat ji please check this.
-    Display hud view. Call method customerDetails from APIClient class passing the parameters. Hide hud view. If api hit is successful,
-    put response customerDetails. Rajat ji please check this. Call initData method which sets customer name, email id and phone no. to corresponding text fields.
+    Take parameter restaurant id from UserManager class, customer id from controller which is calling CustomerDetailVC like SalesSellVC, OrderDetailVC and TopSaleVC.
+    Display hud view. Call method customerDetails from APIClient class passing the parameters. Hide hud view. If api hit is successful, put response customerDetails. Call initData method which sets customer name, email id and phone no. to corresponding text fields.
     Call reloadData method on table view which reloads the rows and sections of the table view.
     If api hit is not successful, if error message is noDataMessage or noDataMessage1 in Constants.swift, display message msgFailed in AppMessages.swift in dialog else display error message in dialog.   
     */
@@ -177,8 +177,7 @@ extension CustomerDetailVC:UITableViewDataSource {
 
        /**
        This method returns no. of rows in section of table view. If customerDetails structure is not null, if customer_Details in cusdtomerDetails
-       is not null, if order_Details in customer_Details is not null. Rajat ji please check this, will update at other places it is used accordingly.
-       Return count of order_Details. Return 0 by default
+       is not null, if order_Details in customer_Details is not null then return count of order_Details. Return 0 by default
        */ 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let customer = customerDetails {
@@ -194,8 +193,8 @@ extension CustomerDetailVC:UITableViewDataSource {
     /**
     This method asks the data source for a cell to insert in a particular location of the table view.
     Set cell to EmployeeDetailCell if cell identifier is employeeDetailCell, else set cell to empty EmployeeDetailCell (default case which happens rarely).
-    Set tag to btnTime, btnPrice and btnDetail to specified index of row, so as to use that value to identify the view later. Rajat ji please check this.
-    Set listeners to btnDetail, btnPrice, btnTime to call methods btnDetailDidClicked, btnPriceDidClicked, btnTimeDidClicked resp. Rajat ji please check this.
+    Set tag to btnTime, btnPrice and btnDetail to specified index of row, so as to use that value to identify the view later.
+    Set listeners to btnDetail, btnPrice, btnTime to call methods btnDetailDidClicked, btnPriceDidClicked, btnTimeDidClicked resp.
     btnPriceDidClicked is not used. If customerDetails structure is not null, if customer_Details in cusdtomerDetails
     is not null, if order_Details in customer_Details is not null, get orderDetails at each index of row.
     If order no. at particular index is not null, set order no. to specified text field concatenated with # symbol.
@@ -242,7 +241,7 @@ extension CustomerDetailVC:UITableViewDataSource {
     
     /**
     Method called when time button in row is clicked. If customerDetails structure is not null, if customer_Details in cusdtomerDetails
-    is not null, if order_Details in customer_Details is not null. Get tag of orderDetails. Rajat ji please check this.
+    is not null, if order_Details in customer_Details is not null. Get tag of orderDetails.
     Instantiate DateVC. If orderPickupDate in orderDetails is not null, pass orderPickupDate to vc. If orderTime in orderDetails is not null, 
     pass orderTime to vc. Add view as sub view of view controller and add DateVC as child view controller
     */
@@ -271,8 +270,8 @@ extension CustomerDetailVC:UITableViewDataSource {
     }
     
     /**
-    Method called when detail button (right arrow) is clicked. Rajat ji please check this.
-    Call method showOrderDetailForTag and pass the tag or identifier. Rajat ji please check this.
+    Method called when detail button (right arrow) is clicked.
+    Call method showOrderDetailForTag and pass the tag or identifier.
     which launches OrderDetailVC
     */
     @objc func btnDetailDidClicked(sender:UIButton) {
@@ -281,7 +280,7 @@ extension CustomerDetailVC:UITableViewDataSource {
     
     /**
     Method called when detail button is clicked. If customerDetails structure is not null, if customer_Details in cusdtomerDetails
-    is not null, if order_Details in customer_Details is not null, get the identifier of orderDetails to fetch which order was clicked. Rajat ji please check this.
+    is not null, if order_Details in customer_Details is not null, get the identifier of orderDetails to fetch which order was clicked.
     If orderNo in clicked order is not null, instantiate OrderDetailVC and pass order no. thus obtained to vc and push vc.
     */
     func showOrderDetailForTag(tag:Int) {
@@ -303,7 +302,7 @@ extension CustomerDetailVC:UITableViewDataSource {
 extension CustomerDetailVC: UITableViewDelegate {
     /**
     Tells the delegate that the specified row is now selected. Call method showOrderDetailTag and pass index of row in it which launches OrderDetailVC.
-    Rajat ji kindly check if OrderDetailVC is launched both in cases when detail button is clicked and anywhere in row of CustomerDetails is clicked.
+    OrderDetailVC is launched when anywhere in row of a customer order details list is clicked.
     */
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         showOrderDetailForTag(tag: indexPath.row)
