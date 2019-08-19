@@ -199,7 +199,7 @@ extension BestSellerVC:UITableViewDataSource {
     If count of yearlyBestseller item is 0, call method setDefault which sets all text fields to null except item 2 which displays No items at center.
     In default case, print default in logs.
 
-    Set tag to btnAll in cell to position of row. Rajat ji please check this.
+    Set position of row to tag for btnAll in cell.
     Set listener to btnAll and return cell.
     */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

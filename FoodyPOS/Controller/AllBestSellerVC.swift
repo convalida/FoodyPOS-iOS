@@ -376,7 +376,7 @@ extension AllBestSellerVC:UITableViewDataSource {
     
     /**
      This method asks the data source for a cell to insert in a particular location of the table view. For 0th row (header row),
-     Set cell to AllBesSellerCell if cell identifier is headerCell, else set cell to empty UITableViewCell. Rajat ji please check this.
+     Set cell to AllBesSellerCell if cell identifier is headerCell, else set cell to empty UITableViewCell.
      If bestSellerData is not null, if by_DateSelection in bestSellerData is not null, if section at particular index is opened or closed, set arrow set bottom arrow accordingly
     If type of selection is week, if weeklyBestSeller in by_DateSelection is not null, if week in a a particular section of weeklyData is not null,
     set header title to value of week. 
@@ -517,7 +517,7 @@ extension AllBestSellerVC:UITableViewDelegate {
 extension UITableView {
     /**
     This method is called inside scrollToTop method.
-    This method returns true if position passed in method is less than no. of rows of index and position passed in method is less than no. of rows. Rajat ji please check if this is correct. 
+    This method returns true if position passed in method is less than no. of rows of index and position passed in method is less than no. of rows.
     */
     func hasRowAtIndexPath(indexPath: IndexPath) -> Bool {
         return indexPath.section < self.numberOfSections && indexPath.row < self.numberOfRows(inSection: indexPath.section)
@@ -525,7 +525,7 @@ extension UITableView {
     
     /**
     This method is called inside reloadTable method.
-    If 0th row of 0th section is less than no. of sections & no. of rows, scroll through the table view until a row identified by 0th index path is at top of the screen.  Rajat ji please check if this is correct.
+    If 0th row of 0th section is less than no. of sections & no. of rows, scroll through the table view until a row identified by 0th index path is at top of the screen.
     */
     func scrollToTop(animated: Bool) {
         let indexPath = IndexPath(row: 0, section: 0)

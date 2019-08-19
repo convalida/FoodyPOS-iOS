@@ -242,7 +242,7 @@ extension EmployeeDetailVC:UITableViewDelegate {
 extension EmployeeDetailVC:EmployeeDetailDelegate {
     /**
     This method is called after updating or adding Employee and this method takes EmployeeDetail and reloads the table data.
-    Rajat ji, please mention if this method is called automatically in case of Edit and Add Employee or it is called somewhere through code.
+    This method is called from line 202 in SignupVC
     */
     func showDetail(detail: [EmployeeDetail]) {
             employeeData?.employeeDetails = detail

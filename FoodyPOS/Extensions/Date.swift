@@ -36,7 +36,7 @@ extension Date {
 
 extension Date {
 
-///Rajat ji please update this as todayDate is already defined
+    ///Returns todays date as Date type
     static func today() -> Date {
         return Date()
     }
@@ -55,7 +55,7 @@ extension Date {
                    considerToday: considerToday)
     }
     
-    /// Find next or previous occourance of a weekday from current or a particular date. Used find previous occurance of Monday. Rajat ji kindly elaborate this, with flow.
+    /// Find next or previous occourance of a weekday from current or a particular date. Used find previous occurance of Monday. Can't elaboarate the flow here because this all belongs to Calendar functionlity
     func get(_ direction: SearchDirection,
              _ weekDay: Weekday,
              considerToday consider: Bool = false) -> Date {
@@ -98,9 +98,7 @@ extension Date {
     }
     
     /**
-    Get start date of current year in yyyy format to string format using Date and DateFormatter class which is pre defined class.
-    Rajat ji kindly elaborate the flow if possible and also which of the two formats- yyyy or hh dd-MM-yyyy is used,
-    also if hh is set to 10 and reason if so.
+    Get start date of current year in yyyy format to string format using Date and DateFormatter class which is pre defined class .hh is set to 10 due to timezone offset variance in various timezones.
     */
     static func startOfYear() -> Date {
         var currentYear = Date()
@@ -123,7 +121,7 @@ extension Date {
 
 // MARK: Helper methods
 extension Date {
-    /// Returns  list of weekdays in this calendar, localized to the Calendar’s locale is set to gregorian identifier. Rajat ji please check/update this
+    /// Returns  list of weekdays in this calendar, localized to the Calendar’s locale is set to gregorian identifier.
     func getWeekDaysInEnglish() -> [String] {
         var calendar = Calendar(identifier: .gregorian)
         calendar.locale = Locale(identifier: "en_US_POSIX")
