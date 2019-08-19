@@ -165,8 +165,8 @@ extension BestSellerVC:UITableViewDataSource {
      Set cell to BestSellerCell if cell identifier is bestSellerCell, else set cell to empty BestSellerCell (default case which happens rarely).
     Define method setDefault which is called when no. of items weekly, monthly or yearly best seller items is null.
     It sets item 1, value 1, value 2, item 3, value 3 to null, item 2 text to No items and its alignment to center.
-    If bestSellerData is null, for 0th row, set text to Weekly Bestseller Items. If count of weeklyBestseller items in bestsellerData is greater than or equal to 1,
-    if item at 0th position of weeklyBestSellerItem is not null, set sub item and counting to item 1 and value 1 text field resp. in cell.       
+    If bestSellerData is null, for 0th row, set text to Weekly Bestseller Items. If count of weeklyBestseller items in bestsellerData is greater than 0,
+    if count of weeklyBestseller items in bestsellerData is greater than or equal to 1, if item at 0th position of weeklyBestSellerItem is not null, set sub item and counting to item 1 and value 1 text field resp. in cell.       
     if count of weeklyBestseller item is less than 1, set item 1 and value 1 text field to null.
     If count of weeklyBestseller items in bestsellerData is greater than or equal to 2,
     if item at 1st position of weeklyBestSellerItem is not null, set sub item and counting to item 2 and value 2 text field resp. in cell.       
@@ -174,7 +174,33 @@ extension BestSellerVC:UITableViewDataSource {
     If count of weeklyBestseller items in bestsellerData is greater than or equal to 3,
     if item at 2nd position of weeklyBestSellerItem is not null, set sub item and counting to item 3 and value 3 text field resp. in cell.       
     if count of weeklyBestseller item is less than 3, set item 3 and value 3 text field to null.
-    If count of weeklyBestseller item is 0,
+    If count of weeklyBestseller item is 0, call method setDefault which sets all text fields to null except item 2 which displays No items at center.
+
+    For 1st row, set text to Monthly Bestseller Items. If count of monthlyBestseller items in bestsellerData is greater than 0,
+    if count of monthlyBestseller items in bestsellerData is greater than or equal to 1, if item at 0th position of monthlyBestSellerItem is not null, set sub item and counting to item 1 and value 1 text field resp. in cell.       
+    if count of monthlyBestseller item is less than 1, set item 1 and value 1 text field to null.
+    If count of monthlyBestseller items in bestsellerData is greater than or equal to 2,
+    if item at 1st position of monthlyBestSellerItem is not null, set sub item and counting to item 2 and value 2 text field resp. in cell.       
+    if count of monthlyBestseller item is less than 2, set item 2 and value 2 text field to null.
+    If count of monthlyBestseller items in bestsellerData is greater than or equal to 3,
+    if item at 2nd position of monthlyBestSellerItem is not null, set sub item and counting to item 3 and value 3 text field resp. in cell.       
+    if count of monthlyBestseller item is less than 3, set item 3 and value 3 text field to null.
+    If count of monthlyBestseller item is 0, call method setDefault which sets all text fields to null except item 2 which displays No items at center.
+
+    For 2nd row, set text to Yearly Bestseller Items. If count of yearlyBestseller items in bestsellerData is greater than 0,
+    if count of yearlyBestseller items in bestsellerData is greater than or equal to 1, if item at 0th position of yearlyBestSellerItem is not null, set sub item and counting to item 1 and value 1 text field resp. in cell.       
+    if count of yearlyBestseller item is less than 1, set item 1 and value 1 text field to null.
+    If count of yearlyBestseller items in bestsellerData is greater than or equal to 2,
+    if item at 1st position of yearlyBestSellerItem is not null, set sub item and counting to item 2 and value 2 text field resp. in cell.       
+    if count of yearlyBestseller item is less than 2, set item 2 and value 2 text field to null.
+    If count of yearlyBestseller items in bestsellerData is greater than or equal to 3,
+    if item at 2nd position of yearlyBestSellerItem is not null, set sub item and counting to item 3 and value 3 text field resp. in cell.       
+    if count of yearlyBestseller item is less than 3, set item 3 and value 3 text field to null.
+    If count of yearlyBestseller item is 0, call method setDefault which sets all text fields to null except item 2 which displays No items at center.
+    In default case, print default in logs.
+
+    Set tag to btnAll in cell to position of row. Rajat ji please check this.
+    Set listener to btnAll and return cell.
     */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "bestSellerCell") as? BestSellerCell else {
@@ -313,6 +339,10 @@ extension BestSellerVC:UITableViewDataSource {
         return cell
     }
     
+    /**
+    Method called when See all button is clicked. Instantiate AllBestSellerVC. If tag of button is 0, sety type to week, if tag of button is 1, set type to month,
+    if tag of button is 2, set type to year, pass type with vc and push vc.
+    */
     @objc func btnAllDidClicked(sender:UIButton) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.AllBestSellerVC) as! AllBestSellerVC
         if sender.tag == 0 {
@@ -327,10 +357,16 @@ extension BestSellerVC:UITableViewDataSource {
 }
 
 extension BestSellerVC:UITableViewDelegate {
+    /**
+    Asks the delegate for the height to use for a row in a specified location. Return a constant representing the default value for a given dimension
+    */
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
     
+    /**
+    Asks the delegate for the estimated height of a row in a specified location. If device is iPad, return 200 else return 150.
+    */
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         if Global.isIpad {
             return 200.0

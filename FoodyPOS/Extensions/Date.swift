@@ -11,7 +11,7 @@ import Foundation
 let dateFormat = "MM/dd/yyyy"
 extension Date {
     
-    /// Get today's date in proper date format in MM/dd/yyyy"
+    /// Get today's date in proper date format in MM/dd/yyyy" using Date and DateFormatter class which is pre defined class
     static var todayDate:String {
         let date = Date()
         let formatter = DateFormatter()
@@ -19,14 +19,14 @@ extension Date {
         return formatter.string(from: date)
     }
     
-    /// Format date according to given format as string
+    /// Format date according to given format as string using DateFormatter class which is pre defined class
     func getDateString(format:String = dateFormat) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = format
         return formatter.string(from: self)
     }
     
-    /// Get formated date from string in format MM/dd/yyyy
+    /// Get formatted date from string (which is passed) in format MM/dd/yyyy using DateFormatter class which is pre defined class
     static func getDate(fromString string:String, format:String = dateFormat) -> Date? {
         let formatter = DateFormatter()
         formatter.dateFormat = format
@@ -36,7 +36,7 @@ extension Date {
 
 extension Date {
 
-///Rajat ji please update this
+///Rajat ji please update this as todayDate is already defined
     static func today() -> Date {
         return Date()
     }
@@ -48,14 +48,14 @@ extension Date {
                    considerToday: considerToday)
     }
     
-    /// Find previous occourance of a weekday from current date considering today's date
+    /// Find previous occourance of a weekday from current date considering today's date. 
     func previous(_ weekday: Weekday, considerToday: Bool = true) -> Date {
         return get(.Previous,
                    weekday,
                    considerToday: considerToday)
     }
     
-    /// Find next or previous occourance of a weekday from current or a particular date. 
+    /// Find next or previous occourance of a weekday from current or a particular date. Used find previous occurance of Monday. Rajat ji kindly elaborate this, with flow.
     func get(_ direction: SearchDirection,
              _ weekDay: Weekday,
              considerToday consider: Bool = false) -> Date {
@@ -97,6 +97,11 @@ extension Date {
         return Calendar.current.date(byAdding: DateComponents(month: 1, day: -1), to: self.startOfMonth())!
     }
     
+    /**
+    Get start date of current year in yyyy format to string format using Date and DateFormatter class which is pre defined class.
+    Rajat ji kindly elaborate the flow if possible and also which of the two formats- yyyy or hh dd-MM-yyyy is used,
+    also if hh is set to 10 and reason if so.
+    */
     static func startOfYear() -> Date {
         var currentYear = Date()
         currentYear = Date()
@@ -118,7 +123,7 @@ extension Date {
 
 // MARK: Helper methods
 extension Date {
-    /// Returns Sunday, Monday etc
+    /// Returns  list of weekdays in this calendar, localized to the Calendar’s locale is set to gregorian identifier. Rajat ji please check/update this
     func getWeekDaysInEnglish() -> [String] {
         var calendar = Calendar(identifier: .gregorian)
         calendar.locale = Locale(identifier: "en_US_POSIX")
