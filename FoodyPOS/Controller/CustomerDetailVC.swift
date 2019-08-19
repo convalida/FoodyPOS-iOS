@@ -9,8 +9,7 @@
 import UIKit
 
 /**
- View controller class for Customer details or customer history section called when customer name is clicked in TopSaleVC, SalesSellAllVC, OrderDetailVC.
-    This is a generic Controller which is called from various places where customer name is displayed
+ View controller class for Customer details or customer history section called when customer name is clicked in TopSaleVC, SalesSellAllVC, OrderDetailVC and all controllers where customer name is displayed.
 */
 class CustomerDetailVC: UIViewController {
 
@@ -271,8 +270,7 @@ extension CustomerDetailVC:UITableViewDataSource {
     
     /**
     Method called when detail button (right arrow) is clicked.
-    Call method showOrderDetailForTag and pass the tag or identifier.
-    which launches OrderDetailVC
+    Call method showOrderDetailForTag and pass the tag or identifier which launches OrderDetailVC
     */
     @objc func btnDetailDidClicked(sender:UIButton) {
         showOrderDetailForTag(tag: sender.tag)
@@ -302,7 +300,7 @@ extension CustomerDetailVC:UITableViewDataSource {
 extension CustomerDetailVC: UITableViewDelegate {
     /**
     Tells the delegate that the specified row is now selected. Call method showOrderDetailTag and pass index of row in it which launches OrderDetailVC.
-    OrderDetailVC is launched when anywhere in row of a customer order details list is clicked.
+    OrderDetailVC is launched when anywhere in row of a customer order details list is clicked or detailButton (arrow is clicked).
     */
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         showOrderDetailForTag(tag: indexPath.row)

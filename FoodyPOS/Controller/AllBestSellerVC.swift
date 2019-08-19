@@ -47,7 +47,7 @@ class AllBestSellerVC: UIViewController {
     Life cycle method called after view is loaded. Set delegate and data source of table view to self.
     Call initHudView method which initializes the hud view. If value of type is week. This value is set depending on value passed in vc when called from BestSellerVC based on view more is clicked from weekly, monthly or yearly section.
     If type value is week, set start date to previous occurance of Monday in current week, considering today's date.
-    Set title of back button to Weekly Bestseller items. Yes Minakshi Ji, back button has a title which displays weekly/monthly/yearly bestseller items in the navigation bar.
+    Set title of back button to Weekly Bestseller items. Back button has a title which displays weekly/monthly/yearly bestseller items in the navigation bar.
      If type value is month, set start date to first date of current month.
     Set title of back button to Monthly Bestseller items. 
      If type value is year, set start date to first date of current year.
@@ -374,6 +374,30 @@ extension AllBestSellerVC:UITableViewDataSource {
         return 1
     }
     
+    /**
+     This method asks the data source for a cell to insert in a particular location of the table view. For 0th row (header row),
+     Set cell to AllBesSellerCell if cell identifier is headerCell, else set cell to empty UITableViewCell. Rajat ji please check this.
+     If bestSellerData is not null, if by_DateSelection in bestSellerData is not null, if section at particular index is opened or closed, set arrow set bottom arrow accordingly
+    If type of selection is week, if weeklyBestSeller in by_DateSelection is not null, if week in a a particular section of weeklyData is not null,
+    set header title to value of week. 
+    If type of selection is month, if monthlyBestSeller in by_DateSelection is not null, if month in a a particular section of monthData is not null,
+    set header title to value of month. 
+    If type of selection is year, if yearlyBestSeller in by_DateSelection is not null, if year in a a particular section of yearData is not null,
+    set header title to value of year. Return cell. 
+    For row other than 0th row, set cell to AllBesSellerCell if cell identifier is itemCell, else set cell to empty UITableViewCell.
+    If bestSellerData is not null, if by_DateSelection in bestSellerData is not null, if type of selection is week, if weeklyBestsellerItems in by_DateSelection is not null,
+    if at section in weeklyBestSellerItems, item_Details array is not null, if at row-1 position in item_Details, subitems is not null,
+    set item name to corresponding text field in cell, if at row-1 position in item_Details, counting is not null,
+    set counting to corresponding text field in cell.
+    If type of selection is month, if monthlyBestsellerItems in by_DateSelection is not null,
+    if at section in monthlyBestSellerItems, item_Details array is not null, if at row-1 position in item_Details, subitems is not null,
+    set item name to corresponding text field in cell, if at row-1 position in item_Details, counting is not null,
+    set counting to corresponding text field in cell.
+    If type of selection is year, if yearlyBestsellerItems in by_DateSelection is not null,
+    if at section in yearlyBestSellerItems, item_Details array is not null, if at row-1 position in item_Details, subitems is not null,
+    set item name to corresponding text field in cell, if at row-1 position in item_Details, counting is not null,
+    set counting to corresponding text field in cell. Return cell.
+    */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == 0 {
@@ -459,6 +483,10 @@ extension AllBestSellerVC:UITableViewDataSource {
 
 
 extension AllBestSellerVC:UITableViewDelegate {
+     /**
+     Tells the delegate that the specified row is now selected. If 0th row, i.e., header row is selected, toggle the status of section,
+     i.e., if it is opened, close it, if it is closed, open it. Get the current section of table view and reload it.
+     */
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             if statusData[indexPath.section].isOpened {
@@ -471,20 +499,34 @@ extension AllBestSellerVC:UITableViewDelegate {
         }
     }
     
+    /**
+     Asks the delegate for the height to use for a row in a specified location. 
+    */
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
     
+    /**
+    Asks the delegate for the estimated height of a row in a specified location.
+    */
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200.0
     }
 }
 
 extension UITableView {
+    /**
+    This method is called inside scrollToTop method.
+    This method returns true if position passed in method is less than no. of rows of index and position passed in method is less than no. of rows. Rajat ji please check if this is correct. 
+    */
     func hasRowAtIndexPath(indexPath: IndexPath) -> Bool {
         return indexPath.section < self.numberOfSections && indexPath.row < self.numberOfRows(inSection: indexPath.section)
     }
     
+    /**
+    This method is called inside reloadTable method.
+    If 0th row of 0th section is less than no. of sections & no. of rows, scroll through the table view until a row identified by 0th index path is at top of the screen.  Rajat ji please check if this is correct.
+    */
     func scrollToTop(animated: Bool) {
         let indexPath = IndexPath(row: 0, section: 0)
         if self.hasRowAtIndexPath(indexPath: indexPath) {

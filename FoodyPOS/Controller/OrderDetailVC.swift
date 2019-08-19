@@ -141,7 +141,7 @@ class OrderDetailVC: UIViewController {
     
     /**
     Method called when amount view is clicked. Instantiate AmountVC, if onClick is not null, pass onClick to vc.
-    Add view as sub view of view controller and add AmountVC as child view controller. This method is exactly identical to viewAmounDidClicked because user can click either on view or on button.
+    Add view as sub view of view controller and add AmountVC as child view controller. This method is exactly identical to viewAmounDidClicked because when user clicks either on amount view or on button, we have to launch AmountVC to provide more clickable area.
     */
     @IBAction func btnAmountDidClicked(_ sender: UIButton) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.AmountVC) as! AmountVC
@@ -169,7 +169,7 @@ class OrderDetailVC: UIViewController {
 
     /**
     This method is responsible for hitting web service. If restaurant id in UserManager class is null, then return.
-    Take parameter restaurant id from UserManager class, start date and end date if they are not null. Start date and end dates are passed in case view controller is launched by clicking on particular order no. in OrderlistVC.
+    Take parameter restaurant id from UserManager class, start date and end date if they are not null. Start date and end dates are passed in case view controller is launched by clicking on particular order no. in OrderlistVC, else null is passed.
     Order no. is passed in the method when it is called. Display hud view. Pass parameters to orderSearch method of APIClient class.
     Hide hud view. If api hit is successful, if byOrderNumber structure's first element has result code.
     if result code is 0, if byOrderNumber structure's first element has message, show message in toast.

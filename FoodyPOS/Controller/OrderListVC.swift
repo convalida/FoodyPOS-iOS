@@ -35,7 +35,7 @@ class OrderListVC: UIViewController {
     ///Outlet for top view or navigation bar.
     @IBOutlet weak var viewTop: UIView!
 
-    //Array to store status of all orders displayed in the list to determine which header rows containing dates are opened.
+    ///Array to store status of all orders displayed in the list to determine which header rows containing dates are opened.
     var statusData = [Status]()
     ///Structure of Order instantiated
     var orderData:Order?
@@ -202,7 +202,7 @@ class OrderListVC: UIViewController {
     }
     
     /**
-        This action refers to the back arrow in the top navigation bar.
+        This action refers to the back arrow in the top navigation bar. Rajat ji please check btnBackDidClicked is also for same purpose.
     */
     @IBAction func btnSearchDidClicked(_ sender: UIButton) {
         viewSearch.isHidden = true
@@ -277,7 +277,7 @@ class OrderListVC: UIViewController {
     Remove selection from search text field and hide keyboard.  If search tyext field is empty, show message Please enter order no. in toast
     else if restaurant id is not in UserManager class, return. Take restaurant id from UserManager class, start date and end date as empty parameters and order no. from search text.
     Display hud view. Pass the parameters to orderSearch method of APIClient class. Hide hud view. If api hit is successful,
-    If in byOrderNumber array, first element is resultCode and if result code is 0.
+    If in byOrderNumber array, first element is resultCode and if result code is 0
      and if first message in byOrderNumber array is not null, show message obtained in response in toast.
     If in byOrderNumber array, first element is not resultCode, instantiate OrderDetailVC. Pass first value of onClick in byOrderNumber array to vc.
     Pass first value of totalPrices in byOrderNumber array to vc and push vc.
@@ -398,7 +398,7 @@ extension OrderListVC:UITableViewDataSource {
     /**
     This method asks the data source for a cell to insert in a particular location of the table view. For 0th row, set cell to OrderListCell if cell identifier is headerCell, else set cell to empty OrderListCell (default case which happens rarely)
     If orderData is not null, if order has date array, check if the section is opened or not then set the arrow 
-    icon (in parent row/section depicting the section is opened or closed) accordingly in both cases it is opened or closed.
+    icon (in parent row/section depicting the section is opened or closed) accordingly, in both cases it is opened or closed.
     In date array, set orderDate to corresponding text field in section at particular index.
     If in date array, orderNumberDetails is not null, set count of items in orderNumberDetail to lblHeaderOrder text field and value returned from method getTotalAmountOfOrders in lblHeaderPrice text field at particular index of section.
     0th row will always be the header in the table view section to show details of orders on a particular date.
@@ -503,12 +503,12 @@ extension OrderListVC:UITableViewDelegate {
 
 extension OrderListVC:UITextFieldDelegate {
     /**
-    The text field calls this method whenever the user taps the return/done button. This method is called when user clicks on Done button on keyboard.
+    The text field calls this method whenever the user taps the return/done button. 
      Dismiss the keyboard. If text field is empty, show toast message Please enter an order no. If text field is not empty,
      if UserManager class does not have restaurant id, return. Take parameter restaurant id from UserManager class, start date and end date from btnStartDate and btnEndDate resp.,
     and order no. from text field. Call orderSearch method from APIClient class and pass the parameters. On successful hit of web service,
      print response in logs. OrderDetailVc is not launched in case of success earlier. 
-     Minakshi Ji: this method acts as a middleware between the doneClicked method and the button. This is a generic method which works over all the text field whereas the doneClicked method is passed as a callback function on line 73. This method is validating the text between field. If all validations are successfull then we dont stop the execution of code, If there are some errors then we are stopping the execution of code by returning false from this method.
+     This method acts as a middleware between the doneClicked method and the button. This is a generic method which works over all the text field whereas the doneClicked method is passed as a callback function on line 73. This method is validating the text between field. If all validations are successful, then we continue the execution of code, if there are some errors then we are stopping the execution of code by returning false from this method.
     If api hit is not successful, if error message is noDataMessage or noDataMessage1 in Constants.swift, display message msgFailed in AppMessages.swift in dialog else display error message in dialog.
     Return true, i.e., the text field should implement its default behavior for the return button and doneClicked method is called.
     */
