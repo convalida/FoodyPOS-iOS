@@ -11,7 +11,7 @@ import Foundation
 let dateFormat = "MM/dd/yyyy"
 extension Date {
     
-    /// Get today's date in proper date format in MM/dd/yyyy" using Date and DateFormatter class which is pre defined class
+    /// Get today's date in proper date format in "MM/dd/yyyy" using Date and DateFormatter class which is pre defined class. The date is returned in String format. Rajat ji please check this.
     static var todayDate:String {
         let date = Date()
         let formatter = DateFormatter()
@@ -36,7 +36,7 @@ extension Date {
 
 extension Date {
 
-    ///Returns todays date as Date type
+    ///Returns today's date as Date type
     static func today() -> Date {
         return Date()
     }
@@ -55,7 +55,7 @@ extension Date {
                    considerToday: considerToday)
     }
     
-    /// Find next or previous occourance of a weekday from current or a particular date. Used find previous occurance of Monday. Can't elaboarate the flow here because this all belongs to Calendar functionlity
+    /// Find next or previous occourance of a weekday from current or a particular date. Used find previous occurance of Monday. This all belongs to Calendar functionlity
     func get(_ direction: SearchDirection,
              _ weekDay: Weekday,
              considerToday consider: Bool = false) -> Date {
@@ -98,7 +98,10 @@ extension Date {
     }
     
     /**
-    Get start date of current year in yyyy format to string format using Date and DateFormatter class which is pre defined class .hh is set to 10 due to timezone offset variance in various timezones.
+    Get start date of current year. Get current year in yyyy format using Date and DateFormatter class which is 
+    pre defined class, then get the first date of current year in hh dd-MM-yyyy format 
+    (hh is set to 10 due to timezone offset variance in various timezones) and if it is not null, then return it. 
+    Rajat ji please check this complete comment again.
     */
     static func startOfYear() -> Date {
         var currentYear = Date()
@@ -128,14 +131,35 @@ extension Date {
         return calendar.weekdaySymbols
     }
     
+    ///Enum for weekdays string
     enum Weekday: String {
-        case monday, tuesday, wednesday, thursday, friday, saturday, sunday
+        ///Case if day is Monday
+        case monday
+        ///Case if day is Tuesday
+        case tuesday
+        ///Case if day is Wednesday
+        case wednesday
+        ///Case if day is Thurday
+        case thursday
+        ///Case if day is Friday
+        case friday
+        ///Case if day is Saturday
+        case saturday
+        ///Case if day is Sunday
+        case sunday
     }
     
+    ///Enum for direction of search for occurance of weekday. Rajat ji please check this.
     enum SearchDirection {
+        ///Case when next occurance of weekday is searched
         case Next
+        ///Case when previous occurance of weekday is searched
         case Previous
-        
+
+       /**
+        Determine weekday's occurance search direction. If Next is passed in SearchDirection, then direction of
+       search is forward, if Previous is passed in SearchDirection, direction of search is backward. Rajat ji please check this whole comment.
+       */
         var calendarSearchDirection: Calendar.SearchDirection {
             switch self {
             case .Next:

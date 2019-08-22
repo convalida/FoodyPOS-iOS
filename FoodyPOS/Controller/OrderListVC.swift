@@ -202,7 +202,7 @@ class OrderListVC: UIViewController {
     }
     
     /**
-        This action refers to the back arrow in the top navigation bar. When we press the magnifying glass icon and then click on the back arrow then it hides the keyboard and hide the search view
+        When user presses the magnifying glass icon and then click on the back arrow then it hides the keyboard and hide the search view
     */
     @IBAction func btnSearchDidClicked(_ sender: UIButton) {
         viewSearch.isHidden = true
