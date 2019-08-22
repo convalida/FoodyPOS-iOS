@@ -28,7 +28,7 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    /// Show Toaster on view controller
+    /// Show toaster on view controller. Rajat ji please mention if toaster is same as toast or something else
     func showToast(_ text:String) {
         if let currentToast = ToastCenter.default.currentToast {
             currentToast.cancel()
@@ -36,7 +36,7 @@ extension UIViewController {
         Toast(text: text).show()
     }
     
-    /// Show Toast on view controller with custom duration
+    /// Show toast on view controller with custom duration
     func showToast(text:String,delay:TimeInterval,duration:TimeInterval) {
         if let currentToast = ToastCenter.default.currentToast {
             currentToast.cancel()

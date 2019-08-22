@@ -10,13 +10,21 @@
 import Foundation
 import UIKit
 
+///Enum for border. Not in Use
 enum ViewBorder: String {
-    case left, right, top, bottom
+    ///For left border of UIView
+    case left
+    ///For right border of UIView
+    case right
+    ///For top border of UIView
+    case top
+    ///For bottom border of UIView
+    case bottom
 }
 
 extension UIView {
     
-    /// Create editable corner radius of a view
+    /// Create editable corner radius of a view. Rajat ji please search and mention where it is used in storyboard as I cannot check the story board
     @IBInspectable var cornerRadii:CGFloat {
         set {
             self.layer.cornerRadius = newValue
@@ -26,7 +34,7 @@ extension UIView {
         }
     }
     
-    /// Create editable border color of a view
+    /// Create editable border color of a view. Rajat ji please mention where it is used
     @IBInspectable var borderColor:UIColor {
         set {
             self.layer.borderColor = newValue.cgColor
@@ -36,7 +44,7 @@ extension UIView {
         }
     }
     
-    /// Create editable border width of a view
+    /// Create editable border width of a view. Rajat ji please mention where it is used
     @IBInspectable var borderWidth:CGFloat {
         set {
             self.layer.borderWidth = newValue
@@ -46,7 +54,7 @@ extension UIView {
         }
     }
     
-    /// Create editable shadow of a view
+    /// Create editable shadow of a view. Rajat ji please search and mention where it is used in storyboard as I cannot check the story board
     @IBInspectable
     public var shadowColor: UIColor? {
         get {
@@ -60,7 +68,7 @@ extension UIView {
         }
     }
     
-    /// Create editable shadow offset of a view
+    /// Create editable shadow offset of a view. Rajat ji please search and mention where it is used in storyboard
     @IBInspectable
     public var shadowOffset: CGSize {
         get {
@@ -71,7 +79,7 @@ extension UIView {
         }
     }
     
-    /// Create editable shadow opacity of a view
+    /// Create editable shadow opacity of a view. Rajat ji please search and mention where it is used in storyboard
     @IBInspectable
     public var shadowOpacity: Double {
         get {
@@ -82,7 +90,7 @@ extension UIView {
         }
     }
     
-    /// Create editable shadow radius of a view
+    /// Create editable shadow radius of a view. Rajat ji please search and mention where it is used in storyboard
     @IBInspectable
     public var shadowRadius: CGFloat {
         get {
@@ -104,7 +112,7 @@ extension UIView {
         }
     }
     
-    /// Create editable shadow raster property of a view
+    /// Create editable shadow raster property of a view. Not used
     @IBInspectable
     public var shadowShouldRasterize: Bool {
         get {
@@ -115,7 +123,7 @@ extension UIView {
         }
     }
     
-    /// Create editable rasterizationScale of a view
+    /// Create editable rasterizationScale of a view. Not used
     @IBInspectable
     public var shadowRasterizationScale: CGFloat {
         get {
@@ -126,7 +134,7 @@ extension UIView {
         }
     }
     
-    /// Create editable maskToBounds of a view
+    /// Create editable maskToBounds of a view. Rajat ji please search and mention where it is used in storyboard 
     @IBInspectable
     public var maskToBounds: Bool {
         get {
@@ -137,7 +145,7 @@ extension UIView {
         }
     }
     
-    /// applies a rectangular shadow of a view
+    /// Applies a rectangular shadow of a view. Used in LeftSlideMenu.
     func rectShadow(offsetWidth:CGFloat = -1,offsetHeight:CGFloat = 1,opacity:Float = 0.5,radius:CGFloat = 1,color: CGColor = UIColor.black.cgColor) {
         
         self.layer.masksToBounds = false
