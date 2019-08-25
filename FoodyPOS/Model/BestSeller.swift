@@ -19,21 +19,51 @@ import Foundation
 //    let Counting:String?
 //}
 
+/**
+Strucutre for BestSeller
+*/
 struct BestSeller: Codable {
-    let weeklyBestsellersItem, monthelyBestsellersItem, yearlyBestsellersItem: [LyBestsellersItem?]
+
+    ///Variable for weekly section of LyBestseller structure. Rajat ji please check this and also, made declarations of weekly, monthly and yearly seperate. Please check that also if it is correct.
+    let weeklyBestsellersItem: [LyBestsellersItem?]
+     ///Variable for weekly section of LyBestseller structure. 
+    let monthelyBestsellersItem: [LyBestsellersItem?] 
+     ///Variable for weekly section of LyBestseller structure. 
+    let yearlyBestsellersItem: [LyBestsellersItem?]
     
+    /**
+    Enum is defined here. It assigns response keys of weekly, monthly and yearly bestseller items to corresponding variables
+    */
     enum CodingKeys: String, CodingKey {
+         /**
+        Assign WeeklyBestsellersItem key to weeklyBestsellersItem variable which displays top 3 bestseller items of current week with their counting
+        */
         case weeklyBestsellersItem = "WeeklyBestsellersItem"
+         /**
+        Assign MonthlyBestsellersItem key to monthlyBestsellersItem variable which displays top 3 bestseller items of current month with their counting
+        */
         case monthelyBestsellersItem = "MonthelyBestsellersItem"
+         /**
+        Assign YearlyBestsellersItem key to yearlyBestsellersItem variable which displays top 3 bestseller items of current year with their counting
+        */
         case yearlyBestsellersItem = "YearlyBestsellersItem"
     }
 }
 
+///Rajat ji please update this
 struct LyBestsellersItem: Codable {
-    let subitems, counting: String?
+    ///Variable for Subitems key
+    let subitems: String? 
+    ///Variable for Counting key
+    let counting: String?
     
+    /**
+    Enum is defined here. It assigns response keys of sub items and counting to corresponding variables
+    */
     enum CodingKeys: String, CodingKey {
+        ///Assign Subitems key subitems variable which displays item name
         case subitems = "Subitems"
+        ///Assign Counting key to counting variable which displays no. of times an item was ordered
         case counting = "Counting"
     }
 }
