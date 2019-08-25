@@ -17,12 +17,12 @@ open class LeftSlideMenu:UIViewController {
         return true
     }
     
-    ///Rajat ji please update this
+    ///Stores reference of ViewController on which the menu is called
     private var _mainVC:UIViewController!
 
    /**
    If device width is greater than height of device (in case of landscape mode), return width of menu equal to height of screen,
-   else (in case of portrait mode), set width of menu equal to 0.8 times width of screen. Rajat ji please check this
+   else (in case of portrait mode), set width of menu equal to 0.8 times width of screen.
    */ 
     var menuWidth:CGFloat {
         if UIScreen.main.bounds.size.width > UIScreen.main.bounds.size.height {
@@ -35,7 +35,7 @@ open class LeftSlideMenu:UIViewController {
     ///Set left menu to be closed by default
     var isLeftMenuOpen:Bool = false
     
-    ///Rajat ji please update this
+    ///Getter and Setter method to get reference of ViewController on which the menu is called
     var mainVC: UIViewController {
         get {
             return self._mainVC
@@ -46,14 +46,14 @@ open class LeftSlideMenu:UIViewController {
     }
 
    /**
-   This method is used to apply a rectangular shadow of a view. This shadow is displayed at right edge of left slide menu. Rajat ji please check this.
+   This method is used to apply a rectangular shadow of a view. This shadow is displayed at right edge of left slide menu.
    */ 
     @objc func updateUI(){
         self.menuVC.view.rectShadow(offsetWidth: 3, offsetHeight: 0, opacity: 0.5)
     }
     
     /**
-    Rajat ji please mention where this is called and what this method does  
+    This method is called when
     */
     public convenience init(vc:UIViewController) {
         self.init()
