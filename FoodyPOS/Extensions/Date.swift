@@ -11,7 +11,7 @@ import Foundation
 let dateFormat = "MM/dd/yyyy"
 extension Date {
     
-    /// Get today's date in proper date format in "MM/dd/yyyy" using Date and DateFormatter class which is pre defined class. The date is returned in String format. Rajat ji please check this.
+    /// Get today's date in proper date format in "MM/dd/yyyy" using Date and DateFormatter class which is pre defined class. The date is returned in String format.
     static var todayDate:String {
         let date = Date()
         let formatter = DateFormatter()
@@ -101,7 +101,7 @@ extension Date {
     Get start date of current year. Get current year in yyyy format using Date and DateFormatter class which is 
     pre defined class, then get the first date of current year in hh dd-MM-yyyy format 
     (hh is set to 10 due to timezone offset variance in various timezones) and if it is not null, then return it. 
-    Rajat ji please check this complete comment again.
+    Minakshi Ji this is correct
     */
     static func startOfYear() -> Date {
         var currentYear = Date()
@@ -149,7 +149,7 @@ extension Date {
         case sunday
     }
     
-    ///Enum for direction of search for occurance of weekday. Rajat ji please check this.
+    ///Enum for direction of search for occurance of weekday.
     enum SearchDirection {
         ///Case when next occurance of weekday is searched
         case Next
@@ -158,7 +158,7 @@ extension Date {
 
        /**
         Determine weekday's occurance search direction. If Next is passed in SearchDirection, then direction of
-       search is forward, if Previous is passed in SearchDirection, direction of search is backward. Rajat ji please check this whole comment.
+       search is forward, if Previous is passed in SearchDirection, direction of search is backward.
        */
         var calendarSearchDirection: Calendar.SearchDirection {
             switch self {

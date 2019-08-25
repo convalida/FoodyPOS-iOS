@@ -242,7 +242,7 @@ extension EmployeeDetailVC:UITableViewDelegate {
 extension EmployeeDetailVC:EmployeeDetailDelegate {
     /**
     This method is called after adding or updating Employee and this method takes EmployeeDetail and reloads the table data.
-    This method is called in removeController method in SignupVC. Rajat ji please mention if this method is used in both editing and adding employee or adding employee only
+    This method is called in removeController method in SignupVC. This method is used in to see the Employee detail only after adding an employee
     */
     func showDetail(detail: [EmployeeDetail]) {
             employeeData?.employeeDetails = detail
@@ -253,8 +253,7 @@ extension EmployeeDetailVC:EmployeeDetailDelegate {
 extension EmployeeDetailVC:EditEmployeeDelegate {
     /**
     This method is called when user wants to update any employee data. This also calls the api to update data on server.
-    This method is called EditEmployeeVC. Rajat ji please check this.
-        
+    This method is called from EditEmployeeVC.
     */
     func updateEmployee() {
         callEmployeeAPI()

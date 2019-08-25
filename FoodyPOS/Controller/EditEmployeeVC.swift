@@ -8,7 +8,7 @@
 
 import UIKit
 
-///Protocol for defining delegate of current class. This is used to update the employee details in EmployeeDetailVC. Rajat ji please check this.
+///Protocol for defining delegate of current class. This is used to update the employee details in EmployeeDetailVC.
 protocol EditEmployeeDelegate {
     ///Abstract method for EditEmployeeDelegate protocol.
     func updateEmployee()
@@ -18,7 +18,7 @@ protocol EditEmployeeDelegate {
 View controller class for Edit employee dialog
 */
 class EditEmployeeVC: UIViewController {
-    ///Outlet for main view/ complete dialog. Rajat ji please check this. 
+    ///Outlet for main view/ complete dialog.
     @IBOutlet weak var mainView: UIView!
     ///Outlet for user name label
     @IBOutlet weak var lblUserName: UILabel!
@@ -26,12 +26,12 @@ class EditEmployeeVC: UIViewController {
     @IBOutlet weak var lblEmailId: UILabel!
     ///Outlet for role type button.
     @IBOutlet weak var lblRoleType: UIButton!
-    ///Outlet for active status button/check box. Rajat ji please check this.
+    ///Outlet for active status button/check box.
     @IBOutlet weak var btnActive: UIButton!
     
     ///Declare variable for EmployeeDetail strucutre
     var employeeDetail:EmployeeDetail?
-    ///Set delegate of EditEmployeeVC to EditEmployeeDelegate. Rajat ji please check this
+    ///Set delegate of EditEmployeeVC to EditEmployeeDelegate.
     var delegate:EditEmployeeDelegate!
     ///Set boolean isUpdate to false
     var isUpdate = false
@@ -110,7 +110,7 @@ class EditEmployeeVC: UIViewController {
     }
     
     /**
-    Method called when status button (check box) is clicked to toggle its selected value. Rajat ji please check this. If button is selected or isSelected value is true previously, 
+    Method called when status button (check box) is clicked to toggle its selected value. If button is selected or isSelected value is true previously,
     then set it to unselected or isSelected value to false. If button is not selected or isSelected value is false previously, then set it to selected or isSelected value to true.
     */
     @IBAction func btnStatusDidClicked(_ sender: UIButton) {
@@ -122,7 +122,7 @@ class EditEmployeeVC: UIViewController {
     }
     
     /**
-    Method called when update button is clicked. If UserManager class does not have restaurant id or employeeDetail is null then return, Rajat ji please check this.
+    Method called when update button is clicked. If UserManager class does not have restaurant id or employeeDetail is null then return.
     Set isActive variable to true. If btnActive is not selected, set isActive value to false. Take parameters restaurant id from UserManager class,
     account id from employee, role type from lblRoleType, isActive value is initalized locally, modifiedBy value from UserManager class's emailvalue.
     Display hud view. Call updateEmployee method from APIClient class and pass parameters to it. If api hit is successful and resultCode is 1, 
@@ -180,7 +180,7 @@ class EditEmployeeVC: UIViewController {
     // Show option to choose Role
     /**
     Method called when role type button. Set style to action sheet to present the user with a set of alternatives for role type.
-    If device is iPad, set style to alert. For alert (iPad), set alert with two buttons with message Choose an option, actions - Employee, Manager. Rajat ji please check this.
+    If device is iPad, set style to alert. For alert (iPad), set alert with two buttons with message Choose an option, actions - Employee, Manager.
     */
     @IBAction func btnRoleTypeDidClicked(_ sender: UIButton) {
         var style:UIAlertControllerStyle = .actionSheet
@@ -202,7 +202,7 @@ class EditEmployeeVC: UIViewController {
     /**
     Method called when update button is clicked, cancel button is clicked or user touched outside the alert.
     Unlink the view from its superview and its window, and removes it from the responder chain. Remove the view controller from its parent.
-    If isUpdate value is true (after successful api hit), then call updateEmployee method which hits the Edit employee web service. Rajat ji please check and correct this.
+    If isUpdate value is true (after successful api hit), then call updateEmployee method which hits the Edit employee web service. Minakshi Ji this is correct
 
     */
     func removeController() {

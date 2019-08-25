@@ -24,7 +24,7 @@ enum ViewBorder: String {
 
 extension UIView {
     
-    /// Create editable corner radius of a view. Rajat ji please search and mention where it is used in storyboard as I cannot check the story board
+    /// Create editable corner radius of a view. This is used on all popup, buttons to make rouned corners
     @IBInspectable var cornerRadii:CGFloat {
         set {
             self.layer.cornerRadius = newValue
@@ -34,7 +34,7 @@ extension UIView {
         }
     }
     
-    /// Create editable border color of a view. Rajat ji please mention where it is used
+    /// Create editable border color of a view. This is used on date selector fields
     @IBInspectable var borderColor:UIColor {
         set {
             self.layer.borderColor = newValue.cgColor
@@ -44,7 +44,7 @@ extension UIView {
         }
     }
     
-    /// Create editable border width of a view. Rajat ji please mention where it is used
+    /// Create editable border width of a view. This is used on date selector fields
     @IBInspectable var borderWidth:CGFloat {
         set {
             self.layer.borderWidth = newValue
@@ -54,7 +54,7 @@ extension UIView {
         }
     }
     
-    /// Create editable shadow of a view. Rajat ji please search and mention where it is used in storyboard as I cannot check the story board
+    /// Create editable shadow of a view. This is mainly used for bottom shadow on Navigation bar and some other buttons
     @IBInspectable
     public var shadowColor: UIColor? {
         get {
@@ -68,7 +68,7 @@ extension UIView {
         }
     }
     
-    /// Create editable shadow offset of a view. Rajat ji please search and mention where it is used in storyboard
+    /// Create editable shadow offset of a view. This is mainly used with bottom shadow on Navigation bar and some other buttons
     @IBInspectable
     public var shadowOffset: CGSize {
         get {
@@ -79,7 +79,7 @@ extension UIView {
         }
     }
     
-    /// Create editable shadow opacity of a view. Rajat ji please search and mention where it is used in storyboard
+    /// Create editable shadow opacity of a view. This is mainly used with bottom shadow on Navigation bar and some other buttons
     @IBInspectable
     public var shadowOpacity: Double {
         get {
@@ -90,7 +90,7 @@ extension UIView {
         }
     }
     
-    /// Create editable shadow radius of a view. Rajat ji please search and mention where it is used in storyboard
+    /// Create editable shadow radius of a view. This is mainly used with bottom shadow on Navigation bar and some other buttons
     @IBInspectable
     public var shadowRadius: CGFloat {
         get {
@@ -134,7 +134,7 @@ extension UIView {
         }
     }
     
-    /// Create editable maskToBounds of a view. Rajat ji please search and mention where it is used in storyboard 
+    /// Create editable maskToBounds of a view. This is mainly used with bottom shadow on Navigation bar and some other buttons 
     @IBInspectable
     public var maskToBounds: Bool {
         get {
