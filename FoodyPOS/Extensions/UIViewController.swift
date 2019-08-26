@@ -28,7 +28,7 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    /// Show toaster on view controller. Minakshi ji toaster is same as toast
+    /// Show toaster on view controller. Toaster is same as toast
     func showToast(_ text:String) {
         if let currentToast = ToastCenter.default.currentToast {
             currentToast.cancel()

@@ -54,7 +54,8 @@ extension UIView {
         }
     }
     
-    /// Create editable shadow of a view. This is mainly used for bottom shadow on Navigation bar and some other buttons
+    /// Create editable shadow of a view. This is mainly used for bottom shadow on Navigation bar and some other buttons.
+    ///Rajat ji please mention if it used in bottom navigation bar or side navigation bar. I will update at other places accordingly.
     @IBInspectable
     public var shadowColor: UIColor? {
         get {
@@ -69,6 +70,7 @@ extension UIView {
     }
     
     /// Create editable shadow offset of a view. This is mainly used with bottom shadow on Navigation bar and some other buttons
+    
     @IBInspectable
     public var shadowOffset: CGSize {
         get {
@@ -101,7 +103,7 @@ extension UIView {
         }
     }
     
-    /// Create editable shadow path of a view
+    /// Create editable shadow path of a view. Used in rectShadow method
     @IBInspectable
     public var shadowPath: CGPath? {
         get {

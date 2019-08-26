@@ -24,7 +24,7 @@ Strucutre for BestSeller
 */
 struct BestSeller: Codable {
 
-    ///Variable for weekly section of LyBestseller structure. Declarations of weekly, monthly and yearly seperate. Please check that also if it is correct.
+    ///Variable for weekly section of LyBestseller structure. Declarations of weekly, monthly and yearly seperate. Rajat ji Please check that also if seperated declarations are correct.
     let weeklyBestsellersItem: [LyBestsellersItem?]
      ///Variable for weekly section of LyBestseller structure. 
     let monthelyBestsellersItem: [LyBestsellersItem?] 

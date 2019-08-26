@@ -28,7 +28,6 @@ extension UIColor {
     
     /**
      Set light unselect color on sales report. Is is used in DasboardVC to set color of week/month/year button when button is not selected. 
-     Minakshi Ji, This is used in DasboardVC
     */
     static var lightUnselect:UIColor {
         return UIColor(red: 184/255, green: 184/255, blue: 184/255, alpha: 0.5)

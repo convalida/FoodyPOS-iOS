@@ -241,8 +241,8 @@ extension EmployeeDetailVC:UITableViewDelegate {
 
 extension EmployeeDetailVC:EmployeeDetailDelegate {
     /**
-    This method is called after adding or updating Employee and this method takes EmployeeDetail and reloads the table data.
-    This method is called in removeController method in SignupVC. This method is used in to see the Employee detail only after adding an employee
+    This method is called after adding employee and this method takes EmployeeDetail and reloads the table data.
+    It is called in removeController method in SignupVC. It is used in to see the Employee detail after adding an employee
     */
     func showDetail(detail: [EmployeeDetail]) {
             employeeData?.employeeDetails = detail

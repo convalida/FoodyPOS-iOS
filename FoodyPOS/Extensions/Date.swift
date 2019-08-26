@@ -101,7 +101,6 @@ extension Date {
     Get start date of current year. Get current year in yyyy format using Date and DateFormatter class which is 
     pre defined class, then get the first date of current year in hh dd-MM-yyyy format 
     (hh is set to 10 due to timezone offset variance in various timezones) and if it is not null, then return it. 
-    Minakshi Ji this is correct
     */
     static func startOfYear() -> Date {
         var currentYear = Date()

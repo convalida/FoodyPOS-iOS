@@ -92,7 +92,7 @@ struct Order_Details : Codable {
         case tip = "Tip"
          ///Assign Total key to total value which displays total amount of order
         case total = "Total"
-         ///Assign Items_Details key to items_Details value which displays details of items. In Customer details reponse, it is not present, 
+         ///Assign Items_Details key to items_Details value which displays details of items. In Customer details reponse, it is not present. 
         case items_Details = "Items_Details"
     }
 }

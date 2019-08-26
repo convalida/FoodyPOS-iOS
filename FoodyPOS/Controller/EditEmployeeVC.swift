@@ -180,7 +180,7 @@ class EditEmployeeVC: UIViewController {
     // Show option to choose Role
     /**
     Method called when role type button. Set style to action sheet to present the user with a set of alternatives for role type.
-    If device is iPad, set style to alert. For alert (iPad), set alert with two buttons with message Choose an option, actions - Employee, Manager.
+    If device is iPad, set style to alert. Set alert with two buttons with message Choose an option, actions - Employee, Manager in both cases - iPhone and iPad. Rajat ji please check this 
     */
     @IBAction func btnRoleTypeDidClicked(_ sender: UIButton) {
         var style:UIAlertControllerStyle = .actionSheet
@@ -202,8 +202,7 @@ class EditEmployeeVC: UIViewController {
     /**
     Method called when update button is clicked, cancel button is clicked or user touched outside the alert.
     Unlink the view from its superview and its window, and removes it from the responder chain. Remove the view controller from its parent.
-    If isUpdate value is true (after successful api hit), then call updateEmployee method which hits the Edit employee web service. Minakshi Ji this is correct
-
+    If isUpdate value is true (after successful api hit), then call updateEmployee method which hits the Edit employee web service.
     */
     func removeController() {
         self.view.removeFromSuperview()
