@@ -59,7 +59,7 @@ struct OrderNumberDetail: Codable {
     let totalPrices : String?
     ///Variable for PickupTime key
     let pickupTime : String?
-      ///This is no longer returned in response. Rajat ji please check if it can be removed 
+    ///This is no longer returned in response. Minaksh ji please let it be here, If you want that it should be removed then you can do it after KT. Otherwise it can bring more complications for you.
     let onClick : OnClick?
     
      /**
@@ -75,12 +75,12 @@ struct OrderNumberDetail: Codable {
         case totalPrices = "TotalPrices"
         ///Assign PickupTime key to pickupTime variable which displays pickup time of of a particular order
         case pickupTime = "PickupTime"
-        ///This is no longer returned in response. Rajat ji please check if it is to be removed from Order.swift and added to OrderSearch.swift
+        ///This is no longer returned in response. Minakshi ji please let it be here
         case onClick = "OnClick"
     }
 }
 
- ///This is no longer returned in response. Rajat ji please check if it is to be removed from Order.swift and added to OrderSearch.swift
+///Minakshi Ji, There is no need to remove it from here this struct is accessible throughout the project.
 ///Structure for OnClick object 
 struct OnClick: Codable {
     ///Variable for CUstomerId key
@@ -103,8 +103,7 @@ struct OnClick: Codable {
     let grandTotal : String?
     ///Variable for OrderItemDetail structure
     let orderItemDetails : [OrderItemDetail]?
-    
-     ///This is no longer returned in response. Rajat ji please check if it can be removed
+
      /**
     Enum is defined here. It assigns response keys OnClick object to corresponding variables
     */
@@ -132,7 +131,7 @@ struct OnClick: Codable {
     }
 }
 
- ///This is no longer returned in response. Rajat ji please check if it can be removed from Order.swift and added to OrderSearch.swift
+///Minakshi Ji, There is no need to remove it from here this struct is accessible throughout the project.
 ///Structure for item details
 struct OrderItemDetail: Codable {
     ///Variable for SubitemsNames key
@@ -150,7 +149,6 @@ struct OrderItemDetail: Codable {
     ///Variable for Total key
     let total : String?
     
-     ///This is no longer returned in response. Rajat ji please check if it can be removed from Order.swift and added to OrderSearch.swift
     /**
     Enum is defined here. It assigns response keys OrderItemDetails object to corresponding variables
     */

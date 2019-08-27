@@ -9,7 +9,7 @@
 
 import Foundation
 
-///Structure for view of Left menu. Rajat ji please check this
+///Structure for view of Left menu.
 struct LeftMenu {
     
     ///Used in LeftMenuVC. Variable to store array of icon and title of left menu for upper section. Used to show Dashboard, Orders, Customer details and Reports
@@ -29,25 +29,26 @@ struct LeftMenu {
     
     ///Structure for CellIdentifier which identifies type of cell is header cell or menu cell used in LeftMenuVC
     struct CellIdentifier {
-        ///Rajat ji please update this as both header cell and menu cell return LeftMenuCell
+        ///Identifier for header cell
         static let headerCell = "headerCell"
-          ///Rajat ji please update this as both header cell and menu cell return LeftMenuCell
+        
+        ///Identifier for menu cell return LeftMenuCell
         static let menuCell = "menuCell"
     }
     
-    ///Structure upper section for Left menu. Rajat ji please check this
+    ///Structure upper section for Left menu.
     struct  Main {
-        ///Variable for image view (icon) for various menu items in 0th section. Rajat ji please check this
+        ///Variable for image view (icon) for various menu items in 0th section.
         let image:UIImage
-        ///Variable for title for various menu items in 0th section. Rajat ji please check this
+        ///Variable for title for various menu items in 0th section.
         let title:String
     }
     
       ///Structure Profile section for Left menu
     struct Profile {
-        ///Variable for image view (icon) for various menu items in 1st section. Rajat ji please check this
+        ///Variable for image view (icon) for various menu items in 1st section.
         let image:UIImage
-        ///Variable for title for various menu items in 1st section. Rajat ji please check this
+        ///Variable for title for various menu items in 1st section.
         let title:String
     }
 }

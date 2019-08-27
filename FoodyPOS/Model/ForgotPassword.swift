@@ -11,7 +11,7 @@ import Foundation
 ///Structure for ForgotPassword
 struct ForgotPassword:Codable {
     ///Variable for message
-    let message: String 
+    let message: String
     ///Variable for ResultCode key
     let resultCode: String
     
@@ -19,7 +19,7 @@ struct ForgotPassword:Codable {
     Enum is defined here. It assigns response keys of ForgotPassword to corresponding variables
     */
     enum CodingKeys: String, CodingKey {
-        ///Rajat ji please check this, nothing is assigned to case message
+        ///Minakshi Ji, if nothing is assigned here then the key is also same in response
         case message
         ///Assign ResultCode key to resultCode variable which displays 1 in case of success and 0 in case of failure
         case resultCode = "ResultCode"

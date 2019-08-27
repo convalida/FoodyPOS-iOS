@@ -17,7 +17,7 @@ open class LeftSlideMenu:UIViewController {
         return true
     }
     
-    ///Stores reference of ViewController on which the menu is called. Rajat ji please check if mainVC is dashboardVC and where it is mentioned
+    ///Stores reference of ViewController on which the menu is called. It can be any view controller which is set while initializing the LeftMenu
     private var _mainVC:UIViewController!
 
    /**
@@ -53,8 +53,7 @@ open class LeftSlideMenu:UIViewController {
     }
     
     /**
-    When is this method called, Rajat ji please update this.
-    Rajat ji please update the flow/working of this method.
+    Minakshi Ji this is called when we initialize the LeftMenuVC on any controller.
     */
     public convenience init(vc:UIViewController) {
         self.init()
@@ -113,7 +112,7 @@ open class LeftSlideMenu:UIViewController {
     /**
     This method is called in DashboardVC when menu button is clicked.
     Dismiss the presented view controller.
-    Set dimensions of frame and set frame of self.menuVC.view.frame. Rajat ji please mention if frame dimensions are set in case it is open or closed. Also explain it if possible.
+    Set dimensions of frame and set frame of self.menuVC.view.frame. Minakshi ji, frame dimensions are set only in case it is open.
     If mainVC's child view controller does not has menuVC, then add menu vc as child view controller of main vc.
     Add menuGestureView so that user can click anywhere on the screen and the menu will be closed.
     View’s autoresizing mask is not translated into Auto Layout constraints. Add top, bottom, leading and trailing constraints to menuGestureVC 
@@ -124,7 +123,7 @@ open class LeftSlideMenu:UIViewController {
     Set width, bottom, top and leading constraint, to menuVC (LeftMenuVC)
     Set auto resizing mask (determines how the receiver resizes itself when its superview’s bounds change) to flexible width and flexible height
     Lay out the subviews immediately, if layout updates are pending.
-    Set animation to Left menu portion from x=0 and other remaining portion with alpha value 0.1. Rajat ji please check this.
+    Set animation to Left menu portion from x=0 and other remaining portion with alpha value 0.1.
      Call updateUI method, which displays shadow in edge of left slide menu.
     */
     @objc open func open(){
@@ -225,8 +224,8 @@ open class LeftSlideMenu:UIViewController {
     direction. If current frame width is less then 150 then close() method is called to close the menu. 
     This method is called on pan gesture recognizer.
     If gesture recognizer in view is null, then return. If translation value along x is negative, set it to 
-    positive and and set it as origin of frame. Rajat ji please check this.
-    Rajat ji please mention the use of this method and what this method is doing
+    positive and and set it as origin of frame.
+    Minakshi Ji, the use of this method is clear from its name, It is used to swipe menu into left or right direction.
     */
     @objc open func swipeLeftMenu(gestureRecognizer:UIPanGestureRecognizer){
         
@@ -268,7 +267,7 @@ open class LeftSlideMenu:UIViewController {
     This method is called in closeLeftMenuOnSwipe. This method animates the left menu until the frame width
     is set to 0. Set origin of menuvc frame to negative of width of menu, set isLeftMenuOpen value to false,
     set alpha value of menuGestureView to 0. When animation is completed, unlink menuVC and menuGestureView from 
-    superview and its window, and remove it from the responder chain. Rajat ji please check this.
+    superview and its window, and remove it from the responder chain.
     */
     @objc open func close(){
         

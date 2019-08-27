@@ -180,7 +180,7 @@ class EditEmployeeVC: UIViewController {
     // Show option to choose Role
     /**
     Method called when role type button. Set style to action sheet to present the user with a set of alternatives for role type.
-    If device is iPad, set style to alert. Set alert with two buttons with message Choose an option, actions - Employee, Manager in both cases - iPhone and iPad. Rajat ji please check this 
+    If device is iPad, set style to alert. Set alert with two buttons with message Choose an option, actions - Employee, Manager in both cases - iPhone and iPad.
     */
     @IBAction func btnRoleTypeDidClicked(_ sender: UIButton) {
         var style:UIAlertControllerStyle = .actionSheet

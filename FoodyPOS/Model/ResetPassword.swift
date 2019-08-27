@@ -19,7 +19,7 @@ struct ResetPassword: Codable {
     Enum is defined here. It assigns response keys of root object to corresponding variables
     */
     enum CodingKeys: String, CodingKey {
-        ///Rajat ji please check this, nothing is assigned to case message
+        ///Minakshi Ji, Not compulsory to assign key to message here
         ///It displays appropriate message in reponse depending on api hit is successful or not
         case message
         ///Assign ResultCode key to resultCode variable which returns 1 in case password is successfully changed else returns 0

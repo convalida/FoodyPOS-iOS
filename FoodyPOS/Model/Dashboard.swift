@@ -10,7 +10,7 @@
 
 import Foundation
 
-///Structure for dashboard for displaying cells for label values. Rajat ji please check this
+///Structure for dashboard for displaying cells for label values.
 struct Dashboard {
 
     /**Structure for Data for to store title, sub title and icon for label values.
@@ -52,7 +52,7 @@ struct Dashboard1: Codable {
     enum CodingKeys: String, CodingKey {
         ///Assign LabelValues key to labelValues variable which display weekly sales, customers, orders and total, sales, customers and orders.
         case labelValues = "LabelValues"
-        ///Rajat ji please check this, chart is not assigned.
+        ///Minakshi ji, No need to assign value if key and value is same
         case chart
     }
     
