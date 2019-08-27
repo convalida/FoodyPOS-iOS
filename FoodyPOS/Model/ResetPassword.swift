@@ -8,11 +8,21 @@
 
 import Foundation
 
+///Structure for ResetPassword in OTP web service
 struct ResetPassword: Codable {
-    let message, resultCode: String
+    ///Variable for message key
+    let message: String
+    ///Variable for ResultCode key
+    let resultCode: String
     
+     /**
+    Enum is defined here. It assigns response keys of root object to corresponding variables
+    */
     enum CodingKeys: String, CodingKey {
+        ///Rajat ji please check this, nothing is assigned to case message
+        ///It displays appropriate message in reponse depending on api hit is successful or not
         case message
+        ///Assign ResultCode key to resultCode variable which returns 1 in case password is successfully changed else returns 0
         case resultCode = "ResultCode"
     }
 }

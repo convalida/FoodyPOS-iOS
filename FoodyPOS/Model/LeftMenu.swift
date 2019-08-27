@@ -29,19 +29,25 @@ struct LeftMenu {
     
     ///Structure for CellIdentifier which identifies type of cell is header cell or menu cell used in LeftMenuVC
     struct CellIdentifier {
-        
+        ///Rajat ji please update this as both header cell and menu cell return LeftMenuCell
         static let headerCell = "headerCell"
-         
+          ///Rajat ji please update this as both header cell and menu cell return LeftMenuCell
         static let menuCell = "menuCell"
     }
     
+    ///Structure upper section for Left menu. Rajat ji please check this
     struct  Main {
+        ///Variable for image view (icon) for various menu items in 0th section. Rajat ji please check this
         let image:UIImage
+        ///Variable for title for various menu items in 0th section. Rajat ji please check this
         let title:String
     }
     
+      ///Structure Profile section for Left menu
     struct Profile {
+        ///Variable for image view (icon) for various menu items in 1st section. Rajat ji please check this
         let image:UIImage
+        ///Variable for title for various menu items in 1st section. Rajat ji please check this
         let title:String
     }
 }
