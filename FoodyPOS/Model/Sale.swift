@@ -11,9 +11,9 @@ import Foundation
 struct Sale: Codable {
     ///Variable for AllSaleElement structure used in TopSaleVC.
     let topRestaurentSale: [AllSaleElement]
-    ///Minakshi Ji, we define it here for keys in response which may be in the API response earlier but not now. Please check api response for this.
+    ///It is defined here for keys in response which is there in the API response when null is passed in startdate and enddate parameters. Checked the api response. In app, for current week also, api hit is through dates passed, so it is not used. Rajat ji please check this
     let weekSales: JSONNull?
-     ///Variable for AllSaleElement structure used in SalesSellAllVC. Minakshi ji, Yes same structure/Data Type is assigned to two variables but they can have different data
+     ///Variable for AllSaleElement structure used in SalesSellAllVC. Same structure/Data Type is assigned to two variables but they can have different data
     let allSales: [AllSaleElement]
     
     /**
@@ -22,7 +22,10 @@ struct Sale: Codable {
     enum CodingKeys: String, CodingKey {
         ///Assign TopRestaurentSale key to topRestaurantSale variable, used in TopSaleVC
         case topRestaurentSale = "TopRestaurentSale"
-        ///Assign WeekSales key to weekSales variable. Minakshi Ji, we define it here for keys in response which may be in the API response earlier but not now. Please check api response for this.
+        /**
+        Assign WeekSales key to weekSales variable. 
+         In app, for current week also, api hit is through dates passed, so it is not used. Rajat ji please check this
+        */
         case weekSales = "WeekSales"
         ///Assign AllSales key to allSales variable, used in SalesSellAllVC
         case allSales = "AllSales"
@@ -62,12 +65,12 @@ struct AllSaleElement: Codable {
 // MARK: Encode/decode helpers
 // TODO: To Be Explained Later:
 
-///Minakshi Ji this is used to handle null response from json response
+///This is used to handle null response from json response
 class JSONNull: Codable {
-    ///Minakshi ji please ignore this, If you need more explaination on this then you can go through Codable implementation of Alamofire. I can not explain this
+    ///Rajat ji please update this for the purpose of documentation
     public init() {}
     
-    ///Minakshi ji please ignore this, If you need more explaination on this then you can go through Codable implementation of Alamofire. I can not explain this
+    ///Rajat ji please update this for the purpose of documentation
     public required init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         if !container.decodeNil() {
@@ -75,8 +78,8 @@ class JSONNull: Codable {
         }
     }
     
-    ///Minakshi ji please ignore this, If you need more explaination on this then you can go through Codable implementation of Alamofire. I can not explain this
-    public func encode(to encoder: Encoder) throws {
+    ///Rajat ji please update this for the purpose of documentation.
+        public func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         try container.encodeNil()
     }

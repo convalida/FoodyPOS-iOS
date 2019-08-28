@@ -12,7 +12,7 @@ import UIKit
 ///Class to dispaly different types of alerts.
 class Alert: NSObject {
     
-    /// Display a basic alert
+    /// Show simple alert with title and message and also action. Not used in project
     public static func showSimpleAlert(title:String, message:String, actionTitle:String, controller:UIViewController) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: actionTitle, style: .default, handler: nil)
@@ -20,7 +20,7 @@ class Alert: NSObject {
         controller.present(alert, animated: true, completion: nil)
     }
     
-    /// show alert with a single button
+    ///Show alert with single button, title, message and handler to handle actions. Used in DashboardVC temprarily to show token
     public static func showSingleButtonAlert(title:String, message:String, actionTitle:String, controller:UIViewController, handler:(()-> Void)?){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: actionTitle, style: .default) { (UIAlertAction) in
@@ -32,7 +32,9 @@ class Alert: NSObject {
         controller.present(alert, animated: true, completion: nil)
     }
     
-    /// show alert with two buttons
+    /**
+    Show alert with two button actions. Used in EditEmployeeVC and SignUpVC to select the role type is Manager and Employee.
+    */
     public static func showDoubleButtonAlert(title:String, message:String, actionTitle1:String, actionTitle2:String, alertStyle:UIAlertControllerStyle, controller:UIViewController, handler1:(()-> Void)?, handler2:(()->Void)?){
        
         let alert = UIAlertController(title: title, message: message, preferredStyle: alertStyle)
@@ -55,7 +57,7 @@ class Alert: NSObject {
         controller.present(alert, animated: true, completion: nil)
     }
     
-    /// Show alert with title
+    /// Show text field inside alert. Not used in project
     public static func showSingleTextAlertWithTitle(title:String, message:String, actionTitle:String, placeHolder:String, controller:UIViewController, handler:((UITextField)->Void)?){
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -75,7 +77,9 @@ class Alert: NSObject {
         controller.present(alert, animated: true, completion: nil)
     }
     
-    /// Show double alert with title
+    /**
+     Show alert with title, message body. Not in use in this project
+     */
     public static func showDoubleTextAlert(title:String, message:String, actionTitle:String, placeHolder1:String, placeHolder2:String, isPassword:Bool, controller:UIViewController, handler:((UITextField, UITextField)->Void)?){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addTextField { (textField:UITextField) in
@@ -101,7 +105,10 @@ class Alert: NSObject {
         controller.present(alert, animated: true, completion: nil)
     }
 
-    /// display datepicker for date inputs
+    /**
+     Display datepicker for date inputs with ok and cancel actions. Used in AllBestSelerVC, OrderListVC, 
+     SalesReportVC, SalesSellAllVC. For iPad, show alert as popover. Rajat ji please check this.
+    */
     public static func showDatePicker(dataPicker:UIDatePicker, controller:UIViewController, viewRect:UIView, hander:((Date)->Void)?) {
         let alert = UIAlertController(title: "\n\n\n\n\n\n\n\n\n", message: nil, preferredStyle: .actionSheet)
         alert.view.addSubview(dataPicker)

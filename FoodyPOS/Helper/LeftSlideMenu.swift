@@ -53,7 +53,9 @@ open class LeftSlideMenu:UIViewController {
     }
     
     /**
-    Minakshi Ji this is called when we initialize the LeftMenuVC on any controller.
+    This is called when we initialize the LeftMenu on any controller. Initialize LeftMenu. Set its vc to 
+    mainvc which dashboardvc in this case. If orientation is changed, post a notification which calls updateUI method which shows
+    shadow in left menu accordingly. Rajat ji please check this whole comment. 
     */
     public convenience init(vc:UIViewController) {
         self.init()
@@ -112,7 +114,7 @@ open class LeftSlideMenu:UIViewController {
     /**
     This method is called in DashboardVC when menu button is clicked.
     Dismiss the presented view controller.
-    Set dimensions of frame and set frame of self.menuVC.view.frame. Minakshi ji, frame dimensions are set only in case it is open.
+    Set dimensions of frame and set frame of self.menuVC.view.frame. Frame dimensions are set only in case it is open. Rajat ji please mention the reason for negaive coordinates when menu is opened if possible.
     If mainVC's child view controller does not has menuVC, then add menu vc as child view controller of main vc.
     Add menuGestureView so that user can click anywhere on the screen and the menu will be closed.
     View’s autoresizing mask is not translated into Auto Layout constraints. Add top, bottom, leading and trailing constraints to menuGestureVC 
@@ -123,7 +125,7 @@ open class LeftSlideMenu:UIViewController {
     Set width, bottom, top and leading constraint, to menuVC (LeftMenuVC)
     Set auto resizing mask (determines how the receiver resizes itself when its superview’s bounds change) to flexible width and flexible height
     Lay out the subviews immediately, if layout updates are pending.
-    Set animation to Left menu portion from x=0 and other remaining portion with alpha value 0.1.
+    Set animation to Left menu portion with frame's origin from x=0 and other remaining portion with alpha value 0.1.
      Call updateUI method, which displays shadow in edge of left slide menu.
     */
     @objc open func open(){
@@ -220,12 +222,15 @@ open class LeftSlideMenu:UIViewController {
     }
     
     /**
-    This method is used to close and open the menu on when user starts to swipe the menu in left or right 
-    direction. If current frame width is less then 150 then close() method is called to close the menu. 
-    This method is called on pan gesture recognizer.
-    If gesture recognizer in view is null, then return. If translation value along x is negative, set it to 
-    positive and and set it as origin of frame.
-    Minakshi Ji, the use of this method is clear from its name, It is used to swipe menu into left or right direction.
+    This method is called for pan gesture. It is used to close and open the menu on when user starts to swipe the menu in left or right 
+    direction. If gesture recognizer view is null, then return. 
+    If translation is negative, (i.e. left menu is closed), then set origin of frame to positive value of translation. Rajat ji please check this.
+    If gesture recognizer state is ended, i.e., it is completely opened or closed currently, if origin of frame of gesture recognizer is negative, 
+    then close() method is called to close the menu. Rajat ji please check this and mention if negative value of gesture means menu is open.  
+    Else animate the menu and set frame's origin to 0 of x axis. Rajat ji please mention if frame's orgin 0 means the menu is open or closed.
+
+   
+   
     */
     @objc open func swipeLeftMenu(gestureRecognizer:UIPanGestureRecognizer){
         

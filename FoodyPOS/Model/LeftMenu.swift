@@ -32,7 +32,7 @@ struct LeftMenu {
         ///Identifier for header cell
         static let headerCell = "headerCell"
         
-        ///Identifier for menu cell return LeftMenuCell
+        ///Identifier for menu cell
         static let menuCell = "menuCell"
     }
     

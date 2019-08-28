@@ -54,8 +54,7 @@ extension UIView {
         }
     }
     
-    /// Create editable shadow of a view. This is mainly used for bottom shadow on Navigation bar and some other buttons.
-    ///Minakshi ji it is used in top navigation bar
+    /// Create editable shadow of a view. This is mainly used for bottom shadow on top navigation bar and some other buttons. Rajat ji would request you to recheck it as on top navigation bar, shadow cannot be seen. I will update at other places accordingly.
     @IBInspectable
     public var shadowColor: UIColor? {
         get {

@@ -57,5 +57,7 @@ struct ByOrderNumber: Codable {
         case message = "Message"
         ///Assign ResultCode key to resultCode variable which returns 0 if api hit is not successful
         case resultCode = "ResultCode"
+
+        ///Structure of onClick and its children defined in Order.swift, as earlier, response for OnClick was returned in Orderlist
     }
 }

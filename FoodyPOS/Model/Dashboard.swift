@@ -52,7 +52,7 @@ struct Dashboard1: Codable {
     enum CodingKeys: String, CodingKey {
         ///Assign LabelValues key to labelValues variable which display weekly sales, customers, orders and total, sales, customers and orders.
         case labelValues = "LabelValues"
-        ///Minakshi ji, No need to assign value if key and value is same
+        ///It displays chart values for sales and orders for week, month and year. Nothing is assigned here as the key is same in response
         case chart
     }
     
@@ -166,17 +166,17 @@ struct LabelValues: Codable {
     Enum is defined here. It assigns response keys of LabelValues to corresponding variables
     */
     enum CodingKeys: String, CodingKey {
-        ///Assign TotalSale key to totalSale variable which displays total sale
+        ///Assign TotalSale key to totalSale variable which displays total sale of current year
         case totalSale = "TotalSale"
-        ///Assign TotalOrders key to totalOrders variable which displays total orders
+        ///Assign TotalOrders key to totalOrders variable which displays total orders of current year 
         case totalOrders = "TotalOrders"
-        ///Assign TotalCustomers key to totalCustomers variable which displays total customers
+        ///Assign TotalCustomers key to totalCustomers variable which displays total new customers of current year
         case totalCustomers = "TotalCustomers"
         ///Assign WeekSale key to weeksale variable which displays sale of current week
         case weeksale = "Weeksale"
         ///Assign WeeklyOrder key to weekly order variable which displays orders of current week
         case weeklyOrder = "WeeklyOrder"
-        ///Assign WeekCustomer key to weekCustomer variable which displays customers of current week 
+        ///Assign WeekCustomer key to weekCustomer variable which displays new customers of current week 
         case weekCustomer = "WeekCustomer"
     }
 }

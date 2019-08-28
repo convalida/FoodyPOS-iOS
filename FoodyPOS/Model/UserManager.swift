@@ -8,7 +8,13 @@
 
 import Foundation
 
+///Class for saving and retrieving data used throughout the project. Rajat ji please check this 
 class UserManager {
+    /**
+    Method to save data to UserDefaults using User.swift class. Rajat ji please check this
+    If userName, isActive, restaurantID, tax, restaurantName, role in User class is not null, set userName, isActive,
+    restaurantID, tax, restaurantName, role to values of User.swift class. If value of role is Manager, set isManager to true, else set isManager to false.
+    */
     static func saveUserDataIntoDefaults(user:User) {
         
         if let userName = user.userName {
@@ -41,7 +47,7 @@ class UserManager {
         }
     }
     
-    /// Get and Set userName
+    /// Get and set userName
     public static var userName:String? {
         set(newValue) {
             UserDefaults.standard.setValue(newValue, forKey: "userName")
@@ -51,7 +57,7 @@ class UserManager {
         }
     }
     
-    /// Get and Set isActive
+    /// Get and set isActive status
     public static var isActive:String? {
         set(newValue) {
             UserDefaults.standard.setValue(newValue, forKey: "isActive")
@@ -61,7 +67,7 @@ class UserManager {
         }
     }
 
-    /// Get and Set restaurantID
+    /// Get and set restaurantID
     public static var restaurantID:String? {
         set(newValue) {
             UserDefaults.standard.setValue(newValue, forKey: "restaurantID")
@@ -71,7 +77,7 @@ class UserManager {
         }
     }
     
-    /// Get and Set tax
+    /// Get and set tax
     public static var tax:String? {
         set(newValue) {
             UserDefaults.standard.setValue(newValue, forKey: "tax")
@@ -81,7 +87,7 @@ class UserManager {
         }
     }
     
-    /// Get and Set restaurentName
+    /// Get and set restaurentName
     public static var restaurentName:String? {
         set(newValue) {
             UserDefaults.standard.setValue(newValue, forKey: "restaurentName")
@@ -91,7 +97,7 @@ class UserManager {
         }
     }
     
-    /// Get and Set role
+    /// Get and set role
     public static var role:String? {
         set(newValue) {
             UserDefaults.standard.setValue(newValue, forKey: "role")
@@ -101,7 +107,7 @@ class UserManager {
         }
     }
     
-    /// Get and Set isRemember
+    /// Get and set isRemember
     public static var isRemember:Bool {
         set(newValue) {
             UserDefaults.standard.set(newValue, forKey: "isRemember")
@@ -111,7 +117,7 @@ class UserManager {
         }
     }
     
-    /// Get and Set email
+    /// Get and set email
     public static var email:String? {
         set(newValue) {
             UserDefaults.standard.setValue(newValue, forKey: "email")
@@ -121,7 +127,7 @@ class UserManager {
         }
     }
     
-    /// Get and Set password
+    /// Get and set password
     public static var password:String? {
         set(newValue) {
             UserDefaults.standard.setValue(newValue, forKey: "password")
@@ -131,7 +137,7 @@ class UserManager {
         }
     }
     
-    /// Get and Set isManager
+    /// Get and set isManager
     public static var isManager:Bool {
         set(newValue) {
             UserDefaults.standard.set(newValue, forKey: "isManager")
@@ -141,7 +147,7 @@ class UserManager {
         }
     }
     
-    /// Get and Set isLogin
+    /// Get and set isLogin
     public static var isLogin:Bool {
         set(newValue) {
             UserDefaults.standard.set(newValue, forKey: "isLogin")
@@ -151,6 +157,7 @@ class UserManager {
         }
     }
     
+    ///Get and set token
     public static var token:String? {
         set(newValue) {
             UserDefaults.standard.setValue(newValue, forKey: "token")

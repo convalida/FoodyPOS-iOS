@@ -59,7 +59,7 @@ struct OrderNumberDetail: Codable {
     let totalPrices : String?
     ///Variable for PickupTime key
     let pickupTime : String?
-    ///This is no longer returned in response. Minaksh ji please let it be here, If you want that it should be removed then you can do it after KT. Otherwise it can bring more complications for you.
+    ///This is no longer returned in response. Eariler it was returned in response but it was changed. 
     let onClick : OnClick?
     
      /**
@@ -75,13 +75,13 @@ struct OrderNumberDetail: Codable {
         case totalPrices = "TotalPrices"
         ///Assign PickupTime key to pickupTime variable which displays pickup time of of a particular order
         case pickupTime = "PickupTime"
-        ///This is no longer returned in response. Minakshi ji please let it be here
+        ///Assign OnClick key to onClick variable. This is no longer returned in response. Eariler it was returned in response but it was changed. 
         case onClick = "OnClick"
     }
 }
 
-///Minakshi Ji, There is no need to remove it from here this struct is accessible throughout the project.
-///Structure for OnClick object 
+
+///Structure for OnClick object. This struct is accessible throughout the project and is used OrderSearch
 struct OnClick: Codable {
     ///Variable for CUstomerId key
     let customerId : String?
@@ -131,8 +131,7 @@ struct OnClick: Codable {
     }
 }
 
-///Minakshi Ji, There is no need to remove it from here this struct is accessible throughout the project.
-///Structure for item details
+///Structure for item details. This struct is accessible throughout the project and is used OrderSearch
 struct OrderItemDetail: Codable {
     ///Variable for SubitemsNames key
     let subitemsNames : String?
@@ -150,7 +149,7 @@ struct OrderItemDetail: Codable {
     let total : String?
     
     /**
-    Enum is defined here. It assigns response keys OrderItemDetails object to corresponding variables
+    Enum is defined here. It assigns response keys OrderItemDetail object to corresponding variables
     */
     enum CodingKeys: String, CodingKey {
         

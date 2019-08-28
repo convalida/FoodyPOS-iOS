@@ -19,7 +19,7 @@ struct ForgotPassword:Codable {
     Enum is defined here. It assigns response keys of ForgotPassword to corresponding variables
     */
     enum CodingKeys: String, CodingKey {
-        ///Minakshi Ji, if nothing is assigned here then the key is also same in response
+        ///It displays appropriate message in response depending on api hit is successful or not. Nothing is assigned here as the key is same in response
         case message
         ///Assign ResultCode key to resultCode variable which displays 1 in case of success and 0 in case of failure
         case resultCode = "ResultCode"
