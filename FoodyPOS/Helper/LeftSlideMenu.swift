@@ -55,7 +55,7 @@ open class LeftSlideMenu:UIViewController {
     /**
     This is called when we initialize the LeftMenu on any controller. Initialize LeftMenu. Set its vc to 
     mainvc which dashboardvc in this case. If orientation is changed, post a notification which calls updateUI method which shows
-    shadow in left menu accordingly. Rajat ji please check this whole comment. 
+    shadow in left menu accordingly.
     */
     public convenience init(vc:UIViewController) {
         self.init()
@@ -114,7 +114,7 @@ open class LeftSlideMenu:UIViewController {
     /**
     This method is called in DashboardVC when menu button is clicked.
     Dismiss the presented view controller.
-    Set dimensions of frame and set frame of self.menuVC.view.frame. Frame dimensions are set only in case it is open. Rajat ji please mention the reason for negaive coordinates when menu is opened if possible.
+    Set dimensions of frame and set frame of self.menuVC.view.frame. Frame dimensions are set only in case it is open. Minakshi ji, negative coordinates is to shift 20px from top.
     If mainVC's child view controller does not has menuVC, then add menu vc as child view controller of main vc.
     Add menuGestureView so that user can click anywhere on the screen and the menu will be closed.
     View’s autoresizing mask is not translated into Auto Layout constraints. Add top, bottom, leading and trailing constraints to menuGestureVC 
@@ -224,10 +224,10 @@ open class LeftSlideMenu:UIViewController {
     /**
     This method is called for pan gesture. It is used to close and open the menu on when user starts to swipe the menu in left or right 
     direction. If gesture recognizer view is null, then return. 
-    If translation is negative, (i.e. left menu is closed), then set origin of frame to positive value of translation. Rajat ji please check this.
+    If translation is negative, (i.e. left menu is closed), then set origin of frame to positive value of translation.
     If gesture recognizer state is ended, i.e., it is completely opened or closed currently, if origin of frame of gesture recognizer is negative, 
     then close() method is called to close the menu. Rajat ji please check this and mention if negative value of gesture means menu is open.  
-    Else animate the menu and set frame's origin to 0 of x axis. Rajat ji please mention if frame's orgin 0 means the menu is open or closed.
+    Else animate the menu and set frame's origin to 0 of x axis. M ji please mention if frame's orgin 0 means the menu is open or closed.
 
    
    

@@ -106,8 +106,7 @@ class Alert: NSObject {
     }
 
     /**
-     Display datepicker for date inputs with ok and cancel actions. Used in AllBestSelerVC, OrderListVC, 
-     SalesReportVC, SalesSellAllVC. For iPad, show alert as popover. Rajat ji please check this.
+     Display datepicker for date inputs with ok and cancel actions. Used in AllBestSelerVC, OrderListVC, SalesReportVC, SalesSellAllVC. For iPad, show alert as popover.
     */
     public static func showDatePicker(dataPicker:UIDatePicker, controller:UIViewController, viewRect:UIView, hander:((Date)->Void)?) {
         let alert = UIAlertController(title: "\n\n\n\n\n\n\n\n\n", message: nil, preferredStyle: .actionSheet)
