@@ -11,7 +11,7 @@ import Foundation
 struct Sale: Codable {
     ///Variable for AllSaleElement structure used in TopSaleVC.
     let topRestaurentSale: [AllSaleElement]
-    ///It is defined here for keys in response which is there in the API response when null is passed in startdate and enddate parameters. Checked the api response. In app, for current week also, api hit is through dates passed, so it is not used. Rajat ji please check this
+    ///It is defined here for keys in response which is there in the API response when null is passed in startdate and enddate parameters. Checked the api response. In app, for current week also, api hit is through dates passed, so it is not used.
     let weekSales: JSONNull?
      ///Variable for AllSaleElement structure used in SalesSellAllVC. Same structure/Data Type is assigned to two variables but they can have different data
     let allSales: [AllSaleElement]
@@ -24,7 +24,7 @@ struct Sale: Codable {
         case topRestaurentSale = "TopRestaurentSale"
         /**
         Assign WeekSales key to weekSales variable. 
-         In app, for current week also, api hit is through dates passed, so it is not used. Rajat ji please check this
+         In app, for current week also, api hit is through dates passed, so it is not used.
         */
         case weekSales = "WeekSales"
         ///Assign AllSales key to allSales variable, used in SalesSellAllVC
@@ -67,10 +67,10 @@ struct AllSaleElement: Codable {
 
 ///This is used to handle null response from json response
 class JSONNull: Codable {
-    ///Rajat ji please update this for the purpose of documentation
+    ///Initializer method for this class which does nothing
     public init() {}
     
-    ///Rajat ji please update this for the purpose of documentation
+    ///Required Initializer method for this class which creates a new instance by decoding from the given decoder and checks if it is not nil, if nil then throws mismatch error
     public required init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         if !container.decodeNil() {
@@ -78,9 +78,11 @@ class JSONNull: Codable {
         }
     }
     
-    ///Rajat ji please update this for the purpose of documentation.
+        ///Encodes this value into the given encoder.
         public func encode(to encoder: Encoder) throws {
+        ///Returns an encoding container appropriate for holding a single primitive value.
         var container = encoder.singleValueContainer()
+        ///Encodes a null value.
         try container.encodeNil()
     }
 }

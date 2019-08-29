@@ -8,10 +8,10 @@
 
 import Foundation
 
-///Class for saving and retrieving data used throughout the project. Rajat ji please check this 
+///Class for saving and retrieving data used throughout the project.
 class UserManager {
     /**
-    Method to save data to UserDefaults using User.swift class. Rajat ji please check this
+    Method to save data to UserDefaults using User.swift class.
     If userName, isActive, restaurantID, tax, restaurantName, role in User class is not null, set userName, isActive,
     restaurantID, tax, restaurantName, role to values of User.swift class. If value of role is Manager, set isManager to true, else set isManager to false.
     */

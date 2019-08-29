@@ -226,8 +226,8 @@ open class LeftSlideMenu:UIViewController {
     direction. If gesture recognizer view is null, then return. 
     If translation is negative, (i.e. left menu is closed), then set origin of frame to positive value of translation.
     If gesture recognizer state is ended, i.e., it is completely opened or closed currently, if origin of frame of gesture recognizer is negative, 
-    then close() method is called to close the menu. Rajat ji please check this and mention if negative value of gesture means menu is open.  
-    Else animate the menu and set frame's origin to 0 of x axis. M ji please mention if frame's orgin 0 means the menu is open or closed.
+    then close() method is called to close the menu. Minakshi ji if negative value of gesture means menu is going to close.  
+    Else animate the menu and set frame's origin to 0 of x axis. Minakshi ji if frame's orgin 0 means the menu is open.
 
    
    
