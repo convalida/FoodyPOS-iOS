@@ -1,0 +1,2238 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Controller/TopSaleVC.swift",
+      "line": 11,
+      "symbol": "TopSaleVC",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Controller/TopSaleVC.swift",
+      "line": 183,
+      "symbol": "TopSaleVC",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Controller/TopSaleVC.swift",
+      "line": 260,
+      "symbol": "TopSaleVC",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSInfiniteLoader.swift",
+      "line": 13,
+      "symbol": "ARSInfiniteLoader",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSInfiniteLoader.swift",
+      "line": 15,
+      "symbol": "ARSInfiniteLoader.emptyView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSInfiniteLoader.swift",
+      "line": 16,
+      "symbol": "ARSInfiniteLoader.backgroundBlurView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSInfiniteLoader.swift",
+      "line": 17,
+      "symbol": "ARSInfiniteLoader.backgroundSimpleView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSInfiniteLoader.swift",
+      "line": 18,
+      "symbol": "ARSInfiniteLoader.backgroundFullView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSInfiniteLoader.swift",
+      "line": 19,
+      "symbol": "ARSInfiniteLoader.backgroundView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSInfiniteLoader.swift",
+      "line": 29,
+      "symbol": "ARSInfiniteLoader.outerCircle",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSInfiniteLoader.swift",
+      "line": 30,
+      "symbol": "ARSInfiniteLoader.middleCircle",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSInfiniteLoader.swift",
+      "line": 31,
+      "symbol": "ARSInfiniteLoader.innerCircle",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSInfiniteLoader.swift",
+      "line": 32,
+      "symbol": "ARSInfiniteLoader.targetView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSInfiniteLoader.swift",
+      "line": 34,
+      "symbol": "ARSInfiniteLoader.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSInfiniteLoader.swift",
+      "line": 44,
+      "symbol": "ARSInfiniteLoader.deinit",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSInfiniteLoader.swift",
+      "line": 50,
+      "symbol": "ARSInfiniteLoader.orientationChanged(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSInfiniteLoader.swift",
+      "line": 64,
+      "symbol": "ARSInfiniteLoader",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSInfiniteLoader.swift",
+      "line": 66,
+      "symbol": "ARSInfiniteLoader.ars_showOnView(_:completionBlock:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgress.swift",
+      "line": 13,
+      "symbol": "ARSLineProgress",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgress.swift",
+      "line": 15,
+      "symbol": "ARSLineProgress.shown",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgress.swift",
+      "line": 16,
+      "symbol": "ARSLineProgress.statusShown",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgress.swift",
+      "line": 40,
+      "symbol": "ARSLineProgress.show()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgress.swift",
+      "line": 44,
+      "symbol": "ARSLineProgress.showWithPresentCompetionBlock(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgress.swift",
+      "line": 48,
+      "symbol": "ARSLineProgress.ars_showOnView(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgress.swift",
+      "line": 52,
+      "symbol": "ARSLineProgress.ars_showOnView(_:completionBlock:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgress.swift",
+      "line": 88,
+      "symbol": "ARSLineProgress.showWithProgressObject(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgress.swift",
+      "line": 92,
+      "symbol": "ARSLineProgress.showWithProgressObject(_:completionBlock:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgress.swift",
+      "line": 96,
+      "symbol": "ARSLineProgress.showWithProgressObject(_:onView:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgress.swift",
+      "line": 100,
+      "symbol": "ARSLineProgress.showWithProgressObject(_:onView:completionBlock:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgress.swift",
+      "line": 108,
+      "symbol": "ARSLineProgress.updateWithProgress(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgress.swift",
+      "line": 112,
+      "symbol": "ARSLineProgress.cancelPorgressWithFailAnimation(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgress.swift",
+      "line": 116,
+      "symbol": "ARSLineProgress.cancelPorgressWithFailAnimation(_:completionBlock:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgress.swift",
+      "line": 124,
+      "symbol": "ARSLineProgress.hide()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressConstants.swift",
+      "line": 13,
+      "symbol": "ARS_BACKGROUND_VIEW_SIDE_LENGTH",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressConstants.swift",
+      "line": 14,
+      "symbol": "ARS_STATUS_PATH_SIDE_LENGTH",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressConstants.swift",
+      "line": 16,
+      "symbol": "ARS_CIRCLE_ROTATION_TO_VALUE",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressConstants.swift",
+      "line": 17,
+      "symbol": "ARS_CIRCLE_ROTATION_REPEAT_COUNT",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressConstants.swift",
+      "line": 18,
+      "symbol": "ARS_CIRCLE_RADIUS_OUTER",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressConstants.swift",
+      "line": 19,
+      "symbol": "ARS_CIRCLE_RADIUS_MIDDLE",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressConstants.swift",
+      "line": 20,
+      "symbol": "ARS_CIRCLE_RADIUS_INNER",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressConstants.swift",
+      "line": 21,
+      "symbol": "ARS_CIRCLE_LINE_WIDTH",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressConstants.swift",
+      "line": 22,
+      "symbol": "ARS_CIRCLE_START_ANGLE",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressConstants.swift",
+      "line": 23,
+      "symbol": "ARS_CIRCLE_END_ANGLE",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressConstants.swift",
+      "line": 25,
+      "symbol": "ars_currentStatus",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressConstants.swift",
+      "line": 26,
+      "symbol": "ars_currentLoader",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressConstants.swift",
+      "line": 27,
+      "symbol": "ars_currentCompletionBlock",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressCustomization.swift",
+      "line": 14,
+      "symbol": "ARSLineProgressConfiguration",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressCustomization.swift",
+      "line": 16,
+      "symbol": "ARSLineProgressConfiguration.showSuccessCheckmark",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressCustomization.swift",
+      "line": 18,
+      "symbol": "ARSLineProgressConfiguration.backgroundViewDismissTransformScale",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressCustomization.swift",
+      "line": 19,
+      "symbol": "ARSLineProgressConfiguration.backgroundViewColor",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressCustomization.swift",
+      "line": 20,
+      "symbol": "ARSLineProgressConfiguration.backgroundViewStyle",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressCustomization.swift",
+      "line": 21,
+      "symbol": "ARSLineProgressConfiguration.backgroundViewCornerRadius",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressCustomization.swift",
+      "line": 22,
+      "symbol": "ARSLineProgressConfiguration.backgroundViewPresentAnimationDuration",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressCustomization.swift",
+      "line": 23,
+      "symbol": "ARSLineProgressConfiguration.backgroundViewDismissAnimationDuration",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressCustomization.swift",
+      "line": 25,
+      "symbol": "ARSLineProgressConfiguration.blurStyle",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressCustomization.swift",
+      "line": 26,
+      "symbol": "ARSLineProgressConfiguration.circleColorOuter",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressCustomization.swift",
+      "line": 27,
+      "symbol": "ARSLineProgressConfiguration.circleColorMiddle",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressCustomization.swift",
+      "line": 28,
+      "symbol": "ARSLineProgressConfiguration.circleColorInner",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressCustomization.swift",
+      "line": 30,
+      "symbol": "ARSLineProgressConfiguration.circleRotationDurationOuter",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressCustomization.swift",
+      "line": 31,
+      "symbol": "ARSLineProgressConfiguration.circleRotationDurationMiddle",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressCustomization.swift",
+      "line": 32,
+      "symbol": "ARSLineProgressConfiguration.circleRotationDurationInner",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressCustomization.swift",
+      "line": 34,
+      "symbol": "ARSLineProgressConfiguration.checkmarkAnimationDrawDuration",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressCustomization.swift",
+      "line": 35,
+      "symbol": "ARSLineProgressConfiguration.checkmarkLineWidth",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressCustomization.swift",
+      "line": 36,
+      "symbol": "ARSLineProgressConfiguration.checkmarkColor",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressCustomization.swift",
+      "line": 38,
+      "symbol": "ARSLineProgressConfiguration.successCircleAnimationDrawDuration",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressCustomization.swift",
+      "line": 39,
+      "symbol": "ARSLineProgressConfiguration.successCircleLineWidth",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressCustomization.swift",
+      "line": 40,
+      "symbol": "ARSLineProgressConfiguration.successCircleColor",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressCustomization.swift",
+      "line": 42,
+      "symbol": "ARSLineProgressConfiguration.failCrossAnimationDrawDuration",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressCustomization.swift",
+      "line": 43,
+      "symbol": "ARSLineProgressConfiguration.failCrossLineWidth",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressCustomization.swift",
+      "line": 44,
+      "symbol": "ARSLineProgressConfiguration.failCrossColor",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressCustomization.swift",
+      "line": 46,
+      "symbol": "ARSLineProgressConfiguration.failCircleAnimationDrawDuration",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressCustomization.swift",
+      "line": 47,
+      "symbol": "ARSLineProgressConfiguration.failCircleLineWidth",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressCustomization.swift",
+      "line": 48,
+      "symbol": "ARSLineProgressConfiguration.failCircleColor",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressExtensions.swift",
+      "line": 15,
+      "symbol": "UIColor.ars_colorWithRGB(_:green:blue:alpha:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressExtensions.swift",
+      "line": 21,
+      "symbol": "ars_dispatchAfter(_:block:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressExtensions.swift",
+      "line": 26,
+      "symbol": "ars_dispatchOnMainQueue(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressHelpers.swift",
+      "line": 14,
+      "symbol": "ARSLoaderType",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressHelpers.swift",
+      "line": 15,
+      "symbol": "ARSLoaderType.infinite",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressHelpers.swift",
+      "line": 16,
+      "symbol": "ARSLoaderType.progress",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressHelpers.swift",
+      "line": 19,
+      "symbol": "BackgroundStyle",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressHelpers.swift",
+      "line": 20,
+      "symbol": "BackgroundStyle.blur",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressHelpers.swift",
+      "line": 21,
+      "symbol": "BackgroundStyle.simple",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressHelpers.swift",
+      "line": 22,
+      "symbol": "BackgroundStyle.full",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressHelpers.swift",
+      "line": 25,
+      "symbol": "ars_window()",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressHelpers.swift",
+      "line": 40,
+      "symbol": "ars_createdFrameForBackgroundView(_:onView:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressHelpers.swift",
+      "line": 78,
+      "symbol": "ARSBlurredBackgroundRect",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressHelpers.swift",
+      "line": 80,
+      "symbol": "ARSBlurredBackgroundRect.view",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressHelpers.swift",
+      "line": 82,
+      "symbol": "ARSBlurredBackgroundRect.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressHelpers.swift",
+      "line": 93,
+      "symbol": "ARSSimpleBackgroundRect",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressHelpers.swift",
+      "line": 95,
+      "symbol": "ARSSimpleBackgroundRect.view",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressHelpers.swift",
+      "line": 97,
+      "symbol": "ARSSimpleBackgroundRect.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressHelpers.swift",
+      "line": 105,
+      "symbol": "ARSFullBackgroundRect",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressHelpers.swift",
+      "line": 107,
+      "symbol": "ARSFullBackgroundRect.view",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressHelpers.swift",
+      "line": 109,
+      "symbol": "ARSFullBackgroundRect.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressHelpers.swift",
+      "line": 117,
+      "symbol": "ars_createCircles(_:middleCircle:innerCircle:onView:loaderType:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressHelpers.swift",
+      "line": 174,
+      "symbol": "ars_stopCircleAnimations(_:completionBlock:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressHelpers.swift",
+      "line": 185,
+      "symbol": "ars_presentLoader(_:onView:completionBlock:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressHelpers.swift",
+      "line": 216,
+      "symbol": "ars_hideLoader(_:withCompletionBlock:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressHelpers.swift",
+      "line": 256,
+      "symbol": "ars_configureLayer(_:forView:withPath:withBounds:withColor:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressHelpers.swift",
+      "line": 266,
+      "symbol": "ars_animateCircles(_:middleCircle:innerCircle:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressHelpers.swift",
+      "line": 284,
+      "symbol": "ars_cleanupLoader(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressProtocols.swift",
+      "line": 13,
+      "symbol": "ARSLoader",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressProtocols.swift",
+      "line": 14,
+      "symbol": "ARSLoader.emptyView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressProtocols.swift",
+      "line": 15,
+      "symbol": "ARSLoader.backgroundView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressProtocols.swift",
+      "line": 16,
+      "symbol": "ARSLoader.outerCircle",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressProtocols.swift",
+      "line": 17,
+      "symbol": "ARSLoader.middleCircle",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressProtocols.swift",
+      "line": 18,
+      "symbol": "ARSLoader.innerCircle",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressProtocols.swift",
+      "line": 19,
+      "symbol": "ARSLoader.targetView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSLineProgressTypeAliases.swift",
+      "line": 13,
+      "symbol": "ars_config",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSProgressLoader.swift",
+      "line": 13,
+      "symbol": "ARSProgressLoader",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSProgressLoader.swift",
+      "line": 15,
+      "symbol": "ARSProgressLoader.emptyView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSProgressLoader.swift",
+      "line": 16,
+      "symbol": "ARSProgressLoader.backgroundBlurView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSProgressLoader.swift",
+      "line": 17,
+      "symbol": "ARSProgressLoader.backgroundSimpleView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSProgressLoader.swift",
+      "line": 18,
+      "symbol": "ARSProgressLoader.backgroundFullView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSProgressLoader.swift",
+      "line": 19,
+      "symbol": "ARSProgressLoader.backgroundView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSProgressLoader.swift",
+      "line": 29,
+      "symbol": "ARSProgressLoader.outerCircle",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSProgressLoader.swift",
+      "line": 30,
+      "symbol": "ARSProgressLoader.middleCircle",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSProgressLoader.swift",
+      "line": 31,
+      "symbol": "ARSProgressLoader.innerCircle",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSProgressLoader.swift",
+      "line": 32,
+      "symbol": "ARSProgressLoader.multiplier",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSProgressLoader.swift",
+      "line": 33,
+      "symbol": "ARSProgressLoader.lastMultiplierValue",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSProgressLoader.swift",
+      "line": 34,
+      "symbol": "ARSProgressLoader.progressValue",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSProgressLoader.swift",
+      "line": 35,
+      "symbol": "ARSProgressLoader.progress",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSProgressLoader.swift",
+      "line": 36,
+      "symbol": "ARSProgressLoader.failed",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSProgressLoader.swift",
+      "line": 37,
+      "symbol": "ARSProgressLoader.weakSelf",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSProgressLoader.swift",
+      "line": 38,
+      "symbol": "ARSProgressLoader.targetView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSProgressLoader.swift",
+      "line": 40,
+      "symbol": "ARSProgressLoader.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSProgressLoader.swift",
+      "line": 51,
+      "symbol": "ARSProgressLoader.deinit",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSProgressLoader.swift",
+      "line": 57,
+      "symbol": "ARSProgressLoader.orientationChanged(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSProgressLoader.swift",
+      "line": 71,
+      "symbol": "ARSProgressLoader",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSProgressLoader.swift",
+      "line": 75,
+      "symbol": "ARSProgressLoader.ars_showWithValue(_:onView:progress:completionBlock:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSProgressLoader.swift",
+      "line": 92,
+      "symbol": "ARSProgressLoader.ars_cancelWithFailAnimation(_:completionBlock:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSProgressLoader.swift",
+      "line": 103,
+      "symbol": "ARSProgressLoader.ars_launchTimer()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSProgressLoader.swift",
+      "line": 112,
+      "symbol": "ARSProgressLoader.ars_incrementCircleRadius()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSProgressLoader.swift",
+      "line": 128,
+      "symbol": "ARSProgressLoader.ars_drawCirclePath()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSProgressLoader.swift",
+      "line": 141,
+      "symbol": "ARSProgressLoader.ars_didIncrementMultiplier()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSProgressLoader.swift",
+      "line": 164,
+      "symbol": "ARSProgressLoader.ars_progressSource()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSProgressLoader.swift",
+      "line": 172,
+      "symbol": "ARSProgressLoader.ars_completed()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSProgressLoader.swift",
+      "line": 204,
+      "symbol": "ARSProgressLoader.ars_failedLoading()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSStatus.swift",
+      "line": 13,
+      "symbol": "ARSStatusType",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSStatus.swift",
+      "line": 14,
+      "symbol": "ARSStatusType.success",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSStatus.swift",
+      "line": 15,
+      "symbol": "ARSStatusType.fail",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSStatus.swift",
+      "line": 18,
+      "symbol": "ARSStatus",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSStatus.swift",
+      "line": 20,
+      "symbol": "ARSStatus.emptyView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSStatus.swift",
+      "line": 21,
+      "symbol": "ARSStatus.backgroundBlurView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSStatus.swift",
+      "line": 22,
+      "symbol": "ARSStatus.backgroundSimpleView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSStatus.swift",
+      "line": 23,
+      "symbol": "ARSStatus.backgroundFullView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSStatus.swift",
+      "line": 24,
+      "symbol": "ARSStatus.backgroundView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSStatus.swift",
+      "line": 35,
+      "symbol": "ARSStatus.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSStatus.swift",
+      "line": 46,
+      "symbol": "ARSStatus.deinit",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSStatus.swift",
+      "line": 52,
+      "symbol": "ARSStatus.orientationChanged(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSStatus.swift",
+      "line": 64,
+      "symbol": "ARSStatus.show(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSStatus.swift",
+      "line": 77,
+      "symbol": "ARSStatus.drawStatus(_:loader:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSStatus.swift",
+      "line": 94,
+      "symbol": "ARSStatus",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSStatus.swift",
+      "line": 96,
+      "symbol": "ARSStatus.drawSuccess(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSStatus.swift",
+      "line": 149,
+      "symbol": "ARSStatus.drawFail(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/Extensions/StringExtension.swift",
+      "line": 12,
+      "symbol": "String.trim()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/Extensions/StringExtension.swift",
+      "line": 16,
+      "symbol": "String.range(from:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/Extensions/UIViewExtension.swift",
+      "line": 12,
+      "symbol": "UIView.loadViewFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWTextFieldView.swift",
+      "line": 11,
+      "symbol": "KWTextFieldDelegate",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWTextFieldView.swift",
+      "line": 12,
+      "symbol": "KWTextFieldDelegate.moveToNext(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWTextFieldView.swift",
+      "line": 13,
+      "symbol": "KWTextFieldDelegate.moveToPrevious(_:oldCode:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWTextFieldView.swift",
+      "line": 14,
+      "symbol": "KWTextFieldDelegate.didChangeCharacters()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWTextFieldView.swift",
+      "line": 17,
+      "symbol": "KWTextFieldView",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWTextFieldView.swift",
+      "line": 20,
+      "symbol": "KWTextFieldView.maxCharactersLength",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWTextFieldView.swift",
+      "line": 23,
+      "symbol": "KWTextFieldView.underlineColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWTextFieldView.swift",
+      "line": 29,
+      "symbol": "KWTextFieldView.underlineSelectedColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWTextFieldView.swift",
+      "line": 31,
+      "symbol": "KWTextFieldView.textColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWTextFieldView.swift",
+      "line": 37,
+      "symbol": "KWTextFieldView.textSize",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWTextFieldView.swift",
+      "line": 43,
+      "symbol": "KWTextFieldView.textFont",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWTextFieldView.swift",
+      "line": 53,
+      "symbol": "KWTextFieldView.textFieldBackgroundColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWTextFieldView.swift",
+      "line": 59,
+      "symbol": "KWTextFieldView.textFieldTintColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWTextFieldView.swift",
+      "line": 65,
+      "symbol": "KWTextFieldView.darkKeyboard",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWTextFieldView.swift",
+      "line": 73,
+      "symbol": "KWTextFieldView.numberTextField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWTextFieldView.swift",
+      "line": 78,
+      "symbol": "KWTextFieldView.delegate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWTextFieldView.swift",
+      "line": 80,
+      "symbol": "KWTextFieldView.code",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWTextFieldView.swift",
+      "line": 85,
+      "symbol": "KWTextFieldView.init(frame:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWTextFieldView.swift",
+      "line": 91,
+      "symbol": "KWTextFieldView.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWTextFieldView.swift",
+      "line": 97,
+      "symbol": "KWTextFieldView.deinit",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWTextFieldView.swift",
+      "line": 111,
+      "symbol": "KWTextFieldView.activate()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWTextFieldView.swift",
+      "line": 118,
+      "symbol": "KWTextFieldView.deactivate()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWTextFieldView.swift",
+      "line": 122,
+      "symbol": "KWTextFieldView.reset()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWTextFieldView.swift",
+      "line": 128,
+      "symbol": "KWTextFieldView.textFieldDidChange(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWTextFieldView.swift",
+      "line": 134,
+      "symbol": "KWTextFieldView.updateUnderline()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWTextFieldView.swift",
+      "line": 140,
+      "symbol": "KWTextFieldView",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWTextFieldView.swift",
+      "line": 141,
+      "symbol": "KWTextFieldView.textField(_:shouldChangeCharactersIn:replacementString:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWVerificationCodeView.swift",
+      "line": 11,
+      "symbol": "KWVerificationCodeViewDelegate",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWVerificationCodeView.swift",
+      "line": 12,
+      "symbol": "KWVerificationCodeViewDelegate.didChangeVerificationCode()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWVerificationCodeView.swift",
+      "line": 15,
+      "symbol": "KWVerificationCodeView",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWVerificationCodeView.swift",
+      "line": 24,
+      "symbol": "KWVerificationCodeView.underlineColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWVerificationCodeView.swift",
+      "line": 32,
+      "symbol": "KWVerificationCodeView.underlineSelectedColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWVerificationCodeView.swift",
+      "line": 40,
+      "symbol": "KWVerificationCodeView.textColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWVerificationCodeView.swift",
+      "line": 48,
+      "symbol": "KWVerificationCodeView.digits",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWVerificationCodeView.swift",
+      "line": 54,
+      "symbol": "KWVerificationCodeView.textSize",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWVerificationCodeView.swift",
+      "line": 62,
+      "symbol": "KWVerificationCodeView.textFont",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWVerificationCodeView.swift",
+      "line": 76,
+      "symbol": "KWVerificationCodeView.textFieldBackgroundColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWVerificationCodeView.swift",
+      "line": 84,
+      "symbol": "KWVerificationCodeView.textFieldTintColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWVerificationCodeView.swift",
+      "line": 92,
+      "symbol": "KWVerificationCodeView.darkKeyboard",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWVerificationCodeView.swift",
+      "line": 101,
+      "symbol": "KWVerificationCodeView.keyboardType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWVerificationCodeView.swift",
+      "line": 110,
+      "symbol": "KWVerificationCodeView.view",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWVerificationCodeView.swift",
+      "line": 113,
+      "symbol": "KWVerificationCodeView.isTappable",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWVerificationCodeView.swift",
+      "line": 119,
+      "symbol": "KWVerificationCodeView.textFieldViews",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWVerificationCodeView.swift",
+      "line": 135,
+      "symbol": "KWVerificationCodeView.delegate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWVerificationCodeView.swift",
+      "line": 138,
+      "symbol": "KWVerificationCodeView.init(frame:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWVerificationCodeView.swift",
+      "line": 144,
+      "symbol": "KWVerificationCodeView.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWVerificationCodeView.swift",
+      "line": 151,
+      "symbol": "KWVerificationCodeView.getVerificationCode()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWVerificationCodeView.swift",
+      "line": 160,
+      "symbol": "KWVerificationCodeView.hasValidCode()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWVerificationCodeView.swift",
+      "line": 170,
+      "symbol": "KWVerificationCodeView.clear()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWVerificationCodeView.swift",
+      "line": 179,
+      "symbol": "KWVerificationCodeView.resignFirstResponder()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWVerificationCodeView.swift",
+      "line": 223,
+      "symbol": "KWVerificationCodeView",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWVerificationCodeView.swift",
+      "line": 224,
+      "symbol": "KWVerificationCodeView.moveToNext(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWVerificationCodeView.swift",
+      "line": 229,
+      "symbol": "KWVerificationCodeView.moveToPrevious(_:oldCode:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/KWVerificationCodeView/Classes/KWVerificationCodeView.swift",
+      "line": 241,
+      "symbol": "KWVerificationCodeView.didChangeCharacters()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Model/CustomerDetail.swift",
+      "line": 102,
+      "symbol": "Items_Details.itemsNames",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Model/CustomerDetail.swift",
+      "line": 103,
+      "symbol": "Items_Details.itemPrice",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Model/CustomerDetail.swift",
+      "line": 104,
+      "symbol": "Items_Details.modifier",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Model/CustomerDetail.swift",
+      "line": 105,
+      "symbol": "Items_Details.modifierPrices",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Model/CustomerDetail.swift",
+      "line": 106,
+      "symbol": "Items_Details.addOn",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Model/CustomerDetail.swift",
+      "line": 107,
+      "symbol": "Items_Details.addOnPrices",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Model/CustomerDetail.swift",
+      "line": 109,
+      "symbol": "Items_Details.CodingKeys",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Model/CustomerDetail.swift",
+      "line": 110,
+      "symbol": "Items_Details.CodingKeys.itemsNames",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Model/CustomerDetail.swift",
+      "line": 111,
+      "symbol": "Items_Details.CodingKeys.itemPrice",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Model/CustomerDetail.swift",
+      "line": 112,
+      "symbol": "Items_Details.CodingKeys.modifier",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Model/CustomerDetail.swift",
+      "line": 113,
+      "symbol": "Items_Details.CodingKeys.modifierPrices",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Model/CustomerDetail.swift",
+      "line": 114,
+      "symbol": "Items_Details.CodingKeys.addOn",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Model/CustomerDetail.swift",
+      "line": 115,
+      "symbol": "Items_Details.CodingKeys.addOnPrices",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Resources/API/Connectivity.swift",
+      "line": 20,
+      "symbol": "Connectivity.isConnectedToInternet",
+      "symbol_kind": "source.lang.swift.decl.var.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Resources/AppDelegate.swift",
+      "line": 86,
+      "symbol": "AppDelegate.application(_:didRegisterForRemoteNotificationsWithDeviceToken:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Resources/AppDelegate.swift",
+      "line": 152,
+      "symbol": "UIApplication.build",
+      "symbol_kind": "source.lang.swift.decl.var.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/CustomerOrderCell.swift",
+      "line": 11,
+      "symbol": "CustomerOrderCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/CustomerOrderCell.swift",
+      "line": 13,
+      "symbol": "CustomerOrderCell.btnTime",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/CustomerOrderCell.swift",
+      "line": 14,
+      "symbol": "CustomerOrderCell.btnPrice",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/CustomerOrderCell.swift",
+      "line": 15,
+      "symbol": "CustomerOrderCell.btnDetail",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/CustomerOrderCell.swift",
+      "line": 16,
+      "symbol": "CustomerOrderCell.lblNo",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/CustomerOrderCell.swift",
+      "line": 18,
+      "symbol": "CustomerOrderCell.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/CustomerOrderCell.swift",
+      "line": 23,
+      "symbol": "CustomerOrderCell.setSelected(_:animated:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/DashboardCell.swift",
+      "line": 11,
+      "symbol": "DashboardCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/DashboardCell.swift",
+      "line": 13,
+      "symbol": "DashboardCell.viewColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/DashboardCell.swift",
+      "line": 14,
+      "symbol": "DashboardCell.lblTitle",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/DashboardCell.swift",
+      "line": 15,
+      "symbol": "DashboardCell.lblValue",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/DashboardCell.swift",
+      "line": 16,
+      "symbol": "DashboardCell.imgIcon",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/DashboardCell.swift",
+      "line": 18,
+      "symbol": "DashboardCell.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/DashboardCell.swift",
+      "line": 23,
+      "symbol": "DashboardCell.setSelected(_:animated:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/EmployeeDetailCell.swift",
+      "line": 11,
+      "symbol": "EmployeeDetailCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/EmployeeDetailCell.swift",
+      "line": 12,
+      "symbol": "EmployeeDetailCell.imgUser",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/EmployeeDetailCell.swift",
+      "line": 13,
+      "symbol": "EmployeeDetailCell.lblName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/EmployeeDetailCell.swift",
+      "line": 14,
+      "symbol": "EmployeeDetailCell.lblEmail",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/EmployeeDetailCell.swift",
+      "line": 15,
+      "symbol": "EmployeeDetailCell.lblRole",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/EmployeeDetailCell.swift",
+      "line": 16,
+      "symbol": "EmployeeDetailCell.lblStatus",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/EmployeeDetailCell.swift",
+      "line": 17,
+      "symbol": "EmployeeDetailCell.btnEdit",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/EmployeeDetailCell.swift",
+      "line": 19,
+      "symbol": "EmployeeDetailCell.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/EmployeeDetailCell.swift",
+      "line": 24,
+      "symbol": "EmployeeDetailCell.setSelected(_:animated:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/LeftMenuCell.swift",
+      "line": 11,
+      "symbol": "LeftMenuCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/LeftMenuCell.swift",
+      "line": 13,
+      "symbol": "LeftMenuCell.lblHeader",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/LeftMenuCell.swift",
+      "line": 14,
+      "symbol": "LeftMenuCell.imgIcon",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/LeftMenuCell.swift",
+      "line": 15,
+      "symbol": "LeftMenuCell.lblTitle",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/LeftMenuCell.swift",
+      "line": 16,
+      "symbol": "LeftMenuCell.viewBorder",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/LeftMenuCell.swift",
+      "line": 18,
+      "symbol": "LeftMenuCell.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/LeftMenuCell.swift",
+      "line": 23,
+      "symbol": "LeftMenuCell.setSelected(_:animated:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/OrderDetailCell.swift",
+      "line": 11,
+      "symbol": "OrderDetailCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/OrderDetailCell.swift",
+      "line": 13,
+      "symbol": "OrderDetailCell.lblSubitem",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/OrderDetailCell.swift",
+      "line": 14,
+      "symbol": "OrderDetailCell.lblModifier",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/OrderDetailCell.swift",
+      "line": 15,
+      "symbol": "OrderDetailCell.lblAddOn",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/OrderDetailCell.swift",
+      "line": 16,
+      "symbol": "OrderDetailCell.lblInstruction",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/OrderDetailCell.swift",
+      "line": 17,
+      "symbol": "OrderDetailCell.lblPrice",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/OrderDetailCell.swift",
+      "line": 18,
+      "symbol": "OrderDetailCell.lblAddOnPrice",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/OrderDetailCell.swift",
+      "line": 19,
+      "symbol": "OrderDetailCell.lblTotal",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/OrderDetailCell.swift",
+      "line": 20,
+      "symbol": "OrderDetailCell.stackSubitem",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/OrderDetailCell.swift",
+      "line": 21,
+      "symbol": "OrderDetailCell.stackModifier",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/OrderDetailCell.swift",
+      "line": 22,
+      "symbol": "OrderDetailCell.stackAddOn",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/OrderDetailCell.swift",
+      "line": 23,
+      "symbol": "OrderDetailCell.stackInstruction",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/OrderDetailCell.swift",
+      "line": 24,
+      "symbol": "OrderDetailCell.stackPrice",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/OrderDetailCell.swift",
+      "line": 25,
+      "symbol": "OrderDetailCell.stackAddOnPrice",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/OrderDetailCell.swift",
+      "line": 26,
+      "symbol": "OrderDetailCell.stackTotal",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/OrderDetailCell.swift",
+      "line": 28,
+      "symbol": "OrderDetailCell.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/OrderDetailCell.swift",
+      "line": 33,
+      "symbol": "OrderDetailCell.setSelected(_:animated:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/OrderListCell.swift",
+      "line": 11,
+      "symbol": "OrderListCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/OrderListCell.swift",
+      "line": 12,
+      "symbol": "OrderListCell.lblHeaderDate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/OrderListCell.swift",
+      "line": 13,
+      "symbol": "OrderListCell.lblHeaderOrder",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/OrderListCell.swift",
+      "line": 14,
+      "symbol": "OrderListCell.lblHeaderPrice",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/OrderListCell.swift",
+      "line": 15,
+      "symbol": "OrderListCell.lblListNum",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/OrderListCell.swift",
+      "line": 16,
+      "symbol": "OrderListCell.btnListTIme",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/OrderListCell.swift",
+      "line": 17,
+      "symbol": "OrderListCell.lblListPrice",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/OrderListCell.swift",
+      "line": 18,
+      "symbol": "OrderListCell.imgHeader",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/OrderListCell.swift",
+      "line": 20,
+      "symbol": "OrderListCell.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/OrderListCell.swift",
+      "line": 25,
+      "symbol": "OrderListCell.setSelected(_:animated:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/SalesReportCell.swift",
+      "line": 11,
+      "symbol": "SalesReportCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/SalesReportCell.swift",
+      "line": 13,
+      "symbol": "SalesReportCell.lblDay",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/SalesReportCell.swift",
+      "line": 14,
+      "symbol": "SalesReportCell.lblOrder",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/SalesReportCell.swift",
+      "line": 15,
+      "symbol": "SalesReportCell.lblPrice",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/SalesReportCell.swift",
+      "line": 17,
+      "symbol": "SalesReportCell.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/SalesReportCell.swift",
+      "line": 22,
+      "symbol": "SalesReportCell.setSelected(_:animated:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/TopSaleCell.swift",
+      "line": 11,
+      "symbol": "TopSaleCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/TopSaleCell.swift",
+      "line": 13,
+      "symbol": "TopSaleCell.lblLetter",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/TopSaleCell.swift",
+      "line": 14,
+      "symbol": "TopSaleCell.lblName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/TopSaleCell.swift",
+      "line": 15,
+      "symbol": "TopSaleCell.btnPhone",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/TopSaleCell.swift",
+      "line": 16,
+      "symbol": "TopSaleCell.lblOrder",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/TopSaleCell.swift",
+      "line": 17,
+      "symbol": "TopSaleCell.lblPrice",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/TopSaleCell.swift",
+      "line": 19,
+      "symbol": "TopSaleCell.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/Cell/TopSaleCell.swift",
+      "line": 24,
+      "symbol": "TopSaleCell.setSelected(_:animated:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/DesignButton.swift",
+      "line": 11,
+      "symbol": "DesignButton",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/DesignButton.swift",
+      "line": 13,
+      "symbol": "DesignButton.draw(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/DesignButton.swift",
+      "line": 24,
+      "symbol": "DesignButton.bottomColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/DesignImageView.swift",
+      "line": 11,
+      "symbol": "DesignImageView",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/DesignImageView.swift",
+      "line": 13,
+      "symbol": "DesignImageView.draw(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/DesignImageView.swift",
+      "line": 24,
+      "symbol": "DesignImageView.bottomColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/DesignImageView.swift",
+      "line": 30,
+      "symbol": "DesignImageView.prepareForInterfaceBuilder()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/DesignImageView.swift",
+      "line": 34,
+      "symbol": "DesignImageView.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/DesignImageView.swift",
+      "line": 40,
+      "symbol": "DesignImageView.tintColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/DesignLabel.swift",
+      "line": 11,
+      "symbol": "DesignLabel",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/DesignLabel.swift",
+      "line": 12,
+      "symbol": "DesignLabel.draw(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/DesignLabel.swift",
+      "line": 24,
+      "symbol": "DesignLabel.bottomColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/DesignTextField.swift",
+      "line": 13,
+      "symbol": "DesignTextField",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/DesignTextField.swift",
+      "line": 30,
+      "symbol": "DesignTextField.leftViewRect(forBounds:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/DesignTextField.swift",
+      "line": 36,
+      "symbol": "DesignTextField.rightViewRect(forBounds:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/DesignTextField.swift",
+      "line": 81,
+      "symbol": "UITextField.maxLength",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/DesignTextField.swift",
+      "line": 95,
+      "symbol": "UITextField.checkMaxLength(textField:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/DesignView.swift",
+      "line": 11,
+      "symbol": "DesignView",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/DesignView.swift",
+      "line": 13,
+      "symbol": "DesignView.draw(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/View/DesignView.swift",
+      "line": 24,
+      "symbol": "DesignView.bottomColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS"
+}
