@@ -8,18 +8,31 @@
 
 import UIKit
 
+/**
+This class is used for creating view inside cell in AllBestSellerVC. Rajat ji please check this, will update at other cells accordingly.
+*/
 class AllBestSellerCell: UITableViewCell {
 
+    ///Outlet for title in header cell used for displaying week, month or year depending on weekly, monthly or yearly bestseller more is shown  
     @IBOutlet weak var lblHeaderTitle: UILabel!
+    ///Outlet for image of arrow in header cell which changes its rotation angle depending on status of header cell is opened or closed. Rajat ji please check this
      @IBOutlet weak var imgHeader: UIImageView!
+     ///Outlet for item name in item cell which displays name of item
     @IBOutlet weak var lblItemName: UILabel!
+    ///Outlet for item count in item cell which displays count of item
     @IBOutlet weak var lblItemCount: UILabel!
     
+    /**
+     Prepares the receiver for service after it has been loaded from an Interface Builder archive, or nib file.
+    */
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+    /**
+    Sets the selected state of the cell, optionally animating the transition between states.
+    */
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
