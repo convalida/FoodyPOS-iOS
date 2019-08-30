@@ -80,7 +80,7 @@ extension AppDelegate {
     This method is called when user allows push notification. This method tells the delegate that the app successfully registered with Apple Push Notification service (APNs). This is a delegate method of app which gives us the device token to use it further and convert hexadecimal token to string.
      Return a new string by concatenating the elements of the sequence in token, adding the given separator between each element. Print token in logs. Set token value to UserManager token
      If value of token after trimming is not null, call callLoginApi method from Global class. This method will return if value of email and password is null in UserManager class (in case of alert to allow push notification).
-     This method will call login api in case user allows push notification (or token is abtained) after login.
+     This method will call login api in case user allows push notification (or token is obtained) after login.
      */
     // called when user allows push notification
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {

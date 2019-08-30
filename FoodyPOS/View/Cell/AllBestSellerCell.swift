@@ -9,7 +9,7 @@
 import UIKit
 
 /**
-This class is used for creating view inside cell in AllBestSellerVC. Minakshi ji, this is correct defination
+This class is used for creating view inside cell in AllBestSellerVC.
 */
 class AllBestSellerCell: UITableViewCell {
 

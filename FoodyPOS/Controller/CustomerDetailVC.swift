@@ -191,7 +191,7 @@ extension CustomerDetailVC:UITableViewDataSource {
     
     /**
     This method asks the data source for a cell to insert in a particular location of the table view.
-    Set cell to EmployeeDetailCell if cell identifier is employeeDetailCell, else set cell to empty EmployeeDetailCell (default case which happens rarely).
+    Set cell to CustomerOrderCell if cell identifier is orderCell, else set cell to empty UITableViewCell (default case which happens rarely).
     Set tag to btnTime, btnPrice and btnDetail to specified index of row, so as to use that value to identify the view later.
     Set listeners to btnDetail, btnPrice, btnTime to call methods btnDetailDidClicked, btnPriceDidClicked, btnTimeDidClicked resp.
     btnPriceDidClicked is not used. If customerDetails structure is not null, if customer_Details in cusdtomerDetails
