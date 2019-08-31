@@ -8,6 +8,7 @@
 
 import UIKit
 
+///Rajat ji please update this. It is used in storyboard. Rajat ji please update where it is used. I will update comments accordingly.
 class DesignImageView: UIImageView {
 
     override func draw(_ rect: CGRect) {

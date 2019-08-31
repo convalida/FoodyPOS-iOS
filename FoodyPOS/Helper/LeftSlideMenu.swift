@@ -112,22 +112,23 @@ open class LeftSlideMenu:UIViewController {
     }()
     
     /**
-    This method is called in DashboardVC when menu button is clicked.
-    Dismiss the presented view controller.
-    Set dimensions of frame and set frame of self.menuVC.view.frame. Frame dimensions are set only in case 
-    it is open. Minakshi ji, negative coordinates is to shift 20px from top.
+    This method is called in DashboardVC when menu button is clicked. Dismiss the presented view controller.
+    Set dimensions of frame and set frame of self.menuVC.view.frame. By default x coordinate of menu is 
+    negative and negative y is to shift 20px from top to set it below status bar. Rajat ji please check this.
     If mainVC's child view controller does not has menuVC, then add menu vc as child view controller of main vc.
-    Add menuGestureView so that user can click anywhere on the screen and the menu will be closed.
-    View’s autoresizing mask is not translated into Auto Layout constraints. Add top, bottom, leading and trailing constraints to menuGestureVC 
-    If mainvc's sub view does not has menuvc, add menuvc as sub view of mainvc. Add frame to view of menuvc .
-    Add pan gesture recognizer that looks for panning (dragging) gestures calling method swipeLeftMenu.
-    Add swipe gesture recognizer that looks for swipe gestures calling method closeLeftMenuOnSwipe.
-    Set swipe direction to left and add gesture to menuvc
-    Set width, bottom, top and leading constraint, to menuVC (LeftMenuVC)
-    Set auto resizing mask (determines how the receiver resizes itself when its superview’s bounds change) to flexible width and flexible height
-    Lay out the subviews immediately, if layout updates are pending.
-    Set animation to Left menu portion with frame's origin from x=0 and other remaining portion with alpha value 0.1.
-     Call updateUI method, which displays shadow in edge of left slide menu.
+    If mainvc's sub view does not has menuGestureView, then add menuGestureView so that user can click 
+    anywhere on the screen and the menu will be closed, view’s autoresizing mask is not translated into 
+    Auto Layout constraints, add top, bottom, leading and trailing constraints to menuGestureVC. 
+    If mainvc's sub view does not has menuvc, add menuvc as sub view of mainvc, add frame to view of menuvc,
+    add pan gesture recognizer that looks for panning (dragging) gestures calling method swipeLeftMenu,
+    add swipe gesture recognizer that looks for swipe gestures calling method closeLeftMenuOnSwipe,
+    set swipe direction to left and add gesture to menuvc, set width, bottom, top and leading constraint, 
+    to menuVC (LeftMenuVC), set auto resizing mask (determines how the receiver resizes itself when its 
+    superview’s bounds change) to flexible width and flexible height, lay out the subviews immediately, if 
+    layout updates are pending.
+    Set animation to Left menu portion with frame's origin from x=0, i.e., open left menu. Rajat ji please check this
+     and other remaining portion with alpha value 0.1.
+     Call updateUI method, (after animation, to fix shadow issue - Rajat ji please check this) which displays shadow in edge of left slide menu.
     */
     @objc open func open(){
         
@@ -226,11 +227,10 @@ open class LeftSlideMenu:UIViewController {
     This method is called for pan gesture. It is used to close and open the menu on when user starts to swipe 
     the menu in left or right direction. If gesture recognizer view is null, then return. 
     If translation is negative, (i.e. left menu is closed), then set origin of frame to positive value of 
-    translation. If gesture recognizer state is ended, i.e., it is completely opened or closed currently, 
-    if origin of frame of gesture recognizer is negative, 
-    then close() method is called to close the menu. Minakshi ji if negative value of gesture means menu is 
-    going to close. Else animate the menu and set frame's origin to 0 of x axis. Frame's 
-    orgin 0 means the menu is open.
+    translation, i.e., open the menu. Rajat ji please check this. If gesture recognizer state is ended, 
+    if left menu is swiped towards left and if origin of frame of gesture recognizer is less than -150, 
+    then close() method is called to close the menu. Rajat ji please check this. Else animate the menu and 
+    set frame's origin to 0 of x axis. Frame's orgin 0 means the menu is open.
     */
     @objc open func swipeLeftMenu(gestureRecognizer:UIPanGestureRecognizer){
         

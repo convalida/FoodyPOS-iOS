@@ -8,6 +8,7 @@
 
 import UIKit
 
+///Not used in project. Rajat ji please check this
 class DesignLabel: UILabel {
     override func draw(_ rect: CGRect) {
         // Drawing code
