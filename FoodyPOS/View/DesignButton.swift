@@ -22,8 +22,6 @@ class DesignButton: UIButton {
     Set line width to 0.5. Call method setStroke on bottomColor which is color object with grayscale and alpha values 
     that are both 0.0 and notify the system that your view’s contents need to be redrawn.
     Stroke method is called which is a pre defined method which draws a line along the receiver’s path using the current drawing properties.
-
-    
     */
     override func draw(_ rect: CGRect) {
         let path = UIBezierPath()
