@@ -13,7 +13,7 @@ This class is used for creating view inside cell in DashboardVC.
 */
 class DashboardCell: UITableViewCell {
 
-    ///Rajat ji please check where this outlet is used.
+    ///This is used for all cells in the dashboard
     @IBOutlet weak var viewColor: UIView!
     ///Outlet for title which are keys of label values of response in dashboard like Total Sale, Total Orders, etc. set in manageData in DashboardVC
     @IBOutlet weak var lblTitle: UILabel!

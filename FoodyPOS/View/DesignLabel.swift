@@ -8,7 +8,7 @@
 
 import UIKit
 
-///Not used in project. Rajat ji please check this
+///Not used in project.
 class DesignLabel: UILabel {
     /**
     Overrides the default draw method of text field and set bottom color. Instantiate UIBezierPath class which is a predefined class 

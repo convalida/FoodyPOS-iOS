@@ -19,7 +19,7 @@ class LeftMenuCell: UITableViewCell {
     @IBOutlet weak var imgIcon: UIImageView!
     ///Outlet for title/items in LeftMenu, set in LeftMenu.swift
     @IBOutlet weak var lblTitle: UILabel!
-    ///Outlet for border which is hidden for section 0 and visible for section 1. Rajat ji please see and update if border is above Profile text
+    ///Outlet for border which is hidden for section 0 and visible for section 1. Minakshi ji yes the border is above Profile text
     @IBOutlet weak var viewBorder: UIView!
     
     /**

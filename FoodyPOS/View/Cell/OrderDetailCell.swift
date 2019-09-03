@@ -27,7 +27,7 @@ class OrderDetailCell: UITableViewCell {
     @IBOutlet weak var lblAddOnPrice: UILabel!
     ///Outlet for total price text field
     @IBOutlet weak var lblTotal: UILabel!
-    ///Rajat ji please update this. I will update subsequent outlets accordingly
+    ///Stack View Outlet for showing details of an order
     @IBOutlet weak var stackSubitem: UIStackView!
     @IBOutlet weak var stackModifier: UIStackView!
     @IBOutlet weak var stackAddOn: UIStackView!

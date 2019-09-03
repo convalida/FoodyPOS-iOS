@@ -11,7 +11,7 @@ import UIKit
 
 //@IBDesignable
 /**
-Class for creating input text field. Rajat ji, please check/update this. Used in  ChangePasswordVC, ForgotPasswordVC,
+Class for creating input text field. Used in  ChangePasswordVC, ForgotPasswordVC,
 LoginVC, ResetPasswordVC, SignUpVC.
 */
 class DesignTextField: UITextField {
@@ -32,7 +32,7 @@ class DesignTextField: UITextField {
     
     /**
     Returns the drawing rectangle of the receiver’s left overlay view. Padding is added to origin.
-    Rajat ji please mention its use
+    Minakshi Ji this is not in use
     */
     override func leftViewRect(forBounds bounds: CGRect) -> CGRect {
         var textRect = super.leftViewRect(forBounds: bounds)
@@ -42,7 +42,7 @@ class DesignTextField: UITextField {
     
     /**
     Returns the drawing location of the receiver’s right overlay view. Padding is subtracted from origin.
-    Rajat ji please mention its use if possible
+    Minakshi Ji this is not in use
     */
     override func rightViewRect(forBounds bounds: CGRect) -> CGRect {
         var textRect = super.rightViewRect(forBounds: bounds)
@@ -59,8 +59,8 @@ class DesignTextField: UITextField {
     
     /** 
     Sets TextField bottom color to grayscale and alpha values that are both 0.0. Set bezel style border
-    and mark the receiver’s entire bounds rectangle as needing to be redrawn. Rajat ji please check this as
-     bottom color in text fields is theme color, i.e., orange and without any border
+    and mark the receiver’s entire bounds rectangle as needing to be redrawn.
+     .bezel Displays a bezel-style border for the text field. This style is typically used for standard data-entry fields.
     */
     @IBInspectable var bottomColor:UIColor = UIColor.clear {
         didSet {
@@ -73,8 +73,7 @@ class DesignTextField: UITextField {
     @IBInspectable var padding:CGFloat = 0
     
     /**
-     Sets image of a TextField at 0,0 with height and width 20 each. Rajat ji please mention which image is 
-     displayed in text field.
+     Sets image of a TextField at 0,0 with height and width 20 each. Minakshi ji, This is not in Use
       If image is not null, set right overlay view to always appear in the  text field. 
     If image is null, set left overlay view to never appear in the  text field
     */
@@ -99,7 +98,7 @@ private var kAssociationKeyMaxLength: Int = 0
 extension UITextField {
     
     /**
-    Getter  and setter for max. length of text field. Rajat ji please check if it is used in project or not as 
+    Getter  and setter for max. length of text field. Minakshi Ji this is used for Password validation
     it shows ocuurance in storyboard and where it is used.
     If length is not null, then return length, else return maximum value.
     */

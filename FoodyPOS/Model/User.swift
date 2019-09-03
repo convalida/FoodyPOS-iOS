@@ -57,5 +57,5 @@ struct Logout:Codable {
     ///Variable for result which returns 1 in case user is successfully logged out.
     var result: String?
 
-    ///Enum is not defined here. Rajat ji please check and confirm this
+    ///Minakshi ji Enum is not required here
 }

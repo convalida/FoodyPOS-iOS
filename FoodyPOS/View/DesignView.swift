@@ -8,7 +8,7 @@
 
 import UIKit
 
-///Rajat ji please update this and also where it is used. It shows occurance in Storyboard
+///Minakshi ji this is used in TopSaleVC, OrderListVC,SalesSellAllVC,SalesReportVC,AllBestSellerVC
 class DesignView: UIView {
 
     /**

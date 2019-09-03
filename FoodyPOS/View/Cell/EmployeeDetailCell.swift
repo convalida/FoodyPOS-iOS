@@ -12,7 +12,7 @@ import UIKit
 This class is used for creating view inside cell in EmployeeDetailVC.
 */
 class EmployeeDetailCell: UITableViewCell {
-    ///Rajat ji please update where it is used
+    ///MinakshiJi this is for showing placeholder image of an user
     @IBOutlet weak var imgUser: UIImageView!
     ///Outlet for use name of employee
     @IBOutlet weak var lblName: UILabel!

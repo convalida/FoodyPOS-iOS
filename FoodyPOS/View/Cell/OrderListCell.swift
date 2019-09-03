@@ -12,19 +12,19 @@ import UIKit
 This class is used for creating view inside cell in OrderListVC.
 */
 class OrderListCell: UITableViewCell {
-    ///Outlet for header date which displays date in 0th row of cell. Rajat ji please check this. Will update at other places accordingly.
+    ///Outlet for header date which displays date in 0th row of cell.
     @IBOutlet weak var lblHeaderDate: UILabel!
     ///Outlet for no. of orders on a date, displayed in 0th row of cell
     @IBOutlet var lblHeaderOrder: UILabel!
     ///Outlet for total amount of sale on a date, displayed in 0th row of cell
     @IBOutlet weak var lblHeaderPrice: UILabel!
-    ///Outlet for order no., displayed in row other than 0th row of cell. Rajat ji please check this. Will update at other places accordingly.
+    ///Outlet for order no., displayed in row other than 0th row of cell.
     @IBOutlet weak var lblListNum: UILabel!
-    ///Outlet for time button, displayed in row other than 0th row of cell. Rajat ji please check if it is button, as there is no click listener.
+    ///Outlet for time button, displayed in row other than 0th row of cell. Minakshi ji it is not mandatory to always add click listner for buttons
     @IBOutlet weak var btnListTIme: UIButton!
     ///Outlet for price text concatenated with $ sign, displayed in row other than 0th row of cell.
     @IBOutlet weak var lblListPrice: UILabel!
-    ///Outlet for arrow image whose direction is upward in case header is opened and downward if it is closed and is displayed  in 0th row of cell. Rajat ji please check this
+    ///Outlet for arrow image whose direction is upward in case header is opened and downward if it is closed and is displayed  in 0th row of cell.
     @IBOutlet weak var imgHeader: UIImageView!
     
      /**

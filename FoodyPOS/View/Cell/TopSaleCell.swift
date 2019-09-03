@@ -17,7 +17,7 @@ class TopSaleCell: UITableViewCell {
     @IBOutlet weak var lblLetter: UILabel!
     ///Outlet for customer name from Sale structure or Customer structure in TopSaleVC and SalesSellVC 
     @IBOutlet weak var lblName: UILabel!
-    ///Outlet for contact no. from Sale structure or Customer structure in TopSaleVC and SalesSellVC. Rajat ji please check if it is a button
+    ///Outlet for contact no. from Sale structure or Customer structure in TopSaleVC and SalesSellVC.
     @IBOutlet weak var btnPhone: UIButton!
      ///Outlet for no. of orders from Sale structure or Customer structure in TopSaleVC and SalesSellVC
     @IBOutlet weak var lblOrder: UILabel!
