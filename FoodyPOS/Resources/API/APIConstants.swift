@@ -17,7 +17,7 @@ struct K {
     struct ProductionServer {
         ///Set base url for all web services (live url)
         static let baseURL = "http://business.foodypos.com"
-        //////Set base url for all web services (demo url)
+        ///Set base url for all web services (demo url)
         static let baseURL_2 = "http://staging.foodypos.com"
     }
 }

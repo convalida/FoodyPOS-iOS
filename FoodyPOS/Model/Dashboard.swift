@@ -22,7 +22,7 @@ struct Dashboard {
         let title:String
          ///Variable for sub title for displaying value of labelValues in response
         let subtitle:String
-         ///Variable for con for displaying icon corresponding label value
+         ///Variable for icon for displaying icon corresponding label value
         let icon:UIImage
     }
     

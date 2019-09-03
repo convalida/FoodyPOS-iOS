@@ -24,7 +24,7 @@ struct OrderSearch: Codable {
 
 ///Structure for ByOrderNumber
 struct ByOrderNumber: Codable {
-    ///Variable Message key
+    ///Variable for Message key
     let message: String?
     ///Variable for ResultCode key
     let resultCode: String?

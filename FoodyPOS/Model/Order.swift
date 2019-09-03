@@ -83,7 +83,7 @@ struct OrderNumberDetail: Codable {
 
 ///Structure for OnClick object. This struct is accessible throughout the project and is used OrderSearch
 struct OnClick: Codable {
-    ///Variable for CUstomerId key
+    ///Variable for CustomerId key
     let customerId : String?
     ///Variable for CustomerName key
     let customerName : String?

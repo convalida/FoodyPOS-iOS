@@ -149,6 +149,7 @@ extension AppDelegate {
 }
 
 extension UIApplication {
+    ///Not in use
     class var build: String? {
         //Not in use
         get {

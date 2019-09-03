@@ -99,22 +99,34 @@ struct Order_Details : Codable {
 
 ///This is for describing structure of item_Details under an order detail. It is not used in project and on click of particular order in Customer history, OrderDetailVC is launched which uses OrderItemDetail structure in Order.swift.
 struct Items_Details : Codable {
+    ///Not used
     let itemsNames : String?
+    ///Not used
     let itemPrice : String?
+    ///Not used
     let modifier : String?
+    ///Not used
     let modifierPrices : String?
+    ///Not used
     let addOn : String?
+    ///Not used
     let addOnPrices : String?
     
     /**
     Enum is defined here.  It is not used in project and on click of particular order in Customer history, OrderDetailVC is launched which uses OrderItemDetail structure in Order.swift.
     */
     enum CodingKeys: String, CodingKey {
+        ///Not used
         case itemsNames = "ItemsNames"
+        ///Not used
         case itemPrice = "ItemPrice"
+        ///Not used
         case modifier = "Modifier"
+        ///Not used
         case modifierPrices = "ModifierPrices"
+        ///Not used
         case addOn = "AddOn"
+        ///Not used
         case addOnPrices = "AddOnPrices"
     }
 }

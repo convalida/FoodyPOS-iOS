@@ -8,6 +8,7 @@
 
 import UIKit
 
+///View controller class for showing top 3 sales
 class TopSaleVC: UIViewController {
 
     ///Outlet for table view
@@ -19,7 +20,7 @@ class TopSaleVC: UIViewController {
     ///Outlet for top view or navigation bar
     @IBOutlet weak var viewTop: UIView!
     
-    ///Strucute for Sales instantiated
+    ///Structure for Sales instantiated
     var salesData:Sale?
     ///Instantiate hud view
     var hudView = UIView()
