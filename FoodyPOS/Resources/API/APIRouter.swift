@@ -261,7 +261,7 @@ enum APIRouter: URLRequestConvertible {
         }
     }
     
-     ///This defines the type of encoding for parameteres according to request method type.
+    ///This defines the type of encoding for parameteres according to request method type.
     var parameterEncoding: ParameterEncoding {
         switch method {
              ///If request is of type get, return URLEncoding instance with a .queryString destination

@@ -1,27 +1,6 @@
 {
   "warnings": [
     {
-      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Controller/TopSaleVC.swift",
-      "line": 11,
-      "symbol": "TopSaleVC",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Controller/TopSaleVC.swift",
-      "line": 183,
-      "symbol": "TopSaleVC",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Controller/TopSaleVC.swift",
-      "line": 260,
-      "symbol": "TopSaleVC",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Helper/ARSInfinite/ARSInfiniteLoader.swift",
       "line": 13,
       "symbol": "ARSInfiniteLoader",
@@ -1485,100 +1464,9 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Model/CustomerDetail.swift",
-      "line": 102,
-      "symbol": "Items_Details.itemsNames",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Model/CustomerDetail.swift",
-      "line": 103,
-      "symbol": "Items_Details.itemPrice",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Model/CustomerDetail.swift",
-      "line": 104,
-      "symbol": "Items_Details.modifier",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Model/CustomerDetail.swift",
-      "line": 105,
-      "symbol": "Items_Details.modifierPrices",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Model/CustomerDetail.swift",
-      "line": 106,
-      "symbol": "Items_Details.addOn",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Model/CustomerDetail.swift",
-      "line": 107,
-      "symbol": "Items_Details.addOnPrices",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Model/CustomerDetail.swift",
-      "line": 113,
-      "symbol": "Items_Details.CodingKeys.itemsNames",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Model/CustomerDetail.swift",
-      "line": 114,
-      "symbol": "Items_Details.CodingKeys.itemPrice",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Model/CustomerDetail.swift",
-      "line": 115,
-      "symbol": "Items_Details.CodingKeys.modifier",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Model/CustomerDetail.swift",
-      "line": 116,
-      "symbol": "Items_Details.CodingKeys.modifierPrices",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Model/CustomerDetail.swift",
-      "line": 117,
-      "symbol": "Items_Details.CodingKeys.addOn",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Model/CustomerDetail.swift",
-      "line": 118,
-      "symbol": "Items_Details.CodingKeys.addOnPrices",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Resources/API/Connectivity.swift",
       "line": 20,
       "symbol": "Connectivity.isConnectedToInternet",
-      "symbol_kind": "source.lang.swift.decl.var.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/tutistdev/Documents/ios/FoodyPOS/app/FoodyPOS/FoodyPOS/Resources/AppDelegate.swift",
-      "line": 152,
-      "symbol": "UIApplication.build",
       "symbol_kind": "source.lang.swift.decl.var.class",
       "warning": "undocumented"
     },
