@@ -93,6 +93,7 @@ class EmployeeDetailVC: UIViewController {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.SignUpVC) as! SignUpVC
         vc.delegate = self
         self.view.addSubview(vc.view)
+        /// vc.view.center=CGPoint(x:self.view.frame.size.width/2, y:self.view.frame.size.height/2);
         self.addChildViewController(vc)
         
     }

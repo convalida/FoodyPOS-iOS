@@ -17,7 +17,7 @@ class OrderDetailCell: UITableViewCell {
     @IBOutlet weak var lblSubitem: UILabel!
     ///Outlet for modifier text field
     @IBOutlet weak var lblModifier: UILabel!
-    //Outlet for add on text field
+    ///Outlet for add on text field
     @IBOutlet weak var lblAddOn: UILabel!
     ///Outlet for instruction text field
     @IBOutlet weak var lblInstruction: UILabel!

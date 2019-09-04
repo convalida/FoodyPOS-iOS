@@ -1,4 +1,4 @@
-version: "Apple Swift version 5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
-options: "5250bb901c3ef452845c56899d11030f"
-build_time: [1567528751, 154173000]
+version: "Apple Swift version 4.2.1 (swiftlang-1000.11.42 clang-1000.11.45.1)"
+options: "2222022f1fea8ffa179bceb9bd1ac090"
+build_time: [1567591508, 859460000]
 inputs:

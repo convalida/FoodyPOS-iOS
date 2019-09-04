@@ -16,7 +16,7 @@ class Connectivity {
     ///Message which is displayed when internet is not connected.
     static let msgNoNetwork = "The Internet connection appears to be offline"
     
-    //  Check if device is connected to internet which uses NetworkReachabilityManager() which is pre defined class
+    ///Check if device is connected to internet which uses NetworkReachabilityManager() which is pre defined class
     class var isConnectedToInternet:Bool {
         return NetworkReachabilityManager()!.isReachable
     }

@@ -111,7 +111,9 @@ class LoginVC: UIViewController {
     @IBAction func btnForgotPasswordDidClicked(_ sender: UIButton) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.ForgotPasswordVC) as! ForgotPasswordVC
         self.view.addSubview(vc.view)
+       // vc.view.center=CGPoint(x:self.view.frame.size.width/2, y:self.view.frame.size.height/2);
         self.addChildViewController(vc)
+        
 
     }
     
