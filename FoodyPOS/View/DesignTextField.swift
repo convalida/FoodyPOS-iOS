@@ -11,8 +11,7 @@ import UIKit
 
 //@IBDesignable
 /**
-Class for creating input text field. Used in  ChangePasswordVC, ForgotPasswordVC,
-LoginVC, ResetPasswordVC, SignUpVC.
+Class for creating input text field. Used in  ChangePasswordVC, ForgotPasswordVC, LoginVC, ResetPasswordVC, SignUpVC.
 */
 class DesignTextField: UITextField {
     
@@ -31,8 +30,7 @@ class DesignTextField: UITextField {
     }
     
     /**
-    Returns the drawing rectangle of the receiver’s left overlay view. Padding is added to origin.
-    Minakshi Ji this is not in use
+    Returns the drawing rectangle of the receiver’s left overlay view. Padding is added to origin. This is not in use
     */
     override func leftViewRect(forBounds bounds: CGRect) -> CGRect {
         var textRect = super.leftViewRect(forBounds: bounds)
@@ -41,8 +39,7 @@ class DesignTextField: UITextField {
     }
     
     /**
-    Returns the drawing location of the receiver’s right overlay view. Padding is subtracted from origin.
-    Minakshi Ji this is not in use
+    Returns the drawing location of the receiver’s right overlay view. Padding is subtracted from origin. This is not in use
     */
     override func rightViewRect(forBounds bounds: CGRect) -> CGRect {
         var textRect = super.rightViewRect(forBounds: bounds)
@@ -58,9 +55,7 @@ class DesignTextField: UITextField {
     }
     
     /** 
-    Sets TextField bottom color to grayscale and alpha values that are both 0.0. Set bezel style border
-    and mark the receiver’s entire bounds rectangle as needing to be redrawn.
-     .bezel Displays a bezel-style border for the text field. This style is typically used for standard data-entry fields.
+    Sets TextField bottom color to grayscale and alpha values that are both 0.0. Set bezel style border and mark the receiver’s entire bounds rectangle as needing to be redrawn, .bezel displays a bezel-style border for the text field. This style is typically used for standard data-entry fields. Bottom color of text field as theme color is set in storybaord
     */
     @IBInspectable var bottomColor:UIColor = UIColor.clear {
         didSet {
@@ -73,9 +68,8 @@ class DesignTextField: UITextField {
     @IBInspectable var padding:CGFloat = 0
     
     /**
-     Sets image of a TextField at 0,0 with height and width 20 each. Minakshi ji, This is not in Use
-      If image is not null, set right overlay view to always appear in the  text field. 
-    If image is null, set left overlay view to never appear in the  text field
+     Sets image of a TextField at 0,0 with height and width 20 each. If image is not null, set right overlay view to always appear in the text field.
+    If image is null, set left overlay view to never appear in the  text field. This is not in use
     */
     @IBInspectable var image:UIImage? {
         didSet {
@@ -98,9 +92,7 @@ private var kAssociationKeyMaxLength: Int = 0
 extension UITextField {
     
     /**
-    Getter  and setter for max. length of text field. Minakshi Ji this is used for Password validation
-    it shows ocuurance in storyboard and where it is used.
-    If length is not null, then return length, else return maximum value.
+    Getter  and setter for max. length of text field. If length is not null, then return length, else return maximum value. This is used for password max length to 15 in storyboard
     */
     @IBInspectable var maxLength: Int {
         get {

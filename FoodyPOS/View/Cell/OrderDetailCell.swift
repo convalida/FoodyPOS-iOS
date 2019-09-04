@@ -27,13 +27,19 @@ class OrderDetailCell: UITableViewCell {
     @IBOutlet weak var lblAddOnPrice: UILabel!
     ///Outlet for total price text field
     @IBOutlet weak var lblTotal: UILabel!
-    ///Stack View Outlet for showing details of an order
+    ///Stack view outlet for showing item name of order
     @IBOutlet weak var stackSubitem: UIStackView!
+    ///Stack view outlet for showing modifier
     @IBOutlet weak var stackModifier: UIStackView!
+    ///Stack view outlet for showing add on
     @IBOutlet weak var stackAddOn: UIStackView!
+    ///Stack view outlet for showing instruction
     @IBOutlet weak var stackInstruction: UIStackView!
+    ///Stack view outlet for showing price
     @IBOutlet weak var stackPrice: UIStackView!
+    ///Stack view outlet for showing add on price
     @IBOutlet weak var stackAddOnPrice: UIStackView!
+    ///Stack view outlet for showing total modifier
     @IBOutlet weak var stackTotal: UIStackView!
     
      /**

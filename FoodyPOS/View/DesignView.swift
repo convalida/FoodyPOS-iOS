@@ -8,7 +8,9 @@
 
 import UIKit
 
-///Minakshi ji this is used in TopSaleVC, OrderListVC,SalesSellAllVC,SalesReportVC,AllBestSellerVC
+/**
+ This is used in TopSaleVC, OrderListVC, SalesSellAllVC, AllBestSellerVC to display section above table view and SalesReportVC to display section above table view and cell of table view
+ */
 class DesignView: UIView {
 
     /**

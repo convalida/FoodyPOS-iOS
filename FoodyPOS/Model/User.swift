@@ -57,5 +57,5 @@ struct Logout:Codable {
     ///Variable for result which returns 1 in case user is successfully logged out.
     var result: String?
 
-    ///Minakshi ji Enum is not required here
+    
 }

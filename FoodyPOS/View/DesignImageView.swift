@@ -8,7 +8,7 @@
 
 import UIKit
 
-///Minakshi Ji this is used for cutlery icon on order detail vc and for $ icon on Amount vc
+///This is used for cutlery icon on order detail vc and for $ icon on Amount vc
 class DesignImageView: UIImageView {
 
      /**
@@ -66,8 +66,7 @@ class DesignImageView: UIImageView {
     }
     
     /**
-    Returns a new version of the image configured with the specified rendering mode. Set color to tint color.
-    Set tint color to object with grayscale and alpha values that are both 0.0. Minakshi ji above description is quiet sufficient I think. Can't explain more than this because this is default implementation
+    Returns a new version of the image configured with the specified rendering mode. Set color to tint color. Set tint color to object with grayscale and alpha values that are both 0.0. 
     */
     private func configure() {
         self.image = self.image?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)

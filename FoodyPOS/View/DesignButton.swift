@@ -9,8 +9,7 @@
 import UIKit
 
 /**
-Class for creating UI of button with rounded corners. 
-Used in SignUpVC for select role button
+Class for creating UI of button with rounded corners. Used in SignUpVC for select role button
 */
 class DesignButton: UIButton {
 

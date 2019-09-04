@@ -20,7 +20,7 @@ class OrderListCell: UITableViewCell {
     @IBOutlet weak var lblHeaderPrice: UILabel!
     ///Outlet for order no., displayed in row other than 0th row of cell.
     @IBOutlet weak var lblListNum: UILabel!
-    ///Outlet for time button, displayed in row other than 0th row of cell. Minakshi ji it is not mandatory to always add click listner for buttons
+    ///Outlet for time button, displayed in row other than 0th row of cell.
     @IBOutlet weak var btnListTIme: UIButton!
     ///Outlet for price text concatenated with $ sign, displayed in row other than 0th row of cell.
     @IBOutlet weak var lblListPrice: UILabel!
