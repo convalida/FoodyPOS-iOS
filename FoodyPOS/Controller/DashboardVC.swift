@@ -288,8 +288,8 @@ class DashboardVC: UIViewController {
  On click option button (three dot button). Using KxMenu library, display text Change Password, Logout text, token text (temprarily), image null, target self, call pushMenuItem method on selection and set text color to black. Push the values to menu items array and display them.
      */
     @IBAction func btnOptionsDidClicked(_ sender: UIButton) {
-        let settings = KxMenuItem.init("Token", image: nil, target: self, action: #selector(pushMenuItem(sender:)))
-        settings?.foreColor = UIColor.black
+      /**  let settings = KxMenuItem.init("Token", image: nil, target: self, action: #selector(pushMenuItem(sender:)))
+        settings?.foreColor = UIColor.black**/
         
         let changePassword = KxMenuItem.init("Change Password", image: nil, target: self, action: #selector(pushMenuItem(sender:)))
         changePassword?.foreColor = UIColor.black
@@ -297,7 +297,7 @@ class DashboardVC: UIViewController {
         let logout = KxMenuItem.init("Logout", image: nil, target: self, action: #selector(pushMenuItem(sender:)))
         logout?.foreColor = UIColor.black
         
-        let menuItems = [changePassword,settings,logout]
+        let menuItems = [changePassword,logout]
         
         KxMenu.show(in: self.view, from: sender.frame, menuItems: menuItems)
     }
@@ -454,13 +454,13 @@ class DashboardVC: UIViewController {
     @objc func pushMenuItem(sender:KxMenuItem) {
         KxMenu.dismiss()
         switch sender.title {
-        case "Token":
+        /**case "Token":
             if let token = UserManager.token {
                 Alert.showSingleButtonAlert(title: kAppName, message: token, actionTitle: "Copy", controller: self) {
                     let pasteboard = UIPasteboard.general
                     pasteboard.string = token
                 }
-            }
+            }**/
         case "Change Password":
             let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.ChangePasswordVC) as! ChangePasswordVC
             self.navigationController?.pushViewController(vc, animated: true)
