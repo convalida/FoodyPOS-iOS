@@ -111,10 +111,6 @@
 		CFB358987535CA8B8518D6CC /* Pods_FoodyPOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5E5519135B4D66542A38D9A /* Pods_FoodyPOSUITests.framework */; };
 		E3918FC1AFB511AD213105CC /* Pods_FoodyPOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4813F1E36A8715B4BD52ACB /* Pods_FoodyPOSTests.framework */; };
 		EDBEF64FD9FB49FD8C572DB8 /* Pods_FoodyPOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DA38A93BD666426E48E9EEE /* Pods_FoodyPOS.framework */; };
-		F29D467B22C7768500819E0F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F29D467A22C7768500819E0F /* Images.xcassets */; };
-		F29D467D22C776DA00819E0F /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F29D467C22C776DA00819E0F /* Images-2.xcassets */; };
-		F29D467F22C7784F00819E0F /* Images-3.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F29D467E22C7784F00819E0F /* Images-3.xcassets */; };
-		F29D468122C77CDF00819E0F /* Images-4.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F29D468022C77CDF00819E0F /* Images-4.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -270,10 +266,6 @@
 		A3A1C1371CC6964AB39A6FCB /* Pods-FoodyPOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodyPOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodyPOS/Pods-FoodyPOS.debug.xcconfig"; sourceTree = "<group>"; };
 		C4813F1E36A8715B4BD52ACB /* Pods_FoodyPOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodyPOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5E5519135B4D66542A38D9A /* Pods_FoodyPOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodyPOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F29D467A22C7768500819E0F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		F29D467C22C776DA00819E0F /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
-		F29D467E22C7784F00819E0F /* Images-3.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-3.xcassets"; sourceTree = "<group>"; };
-		F29D468022C77CDF00819E0F /* Images-4.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-4.xcassets"; sourceTree = "<group>"; };
 		F57BA99BE21094B31188D562 /* Pods-FoodyPOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodyPOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodyPOSUITests/Pods-FoodyPOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -339,10 +331,6 @@
 				04C8F9BA21095733005DD9F2 /* View */,
 				04C8F9B92109572C005DD9F2 /* Controller */,
 				2B05FD392115606A00109889 /* Points */,
-				F29D467A22C7768500819E0F /* Images.xcassets */,
-				F29D467C22C776DA00819E0F /* Images-2.xcassets */,
-				F29D467E22C7784F00819E0F /* Images-3.xcassets */,
-				F29D468022C77CDF00819E0F /* Images-4.xcassets */,
 			);
 			path = FoodyPOS;
 			sourceTree = "<group>";
@@ -717,14 +705,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				04C8F996210956E8005DD9F2 /* LaunchScreen.storyboard in Resources */,
-				F29D467B22C7768500819E0F /* Images.xcassets in Resources */,
 				2BA3A3A122C12AB2001E1AF2 /* LaunchScreen.xcassets in Resources */,
 				2B977468212DB20D00229095 /* KWTextFieldView.xib in Resources */,
-				F29D468122C77CDF00819E0F /* Images-4.xcassets in Resources */,
 				04C8F993210956E8005DD9F2 /* Assets.xcassets in Resources */,
 				2B977463212DB20D00229095 /* .gitkeep in Resources */,
-				F29D467D22C776DA00819E0F /* Images-2.xcassets in Resources */,
-				F29D467F22C7784F00819E0F /* Images-3.xcassets in Resources */,
 				2B977464212DB20D00229095 /* .gitkeep in Resources */,
 				04C8F991210956E6005DD9F2 /* Main.storyboard in Resources */,
 				2B97746A212DB20D00229095 /* KWVerificationCodeView.xib in Resources */,
