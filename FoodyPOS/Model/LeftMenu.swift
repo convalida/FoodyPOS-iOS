@@ -20,22 +20,13 @@ struct LeftMenu {
         Main(image: #imageLiteral(resourceName: "icon1-5"), title: "Reports")
     ]
     
-    static let CatalogData = [
-        Catalog(image: #imageLiteral(resourceName: "icon1-5"),title: "Menu"),
-        Catalog(image: #imageLiteral(resourceName: "icon1-5"),title: "Item"),
-        Catalog(image: #imageLiteral(resourceName: "icon1-5"),title: "Modifier"),
-        Catalog(image: #imageLiteral(resourceName: "icon1-5"),title: "AddOn" )
-    ]
     
-    static let RestaurantData = [
-    Restaurant(image: #imageLiteral(resourceName: "icon1-5"), title: "Profile")
-    ]
     
     ///Used in LeftMenuVC. Variable to store array of icon and title of left menu for lower section. Used to show Employee, Change Password and Logout
-    static let UserData = [
-        User(image: #imageLiteral(resourceName: "icon1-6"), title: "Employee"),
-        User(image: #imageLiteral(resourceName: "icon1-7"), title: "Change Password"),
-        User(image: #imageLiteral(resourceName: "icon1-8"), title: "Logout")
+    static let ProfileData = [
+        Profile(image: #imageLiteral(resourceName: "icon1-6"), title: "Employee"),
+        Profile(image: #imageLiteral(resourceName: "icon1-7"), title: "Change Password"),
+        Profile(image: #imageLiteral(resourceName: "icon1-8"), title: "Logout")
     ]
     
     ///Structure for CellIdentifier which identifies type of cell is header cell or menu cell used in LeftMenuVC
@@ -55,17 +46,9 @@ struct LeftMenu {
         let title:String
     }
     
-    struct Catalog{
-        let image:UIImage
-        let title:String
-    }
     
-    struct Restaurant{
-        let image:UIImage
-        let title:String
-    }
       ///Structure Profile section for Left menu
-    struct User {
+    struct Profile {
         ///Variable for image view (icon) for various menu items in 1st section.
         let image:UIImage
         ///Variable for title for various menu items in 1st section.

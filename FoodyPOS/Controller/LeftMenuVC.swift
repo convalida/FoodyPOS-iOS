@@ -81,7 +81,7 @@ extension LeftMenuVC:UITableViewDataSource {
      Asks the data source to return the number of sections in the table view. Return no. of sections- 2
  */
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return 2
     }
     
     /**
@@ -91,13 +91,7 @@ extension LeftMenuVC:UITableViewDataSource {
         if section == 0 {
             return LeftMenu.MainData.count
         }
-        else if section==1{
-        return LeftMenu.CatalogData.count
-        }
-        else if section==2{
-            return LeftMenu.RestaurantData.count
-        }
-        return LeftMenu.UserData.count
+        return LeftMenu.ProfileData.count
         }
     
     /**
@@ -116,17 +110,9 @@ extension LeftMenuVC:UITableViewDataSource {
             if indexPath.row == 0 {
                 cell.lblTitle.textColor = UIColor.themeColor
             }
-        }else if indexPath.section == 1{
-            cell.lblTitle.text = LeftMenu.CatalogData[indexPath.row].title
-            cell.imgIcon.image =  LeftMenu.CatalogData[indexPath.row].image
-        }
-        else if indexPath.section==2{
-            cell.lblTitle.text = LeftMenu.RestaurantData[indexPath.row].title
-            cell.imgIcon.image = LeftMenu.RestaurantData[indexPath.row].image
-        }
-        else if indexPath.section == 3{
-            cell.lblTitle.text = LeftMenu.UserData[indexPath.row].title
-            cell.imgIcon.image = LeftMenu.UserData[indexPath.row].image
+        }else {
+            cell.lblTitle.text=LeftMenu.ProfileData[indexPath.row].title
+            cell.imgIcon.image=LeftMenu.ProfileData[indexPath.row].image
         }
         
         return cell
@@ -155,11 +141,7 @@ extension LeftMenuVC:UITableViewDelegate {
         }
         switch section {
         case 1:
-            headerCell.lblHeader.text = "CATALOG"
-        case 2:
-            headerCell.lblHeader.text = "RESTAURANT"
-        case 3:
-            headerCell.lblHeader.text = "USER"
+            headerCell.lblHeader.text = "Profile"
         default:
             headerCell.lblHeader.text = ""
             headerCell.viewBorder.isHidden = true
@@ -219,7 +201,7 @@ extension LeftMenuVC:UITableViewDelegate {
                 print("Default")
             }
             
-        case 3:
+        case 1:
             switch indexPath.row {
             case 0:
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.EmployeeDetailVC) as! EmployeeDetailVC
@@ -306,7 +288,7 @@ set height to 0. If device is iPad, set height of row to 80, else set height of 
 */
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if !UserManager.isManager {
-            if indexPath.section == 3 {
+            if indexPath.section == 1 {
                 if indexPath.row == 0 {
                     // to hide first row of second section
                     return 0
