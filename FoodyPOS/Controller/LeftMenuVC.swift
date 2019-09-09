@@ -219,6 +219,15 @@ extension LeftMenuVC:UITableViewDelegate {
                 print("Default")
             }
             
+        case 1:
+            switch indexPath.row{
+            case 0:
+                parentVC?.leftSlideMenu.close()
+                
+            default:
+                print("Default")
+            }
+            
         case 3:
             switch indexPath.row {
             case 0:

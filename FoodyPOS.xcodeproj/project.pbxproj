@@ -111,6 +111,7 @@
 		CFB358987535CA8B8518D6CC /* Pods_FoodyPOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5E5519135B4D66542A38D9A /* Pods_FoodyPOSUITests.framework */; };
 		E3918FC1AFB511AD213105CC /* Pods_FoodyPOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4813F1E36A8715B4BD52ACB /* Pods_FoodyPOSTests.framework */; };
 		EDBEF64FD9FB49FD8C572DB8 /* Pods_FoodyPOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DA38A93BD666426E48E9EEE /* Pods_FoodyPOS.framework */; };
+		F2E5B7BA23264492000041A7 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E5B7B923264492000041A7 /* MenuVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -266,6 +267,7 @@
 		A3A1C1371CC6964AB39A6FCB /* Pods-FoodyPOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodyPOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodyPOS/Pods-FoodyPOS.debug.xcconfig"; sourceTree = "<group>"; };
 		C4813F1E36A8715B4BD52ACB /* Pods_FoodyPOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodyPOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5E5519135B4D66542A38D9A /* Pods_FoodyPOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodyPOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2E5B7B923264492000041A7 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		F57BA99BE21094B31188D562 /* Pods-FoodyPOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodyPOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodyPOSUITests/Pods-FoodyPOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -359,6 +361,7 @@
 				04E84D8D210C119300537500 /* LoginVC.swift */,
 				04E84D92210C13A300537500 /* SignUpVC.swift */,
 				04E84D96210C26EF00537500 /* ForgotPasswordVC.swift */,
+				F2E5B7B923264492000041A7 /* MenuVC.swift */,
 				04E84D98210C27A300537500 /* ChangePasswordVC.swift */,
 				04E84DD8210CE3DF00537500 /* DashboardVC.swift */,
 				04E84DDE210CF0AE00537500 /* LeftMenuVC.swift */,
@@ -875,6 +878,7 @@
 				2B931CE721157A9800927A0C /* DesignImageView.swift in Sources */,
 				04E84D97210C26EF00537500 /* ForgotPasswordVC.swift in Sources */,
 				2B977466212DB20D00229095 /* UIViewExtension.swift in Sources */,
+				F2E5B7BA23264492000041A7 /* MenuVC.swift in Sources */,
 				2BF334E521B1694C0063C8D2 /* CustomerOrderCell.swift in Sources */,
 				2BF898CF21160C7C001161F2 /* SalesReportCell.swift in Sources */,
 				2BEE1C3D2129A2540084BEC6 /* OrderDetailCell.swift in Sources */,
