@@ -5930,7 +5930,10 @@
                                 <variation key="heightClass=compact-widthClass=compact" constant="50"/>
                                 <variation key="heightClass=compact-widthClass=regular" constant="50"/>
                             </constraint>
-                            <constraint firstItem="mYw-t9-zsM" firstAttribute="trailing" secondItem="rBy-C5-XB2" secondAttribute="trailing" id="dWy-kK-lqW"/>
+                            <constraint firstItem="mYw-t9-zsM" firstAttribute="trailing" secondItem="rBy-C5-XB2" secondAttribute="trailing" id="dWy-kK-lqW">
+                                <variation key="heightClass=compact-widthClass=compact" constant="50"/>
+                                <variation key="heightClass=compact-widthClass=regular" constant="50"/>
+                            </constraint>
                             <constraint firstItem="mYw-t9-zsM" firstAttribute="bottom" secondItem="rBy-C5-XB2" secondAttribute="bottom" id="r8N-kD-VhN"/>
                             <constraint firstItem="rBy-C5-XB2" firstAttribute="top" secondItem="jtW-0Y-RKK" secondAttribute="top" id="si4-Rv-MxE"/>
                         </constraints>
