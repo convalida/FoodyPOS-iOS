@@ -50,6 +50,13 @@ class OtpVC: UIViewController {
         super.viewDidLoad()
         codeView.delegate = self
         // Do any additional setup after loading the view.
+    /**    let keyboardDoneButtonView = UIToolbar.init()
+        keyboardDoneButtonView.sizeToFit()
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneClicked(sender:)))
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        keyboardDoneButtonView.items = [flexibleSpace, doneButton]
+        //codeView.inputAccessoryView = keyboardDoneButtonView
+        codeView.**/
         initHudView()
     }
 
@@ -72,6 +79,10 @@ class OtpVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+   /** @objc func doneClicked(sender: AnyObject) {
+        self.view.endEditing(true)
+        codeView.resignFirstResponder()
+    }**/
     /**
     Initialize hud view. Set background color to white and hud view as sub view. Set constraints to top, left, bottom and right of hud view, add hud view and hide it.
 */
@@ -116,6 +127,7 @@ class OtpVC: UIViewController {
     and show toast message Verfication code sent to email id which is passed. If api hit is not successful, if error message is noDataMessage or noDataMessage1 in Constants.swift, display message msgFailed in AppMessages.swift in dialog else display error message in dialog.
     */
     @IBAction func btnResendDidClicked(_ sender: UIButton) {
+        codeView.resignFirstResponder()
         let parameter = ["EmailAddress":email!]
         
         self.hudView.isHidden = false
@@ -198,6 +210,7 @@ else verify button to disabled, its alpha value to 0.5 and resend button to enab
             btnVerify.alpha = 1.0
             btnResend.isEnabled = false
             btnResend.alpha = 0.5
+            codeView.resignFirstResponder();
         } else {
             btnVerify.isEnabled = false
             btnVerify.alpha = 0.5
