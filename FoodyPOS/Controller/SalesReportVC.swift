@@ -143,6 +143,14 @@ class SalesReportVC: UIViewController {
     Set date in date picker equal to date in button which is clicked. Show date picker alert and set text in from field equal to alert's date. 
     */
     @IBAction func btnStartDateDidClicked(_ sender: UIButton) {
+  /**  if selection == .daily{
+            imgDaily.tintColor = UIColor.themeColor
+            imgWeekly.tintColor = UIColor.black
+            imgMonthly.tintColor = UIColor.black
+            lblDaily.textColor = UIColor.themeColor
+            lblWeekly.textColor = UIColor.black
+            lblMonthly.textColor = UIColor.black
+        }**/
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
         datePicker.maximumDate = Date.today()
