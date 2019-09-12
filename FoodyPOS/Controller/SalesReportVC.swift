@@ -85,6 +85,10 @@ class SalesReportVC: UIViewController {
         super.viewWillAppear(animated)
         initDate()
         
+        imgDaily.tintAdjustmentMode = .normal
+        imgWeekly.tintAdjustmentMode = .normal
+        imgMonthly.tintAdjustmentMode = .normal
+        
         imgDaily.tintColor = UIColor.themeColor
         imgWeekly.tintColor = UIColor.black
         imgMonthly.tintColor = UIColor.black
