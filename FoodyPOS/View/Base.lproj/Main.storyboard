@@ -606,7 +606,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJf-f3-xS4">
-                                        <rect key="frame" x="8" y="28" width="150" height="30"/>
+                                        <rect key="frame" x="8" y="29.666666666666671" width="150" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="wH2-Jr-lpl">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="200"/>
@@ -1170,7 +1170,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E7x-Ku-Ycg">
-                                        <rect key="frame" x="335" y="27" width="32" height="32"/>
+                                        <rect key="frame" x="335" y="32" width="32" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="32" id="pkN-Nz-B7g"/>
                                         </constraints>
@@ -1285,10 +1285,10 @@
                                             </constraints>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="t6P-2q-UQr">
-                                            <rect key="frame" x="195" y="45.333333333333336" width="168" height="24.000000000000007"/>
+                                            <rect key="frame" x="195" y="45.333333333333336" width="168" height="20.000000000000007"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HT4-gd-vtI">
-                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="24"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="80" id="vLN-tp-x9i">
                                                             <variation key="heightClass=regular-widthClass=regular" constant="110"/>
@@ -1309,7 +1309,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gef-V0-sIN">
-                                                    <rect key="frame" x="88" y="0.0" width="80" height="24"/>
+                                                    <rect key="frame" x="88" y="0.0" width="80" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="tintColor" red="1" green="0.35294117650000001" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
                                                     <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -1330,7 +1330,7 @@
                                             </constraints>
                                         </stackView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="we6-8U-Dft" customClass="HIChartView">
-                                            <rect key="frame" x="0.0" y="81.666666666666657" width="375" height="268.33333333333337"/>
+                                            <rect key="frame" x="0.0" y="77.666666666666657" width="375" height="272.33333333333337"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                     </subviews>
@@ -1629,7 +1629,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wct-aV-zD3">
-                                        <rect key="frame" x="8" y="28" width="150" height="30"/>
+                                        <rect key="frame" x="8" y="29.666666666666671" width="150" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="c1D-r3-foa">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="180"/>
@@ -1724,7 +1724,7 @@
                                                     <rect key="frame" x="12" y="10" width="351" height="126"/>
                                                     <subviews>
                                                         <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cnL-Vg-UIE">
-                                                            <rect key="frame" x="95" y="52.666666666666664" width="145" height="21.999999999999993"/>
+                                                            <rect key="frame" x="95" y="52.666666666666664" width="146" height="21.999999999999993"/>
                                                             <color key="tintColor" red="1" green="0.35294117650000001" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
                                                             <inset key="imageEdgeInsets" minX="-4" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                             <state key="normal" title="(229)425-6069" image="call_small">
@@ -1970,7 +1970,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWn-N6-eYT">
-                                        <rect key="frame" x="8" y="28" width="150" height="30"/>
+                                        <rect key="frame" x="8" y="29.666666666666671" width="150" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="2Dq-XN-6qQ">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="200"/>
@@ -2453,7 +2453,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="31n-h3-bqD">
-                                        <rect key="frame" x="8" y="28" width="200" height="30"/>
+                                        <rect key="frame" x="8" y="29.666666666666671" width="200" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="uIy-rg-rM3">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="300"/>
@@ -2693,7 +2693,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJy-3g-gjK">
-                                        <rect key="frame" x="8" y="28" width="150" height="30"/>
+                                        <rect key="frame" x="8" y="29.666666666666671" width="150" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="NhI-OV-Q9r">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="230"/>
@@ -2742,7 +2742,7 @@
                                                     <rect key="frame" x="12" y="10" width="351" height="126"/>
                                                     <subviews>
                                                         <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zW6-Ee-Kv5">
-                                                            <rect key="frame" x="95" y="52.666666666666664" width="145" height="21.999999999999993"/>
+                                                            <rect key="frame" x="95" y="52.666666666666664" width="146" height="21.999999999999993"/>
                                                             <color key="tintColor" red="1" green="0.35294117650000001" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
                                                             <inset key="imageEdgeInsets" minX="-4" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                             <state key="normal" title="(229)425-6069" image="call_theme">
@@ -3084,7 +3084,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F2w-9x-3QS">
-                                        <rect key="frame" x="8" y="28" width="180" height="30"/>
+                                        <rect key="frame" x="8" y="29.666666666666671" width="180" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="180" id="Jai-k9-1zR">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="230"/>
@@ -3555,7 +3555,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aok-D2-cRT">
-                                        <rect key="frame" x="8" y="28" width="220" height="30"/>
+                                        <rect key="frame" x="8" y="29.666666666666671" width="220" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="220" id="Saj-S2-zvQ">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="300"/>
@@ -4065,7 +4065,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVL-YG-KCd">
-                                        <rect key="frame" x="8" y="28" width="170" height="30"/>
+                                        <rect key="frame" x="8" y="29.666666666666671" width="170" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="170" id="zpL-AV-qn3">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="220"/>
@@ -4955,7 +4955,7 @@
                                     <constraint firstItem="XrU-py-oeG" firstAttribute="leading" secondItem="WjV-HN-25l" secondAttribute="leading" constant="10" id="Cji-87-OXd"/>
                                     <constraint firstItem="XrU-py-oeG" firstAttribute="centerX" secondItem="WjV-HN-25l" secondAttribute="centerX" id="GK2-ud-eDg"/>
                                     <constraint firstItem="XrU-py-oeG" firstAttribute="centerY" secondItem="WjV-HN-25l" secondAttribute="centerY" id="VVN-aB-zdv"/>
-                                    <constraint firstAttribute="bottom" secondItem="XrU-py-oeG" secondAttribute="bottom" constant="208.5" id="ssp-p9-puy"/>
+                                    <constraint firstAttribute="bottom" secondItem="XrU-py-oeG" secondAttribute="bottom" constant="20" id="ssp-p9-puy"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -4999,7 +4999,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oSC-Bt-5uO">
-                                        <rect key="frame" x="8" y="28" width="220" height="30"/>
+                                        <rect key="frame" x="8" y="29.666666666666671" width="220" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="220" id="aEH-2Y-Bmw">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="270"/>
@@ -5171,7 +5171,7 @@
                                                     </constraints>
                                                 </view>
                                                 <button opaque="NO" tag="2" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sEZ-MC-Fzg">
-                                                    <rect key="frame" x="178.66666666666666" y="11" width="18" height="22"/>
+                                                    <rect key="frame" x="179.66666666666666" y="11" width="16" height="22"/>
                                                     <state key="normal" image="icon1-10">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
@@ -5282,7 +5282,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OzC-Rx-Zn8">
-                                        <rect key="frame" x="8" y="28" width="150" height="30"/>
+                                        <rect key="frame" x="8" y="29.666666666666671" width="150" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="cVi-f1-6D8">
                                                 <variation key="heightClass=regular-widthClass=regular" constant="200"/>
@@ -5515,7 +5515,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F9g-qw-2eL">
-                                        <rect key="frame" x="8" y="28" width="359" height="30"/>
+                                        <rect key="frame" x="8" y="29.666666666666671" width="359" height="27"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                         <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Bestseller Items " image="back-arrow-icon">
