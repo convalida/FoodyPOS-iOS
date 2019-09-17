@@ -28,7 +28,7 @@ struct LeftMenu {
     ]
     
     static let RestaurantData = [
-    Restaurant(image: #imageLiteral(resourceName: "icon1-5"), title: "Profile")
+        Restaurant(image: #imageLiteral(resourceName: "icon1-5"), title: "Profile")
     ]
     
     ///Used in LeftMenuVC. Variable to store array of icon and title of left menu for lower section. Used to show Employee, Change Password and Logout
@@ -64,6 +64,7 @@ struct LeftMenu {
         let image:UIImage
         let title:String
     }
+    
       ///Structure Profile section for Left menu
     struct User {
         ///Variable for image view (icon) for various menu items in 1st section.

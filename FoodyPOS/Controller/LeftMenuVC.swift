@@ -92,13 +92,15 @@ extension LeftMenuVC:UITableViewDataSource {
             return LeftMenu.MainData.count
         }
         else if section==1{
-        return LeftMenu.CatalogData.count
+            return LeftMenu.CatalogData.count
         }
         else if section==2{
             return LeftMenu.RestaurantData.count
         }
         return LeftMenu.UserData.count
-        }
+    }
+
+    
     
     /**
      Asks the data source for a cell to insert in a particular location of the table view. Set cell of LeftMenu as LeftMenuCell if CellIdentifier is menuCell (displaying items - child of header items) declared in LeftMenu struct else also return LeftMenuCell as previous.
@@ -128,7 +130,6 @@ extension LeftMenuVC:UITableViewDataSource {
             cell.lblTitle.text = LeftMenu.UserData[indexPath.row].title
             cell.imgIcon.image = LeftMenu.UserData[indexPath.row].image
         }
-        
         return cell
     }
 }
@@ -220,15 +221,19 @@ extension LeftMenuVC:UITableViewDelegate {
             }
             
         case 1:
+
             switch indexPath.row{
             case 0:
                 parentVC?.leftSlideMenu.close()
-                
+              let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.MenuVC) as! MenuVC
+            self.navigationController?.pushViewController(vc, animated: true)
+
             default:
                 print("Default")
             }
             
         case 3:
+
             switch indexPath.row {
             case 0:
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.EmployeeDetailVC) as! EmployeeDetailVC

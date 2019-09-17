@@ -10,13 +10,31 @@ import UIKit
 
 class MenuVC: UIViewController {
 
+    @IBOutlet weak var viewTop: UIView!
+    
+    ///Instantiate hud view
+    var hudView = UIView()
+    
+    ///Display status bar
+    override var prefersStatusBarHidden: Bool {
+        return false
+    }
+    
+    ///Set light color of status bar
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     /*
     // MARK: - Navigation
 

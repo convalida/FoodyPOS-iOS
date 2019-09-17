@@ -51,4 +51,5 @@ struct StoryboardConstant {
     static let DateVC = "DateVC"
     ///Create constant for AllBestSellerVC
     static let AllBestSellerVC = "AllBestSellerVC"
+    static let MenuVC="MenuVC"
 }

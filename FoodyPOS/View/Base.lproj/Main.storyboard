@@ -3069,28 +3069,43 @@
         <!--MenuVC-->
         <scene sceneID="Xom-c6-6cX">
             <objects>
-                <viewController id="CRH-jB-Lyb" customClass="MenuVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuVC" id="CRH-jB-Lyb" customClass="MenuVC" customModule="FoodyPOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A7n-Rz-eM2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TQl-Jv-Ldb" userLabel="View Top">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQl-Jv-Ldb" userLabel="View Top">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EzE-Qe-7ba">
-                                        <rect key="frame" x="8" y="28" width="150" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EzE-Qe-7ba">
+                                        <rect key="frame" x="8" y="28" width="100" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="Sb7-hZ-zrw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                         <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Menu">
+                                        <state key="normal" title="Menu" image="back-arrow-icon">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                        </variation>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.3529411764705882" blue="0.011764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="MWf-O4-1Ni"/>
+                                    <constraint firstItem="EzE-Qe-7ba" firstAttribute="centerY" secondItem="TQl-Jv-Ldb" secondAttribute="centerY" constant="8" id="Xpu-80-m6M"/>
+                                    <constraint firstItem="EzE-Qe-7ba" firstAttribute="leading" secondItem="TQl-Jv-Ldb" secondAttribute="leadingMargin" constant="8" id="tWZ-yZ-BPS"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TQl-Jv-Ldb" firstAttribute="leading" secondItem="A7n-Rz-eM2" secondAttribute="leading" id="XPm-xv-YxI"/>
+                            <constraint firstItem="TQl-Jv-Ldb" firstAttribute="top" secondItem="A7n-Rz-eM2" secondAttribute="top" id="lMO-PZ-BpJ"/>
+                            <constraint firstAttribute="trailing" secondItem="TQl-Jv-Ldb" secondAttribute="trailing" id="n4r-xH-ceM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="fjc-eV-hgB"/>
                     </view>
                     <connections>
