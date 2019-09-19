@@ -11,6 +11,9 @@ import UIKit
 class MenuVC: UIViewController {
 
     @IBOutlet weak var viewTop: UIView!
+    @IBOutlet weak var btnSearch: UIButton!
+    @IBOutlet weak var viewSearch: UIView!
+    @IBOutlet weak var textSearch: DesignTextField!
     
     ///Instantiate hud view
     var hudView = UIView()
@@ -44,5 +47,32 @@ class MenuVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewSearch.isHidden=true
+    }
 
+    @IBAction func btnBackDidClicked(_ sender: UIButton) {
+self.navigationController?.popViewController(animated: true)
+    }
+
+   
+    @IBAction func btnSearchDidClicked(_ sender: UIButton) {
+        if viewSearch.isHidden{
+            textSearch.text=""
+            sender.isSelected = true
+            viewSearch.isHidden=false
+            textSearch.becomeFirstResponder()
+        }
+    }
+    
+    
+    @IBAction func btnSearchBackDidClicked(_ sender: Any) {
+        viewSearch.isHidden=true
+        textSearch.resignFirstResponder()
+    }
+    
+ 
+    
 }
