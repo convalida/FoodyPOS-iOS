@@ -328,6 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				2B6780C12129C9DC00D7EE4C /* FoodyPOS.entitlements */,
+				04C8F9BA21095733005DD9F2 /* View */,
 				04E84D8F210C126C00537500 /* Resources */,
 				04E84D6F210C107400537500 /* Helper */,
 				04C8F9E521095D19005DD9F2 /* Extensions */,
@@ -387,6 +388,7 @@
 		04C8F9BA21095733005DD9F2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2BDED6022112A164007C0AB5 /* Cell */,
 				04C8F98F210956E6005DD9F2 /* Main.storyboard */,
 				04C8F994210956E8005DD9F2 /* LaunchScreen.storyboard */,
 				04C8F9BE210957A9005DD9F2 /* DesignTextField.swift */,
@@ -488,10 +490,8 @@
 				2BFBC6D82117677000DF9A9D /* AppMessages.swift */,
 				2BFBC6D72117675F00DF9A9D /* Validation.swift */,
 				04C8F98B210956E6005DD9F2 /* AppDelegate.swift */,
-				2BDED6022112A164007C0AB5 /* Cell */,
 				2BFBC6DF21176AB800DF9A9D /* Global.swift */,
 				2BF4E00C211DF09C000D2899 /* Alert.swift */,
-				04C8F9BA21095733005DD9F2 /* View */,
 				04C8F992210956E8005DD9F2 /* Assets.xcassets */,
 				04C8F997210956E8005DD9F2 /* Info.plist */,
 				2BA3A3A022C12AB2001E1AF2 /* LaunchScreen.xcassets */,
