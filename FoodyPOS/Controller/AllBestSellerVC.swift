@@ -62,11 +62,13 @@ class AllBestSellerVC: UIViewController {
         
         initHudView()
         if type == "week" {
-            let lastSun = Date.today().previous(.monday)
-            btnStartDate.setTitle(lastSun.getDateString(), for: .normal)
+           // let lastSun = Date.today().previous(.monday)
+            //btnStartDate.setTitle(lastSun.getDateString(), for: .normal)
+            btnStartDate.setTitle(Date.startOfMonth().getDateString(), for: .normal)
             btnBack.setTitle("Weekly Bestseller items", for: .normal)
         }else if type == "month" {
-            btnStartDate.setTitle(Date.startOfMonth().getDateString(), for: .normal)
+           // btnStartDate.setTitle(Date.startOfMonth().getDateString(), for: .normal)
+            btnStartDate.setTitle(Date.startOfYear().getDateString(), for: .normal)
             btnBack.setTitle("Monthly Bestseller items", for: .normal)
 
         }else if type == "year" {

@@ -111,6 +111,7 @@
 		CFB358987535CA8B8518D6CC /* Pods_FoodyPOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5E5519135B4D66542A38D9A /* Pods_FoodyPOSUITests.framework */; };
 		E3918FC1AFB511AD213105CC /* Pods_FoodyPOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4813F1E36A8715B4BD52ACB /* Pods_FoodyPOSTests.framework */; };
 		EDBEF64FD9FB49FD8C572DB8 /* Pods_FoodyPOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DA38A93BD666426E48E9EEE /* Pods_FoodyPOS.framework */; };
+		F244A2512342040100B931D0 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F244A2502342040100B931D0 /* MenuCell.swift */; };
 		F2E5B7BA23264492000041A7 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E5B7B923264492000041A7 /* MenuVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -267,6 +268,7 @@
 		A3A1C1371CC6964AB39A6FCB /* Pods-FoodyPOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodyPOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodyPOS/Pods-FoodyPOS.debug.xcconfig"; sourceTree = "<group>"; };
 		C4813F1E36A8715B4BD52ACB /* Pods_FoodyPOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodyPOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5E5519135B4D66542A38D9A /* Pods_FoodyPOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodyPOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F244A2502342040100B931D0 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		F2E5B7B923264492000041A7 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		F57BA99BE21094B31188D562 /* Pods-FoodyPOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodyPOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodyPOSUITests/Pods-FoodyPOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -330,7 +332,6 @@
 				04E84D6F210C107400537500 /* Helper */,
 				04C8F9E521095D19005DD9F2 /* Extensions */,
 				04C8F9BB21095735005DD9F2 /* Model */,
-				04C8F9BA21095733005DD9F2 /* View */,
 				04C8F9B92109572C005DD9F2 /* Controller */,
 				2B05FD392115606A00109889 /* Points */,
 			);
@@ -386,7 +387,6 @@
 		04C8F9BA21095733005DD9F2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2BDED6022112A164007C0AB5 /* Cell */,
 				04C8F98F210956E6005DD9F2 /* Main.storyboard */,
 				04C8F994210956E8005DD9F2 /* LaunchScreen.storyboard */,
 				04C8F9BE210957A9005DD9F2 /* DesignTextField.swift */,
@@ -488,8 +488,10 @@
 				2BFBC6D82117677000DF9A9D /* AppMessages.swift */,
 				2BFBC6D72117675F00DF9A9D /* Validation.swift */,
 				04C8F98B210956E6005DD9F2 /* AppDelegate.swift */,
+				2BDED6022112A164007C0AB5 /* Cell */,
 				2BFBC6DF21176AB800DF9A9D /* Global.swift */,
 				2BF4E00C211DF09C000D2899 /* Alert.swift */,
+				04C8F9BA21095733005DD9F2 /* View */,
 				04C8F992210956E8005DD9F2 /* Assets.xcassets */,
 				04C8F997210956E8005DD9F2 /* Info.plist */,
 				2BA3A3A022C12AB2001E1AF2 /* LaunchScreen.xcassets */,
@@ -556,6 +558,7 @@
 				04E84DE0210CF1E100537500 /* LeftMenuCell.swift */,
 				043DD8F0210DE8D5009B89C2 /* TopSaleCell.swift */,
 				2BDED6032112A1FE007C0AB5 /* OrderListCell.swift */,
+				F244A2502342040100B931D0 /* MenuCell.swift */,
 				2B931CF72115844F00927A0C /* BestSellerCell.swift */,
 				2BF898CE21160C7C001161F2 /* SalesReportCell.swift */,
 				2B42C3A02116A0B90086FDB6 /* EmployeeDetailCell.swift */,
@@ -894,6 +897,7 @@
 				2BFBC6D92117677000DF9A9D /* Validation.swift in Sources */,
 				04E84D83210C109600537500 /* ARSLineProgressConstants.swift in Sources */,
 				04C8F9E421095D11005DD9F2 /* UIView.swift in Sources */,
+				F244A2512342040100B931D0 /* MenuCell.swift in Sources */,
 				2BDFB179211BD790005B5B27 /* Customers.swift in Sources */,
 				04E84DD9210CE3DF00537500 /* DashboardVC.swift in Sources */,
 				2B931CEA21157A9800927A0C /* DesignButton.swift in Sources */,

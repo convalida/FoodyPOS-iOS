@@ -21,14 +21,14 @@ struct LeftMenu {
     ]
     
     static let CatalogData = [
-        Catalog(image: #imageLiteral(resourceName: "icon1-5"),title: "Menu"),
-        Catalog(image: #imageLiteral(resourceName: "icon1-5"),title: "Item"),
-        Catalog(image: #imageLiteral(resourceName: "icon1-5"),title: "Modifier"),
-        Catalog(image: #imageLiteral(resourceName: "icon1-5"),title: "AddOn" )
+        Catalog(image: #imageLiteral(resourceName: "menu-1"), title: "Menu"),
+        Catalog(image: #imageLiteral(resourceName: "item"),title: "Item"),
+        Catalog(image: #imageLiteral(resourceName: "modifier"),title: "Modifier"),
+        Catalog(image: #imageLiteral(resourceName: "add-on"),title: "AddOn" )
     ]
     
     static let RestaurantData = [
-        Restaurant(image: #imageLiteral(resourceName: "icon1-5"), title: "Profile")
+        Restaurant(image: #imageLiteral(resourceName: "profile"), title: "Profile")
     ]
     
     ///Used in LeftMenuVC. Variable to store array of icon and title of left menu for lower section. Used to show Employee, Change Password and Logout

@@ -14,7 +14,7 @@ class MenuVC: UIViewController {
     @IBOutlet weak var btnSearch: UIButton!
     @IBOutlet weak var viewSearch: UIView!
     @IBOutlet weak var textSearch: DesignTextField!
-    
+    @IBOutlet weak var tableView: UITableView!
     ///Instantiate hud view
     var hudView = UIView()
     
@@ -31,7 +31,11 @@ class MenuVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.delegate = self
+          tableView.dataSource = self
         // Do any additional setup after loading the view.
+          //  tableView.delegate = self
+          //  tableView.dataSource = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -72,7 +76,44 @@ self.navigationController?.popViewController(animated: true)
         viewSearch.isHidden=true
         textSearch.resignFirstResponder()
     }
+}
+
+
+extension MenuVC:UITableViewDataSource {
+        
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+        }
+        
+        
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return 1
+    }
     
- 
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "listCell") as? OrderListCell else {
+            return OrderListCell()
+        }
+        return cell
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      //  if indexPath.row == 0 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "headerCell") as? OrderListCell else {
+                return OrderListCell()
+            }
+        return cell
+    }
+    }
+extension MenuVC:UITableViewDelegate{
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if Global.isIpad {
+            return 80.0
+        }
+        return 44.0
+    }
     
 }
+
+
+
