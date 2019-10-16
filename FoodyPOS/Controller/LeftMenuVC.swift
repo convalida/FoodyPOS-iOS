@@ -14,6 +14,7 @@ class LeftMenuVC: UIViewController {
     @IBOutlet weak var imgLogo: UIImageView!
     ///Outlet for table view below image
     @IBOutlet weak var tableView: UITableView!
+    var customersData:Customers?
 
     ///Display status bar
     override var prefersStatusBarHidden: Bool {
@@ -209,6 +210,7 @@ extension LeftMenuVC:UITableViewDelegate {
             case 2:
                 parentVC?.leftSlideMenu.close()
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.SalesSellAllVC) as! SalesSellAllVC
+                vc.isCustomer=true
                 self.navigationController?.pushViewController(vc, animated: true)
                 
             case 3:

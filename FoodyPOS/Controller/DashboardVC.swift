@@ -18,6 +18,7 @@ class DashboardVC: UIViewController {
     var leftSlideMenu:LeftSlideMenu!
     ///Instantiate Dashboard1 structure with label values and chart array values
     var dashboardData:Dashboard1?
+    var salesData:Sale?
 
     ///Outlet for week button of graph
     @IBOutlet weak var btnWeek: UIButton!
@@ -538,7 +539,10 @@ class DashboardVC: UIViewController {
  Method called when top sale button was clicked. Instantiate TopSaleVC and push vc
      */
     private func showSalesVC() {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.TopSaleVC) as! TopSaleVC
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.SalesSellAllVC) as! SalesSellAllVC
+      //  if let salesData = salesData {
+        //    vc.salesData = salesData
+       // }
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -589,12 +593,12 @@ class DashboardVC: UIViewController {
      */
     func manageData() {
         if let dashboard = dashboardData {
-            Dashboard.titleArray = [Dashboard.Data(title: "Total Sale", subtitle: dashboard.labelValues.totalSale, icon: #imageLiteral(resourceName: "icon1")),
-                                    Dashboard.Data(title: "Weekly Sale", subtitle: dashboard.labelValues.weeksale, icon: #imageLiteral(resourceName: "icon2")),
-                                    Dashboard.Data(title: "Total Orders", subtitle: dashboard.labelValues.totalOrders, icon: #imageLiteral(resourceName: "icon3")),
-                                    Dashboard.Data(title: "Weekly Orders", subtitle: dashboard.labelValues.weeklyOrder, icon: #imageLiteral(resourceName: "icon4")),
-                                    Dashboard.Data(title: "Total Customers", subtitle: dashboard.labelValues.totalCustomers, icon: #imageLiteral(resourceName: "icon5")),
-                                    Dashboard.Data(title: "Weekly Customers", subtitle: dashboard.labelValues.weekCustomer, icon: #imageLiteral(resourceName: "icon6"))]
+            Dashboard.titleArray = [Dashboard.Data(title: "Current year's sale", subtitle: dashboard.labelValues.totalSale, icon: #imageLiteral(resourceName: "icon1")),
+                                    Dashboard.Data(title: "Current week's sale", subtitle: dashboard.labelValues.weeksale, icon: #imageLiteral(resourceName: "icon2")),
+                                    Dashboard.Data(title: "Current year's orders", subtitle: dashboard.labelValues.totalOrders, icon: #imageLiteral(resourceName: "icon3")),
+                                    Dashboard.Data(title: "Current week's orders", subtitle: dashboard.labelValues.weeklyOrder, icon: #imageLiteral(resourceName: "icon4")),
+                                    Dashboard.Data(title: "Total customers", subtitle: dashboard.labelValues.totalCustomers, icon: #imageLiteral(resourceName: "icon5")),
+                                    Dashboard.Data(title: "Current week's customers", subtitle: dashboard.labelValues.weekCustomer, icon: #imageLiteral(resourceName: "icon6"))]
         }
     }
     
@@ -682,6 +686,7 @@ extension DashboardVC:UITableViewDataSource {
   
         case 4,5:
             let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.SalesSellAllVC) as! SalesSellAllVC
+            vc.isCustomer=true
             self.navigationController?.pushViewController(vc, animated: true)
             
         default:
