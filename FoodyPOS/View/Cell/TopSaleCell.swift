@@ -23,6 +23,7 @@ class TopSaleCell: UITableViewCell {
     @IBOutlet weak var lblOrder: UILabel!
      ///Outlet for total price of all orders of customer from Sale structure or Customer structure in TopSaleVC and SalesSellVC
     @IBOutlet weak var lblPrice: UILabel!
+    @IBOutlet weak var lblNew: UILabel!
     
     /**
      Prepares the receiver for service after it has been loaded from an Interface Builder archive, or nib file.
