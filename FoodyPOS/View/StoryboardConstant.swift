@@ -52,4 +52,5 @@ struct StoryboardConstant {
     ///Create constant for AllBestSellerVC
     static let AllBestSellerVC = "AllBestSellerVC"
     static let MenuVC="MenuVC"
+    static let NotificationsVC="NotificationsVC"
 }
