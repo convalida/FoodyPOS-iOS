@@ -16,8 +16,10 @@ struct Sale: Codable {
     parameters. In app, for current week also, api hit is through dates passed, so it is not used.
     */
     let weekSales: JSONNull?
+ //   let weekSales: [AllSaleElement]
      ///Variable for AllSaleElement structure used in SalesSellAllVC. Same structure/Data Type is assigned to two variables but they can have different data
     let allSales: [AllSaleElement]
+   // let allSales: JSONNull?
     
     /**
     Enum is defined here. It assigns response keys of root object to corresponding variables
@@ -47,6 +49,7 @@ struct AllSaleElement: Codable {
     let  totalAmount: String?
     ///Variable for TotalOrder key
     let totalOrder: String?
+    let status: String?
     
     /**
     Enum is defined here. It assigns response keys of each sale object to corresponding variables
@@ -62,6 +65,7 @@ struct AllSaleElement: Codable {
         case totalAmount = "TotalAmount"
         ///Assign TotalOrder key to totalOrder variable which displays no. of orders of a customer
         case totalOrder = "TotalOrder"
+        case status = "Status"
     }
 }
 

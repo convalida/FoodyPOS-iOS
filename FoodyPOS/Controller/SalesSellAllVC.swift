@@ -65,9 +65,11 @@ class SalesSellAllVC: UIViewController {
         
         initHudView()
         
-        let lastSun = Date.today().previous(.monday)
-        btnStartDate.setTitle(lastSun.getDateString(), for: .normal)
-        btnEndDate.setTitle(Date.todayDate, for: .normal)
+       // let lastSun = Date.today().previous(.monday)
+     //   btnStartDate.setTitle(lastSun.getDateString(), for: .normal)
+     //   btnEndDate.setTitle(Date.todayDate, for: .normal)
+        btnStartDate.setTitle("mm/dd/yyyy", for: .normal)
+        btnEndDate.setTitle("mm/dd/yyyy", for: .normal)
         if isCustomer == true {
             btnTitle.setTitle("Customers", for: .normal)
             callCustomersAPI()
@@ -174,10 +176,16 @@ class SalesSellAllVC: UIViewController {
         guard let restaurentId = UserManager.restaurantID else {
             return
         }
-        let prameterDic = ["RestaurantId":restaurentId,
-                           "startdate":(btnStartDate.titleLabel?.text)!,
-                           "enddate":(btnEndDate.titleLabel?.text)!]
+     //   let nullString="null"
+        let test : [String : AnyObject] = ["null" : NSNull()]
         
+        let prameterDic = ["RestaurantId":restaurentId,
+                    //      "startdate":(btnStartDate.titleLabel?.text)!,
+                      //     "enddate":(btnEndDate.titleLabel?.text)!]
+            "startdate":"null".replacingOccurrences(of: "\"", with: ""),
+             "enddate":"null".replacingOccurrences(of: "\"", with: "")]
+           // "startdate":test,
+            //"enddate":test]
         self.hudView.isHidden = false
         APIClient.sales(paramters: prameterDic) { (result) in
             self.hudView.isHidden = true
