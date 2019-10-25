@@ -33,6 +33,7 @@ class SalesSellAllVC: UIViewController {
     var isCustomer = false
     ///Instantiate hud view
     var hudView = UIView()
+    var isSearch=false
     
     ///Structure for cell identifier for topSaleCell
     struct CellIdentifier {
@@ -147,6 +148,7 @@ class SalesSellAllVC: UIViewController {
     If date in startBtnDate is greater than date in endBtnDate, then display start date must be less than or equal to end date in toast.
     */
     @IBAction func btnSearchDidClicked(_ sender: UIButton) {
+        isSearch=true
         if Date.getDate(fromString: (btnStartDate.titleLabel?.text)!)! <= Date.getDate(fromString: (btnEndDate.titleLabel?.text)!)! {
             if !isCustomer {
                 callSalesAPI()
@@ -177,17 +179,25 @@ class SalesSellAllVC: UIViewController {
             return
         }
      //   let nullString="null"
-        let test : [String : AnyObject] = ["null" : NSNull()]
+  //      let test : [String : AnyObject] = ["null" : NSNull()]
         
-        let prameterDic = ["RestaurantId":restaurentId,
+        var parameterDic = [String:Any]()
+        
+      /**  if isSearch {
+            parameterDic = ["RestaurantId":restaurentId,
+                           "fromdate":(btnStartDate.titleLabel?.text)!,
+                           "enddate":(btnEndDate.titleLabel?.text)!]
+        }else {**/
+        parameterDic = ["RestaurantId":restaurentId,
                     //      "startdate":(btnStartDate.titleLabel?.text)!,
                       //     "enddate":(btnEndDate.titleLabel?.text)!]
             "startdate":"null".replacingOccurrences(of: "\"", with: ""),
              "enddate":"null".replacingOccurrences(of: "\"", with: "")]
            // "startdate":test,
             //"enddate":test]
+       // }
         self.hudView.isHidden = false
-        APIClient.sales(paramters: prameterDic) { (result) in
+        APIClient.sales(paramters: parameterDic) { (result) in
             self.hudView.isHidden = true
             switch result {
             case .success(let sales):
@@ -382,6 +392,12 @@ extension SalesSellAllVC:UITableViewDataSource {
             }
             cell.btnPhone.setTitle(topRestaurentData.contactNumber, for: .normal)
             cell.lblLetter.text = String((topRestaurentData.customerName?.first)!)
+            if(topRestaurentData.status=="Old"){
+                cell.lblNew.isHidden=true
+            }
+            else{
+                cell.lblNew.isHidden=false
+            }
         } else if let customers = customersData {
             let customer = customers.byDateSelected[indexPath.row]
             cell.lblName.text = customer.customerName
