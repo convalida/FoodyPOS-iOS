@@ -148,6 +148,19 @@ class SalesSellAllVC: UIViewController {
     If date in startBtnDate is greater than date in endBtnDate, then display start date must be less than or equal to end date in toast.
     */
     @IBAction func btnSearchDidClicked(_ sender: UIButton) {
+        if(btnStartDate.currentTitle=="mm/dd/yyyy" || btnEndDate.currentTitle=="mm/dd/yyyy"){
+            if(btnStartDate.currentTitle=="mm/dd/yyyy" && !(btnEndDate.currentTitle=="mm/dd/yyyy")){
+                self.showToast("Please select a start date")
+            }
+            if(!(btnStartDate.currentTitle=="mm/dd/yyyy") && btnEndDate.currentTitle=="mm/dd/yyyy"){
+                self.showToast("Please select an end date")
+            }
+            if(btnStartDate.currentTitle=="mm/dd/yyyy" && btnEndDate.currentTitle=="mm/dd/yyyy"){
+            self.showToast("Please select a date range")
+            }
+                return
+        }
+        else{
         isSearch=true
         if Date.getDate(fromString: (btnStartDate.titleLabel?.text)!)! <= Date.getDate(fromString: (btnEndDate.titleLabel?.text)!)! {
             if !isCustomer {
@@ -157,6 +170,7 @@ class SalesSellAllVC: UIViewController {
             }
         }else {
             self.showToast("Start date must be less than or equal to end date")
+        }
         }
     }
 
@@ -183,11 +197,11 @@ class SalesSellAllVC: UIViewController {
         
         var parameterDic = [String:Any]()
         
-      /**  if isSearch {
+        if isSearch {
             parameterDic = ["RestaurantId":restaurentId,
-                           "fromdate":(btnStartDate.titleLabel?.text)!,
+                           "startdate":(btnStartDate.titleLabel?.text)!,
                            "enddate":(btnEndDate.titleLabel?.text)!]
-        }else {**/
+        }else {
         parameterDic = ["RestaurantId":restaurentId,
                     //      "startdate":(btnStartDate.titleLabel?.text)!,
                       //     "enddate":(btnEndDate.titleLabel?.text)!]
@@ -195,10 +209,11 @@ class SalesSellAllVC: UIViewController {
              "enddate":"null".replacingOccurrences(of: "\"", with: "")]
            // "startdate":test,
             //"enddate":test]
-       // }
+        }
         self.hudView.isHidden = false
         APIClient.sales(paramters: parameterDic) { (result) in
             self.hudView.isHidden = true
+            print (result)
             switch result {
             case .success(let sales):
                 self.salesData = sales
