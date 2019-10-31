@@ -38,6 +38,7 @@ struct ByDateSelected: Codable {
     let totalOrders: String 
     ///Variable for CustomerId key
     let customerId: String
+    let status: String
     
      /**
     Enum is defined here. It assigns response keys of customer details to corresponding variables
@@ -53,6 +54,7 @@ struct ByDateSelected: Codable {
         case totalOrders = "TotalOrders"
         ///Assign CustomerId key to customerId value which displays customer id of customer
         case customerId  = "CustomerId"
+        case status = "Status"
     }
 }
 

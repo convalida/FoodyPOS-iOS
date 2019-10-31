@@ -34,6 +34,7 @@ class SalesSellAllVC: UIViewController {
     ///Instantiate hud view
     var hudView = UIView()
     var isSearch=false
+    var isWeekCustomer=false
     
     ///Structure for cell identifier for topSaleCell
     struct CellIdentifier {
@@ -73,6 +74,11 @@ class SalesSellAllVC: UIViewController {
         btnEndDate.setTitle("mm/dd/yyyy", for: .normal)
         if isCustomer == true {
             btnTitle.setTitle("Customers", for: .normal)
+          /**  if(isWeekCustomer){
+                let lastMon = Date.today().previous(.monday)
+                   btnStartDate.setTitle(lastMon.getDateString(), for: .normal)
+                   btnEndDate.setTitle(Date.todayDate, for: .normal)
+            }**/
             callCustomersAPI()
          //   isCustomer = true
         } else {
@@ -240,12 +246,24 @@ class SalesSellAllVC: UIViewController {
         guard let restaurentId = UserManager.restaurantID else {
             return
         }
-        let prameterDic = ["RestaurantId":restaurentId,
-                           "startdate":(btnStartDate.titleLabel?.text)!,
-                           "enddate":(btnEndDate.titleLabel?.text)!]
+        
+        var parameterDic = [String:Any]()
+        if(isSearch){
+            parameterDic = ["RestaurantId":restaurentId,
+             "StartDate":(btnStartDate.titleLabel?.text)!,
+             "EndDate":(btnEndDate.titleLabel?.text)!]
+        }
+        else{
+        parameterDic = ["RestaurantId":restaurentId,
+                           "StartDate":"null".replacingOccurrences(of: "\"", with: ""),
+                           "EndDate":"null".replacingOccurrences(of: "\"", with: "")]
+                          // "startdate":(btnStartDate.titleLabel?.text)!,
+                          // "enddate":(btnEndDate.titleLabel?.text)!]
+        }
+        
        
         self.hudView.isHidden = false
-        APIClient.customers(paramters: prameterDic) { (result) in
+        APIClient.customers(paramters: parameterDic) { (result) in
             self.hudView.isHidden = true
             switch result {
             case .success(let customers):
@@ -422,6 +440,12 @@ extension SalesSellAllVC:UITableViewDataSource {
             }
             cell.btnPhone.setTitle(customer.contactNo, for: .normal)
             cell.lblLetter.text = String((customer.customerName.first)!)
+            if(customer.status=="Old"){
+                cell.lblNew.isHidden=true
+            }
+            else{
+                cell.lblNew.isHidden=false
+            }
         }
         return cell
     }

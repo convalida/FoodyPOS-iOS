@@ -45,6 +45,18 @@ class UserManager {
                 self.isManager = false
             }
         }
+        if let acctId = user.acctId{
+            self.acctId=acctId
+        }
+    }
+    
+    public static var acctId:String? {
+        set(newValue){
+            UserDefaults.standard.setValue(newValue, forKey: "acctId")
+        }
+        get{
+            return UserDefaults.standard.value(forKey: "acctId") as? String
+        }
     }
     
     /// Get and set userName

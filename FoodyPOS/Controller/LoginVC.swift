@@ -165,6 +165,7 @@ class LoginVC: UIViewController {
                                         UserManager.email = self.txtEmail.text
                                         UserManager.password = self.txtPassword.text
                                         UserManager.isRemember = self.isRemember
+                                        UserManager.acctId=user.acctId
                                         UserManager.isLogin = true
                                         UserManager.saveUserDataIntoDefaults(user: user)
                                         //Launch Dashboard View Controller

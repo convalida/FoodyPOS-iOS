@@ -89,13 +89,15 @@ class Global:NSObject {
     static func callReadNotificationApi(_ orderNo:String?) {
         //Validate all the field
         var parameterDic = [
-                            "deviceid":UserManager.token ?? ""
+                            "deviceid":UserManager.token ?? "",
+                            "AccountId":UserManager.acctId ?? ""
                             ] as [String:Any]
         if(orderNo != nil){
             parameterDic["orderno"] = orderNo!
         } else {
             parameterDic["orderno"] = ""
         }
+        
         
         //Call Read Notification API
         APIClient.readNotification(paramters: parameterDic) { (result) in

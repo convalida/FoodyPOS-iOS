@@ -687,6 +687,7 @@ extension DashboardVC:UITableViewDataSource {
         case 4,5:
             let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.SalesSellAllVC) as! SalesSellAllVC
             vc.isCustomer=true
+          //  vc.isWeekCustomer=true
             self.navigationController?.pushViewController(vc, animated: true)
             
         default:

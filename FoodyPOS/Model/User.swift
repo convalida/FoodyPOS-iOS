@@ -14,6 +14,7 @@ struct User:Codable {
     var message: String?
     ///Variable for result
     var result: String?
+    var acctId: String?
     ///Variable for UserName key
     var userName: String?
     ///Variable IsActive button
@@ -35,6 +36,7 @@ struct User:Codable {
         case message
         ///It displays appropriate result code in response, if api hit is successful, it returns 1 else it returns 0. Not compulsory to assign key to message here
         case result
+        case acctId = "AccountID"
         ///Assign UserName key to userName variable which displays email of user
         case userName = "UserName"
         ///Assign IsActive key to isActive variable which shows active status of user logged in
