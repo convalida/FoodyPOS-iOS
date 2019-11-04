@@ -114,6 +114,7 @@
 		F20E7EF42359931E00AF2F52 /* NotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20E7EF32359931E00AF2F52 /* NotificationsVC.swift */; };
 		F20E7EF82359BFF100AF2F52 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20E7EF72359BFF100AF2F52 /* NotificationCell.swift */; };
 		F244A2512342040100B931D0 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F244A2502342040100B931D0 /* MenuCell.swift */; };
+		F2DDF680236C26B600775473 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DDF67F236C26B600775473 /* Notifications.swift */; };
 		F2E5B7BA23264492000041A7 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E5B7B923264492000041A7 /* MenuVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -273,6 +274,7 @@
 		F20E7EF32359931E00AF2F52 /* NotificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsVC.swift; sourceTree = "<group>"; };
 		F20E7EF72359BFF100AF2F52 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		F244A2502342040100B931D0 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		F2DDF67F236C26B600775473 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		F2E5B7B923264492000041A7 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		F57BA99BE21094B31188D562 /* Pods-FoodyPOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodyPOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodyPOSUITests/Pods-FoodyPOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -427,6 +429,7 @@
 				2B58EEF9212E725100FB7F30 /* ResetPassword.swift */,
 				2B04691421A478F8002853AA /* CustomerDetail.swift */,
 				2B08600A21A719990059BD29 /* AllBestSeller.swift */,
+				F2DDF67F236C26B600775473 /* Notifications.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -937,6 +940,7 @@
 				04E84D85210C109600537500 /* ARSLineProgressExtensions.swift in Sources */,
 				2BC7BB1C2122B7DF00AF1CA0 /* Order.swift in Sources */,
 				04E84D89210C109600537500 /* ARSProgressLoader.swift in Sources */,
+				F2DDF680236C26B600775473 /* Notifications.swift in Sources */,
 				2B04691521A478F8002853AA /* CustomerDetail.swift in Sources */,
 				2BFBC6E121176AB800DF9A9D /* Global.swift in Sources */,
 			);

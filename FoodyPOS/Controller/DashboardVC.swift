@@ -311,6 +311,11 @@ class DashboardVC: UIViewController {
         showSalesVC()
     }
     
+    @IBAction func btnNotificationDidClicked(_ sender: UIButton) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.NotificationsVC) as! NotificationsVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     //Show the order list data UI
     /**
  Orderlist button clicked. Call showOrderVC method which instantiates OrderListVC

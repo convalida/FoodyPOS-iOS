@@ -291,6 +291,9 @@ class SalesSellAllVC: UIViewController {
     func reloadTable() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
+            if self.tableView.numberOfRows(inSection: 0) > 0 {
+                self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .none, animated: true)
+            }
         }
     }
     

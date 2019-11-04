@@ -50,13 +50,15 @@ enum APIRouter: URLRequestConvertible {
     ///Case if logout web service is hit
     case logout([String:Any])
     
+    case notifications([String:Any])
+    
     // MARK: - HTTPMethod
     /**
  Defines the HTTP method of request of login, readNotification, bestselleritems, sales, orderlist, customers, dashboard, report, addEmployee, changePassword, forgotPassword, employee, updateEmployee, orderSearch, resetPassword, customerDetails, getAllBestseller, logout is get request.
  */
     private var method: HTTPMethod {
         switch self {
-   case .login,.readNotification,.bestselleritems,.sales,.orderList,.customers,.dashboard,.report,.addEmployee,.changePassword,.forgotPassword,.employee,.updateEmployee,.orderSearch,.resetPasword,.customerDetails, .getAllBestSeller, .logout:
+   case .login,.readNotification,.bestselleritems,.sales,.orderList,.customers,.dashboard,.report,.addEmployee,.changePassword,.forgotPassword,.employee,.updateEmployee,.orderSearch,.resetPasword,.customerDetails, .getAllBestSeller, .logout, .notifications:
             return .get
         }
     }
@@ -125,6 +127,8 @@ enum APIRouter: URLRequestConvertible {
             ///If logout web service is hit, append base path to /LogoutByApp string
         case .logout:
             return basePath + "/LogoutByApp"
+        case .notifications:
+            return basePath + "/GetNotificationDetails"
         }
     }
     
@@ -256,6 +260,10 @@ enum APIRouter: URLRequestConvertible {
              If logout web service is hit, pass corresponding parameters specified in DashboardVC and LeftMenuVC
              */
         case .logout(let parameter):
+            print(parameter)
+            return parameter
+            
+        case .notifications(let parameter):
             print(parameter)
             return parameter
         }

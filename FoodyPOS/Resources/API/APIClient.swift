@@ -51,6 +51,10 @@ class APIClient {
         performRequest(route: APIRouter.bestselleritems(paramters), decoder: jsonDecoder, completion: completion)
     }
     
+    public static func notifications(parameters:[String:Any], completion:@escaping (Result<Notifications>) -> Void){
+        performRequest(route: APIRouter.notifications(parameters), decoder: jsonDecoder, completion: completion)
+    }
+    
     ///Route to sales method in APIRouter class which will perform the API calling. This returns Sale object.
     public static func sales(paramters:[String:Any], completion:@escaping (Result<Sale>) -> Void) {
         performRequest(route: APIRouter.sales(paramters), decoder: jsonDecoder, completion: completion)
@@ -143,5 +147,7 @@ class APIClient {
     public static func logout(paramters:[String:Any], completion:@escaping (Result<Logout>) -> Void) {
         performRequest(route: APIRouter.logout(paramters), decoder: jsonDecoder, completion: completion)
     }
+    
+   
 }
 

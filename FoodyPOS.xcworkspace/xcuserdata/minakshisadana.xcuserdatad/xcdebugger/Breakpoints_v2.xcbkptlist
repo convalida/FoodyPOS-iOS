@@ -58,7 +58,7 @@
                   moduleName = "FoodyPOS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/minakshisadana/Desktop/FoodyPOSMinakshi/FoodyPOS/Resources/Global.swift"
-                  timestampString = "594218418.5137351"
+                  timestampString = "594563470.234274"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "106"
@@ -73,7 +73,7 @@
                   moduleName = "FoodyPOS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/minakshisadana/Desktop/FoodyPOSMinakshi/FoodyPOS/Resources/Global.swift"
-                  timestampString = "594218418.516664"
+                  timestampString = "594563470.237618"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "106"
@@ -81,6 +81,38 @@
                   offsetFromSymbolStart = "428">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodyPOS/Controller/TopSaleVC.swift"
+            timestampString = "594391823.507506"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "callSalesAPI()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodyPOS/Controller/SalesSellAllVC.swift"
+            timestampString = "594563468.09312"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "422"
+            endingLineNumber = "422"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
