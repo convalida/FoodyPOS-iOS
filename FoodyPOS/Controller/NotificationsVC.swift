@@ -9,9 +9,11 @@
 import UIKit
 
 class NotificationsVC: UIViewController {
+   
+    @IBOutlet weak var viewTop: UIView!
+    
     @IBOutlet var tableView:UITableView!
     //let data: [String] = ["kirit", "kevin", "hitesh"]
-    @IBOutlet weak var viewTop: UIView!
     
     var notificationsData:Notifications?
     var hudView = UIView()
@@ -36,7 +38,7 @@ class NotificationsVC: UIViewController {
         if(Global.isIpad){
             tableView.tableFooterView?.frame.size.height = 100
         }
-       initHudView()
+  //     initHudView()
         callNotificationsAPI()
 
         // Do any additional setup after loading the view.
@@ -49,6 +51,9 @@ class NotificationsVC: UIViewController {
         }**/
     }
     
+    @IBAction func btnBackDidClick(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -58,7 +63,7 @@ class NotificationsVC: UIViewController {
     func initHudView(){
         hudView.backgroundColor = UIColor.white
         self.view.addSubview(hudView)
-        hudView.translatesAutoresizingMaskIntoConstraints=true
+        hudView.translatesAutoresizingMaskIntoConstraints=false
         hudView.topAnchor.constraint(equalTo: viewTop.bottomAnchor).isActive = true
         hudView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         hudView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
@@ -80,9 +85,7 @@ class NotificationsVC: UIViewController {
     */
     
     
-    @IBAction func btnBackDidClick(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
+    
     
     func reloadTable() {
         DispatchQueue.main.async {
@@ -98,7 +101,7 @@ class NotificationsVC: UIViewController {
            return
         }
         let parameterDic = ["AccountId":accountId]
-        self.hudView.isHidden=false
+       self.hudView.isHidden=false
         APIClient.notifications(parameters: parameterDic){ (result) in
             self.hudView.isHidden=true
             print(result)
@@ -170,6 +173,7 @@ extension NotificationsVC:UITableViewDataSource{
           //  if let notification1=dataNotification.
             
             cell.lblNotification.text=dataNotification!.message
+            //cell.lblNotification.numberOfLines=2
             cell.lblTime.text=dataNotification!.orderDate+" "+dataNotification!.orderTime
         }
         

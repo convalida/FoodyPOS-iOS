@@ -22,7 +22,7 @@ struct NotificationDetails: Codable{
     let message: String
     let orderDate: String
     let orderTime: String
-    let deviceType: String
+   // let deviceType: String
     
     enum CodingKeys: String, CodingKey{
         case orderNo = "OrderNo"
@@ -30,6 +30,6 @@ struct NotificationDetails: Codable{
         case message = "Message"
         case orderDate = "OrderDate"
         case orderTime = "OrderTime"
-        case deviceType = "DeviceType"
+     //   case deviceType = "DeviceType"
     }
 }
