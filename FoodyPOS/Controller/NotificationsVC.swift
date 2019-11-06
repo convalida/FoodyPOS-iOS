@@ -182,13 +182,91 @@ extension NotificationsVC:UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      //  if let notificationsData = notificationsData?.notificationDetails[indexPath.row]{
-          //  if let orderNo = notificationsData.orderNo {
-            //    let vc = self.storyboard?.instantiateInitialViewController(withIdentifier: OrderDetailVC) as! OrderDetailVC
-            //}
-       // }
+        self.hudView.isHidden = false
+        if let notificationsData = notificationsData?.notificationDetails[indexPath.row]{
+            let orderNo = notificationsData.orderNo
+         //       let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.OrderDetailVC) as! OrderDetailVC
+           // vc.orderNo=notificationsData.orderNo
+           // self.navigationController?.pushViewController(vc, animated: true)
+           // }
+          //  callOrderListAPI(orderNo: <#T##String#>)
+            guard let restaurantId = UserManager.restaurantID else{
+                return
+            }
+            let parameterDic = ["RestaurantId":restaurantId,
+                                "startdate":"",
+                                "enddate":"",
+                                "ordernumber":orderNo]
+            
+            APIClient.orderSearch(paramters: parameterDic){(result) in
+                self.hudView.isHidden = true
+                switch result{
+                case .success(let order):
+                    if let resultCode = order.byOrderNumber.first?.resultCode{
+                        if resultCode == "0"{
+                            if let message = order.byOrderNumber.first?.message{
+                                self.showToast(message)
+                            }
+                        }
+                    }
+                    else{
+                        let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.OrderDetailVC) as! OrderDetailVC
+                        vc.onClick = order.byOrderNumber.first?.onClick
+                        vc.totalPrice = order.byOrderNumber.first?.totalPrices
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    }
+                case .failure(let error):
+                    if (error.localizedDescription == noDataMessage || error.localizedDescription == noDataMessage1){
+                        self.showAlert(title: kAppName, message: AppMessages.msgFailed)
+                    }
+                    else{
+                        self.showAlert(title: kAppName, message: error.localizedDescription)
+                    }
+                }
+                
+            }
+        }
+
+        }
     }
-}
+  /**  public func callOrderListAPI(orderNo: String){
+        guard let restaurantId = UserManager.restaurantID else{
+            return
+        }
+        let parameterDic = ["RestaurantId":restaurantId,
+                            "startdate":"",
+                            "enddate":"",
+                            "ordernumber":orderNo]
+        self.hudView.isHidden = false
+        APIClient.orderSearch(paramters: parameterDic){(result) in
+            self.hudView.isHidden = true
+            switch result{
+            case .success(let order):
+                if let resultCode = order.byOrderNumber.first?.resultCode{
+                    if resultCode == "0"{
+                                if let message = order.byOrderNumber.first?.message{
+                                    self.showToast(message)
+                        }
+                    }
+                }
+                else{
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.OrderDetailVC) as! OrderDetailVC
+                    vc.onClick = order.byOrderNumber.first?.onClick
+                    vc.totalPrice = order.byOrderNumber.first?.totalPrices
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+            case .failure(let error):
+                if (error.localizedDescription == noDataMessage || error.localizedDescription == noDataMessage1){
+                    self.showAlert(title: kAppName, message: AppMessages.msgFailed)
+                }
+                else{
+                    self.showAlert(title: kAppName, message: error.localizedDescription)
+                }
+            }
+            
+        }
+    }
+}**/
 
 extension NotificationsVC:UITableViewDelegate{
     func tableView(_tableView:UITableView, heightForRowAt indexPath: IndexPath) ->CGFloat{
