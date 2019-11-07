@@ -182,7 +182,8 @@ extension NotificationsVC:UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.hudView.isHidden = false
+        tableView.deselectRow(at: indexPath, animated: true)
+       
         if let notificationsData = notificationsData?.notificationDetails[indexPath.row]{
             let orderNo = notificationsData.orderNo
          //       let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.OrderDetailVC) as! OrderDetailVC
@@ -197,7 +198,7 @@ extension NotificationsVC:UITableViewDataSource{
                                 "startdate":"",
                                 "enddate":"",
                                 "ordernumber":orderNo]
-            
+             self.hudView.isHidden = false
             APIClient.orderSearch(paramters: parameterDic){(result) in
                 self.hudView.isHidden = true
                 switch result{
@@ -214,6 +215,7 @@ extension NotificationsVC:UITableViewDataSource{
                         vc.onClick = order.byOrderNumber.first?.onClick
                         vc.totalPrice = order.byOrderNumber.first?.totalPrices
                         self.navigationController?.pushViewController(vc, animated: true)
+                       // Global.callReadNotificationApi(orderNo)
                     }
                 case .failure(let error):
                     if (error.localizedDescription == noDataMessage || error.localizedDescription == noDataMessage1){
