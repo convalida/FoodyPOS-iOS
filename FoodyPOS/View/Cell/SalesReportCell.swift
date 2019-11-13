@@ -19,6 +19,13 @@ class SalesReportCell: UITableViewCell {
     @IBOutlet weak var lblOrder: UILabel!
     ///Outlet for price amount text on a day/week/month
     @IBOutlet weak var lblPrice: UILabel!
+    @IBOutlet weak var imgHeader: UIImageView!
+    @IBOutlet weak var lblHeaderDate: UILabel!
+    @IBOutlet weak var lblHeaderOrder: UILabel!
+    @IBOutlet weak var lblHeaderPrice: UILabel!
+    @IBOutlet weak var lblListNum: UILabel!
+    @IBOutlet weak var lblListPrice: UILabel!
+    @IBOutlet weak var btnListTime: UIButton!
     
     /**
      Prepares the receiver for service after it has been loaded from an Interface Builder archive, or nib file.

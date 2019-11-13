@@ -17,6 +17,10 @@ enum Selection {
     case monthly
 }
 
+/**struct StatusReport{
+    var isOpened = Bool()
+}**/
+
 ///Class for sales report view controller
 class SalesReportVC: UIViewController {
 
@@ -45,6 +49,8 @@ class SalesReportVC: UIViewController {
     ///Outlet for top view or navigation bar
     @IBOutlet weak var viewTop: UIView!
 
+   // var statusData = [StatusReport]()
+    
     ///Structure for reports instantiated
     var reportData:Report?
     ///Set selection to be daily by default
@@ -486,7 +492,7 @@ extension SalesReportVC:UITableViewDataSource {
     Return the cell.
     */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "salesReportCell") as? SalesReportCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "salesReportGrandCell") as? SalesReportCell else {
             return SalesReportCell()
         }
         switch selection {
