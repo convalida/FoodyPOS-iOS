@@ -7,6 +7,11 @@
 //
 
 import UIKit
+
+struct StatusReport{
+    var isOpened = Bool()
+}
+
 ///Enum for daily, weekly and monthly selection
 enum Selection {
     ///Case if daily tab was selected
@@ -17,8 +22,20 @@ enum Selection {
     case monthly
 }
 
-/**struct StatusReport{
-    var isOpened = Bool()
+
+//struct StatusDetail{
+ //   var isOpened = Bool()
+//}
+
+/**protocol StatusDetail {
+    var isCollapsible: Bool { get }
+    var isCollapsed: Bool { get set }
+}
+
+extension StatusDetail{
+    var isCollapsible: Bool{
+        return true
+    }
 }**/
 
 ///Class for sales report view controller
@@ -49,16 +66,24 @@ class SalesReportVC: UIViewController {
     ///Outlet for top view or navigation bar
     @IBOutlet weak var viewTop: UIView!
 
-   // var statusData = [StatusReport]()
+    
+    var statusReportData = [StatusReport]()
+  //  var statusDetail = [StatusDetail]()
+  //  var isCollapsible: Bool { get }
+  //  var isCollapsed: Bool { get set }
     
     ///Structure for reports instantiated
     var reportData:Report?
     ///Set selection to be daily by default
+    var dailyReport:Day?
+    var weeklyReport:Week?
+    var monthlyReport:Month?
     var selection:Selection = .daily
     ///Instantiate hud view
     var hudView = UIView()
     ///Set isSearch value to false by default
     var isSearch = false
+    var sectionCount = 0
     
     ///Set status bar to visible
     override var prefersStatusBarHidden: Bool {
@@ -389,15 +414,44 @@ class SalesReportVC: UIViewController {
         let report = getDayCount()
         lblTotalOrder.text = report.0
         lblTotalAmount.text = "$" + report.1
+       /** if let dayReports = dailyReport{
+            if let date = dayReports.byDate{
+                for _ in 0...date.count{
+                    var status = StatusReport()
+                    status.isOpened = false
+                    statusReportData.append(status)
+                }
+            }
+        }**/
+        if let reports = reportData{
+          //  if let days = reports.day{
+            if let date = dailyReport?.byDate{
+                for _ in 0...date.count{
+                    var status = StatusReport()
+                    status.isOpened = false
+                    statusReportData.append(status)
+                }
+        }
     }
-    
+    }
+  //  }
     /**
     This method is called, when weekly button is clicked. Call getWeekCount method and set total no. of orders and total amount to corresponding text fields.
     */
     func setWeekData() {
+       // if let reports = reportData{
         let report = getWeekCount()
         lblTotalOrder.text = report.0
         lblTotalAmount.text = "$" + report.1
+        if let weekReports = weeklyReport{
+            if let week = weekReports.byWeekDate{
+                for _ in 0...week.count{
+                    var status = StatusReport()
+                    status.isOpened = false
+                    statusReportData.append(status)
+                }
+            }
+        }
     }
     
     /**
@@ -407,6 +461,15 @@ class SalesReportVC: UIViewController {
         let report = getMonthCount()
         lblTotalOrder.text = report.0
         lblTotalAmount.text = "$" + report.1
+        if let monthReports = monthlyReport{
+            if let month = monthReports.byMonthDate{
+                for _ in 0...month.count{
+                    var status = StatusReport()
+                    status.isOpened = false
+                    statusReportData.append(status)
+                }
+            }
+        }
     }
 }
 
@@ -458,6 +521,8 @@ extension SalesReportVC:UITableViewDataSource {
         noDataLbl.textAlignment = .center
         tableView.backgroundView = noDataLbl
         
+       // tableView(<#T##tableView: UITableView##UITableView#>, numberOfRowsInSection: <#T##Int#>)
+        
         return numberOfSection
     }
     
@@ -469,15 +534,71 @@ extension SalesReportVC:UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch selection {
         case .daily:
+        //     if (statusReportData[section].isOpened){
+            print(section)
             if let report = reportData {
-                return report.day.count
+                if (statusReportData[section].isOpened){
+                    
+                }
+                
+            //    switch (section){
+              //  case 0:
+               
+                       /** if let dayReport = dailyReport{
+                            if let dates = dayReport.byDate{
+                              // if (statusDetail[dates].isOpened){
+                               // }
+                              //  if(dates.)
+                               // let date = Day
+                              //  if(dates.isCollapsed){
+                                    
+                                //}
+                             //   sectionCount = 2
+                                return dates.count+1
+                            }
+                        }**/
+                 return report.day.count
+                   // }
+                
+                    
+               /** case 1:
+                    if(statusData[section].isOpened){
+                        
+                    }**/
+              //  default : 0
+                //}
+                
+                
+               /** if let dayReport = dailyReport{
+                    if let date = dayReport.byDate{
+                        if let orderNumber = date[section].orderDetails{
+                            return orderNumber.count+1
+                        }
+                    }
+                }**/
+                
             }
+            return 1
         case .weekly:
             if let report = reportData {
+             /**   if(statusData[section].isOpened){
+                    if let weekReport = weeklyReport{
+                        if let weeks = weekReport.byWeekDate{
+                            return weeks.count+1
+                        }
+                    }
+                }**/
                 return report.week.count
             }
         case .monthly:
             if let report = reportData {
+             /**   if(statusData[section].isOpened){
+                    if let monthReport = monthlyReport{
+                        if let months = monthReport.byMonthDate{
+                            return months.count+1
+                        }
+                    }
+                }**/
                 return report.month.count
             }
         }
@@ -492,12 +613,14 @@ extension SalesReportVC:UITableViewDataSource {
     Return the cell.
     */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       // if(indexPath)
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "salesReportGrandCell") as? SalesReportCell else {
             return SalesReportCell()
         }
         switch selection {
         case .daily:
             if let report = reportData {
+              //  if let dayReport = dailyReport{
                 let day = report.day[indexPath.row]
                 cell.lblDay.text = day.day
                 if day.totalsOrders == "1" {
@@ -508,6 +631,7 @@ extension SalesReportVC:UITableViewDataSource {
                 if let amt = Double(day.totalsales) {
                     cell.lblPrice.text = "$" + "\(amt.rounded(toPlaces: 2))"
                 }
+         //   }
             }
         case .weekly:
             if let report = reportData {

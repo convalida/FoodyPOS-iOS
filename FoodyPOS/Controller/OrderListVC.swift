@@ -383,6 +383,7 @@ extension OrderListVC:UITableViewDataSource {
     Return 1 by default for parent row.
     */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(section)
         if statusData[section].isOpened {
             if let order = orderData {
                 if let date = order.date {
