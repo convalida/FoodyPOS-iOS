@@ -19,6 +19,7 @@ class SalesReportCell: UITableViewCell {
     @IBOutlet weak var lblOrder: UILabel!
     ///Outlet for price amount text on a day/week/month
     @IBOutlet weak var lblPrice: UILabel!
+    @IBOutlet weak var imgGrandparent: UIImageView!
     @IBOutlet weak var imgHeader: UIImageView!
     @IBOutlet weak var lblHeaderDate: UILabel!
     @IBOutlet weak var lblHeaderOrder: UILabel!

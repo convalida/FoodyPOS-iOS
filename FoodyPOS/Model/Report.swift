@@ -11,11 +11,11 @@ import Foundation
 ///Structure for Report
 struct Report: Codable {
     ///Variable for Day structure
-    let day: [Day]
+    let day: [Day]?
     ///Variable for Week structure
-    let week: [Week]
+    let week: [Week]?
     ///Variable for Month structure
-    let month: [Month]
+    let month: [Month]?
     
     /**
     Enum is defined here. It assigns response keys of root object to corresponding variables

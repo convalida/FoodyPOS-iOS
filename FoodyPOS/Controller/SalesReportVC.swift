@@ -78,6 +78,9 @@ class SalesReportVC: UIViewController {
     var dailyReport:Day?
     var weeklyReport:Week?
     var monthlyReport:Month?
+    var dayByDate:ByDate?
+    var weekByDate:ByWeekDate?
+    var monthByDate:ByMonthDate?
     var selection:Selection = .daily
     ///Instantiate hud view
     var hudView = UIView()
@@ -115,6 +118,7 @@ class SalesReportVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         initDate()
+       
         
         imgDaily.tintAdjustmentMode = .normal
         imgWeekly.tintAdjustmentMode = .normal
@@ -127,7 +131,10 @@ class SalesReportVC: UIViewController {
         lblWeekly.textColor = UIColor.black
         lblMonthly.textColor = UIColor.black
         
+        if reportData == nil {
         callReportAPI()
+        }
+         
     }
     
     ///Sent to the view controller when the app receives a memory warning.
@@ -237,7 +244,7 @@ class SalesReportVC: UIViewController {
     */
     @IBAction func btnWeeklyDidClicked(_ sender: UIButton) {
         setStartDate()
-        setWeekData()
+        //setWeekData()
         selection = .weekly
         imgDaily.tintColor = UIColor.black
         imgWeekly.tintColor = UIColor.themeColor
@@ -254,7 +261,7 @@ class SalesReportVC: UIViewController {
     */
     @IBAction func btnMonthlyDidClicked(_ sender: UIButton) {
         setStartDate()
-        setMonthData()
+      //  setMonthData()
         selection = .monthly
         imgDaily.tintColor = UIColor.black
         imgWeekly.tintColor = UIColor.black
@@ -290,6 +297,25 @@ class SalesReportVC: UIViewController {
         }
     }
     
+    func initData() {
+        if let reports = reportData{
+            if let dailySection = reports.day{
+                /** let date = dailyReport?.byDate
+                 for _ in 0...date!.count{
+                 var status = StatusReport()
+                 status.isOpened = false
+                 statusReportData.append(status)
+                 }**/
+                for _ in 0...dailySection.count{
+                    var status = StatusReport()
+                    status.isOpened = false
+                    statusReportData.append(status)
+                    
+                }
+            }
+        }
+    }
+    
     /**
     If restaurant id is not null in UserManager, return. If isSearch value is true, i.e., search button is clicked, parameters will contain
     restaurant id from UserManager, fromDate from btnStartDate text, endDate from btnEndDate text.
@@ -319,6 +345,7 @@ class SalesReportVC: UIViewController {
             switch result {
             case .success(let report):
                 self.reportData = report
+             //   self.initData()
                 self.setDayData()
                 self.reloadTable()
                 
@@ -353,7 +380,7 @@ class SalesReportVC: UIViewController {
            var totalOrders = 0
         var totalAmount = 0.0.rounded(toPlaces: 2)
         if let reports = reportData {
-            for report in reports.day {
+            for report in reports.day! {
                 if let order = Int(report.totalsOrders) {
                     totalOrders = totalOrders + order
                 }
@@ -374,7 +401,7 @@ class SalesReportVC: UIViewController {
         var totalOrders = 0
         var totalAmount = 0.0
         if let reports = reportData {
-            for report in reports.week {
+            for report in reports.week! {
                 if let order = Int(report.totalsOrders) {
                     totalOrders = totalOrders + order
                 }
@@ -395,7 +422,7 @@ class SalesReportVC: UIViewController {
         var totalOrders = 0
         var totalAmount = 0.0
         if let reports = reportData {
-            for report in reports.month {
+            for report in reports.month! {
                 if let order = Int(report.totalsOrders) {
                     totalOrders = totalOrders + order
                 }
@@ -423,18 +450,9 @@ class SalesReportVC: UIViewController {
                 }
             }
         }**/
-        if let reports = reportData{
-          //  if let days = reports.day{
-            if let date = dailyReport?.byDate{
-                for _ in 0...date.count{
-                    var status = StatusReport()
-                    status.isOpened = false
-                    statusReportData.append(status)
-                }
-        }
+        
+    
     }
-    }
-  //  }
     /**
     This method is called, when weekly button is clicked. Call getWeekCount method and set total no. of orders and total amount to corresponding text fields.
     */
@@ -471,8 +489,8 @@ class SalesReportVC: UIViewController {
             }
         }
     }
-}
 
+}
 extension SalesReportVC:UITableViewDataSource {
     /**
     This method returns no. of sections. Initialized no. of sections to 1. Set width and height of noDataLbl to width and height of table view.
@@ -488,7 +506,7 @@ extension SalesReportVC:UITableViewDataSource {
         switch selection {
         case .daily:
             if let report = reportData {
-                if report.day.count == 0 {
+                if report.day!.count == 0 {
                     noDataLbl.text = "No daily data found"
                 }else {
                     noDataLbl.text = ""
@@ -498,7 +516,7 @@ extension SalesReportVC:UITableViewDataSource {
             }
         case .weekly:
             if let report = reportData {
-                if report.week.count == 0 {
+                if report.week!.count == 0 {
                     noDataLbl.text = "No weekly data found"
                 }else {
                     noDataLbl.text = ""
@@ -508,7 +526,7 @@ extension SalesReportVC:UITableViewDataSource {
             }
         case .monthly:
             if let report = reportData {
-                if report.month.count == 0 {
+                if report.month!.count == 0 {
                     noDataLbl.text = "No monthly data found"
                 }else {
                     noDataLbl.text = ""
@@ -534,12 +552,24 @@ extension SalesReportVC:UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch selection {
         case .daily:
-        //     if (statusReportData[section].isOpened){
-            print(section)
+          //  if (statusReportData[section].isOpened){
+         //   print(section)
+         //   if (statusReportData[section].isOpened){
             if let report = reportData {
-                if (statusReportData[section].isOpened){
+                return report.day!.count
+            }
+              //  if (statusReportData[section].isOpened){
                     
-                }
+               // }
+                
+                /**    if let  daily = report.day{
+                        if let date = daily[section].byDate{
+                            return date.count+1
+                    }
+                }**/
+                
+          //  }
+          //  return 1
                 
             //    switch (section){
               //  case 0:
@@ -557,8 +587,8 @@ extension SalesReportVC:UITableViewDataSource {
                                 return dates.count+1
                             }
                         }**/
-                 return report.day.count
-                   // }
+                
+                //   }
                 
                     
                /** case 1:
@@ -576,9 +606,7 @@ extension SalesReportVC:UITableViewDataSource {
                         }
                     }
                 }**/
-                
-            }
-            return 1
+            
         case .weekly:
             if let report = reportData {
              /**   if(statusData[section].isOpened){
@@ -588,7 +616,7 @@ extension SalesReportVC:UITableViewDataSource {
                         }
                     }
                 }**/
-                return report.week.count
+                return report.week!.count
             }
         case .monthly:
             if let report = reportData {
@@ -599,7 +627,7 @@ extension SalesReportVC:UITableViewDataSource {
                         }
                     }
                 }**/
-                return report.month.count
+                return report.month!.count
             }
         }
         return 0
@@ -613,7 +641,7 @@ extension SalesReportVC:UITableViewDataSource {
     Return the cell.
     */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       // if(indexPath)
+        if(indexPath.row == 0){
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "salesReportGrandCell") as? SalesReportCell else {
             return SalesReportCell()
         }
@@ -621,7 +649,15 @@ extension SalesReportVC:UITableViewDataSource {
         case .daily:
             if let report = reportData {
               //  if let dayReport = dailyReport{
-                let day = report.day[indexPath.row]
+                if let day = report.day{
+                /**    if statusReportData[indexPath.section].isOpened{
+                    cell.imgGrandparent.transform = CGAffineTransform(rotationAngle: .pi)
+                    }
+                    else{
+                    cell.imgGrandparent.transform = CGAffineTransform.identity
+                    }**/
+                
+                let day = report.day![indexPath.row]
                 cell.lblDay.text = day.day
                 if day.totalsOrders == "1" {
                     cell.lblOrder.text = day.totalsOrders + " order"
@@ -631,11 +667,11 @@ extension SalesReportVC:UITableViewDataSource {
                 if let amt = Double(day.totalsales) {
                     cell.lblPrice.text = "$" + "\(amt.rounded(toPlaces: 2))"
                 }
-         //   }
+            }
             }
         case .weekly:
             if let report = reportData {
-                let week = report.week[indexPath.row]
+                let week = report.week![indexPath.row]
                 cell.lblDay.text = week.week
                 cell.lblOrder.text = week.totalsOrders + " orders"
                 if let amt = Double(week.totalsales) {
@@ -644,7 +680,7 @@ extension SalesReportVC:UITableViewDataSource {
             }
         case .monthly:
             if let report = reportData {
-                let month = report.month[indexPath.row]
+                let month = report.month![indexPath.row]
                 cell.lblDay.text = month.month
                 cell.lblOrder.text = month.totalsOrders + " orders"
                 if let amt = Double(month.totalsales) {
@@ -654,9 +690,72 @@ extension SalesReportVC:UITableViewDataSource {
         }
         return cell
     }
+        
+        else if (indexPath.row == 1){
+        //else{
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "salesReportParentCell") as? SalesReportCell else{
+                return SalesReportCell()
+            }
+           /** switch selection {
+            case .daily:
+                if let report = reportData{
+                    if let day = report.day{
+                       // if let dayByDate = day.
+                        
+                }
+            case .weekly:
+            }**/
+            if let reports = reportData{
+                switch selection{
+                case .daily:
+                    if let daily = reports.day{
+                        if let dates = daily[indexPath.section].byDate{
+                            //if let date = dates[indexPath.row-1].o
+                            if statusReportData[indexPath.section].isOpened{
+                                cell.imgHeader.transform = CGAffineTransform(rotationAngle: .pi)
+                            }
+                            else{
+                            cell.imgHeader.transform = CGAffineTransform.identity
+                            }
+                            if let date = dates[indexPath.row-1].orderDate{
+                            cell.lblHeaderDate.text = date
+                            }
+                            if let amount = dates[indexPath.row-1].totalSales{
+                            cell.lblHeaderOrder.text = amount
+                            }
+                            if let numOfOrders = dates[indexPath.row-1].totalOrders{
+                            cell.lblHeaderPrice.text = numOfOrders
+                            }
+                        }
+                    }
+                case .weekly:
+                    if let weekly = reports.week{
+                    }
+                case .monthly:
+                    if let monthly = reports.month{
+                    }
+            }
+         return cell
+        }
+    }
+  return SalesReportCell()
 }
-
+}
 extension SalesReportVC:UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0{
+          /**  if statusReportData[indexPath.section].isOpened {
+            statusReportData[indexPath.section].isOpened = false
+            }
+            else{
+            statusReportData[indexPath.section].isOpened = true
+            }
+            let sections = IndexSet(integer:indexPath.section)
+            tableView.reloadSections(sections, with: .none)**/
+        }
+    }
+    
     /**
      Asks the delegate for the height to use for a row in a specified location. If device is iPad, return height 140 else return 90
     */
