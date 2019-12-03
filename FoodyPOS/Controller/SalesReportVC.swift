@@ -345,7 +345,7 @@ class SalesReportVC: UIViewController {
             switch result {
             case .success(let report):
                 self.reportData = report
-             //   self.initData()
+               self.initData()
                 self.setDayData()
                 self.reloadTable()
                 
@@ -508,11 +508,14 @@ extension SalesReportVC:UITableViewDataSource {
             if let report = reportData {
                 if report.day!.count == 0 {
                     noDataLbl.text = "No daily data found"
+                    return 0
                 }else {
                     noDataLbl.text = ""
+                    return report.day!.count
                 }
             }else {
                 noDataLbl.text = "No daily data found"
+                return 0
             }
         case .weekly:
             if let report = reportData {
@@ -553,11 +556,18 @@ extension SalesReportVC:UITableViewDataSource {
         switch selection {
         case .daily:
           //  if (statusReportData[section].isOpened){
-         //   print(section)
-         //   if (statusReportData[section].isOpened){
+           print(section)
+            if (statusReportData[section].isOpened){
             if let report = reportData {
-                return report.day!.count
+                if let day = report.day{
+                    if let date = day[section].byDate{
+                        return date.count+1
+                    }
+                }
+            //    return report.day!.count
             }
+            }
+            return 1
               //  if (statusReportData[section].isOpened){
                     
                // }
@@ -650,12 +660,12 @@ extension SalesReportVC:UITableViewDataSource {
             if let report = reportData {
               //  if let dayReport = dailyReport{
                 if let day = report.day{
-                /**    if statusReportData[indexPath.section].isOpened{
+                    if statusReportData[indexPath.section].isOpened{
                     cell.imgGrandparent.transform = CGAffineTransform(rotationAngle: .pi)
                     }
                     else{
                     cell.imgGrandparent.transform = CGAffineTransform.identity
-                    }**/
+                    }
                 
                 let day = report.day![indexPath.row]
                 cell.lblDay.text = day.day
@@ -709,22 +719,28 @@ extension SalesReportVC:UITableViewDataSource {
                 switch selection{
                 case .daily:
                     if let daily = reports.day{
+                       // if statusReportData[indexPath.section].isOpened{
+                       // cell.imgHeader.transform = CGAffineTransform(rotationAngle: .pi)
+                        //}
+                        //else{
+                       // cell.imgHeader.transform = CGAffineTransform.identity
+                        //}
                         if let dates = daily[indexPath.section].byDate{
                             //if let date = dates[indexPath.row-1].o
-                            if statusReportData[indexPath.section].isOpened{
+                      //      if statusReportData[indexPath.section].isOpened{
                                 cell.imgHeader.transform = CGAffineTransform(rotationAngle: .pi)
-                            }
-                            else{
+                        //    }
+                          //  else{
                             cell.imgHeader.transform = CGAffineTransform.identity
-                            }
+                           // }
                             if let date = dates[indexPath.row-1].orderDate{
                             cell.lblHeaderDate.text = date
                             }
                             if let amount = dates[indexPath.row-1].totalSales{
-                            cell.lblHeaderOrder.text = amount
+                            cell.lblHeaderOrder.text = "$" + amount
                             }
                             if let numOfOrders = dates[indexPath.row-1].totalOrders{
-                            cell.lblHeaderPrice.text = numOfOrders
+                            cell.lblHeaderPrice.text = numOfOrders + " order(s)"
                             }
                         }
                     }
@@ -745,14 +761,14 @@ extension SalesReportVC:UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0{
-          /**  if statusReportData[indexPath.section].isOpened {
+            if statusReportData[indexPath.section].isOpened {
             statusReportData[indexPath.section].isOpened = false
             }
             else{
             statusReportData[indexPath.section].isOpened = true
             }
             let sections = IndexSet(integer:indexPath.section)
-            tableView.reloadSections(sections, with: .none)**/
+            tableView.reloadSections(sections, with: .none)
         }
     }
     
