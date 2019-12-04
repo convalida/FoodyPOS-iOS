@@ -313,6 +313,13 @@ class SalesReportVC: UIViewController {
                     
                 }
             }
+            if let weeklySection = reports.week{
+                for _ in 0...weeklySection.count{
+                var status  = StatusReport()
+                    status.isOpened = false
+                    statusReportData.append(status)
+                }
+            }
         }
     }
     
@@ -461,7 +468,7 @@ class SalesReportVC: UIViewController {
         let report = getWeekCount()
         lblTotalOrder.text = report.0
         lblTotalAmount.text = "$" + report.1
-        if let weekReports = weeklyReport{
+       /** if let weekReports = weeklyReport{
             if let week = weekReports.byWeekDate{
                 for _ in 0...week.count{
                     var status = StatusReport()
@@ -469,7 +476,7 @@ class SalesReportVC: UIViewController {
                     statusReportData.append(status)
                 }
             }
-        }
+        }**/
     }
     
     /**
@@ -521,11 +528,14 @@ extension SalesReportVC:UITableViewDataSource {
             if let report = reportData {
                 if report.week!.count == 0 {
                     noDataLbl.text = "No weekly data found"
+                    return 0
                 }else {
                     noDataLbl.text = ""
+                    return report.week!.count
                 }
             }else {
                 noDataLbl.text = "No weekly data found"
+                return 0
             }
         case .monthly:
             if let report = reportData {
@@ -618,6 +628,8 @@ extension SalesReportVC:UITableViewDataSource {
                 }**/
             
         case .weekly:
+            print(section)
+            if(statusReportData[section].isOpened){
             if let report = reportData {
              /**   if(statusData[section].isOpened){
                     if let weekReport = weeklyReport{
@@ -626,8 +638,15 @@ extension SalesReportVC:UITableViewDataSource {
                         }
                     }
                 }**/
-                return report.week!.count
+                if let week = report.week{
+                    if let date = week[section].byWeekDate{
+                    return date.count+1
+                    }
+                }
+             //   return report.week!.count
+                }
             }
+            return 1
         case .monthly:
             if let report = reportData {
              /**   if(statusData[section].isOpened){
@@ -681,11 +700,25 @@ extension SalesReportVC:UITableViewDataSource {
             }
         case .weekly:
             if let report = reportData {
-                let week = report.week![indexPath.row]
+              /**  let week = report.week![indexPath.row]
                 cell.lblDay.text = week.week
                 cell.lblOrder.text = week.totalsOrders + " orders"
                 if let amt = Double(week.totalsales) {
                     cell.lblPrice.text = "$" + "\(amt.rounded(toPlaces: 2))"
+                }**/
+                if let week = report.week{
+                    if(statusReportData[indexPath.section].isOpened){
+                        cell.imgGrandparent.transform = CGAffineTransform(rotationAngle: .pi)
+                    }
+                    else{
+                    cell.imgGrandparent.transform = CGAffineTransform.identity
+                    }
+                    let week = report.week![indexPath.section]
+                    cell.lblDay.text = week.week
+                    cell.lblOrder.text = week.totalsOrders + " orders"
+                    if let amt = Double(week.totalsales) {
+                        cell.lblPrice.text = "$" + "\(amt.rounded(toPlaces: 2))"
+                    }
                 }
             }
         case .monthly:
@@ -701,8 +734,8 @@ extension SalesReportVC:UITableViewDataSource {
         return cell
     }
         
-        else if (indexPath.row == 1){
-        //else{
+      //  else if (indexPath.row == 1){
+        else{
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "salesReportParentCell") as? SalesReportCell else{
                 return SalesReportCell()
             }
@@ -737,24 +770,37 @@ extension SalesReportVC:UITableViewDataSource {
                             cell.lblHeaderDate.text = date
                             }
                             if let amount = dates[indexPath.row-1].totalSales{
-                            cell.lblHeaderOrder.text = "$" + amount
+                            cell.lblHeaderPrice.text = "$" + amount
                             }
                             if let numOfOrders = dates[indexPath.row-1].totalOrders{
-                            cell.lblHeaderPrice.text = numOfOrders + " order(s)"
+                            cell.lblHeaderOrder.text = numOfOrders + " order(s)"
                             }
                         }
                     }
                 case .weekly:
                     if let weekly = reports.week{
+                        if let weekDates = weekly[indexPath.section].byWeekDate{
+                        cell.imgHeader.transform = CGAffineTransform.identity
+                            if let weekDate = weekDates[indexPath.row-1].orderDate{
+                            cell.lblHeaderDate.text = weekDate
+                            }
+                            if let amount = weekDates[indexPath.row-1].totalSales{
+                            cell.lblHeaderPrice.text = "$" + amount
+                            }
+                            if let numberOfOrders = weekDates[indexPath.row-1].totalOrders{
+                            cell.lblHeaderOrder.text = numberOfOrders + " order(s)"
+                            }
+                        }
                     }
                 case .monthly:
                     if let monthly = reports.month{
                     }
             }
-         return cell
+        // return cell
         }
+            return cell
     }
-  return SalesReportCell()
+  //return SalesReportCell()
 }
 }
 extension SalesReportVC:UITableViewDelegate {
