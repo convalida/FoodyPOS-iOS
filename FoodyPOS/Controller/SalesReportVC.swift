@@ -667,7 +667,7 @@ extension SalesReportVC:UITableViewDataSource {
                     cell.imgGrandparent.transform = CGAffineTransform.identity
                     }
                 
-                let day = report.day![indexPath.row]
+                let day = report.day![indexPath.section]
                 cell.lblDay.text = day.day
                 if day.totalsOrders == "1" {
                     cell.lblOrder.text = day.totalsOrders + " order"
@@ -777,8 +777,8 @@ extension SalesReportVC:UITableViewDelegate {
     */
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if Global.isIpad {
-            return 140.0
+            return 90.0
         }
-        return 90.0
+        return 70.0
     }
 }
