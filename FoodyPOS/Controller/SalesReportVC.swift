@@ -320,6 +320,13 @@ class SalesReportVC: UIViewController {
                     statusReportData.append(status)
                 }
             }
+            if let monthlySection = reports.month{
+                for _ in 0...monthlySection.count{
+                    var status = StatusReport()
+                    status.isOpened = false
+                    statusReportData.append(status)
+                }
+            }
         }
     }
     
@@ -486,7 +493,7 @@ class SalesReportVC: UIViewController {
         let report = getMonthCount()
         lblTotalOrder.text = report.0
         lblTotalAmount.text = "$" + report.1
-        if let monthReports = monthlyReport{
+       /** if let monthReports = monthlyReport{
             if let month = monthReports.byMonthDate{
                 for _ in 0...month.count{
                     var status = StatusReport()
@@ -494,7 +501,7 @@ class SalesReportVC: UIViewController {
                     statusReportData.append(status)
                 }
             }
-        }
+        }**/
     }
 
 }
@@ -541,11 +548,14 @@ extension SalesReportVC:UITableViewDataSource {
             if let report = reportData {
                 if report.month!.count == 0 {
                     noDataLbl.text = "No monthly data found"
+                    return 0
                 }else {
                     noDataLbl.text = ""
+                    return report.month!.count
                 }
             }else {
                 noDataLbl.text = "No monthly data found"
+                return 0
             }
         }
         noDataLbl.textColor = UIColor.themeColor
@@ -648,20 +658,22 @@ extension SalesReportVC:UITableViewDataSource {
             }
             return 1
         case .monthly:
-            if let report = reportData {
-             /**   if(statusData[section].isOpened){
-                    if let monthReport = monthlyReport{
-                        if let months = monthReport.byMonthDate{
-                            return months.count+1
+          //  if let report = reportData {
+                if(statusReportData[section].isOpened){
+                    if let report = reportData{
+                   // if let monthReport = monthlyReport{
+                        if let months = report.month{
+                            if let date = months[section].byMonthDate{
+                            return date.count+1
                         }
                     }
-                }**/
-                return report.month!.count
+              //  }
+                //return report.month!.count
             }
         }
-        return 0
+        return 1
     }
-    
+    }
     /**
     This method asks the data source for a cell to insert in a particular location of the table view. Set cell to SalesReportCell if cell identifier is salesReportCell, else set cell to an empty SalesReportCell (this happens very rarely).
     If daily was selected, if reportData has data, for each row index in daily, set order count and amount rounded to 2 decimal places in corresponding text field. In case of single order, the concatenated string is order else orders.
@@ -723,18 +735,26 @@ extension SalesReportVC:UITableViewDataSource {
             }
         case .monthly:
             if let report = reportData {
-                let month = report.month![indexPath.row]
+                if let month = report.month{
+                    if(statusReportData[indexPath.section].isOpened){
+                    cell.imgGrandparent.transform = CGAffineTransform(rotationAngle: .pi)
+                    }
+                    else{
+                    cell.imgGrandparent.transform = CGAffineTransform.identity
+                    }
+                let month = report.month![indexPath.section]
                 cell.lblDay.text = month.month
                 cell.lblOrder.text = month.totalsOrders + " orders"
                 if let amt = Double(month.totalsales) {
                     cell.lblPrice.text = "$" + "\(amt.rounded(toPlaces: 2))"
                 }
             }
+            }
         }
         return cell
     }
         
-      //  else if (indexPath.row == 1){
+     //   else if (indexPath.row == 1){
         else{
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "salesReportParentCell") as? SalesReportCell else{
                 return SalesReportCell()
@@ -794,12 +814,27 @@ extension SalesReportVC:UITableViewDataSource {
                     }
                 case .monthly:
                     if let monthly = reports.month{
+                        if let monthDates = monthly[indexPath.section].byMonthDate{
+                        cell.imgHeader.transform = CGAffineTransform.identity
+                            if let monthDate = monthDates[indexPath.row-1].orderDate{
+                            cell.lblHeaderDate.text = monthDate
+                            }
+                            if let amount = monthDates[indexPath.row-1].totalSales{
+                            cell.lblHeaderPrice.text = "$" + amount
+                            }
+                            if let numberOfOrders = monthDates[indexPath.row-1].totalOrders{
+                            cell.lblHeaderOrder.text = numberOfOrders + " order(s)"
+                            }
+                        }
                     }
             }
         // return cell
         }
             return cell
     }
+        /**else{
+            return
+        }**/
   //return SalesReportCell()
 }
 }
