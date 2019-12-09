@@ -522,7 +522,7 @@ extension SalesReportVC:UITableViewDataSource {
             if let report = reportData {
                 if report.day!.count == 0 {
                     noDataLbl.text = "No daily data found"
-                    return 0
+                    return numberOfSection
                 }else {
                     noDataLbl.text = ""
                     return report.day!.count
@@ -535,7 +535,7 @@ extension SalesReportVC:UITableViewDataSource {
             if let report = reportData {
                 if report.week!.count == 0 {
                     noDataLbl.text = "No weekly data found"
-                    return 0
+                    return numberOfSection
                 }else {
                     noDataLbl.text = ""
                     return report.week!.count
@@ -577,6 +577,7 @@ extension SalesReportVC:UITableViewDataSource {
         case .daily:
           //  if (statusReportData[section].isOpened){
            print(section)
+         //  if(section>0){
             if (statusReportData[section].isOpened){
             if let report = reportData {
                 if let day = report.day{
@@ -587,7 +588,12 @@ extension SalesReportVC:UITableViewDataSource {
             //    return report.day!.count
             }
             }
+          // }
             return 1
+       /** }
+           else{
+            return 0
+            }**/
               //  if (statusReportData[section].isOpened){
                     
                // }
