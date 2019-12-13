@@ -71,6 +71,7 @@ class SalesReportVC: UIViewController {
   //  var statusDetail = [StatusDetail]()
   //  var isCollapsible: Bool { get }
   //  var isCollapsed: Bool { get set }
+           var status = StatusReport()
     
     ///Structure for reports instantiated
     var reportData:Report?
@@ -87,6 +88,7 @@ class SalesReportVC: UIViewController {
     ///Set isSearch value to false by default
     var isSearch = false
     var sectionCount = 0
+    var expandedSectionHeaderNumber: Int = -1
     
     ///Set status bar to visible
     override var prefersStatusBarHidden: Bool {
@@ -235,7 +237,11 @@ class SalesReportVC: UIViewController {
         lblDaily.textColor = UIColor.themeColor
         lblWeekly.textColor = UIColor.black
         lblMonthly.textColor = UIColor.black
+        
+        
         reloadTable()
+        
+        
     }
     
     /**
@@ -252,7 +258,24 @@ class SalesReportVC: UIViewController {
         lblDaily.textColor = UIColor.black
         lblWeekly.textColor = UIColor.themeColor
         lblMonthly.textColor = UIColor.black
+        
+
+     //   status.isOpened = false
+     //   statusReportData.append(status)
+  
+        //self.tableView.reloadData()
+       // initData()
+ //        reloadTable()
+       
+      /**     if statusReportData.isOpened {
+                statusReportData[indexPath.section].isOpened = false
+            }
+            
+            let sections = IndexSet(integer:indexPath.section)
+            tableView.reloadSections(sections, with: .none)**/
+       // }
         reloadTable()
+      //  self.tableView.reloadData()
     }
     
      /**
@@ -269,7 +292,39 @@ class SalesReportVC: UIViewController {
         lblDaily.textColor = UIColor.black
         lblWeekly.textColor = UIColor.black
         lblMonthly.textColor = UIColor.themeColor
+     //   self.tableView.reloadData()
+       // tableView.beginUpdates()
+     //   tableView.endUpdates()
+       // if(statusReportData[].isOpened){
+       
+       // }
+       //  tableViewCollapseSections()
         reloadTable()
+    }
+    
+    func tableViewCollapseSections(){
+    print("Collapse all open sections")
+       // status.isOpened
+        self.expandedSectionHeaderNumber = -1
+        status.isOpened = false
+      //  var indexesPath = [IndexPath]()
+       // NSRange range = NSMakeRange(0, 1)
+      //  tableView.reloadSections(NSIndexSet *)sections
+       // self.tableView.beginUpdates()
+       // self.tableView.endUpdates()
+        if let report = reportData{
+            if report.month?.count != 0{
+             //   let indexSet = NSMutableIndexSet()
+              //  indexSet.add(report.month!.count)
+             //   tableView.reloadSections(IndexSet indexSet, with )
+                let indexSet = IndexSet(integersIn: 0..<report.month!.count)
+                self.tableView.reloadData()
+                self.tableView.reloadSections(indexSet, with: .fade)
+
+            }
+        }
+        
+    
     }
 
     /**
@@ -383,6 +438,8 @@ class SalesReportVC: UIViewController {
                 self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .none, animated: true)
             }
         }
+      //  initData()
+        
     }
     
     /**
@@ -579,6 +636,7 @@ extension SalesReportVC:UITableViewDataSource {
            print(section)
          //  if(section>0){
             if (statusReportData[section].isOpened){
+                
             if let report = reportData {
                 if let day = report.day{
                     if let date = day[section].byDate{
@@ -645,7 +703,7 @@ extension SalesReportVC:UITableViewDataSource {
             
         case .weekly:
             print(section)
-            if(statusReportData[section].isOpened){
+           
             if let report = reportData {
              /**   if(statusData[section].isOpened){
                     if let weekReport = weeklyReport{
@@ -655,24 +713,44 @@ extension SalesReportVC:UITableViewDataSource {
                     }
                 }**/
                 if let week = report.week{
+                     if(statusReportData[section].isOpened){
+                       // self.expandedSectionHeaderNumber=section
                     if let date = week[section].byWeekDate{
                     return date.count+1
                     }
                 }
+                   /**  else{
+                       // cell.imgGrandparent.transform = CGAffineTransform.identity
+                    return 1
+                    }**/
              //   return report.week!.count
                 }
             }
+          /**  else{
+                if let report = reportData{
+                    if let week = report.week{
+                    return week.count
+                    }
+                }
+            }**/
             return 1
         case .monthly:
           //  if let report = reportData {
-                if(statusReportData[section].isOpened){
+            
                     if let report = reportData{
                    // if let monthReport = monthlyReport{
                         if let months = report.month{
+                            if(statusReportData[section].isOpened){
+                           //     self.expandedSectionHeaderNumber=section
                             if let date = months[section].byMonthDate{
                             return date.count+1
                         }
                     }
+                         /**   else{
+                                if(self.expandedSectionHeaderNumber == -1){
+                            return 0
+                                }
+                            }**/
               //  }
                 //return report.month!.count
             }
@@ -688,6 +766,9 @@ extension SalesReportVC:UITableViewDataSource {
     Return the cell.
     */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       // if(!status.isOpened){
+          // let indexPath.init(row: <#T##Int#>, section: <#T##Int#>)
+       // }
         if(indexPath.row == 0){
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "salesReportGrandCell") as? SalesReportCell else {
             return SalesReportCell()
