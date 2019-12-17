@@ -579,40 +579,68 @@ extension SalesReportVC:UITableViewDataSource {
             if let report = reportData {
                 if report.day!.count == 0 {
                     noDataLbl.text = "No daily data found"
-                    return numberOfSection
+                    noDataLbl.textColor = UIColor.themeColor
+                    noDataLbl.textAlignment = .center
+                    tableView.backgroundView = noDataLbl
+                   return 1
                 }else {
                     noDataLbl.text = ""
+                    noDataLbl.textColor = UIColor.themeColor
+                    noDataLbl.textAlignment = .center
+                    tableView.backgroundView = noDataLbl
                     return report.day!.count
                 }
             }else {
                 noDataLbl.text = "No daily data found"
-                return 0
+                noDataLbl.textColor = UIColor.themeColor
+                noDataLbl.textAlignment = .center
+                tableView.backgroundView = noDataLbl
+                return numberOfSection
+                
             }
         case .weekly:
             if let report = reportData {
                 if report.week!.count == 0 {
                     noDataLbl.text = "No weekly data found"
+                    noDataLbl.textColor = UIColor.themeColor
+                    noDataLbl.textAlignment = .center
+                    tableView.backgroundView = noDataLbl
                     return numberOfSection
                 }else {
                     noDataLbl.text = ""
+                    noDataLbl.textColor = UIColor.themeColor
+                    noDataLbl.textAlignment = .center
+                    tableView.backgroundView = noDataLbl
                     return report.week!.count
                 }
             }else {
                 noDataLbl.text = "No weekly data found"
-                return 0
+                noDataLbl.textColor = UIColor.themeColor
+                noDataLbl.textAlignment = .center
+                tableView.backgroundView = noDataLbl
+                return numberOfSection
             }
         case .monthly:
             if let report = reportData {
                 if report.month!.count == 0 {
                     noDataLbl.text = "No monthly data found"
-                    return 0
+                    noDataLbl.textColor = UIColor.themeColor
+                    noDataLbl.textAlignment = .center
+                    tableView.backgroundView = noDataLbl
+                    return numberOfSection
                 }else {
                     noDataLbl.text = ""
+                    noDataLbl.textColor = UIColor.themeColor
+                    noDataLbl.textAlignment = .center
+                    tableView.backgroundView = noDataLbl
                     return report.month!.count
                 }
             }else {
                 noDataLbl.text = "No monthly data found"
-                return 0
+                noDataLbl.textColor = UIColor.themeColor
+                noDataLbl.textAlignment = .center
+                tableView.backgroundView = noDataLbl
+                return numberOfSection
             }
         }
         noDataLbl.textColor = UIColor.themeColor
@@ -633,21 +661,28 @@ extension SalesReportVC:UITableViewDataSource {
         switch selection {
         case .daily:
           //  if (statusReportData[section].isOpened){
-           print(section)
+        //   print(section)
          //  if(section>0){
-            if (statusReportData[section].isOpened){
+          // print (reportData)
                 
             if let report = reportData {
+                if (statusReportData[section].isOpened){
                 if let day = report.day{
+                    if(day.count>0){
                     if let date = day[section].byDate{
                         return date.count+1
                     }
                 }
-            //    return report.day!.count
+                    else{
+                    return 0
+                    }
+                    }
+              //  return 0
             }
+               return 1
             }
           // }
-            return 1
+            return 0
        /** }
            else{
             return 0
@@ -778,6 +813,7 @@ extension SalesReportVC:UITableViewDataSource {
             if let report = reportData {
               //  if let dayReport = dailyReport{
                 if let day = report.day{
+                    if(day.count>0){
                     if statusReportData[indexPath.section].isOpened{
                     cell.imgGrandparent.transform = CGAffineTransform(rotationAngle: .pi)
                     }
@@ -795,7 +831,9 @@ extension SalesReportVC:UITableViewDataSource {
                 if let amt = Double(day.totalsales) {
                     cell.lblPrice.text = "$" + "\(amt.rounded(toPlaces: 2))"
                 }
+                    }
             }
+                return SalesReportCell()
             }
         case .weekly:
             if let report = reportData {
