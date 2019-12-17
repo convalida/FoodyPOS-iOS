@@ -832,8 +832,11 @@ extension SalesReportVC:UITableViewDataSource {
                     cell.lblPrice.text = "$" + "\(amt.rounded(toPlaces: 2))"
                 }
                     }
+                    else{
+                    return SalesReportCell()
+                    }
             }
-                return SalesReportCell()
+                
             }
         case .weekly:
             if let report = reportData {
