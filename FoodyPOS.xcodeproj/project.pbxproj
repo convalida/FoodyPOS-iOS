@@ -114,6 +114,7 @@
 		F20E7EF42359931E00AF2F52 /* NotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20E7EF32359931E00AF2F52 /* NotificationsVC.swift */; };
 		F20E7EF82359BFF100AF2F52 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20E7EF72359BFF100AF2F52 /* NotificationCell.swift */; };
 		F244A2512342040100B931D0 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F244A2502342040100B931D0 /* MenuCell.swift */; };
+		F2BBB96123AB89BF00408582 /* ReportsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BBB96023AB89BF00408582 /* ReportsTableVC.swift */; };
 		F2DDF680236C26B600775473 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DDF67F236C26B600775473 /* Notifications.swift */; };
 		F2E5B7BA23264492000041A7 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E5B7B923264492000041A7 /* MenuVC.swift */; };
 /* End PBXBuildFile section */
@@ -274,6 +275,7 @@
 		F20E7EF32359931E00AF2F52 /* NotificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsVC.swift; sourceTree = "<group>"; };
 		F20E7EF72359BFF100AF2F52 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		F244A2502342040100B931D0 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		F2BBB96023AB89BF00408582 /* ReportsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsTableVC.swift; sourceTree = "<group>"; };
 		F2DDF67F236C26B600775473 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		F2E5B7B923264492000041A7 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		F57BA99BE21094B31188D562 /* Pods-FoodyPOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodyPOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodyPOSUITests/Pods-FoodyPOSUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -388,6 +390,7 @@
 				2BD6599621A5D411005B7A7D /* DateVC.swift */,
 				2B08600C21A724FF0059BD29 /* AllBestSellerVC.swift */,
 				F20E7EF32359931E00AF2F52 /* NotificationsVC.swift */,
+				F2BBB96023AB89BF00408582 /* ReportsTableVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -899,6 +902,7 @@
 				2B42C3A12116A0B90086FDB6 /* EmployeeDetailCell.swift in Sources */,
 				04182C8E210FFD84001EA39F /* OrderListVC.swift in Sources */,
 				F20E7EF82359BFF100AF2F52 /* NotificationCell.swift in Sources */,
+				F2BBB96123AB89BF00408582 /* ReportsTableVC.swift in Sources */,
 				2B04691721A47FF9002853AA /* CustomerDetailVC.swift in Sources */,
 				04E84D86210C109600537500 /* ARSLineProgressHelpers.swift in Sources */,
 				2BFBC6E721176CF400DF9A9D /* User.swift in Sources */,

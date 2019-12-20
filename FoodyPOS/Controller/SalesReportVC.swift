@@ -979,6 +979,14 @@ extension SalesReportVC:UITableViewDelegate {
             let sections = IndexSet(integer:indexPath.section)
             tableView.reloadSections(sections, with: .none)
         }
+        else{
+          /**  if statusReportData[indexPath.section].isOpened {
+                statusReportData[indexPath.section].isOpened = false
+            }
+            else{
+                statusReportData[indexPath.section].isOpened = true
+            }**/
+        }
     }
     
     /**
@@ -990,4 +998,19 @@ extension SalesReportVC:UITableViewDelegate {
         }
         return 70.0
     }
+
+  /**  func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let sectionView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 25))
+        sectionView.backgroundColor = UIColor.magenta
+        
+        let sectionName = UILabel(frame: CGRect(x: 5, y: 0, width: tableView.frame.size.width, height: 25))
+        //sectionName.text = titleString[section]
+        sectionName.textColor = UIColor.white
+        sectionName.font = UIFont.systemFont(ofSize: 14)
+        sectionName.textAlignment = .left
+        
+        sectionView.addSubview(sectionName)
+        return sectionView
+
+    }**/
 }
