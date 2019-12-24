@@ -288,7 +288,8 @@ class SalesReportVC: UIViewController {
     Set tint color of weekly image, monthly image, weekly button and monthly button to black. Call reloadTable method to reload the table.
     */
     @IBAction func btnMonthlyDidClicked(_ sender: UIButton) {
-        setStartDate()
+        //setStartDate()
+        setMonthStartDate()
         setMonthData()
         selection = .monthly
         imgDaily.tintColor = UIColor.black
@@ -352,6 +353,14 @@ class SalesReportVC: UIViewController {
     private func setStartDate() {
         if !isSearch {
             let startDate = Date.startOfMonth()
+            btnStartDate.setTitle(startDate.getDateString(), for: .normal)
+            btnEndDate.setTitle(Date.todayDate, for: .normal)
+        }
+    }
+    
+    private func setMonthStartDate() {
+        if !isSearch {
+        let startDate = Date.startOfYear()
             btnStartDate.setTitle(startDate.getDateString(), for: .normal)
             btnEndDate.setTitle(Date.todayDate, for: .normal)
         }
@@ -1012,8 +1021,8 @@ extension SalesReportVC:UITableViewDelegate {
          //   tableView.selectRow(at: indexPath, animated: true, scrollPosition: .middle)
             
         }**/
-        switch selection{
-        case .daily:
+     //   switch selection{
+      //  case .daily:
             let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.OrderListVC) as! OrderListVC
             vc.restaurantID = UserManager.restaurantID
             vc.startDate = btnStartDate.titleLabel?.text
@@ -1022,11 +1031,11 @@ extension SalesReportVC:UITableViewDelegate {
             vc.reportsOrderList=true
             self.navigationController?.pushViewController(vc, animated: true)
             
-        case .weekly:
+     /**   case .weekly:
             let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.OrderListVC)
         case .monthly:
             let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.OrderListVC)
-        }
+        }**/
         
         
     }
