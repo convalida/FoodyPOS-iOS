@@ -41,6 +41,12 @@ class OrderListVC: UIViewController {
     var orderData:Order?
     ///Hud view instantiated
     var hudView = UIView()
+    var startDate:String?
+    var restaurantID:String?
+    var endDate:String?
+    var orderNumber:String?
+    var reportsOrderList=false
+    
     
     ///Set status bar to visible 
     override var prefersStatusBarHidden: Bool {
@@ -82,6 +88,10 @@ class OrderListVC: UIViewController {
         }**/
         btnStartDate.setTitle(lastSun.getDateString(), for: .normal)
         btnEndDate.setTitle(Date.todayDate, for: .normal)
+        
+        if(reportsOrderList==true){
+        }
+        
     }
 
     /**
@@ -217,12 +227,31 @@ class OrderListVC: UIViewController {
        If api hit is not successful, if error message is noDataMessage or noDataMessage1 in Constants.swift, display message msgFailed in AppMessages.swift in dialog else display error message in dialog.
      */
     func callOrderAPI() {
+     //   let parameterDic=[]
+        var startdate:String?
+        var enddate:String?
+        
+        if(reportsOrderList){
+          /** let parameterDic = ["RestaurantId":restaurantID,
+                                "startdate":startDate,
+                                "enddate":endDate,
+                                "ordernumber":orderNumber
+            ]**/
+            startdate = startDate
+            enddate = endDate
+        }
+        else{
+        startdate = (btnStartDate.titleLabel?.text)!
+            enddate = (btnEndDate.titleLabel?.text)!
+        }
         guard let restaurentId = UserManager.restaurantID else {
             return
         }
         let prameterDic = ["RestaurantId":restaurentId,
-                            "startdate":(btnStartDate.titleLabel?.text)!,
-                           "enddate":(btnEndDate.titleLabel?.text)!,
+                          //  "startdate":(btnStartDate.titleLabel?.text)!,
+                          // "enddate":(btnEndDate.titleLabel?.text)!,
+            "startdate":startdate!,
+            "enddate":enddate!,
                            "ordernumber":"null".replacingOccurrences(of: "\"", with: "")] as [String : Any]
         
         self.hudView.isHidden = false
@@ -242,6 +271,7 @@ class OrderListVC: UIViewController {
                 }
             }
         }
+        //}
     }
     
     ///This method reloads the data of table view

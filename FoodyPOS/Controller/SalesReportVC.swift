@@ -90,6 +90,11 @@ class SalesReportVC: UIViewController {
     var sectionCount = 0
     var expandedSectionHeaderNumber: Int = -1
     
+    var startDate:String?
+    var endDate:String?
+    var restId:String?
+    var orderNum:String?
+    
     ///Set status bar to visible
     override var prefersStatusBarHidden: Bool {
         return false
@@ -250,7 +255,7 @@ class SalesReportVC: UIViewController {
     */
     @IBAction func btnWeeklyDidClicked(_ sender: UIButton) {
         setStartDate()
-        //setWeekData()
+        setWeekData()
         selection = .weekly
         imgDaily.tintColor = UIColor.black
         imgWeekly.tintColor = UIColor.themeColor
@@ -284,7 +289,7 @@ class SalesReportVC: UIViewController {
     */
     @IBAction func btnMonthlyDidClicked(_ sender: UIButton) {
         setStartDate()
-      //  setMonthData()
+        setMonthData()
         selection = .monthly
         imgDaily.tintColor = UIColor.black
         imgWeekly.tintColor = UIColor.black
@@ -900,20 +905,20 @@ extension SalesReportVC:UITableViewDataSource {
                 switch selection{
                 case .daily:
                     if let daily = reports.day{
-                       // if statusReportData[indexPath.section].isOpened{
-                       // cell.imgHeader.transform = CGAffineTransform(rotationAngle: .pi)
-                        //}
+                      // if statusReportData[indexPath.row].isOpened{
+                        //cell.imgHeader.transform = CGAffineTransform(rotationAngle: .pi)
+                       // }
                         //else{
                        // cell.imgHeader.transform = CGAffineTransform.identity
                         //}
                         if let dates = daily[indexPath.section].byDate{
                             //if let date = dates[indexPath.row-1].o
-                      //      if statusReportData[indexPath.section].isOpened{
+                           if statusReportData[indexPath.row].isOpened{
                                 cell.imgHeader.transform = CGAffineTransform(rotationAngle: .pi)
-                        //    }
-                          //  else{
+                          }
+                            else{
                             cell.imgHeader.transform = CGAffineTransform.identity
-                           // }
+                            }
                             if let date = dates[indexPath.row-1].orderDate{
                             cell.lblHeaderDate.text = date
                             }
@@ -928,7 +933,12 @@ extension SalesReportVC:UITableViewDataSource {
                 case .weekly:
                     if let weekly = reports.week{
                         if let weekDates = weekly[indexPath.section].byWeekDate{
+                            if statusReportData[indexPath.row].isOpened{
+                            cell.imgHeader.transform = CGAffineTransform(rotationAngle: .pi)
+                            }
+                            else{
                         cell.imgHeader.transform = CGAffineTransform.identity
+                            }
                             if let weekDate = weekDates[indexPath.row-1].orderDate{
                             cell.lblHeaderDate.text = weekDate
                             }
@@ -943,7 +953,12 @@ extension SalesReportVC:UITableViewDataSource {
                 case .monthly:
                     if let monthly = reports.month{
                         if let monthDates = monthly[indexPath.section].byMonthDate{
+                            if statusReportData[indexPath.row].isOpened{
+                            cell.imgHeader.transform = CGAffineTransform(rotationAngle: .pi)
+                            }
+                            else{
                         cell.imgHeader.transform = CGAffineTransform.identity
+                            }
                             if let monthDate = monthDates[indexPath.row-1].orderDate{
                             cell.lblHeaderDate.text = monthDate
                             }
@@ -969,7 +984,7 @@ extension SalesReportVC:UITableViewDataSource {
 extension SalesReportVC:UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0{
+     /**   if indexPath.row == 0{
             if statusReportData[indexPath.section].isOpened {
             statusReportData[indexPath.section].isOpened = false
             }
@@ -979,14 +994,41 @@ extension SalesReportVC:UITableViewDelegate {
             let sections = IndexSet(integer:indexPath.section)
             tableView.reloadSections(sections, with: .none)
         }
-        else{
-          /**  if statusReportData[indexPath.section].isOpened {
-                statusReportData[indexPath.section].isOpened = false
+        else {
+            if(statusReportData[indexPath.section].isOpened){
+            if statusReportData[indexPath.row].isOpened {
+                statusReportData[indexPath.row].isOpened = false
             }
             else{
-                statusReportData[indexPath.section].isOpened = true
-            }**/
+                statusReportData[indexPath.row].isOpened = true
+            }
+                tableView.beginUpdates()
+                tableView.reloadRows(at: [indexPath], with: .none)
+                tableView.endUpdates()
+            }
+           // let rows = IndexSet(integer: indexPath.row)
+         //   tableView.reloadRows(at: rows, with: .none)
+           // tableView.reloadRows(at: [indexPath], with: .none)
+         //   tableView.selectRow(at: indexPath, animated: true, scrollPosition: .middle)
+            
+        }**/
+        switch selection{
+        case .daily:
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.OrderListVC) as! OrderListVC
+            vc.restaurantID = UserManager.restaurantID
+            vc.startDate = btnStartDate.titleLabel?.text
+            vc.endDate = btnEndDate.titleLabel?.text
+            vc.orderNumber = ""
+            vc.reportsOrderList=true
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        case .weekly:
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.OrderListVC)
+        case .monthly:
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.OrderListVC)
         }
+        
+        
     }
     
     /**
