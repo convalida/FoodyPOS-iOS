@@ -685,8 +685,14 @@ extension DashboardVC:UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         
-        case 0,1,2,3:
+        case 0,2:
             let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.SalesReportVC) as! SalesReportVC
+            vc.reportsMonthly=true
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        case 1,3:
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.SalesReportVC) as! SalesReportVC
+          //  vc.reportsDaily=true
             self.navigationController?.pushViewController(vc, animated: true)
   
         case 4:

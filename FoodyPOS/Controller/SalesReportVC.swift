@@ -94,6 +94,8 @@ class SalesReportVC: UIViewController {
     var endDate:String?
     var restId:String?
     var orderNum:String?
+    var reportsMonthly=false
+    var reportsDaily=false
     
     ///Set status bar to visible
     override var prefersStatusBarHidden: Bool {
@@ -124,6 +126,17 @@ class SalesReportVC: UIViewController {
     */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        if reportData == nil {
+            callReportAPI()
+        }
+        if(reportsMonthly){
+            btnMonthlyClicked()
+        }
+        else if (reportsDaily){
+      //  btnDailyClicked()
+        }
+        else{
         initDate()
        
         
@@ -138,9 +151,9 @@ class SalesReportVC: UIViewController {
         lblWeekly.textColor = UIColor.black
         lblMonthly.textColor = UIColor.black
         
-        if reportData == nil {
-        callReportAPI()
+        
         }
+       
          
     }
     
@@ -254,33 +267,38 @@ class SalesReportVC: UIViewController {
     Set tint color of weekly image, monthly image, weekly button and monthly button to black. Call reloadTable method to reload the table.
     */
     @IBAction func btnWeeklyDidClicked(_ sender: UIButton) {
-        setStartDate()
-        setWeekData()
-        selection = .weekly
-        imgDaily.tintColor = UIColor.black
-        imgWeekly.tintColor = UIColor.themeColor
-        imgMonthly.tintColor = UIColor.black
-        lblDaily.textColor = UIColor.black
-        lblWeekly.textColor = UIColor.themeColor
-        lblMonthly.textColor = UIColor.black
         
-
-     //   status.isOpened = false
-     //   statusReportData.append(status)
-  
-        //self.tableView.reloadData()
-       // initData()
- //        reloadTable()
-       
-      /**     if statusReportData.isOpened {
-                statusReportData[indexPath.section].isOpened = false
-            }
-            
-            let sections = IndexSet(integer:indexPath.section)
-            tableView.reloadSections(sections, with: .none)**/
-       // }
-        reloadTable()
       //  self.tableView.reloadData()
+        btnWeeklyClicked()
+    }
+    
+   func btnWeeklyClicked(){
+    setStartDate()
+    setWeekData()
+    selection = .weekly
+    imgDaily.tintColor = UIColor.black
+    imgWeekly.tintColor = UIColor.themeColor
+    imgMonthly.tintColor = UIColor.black
+    lblDaily.textColor = UIColor.black
+    lblWeekly.textColor = UIColor.themeColor
+    lblMonthly.textColor = UIColor.black
+    
+    
+    //   status.isOpened = false
+    //   statusReportData.append(status)
+    
+    //self.tableView.reloadData()
+    // initData()
+    //        reloadTable()
+    
+    /**     if statusReportData.isOpened {
+     statusReportData[indexPath.section].isOpened = false
+     }
+     
+     let sections = IndexSet(integer:indexPath.section)
+     tableView.reloadSections(sections, with: .none)**/
+    // }
+    reloadTable()
     }
     
      /**
@@ -289,6 +307,11 @@ class SalesReportVC: UIViewController {
     */
     @IBAction func btnMonthlyDidClicked(_ sender: UIButton) {
         //setStartDate()
+        btnMonthlyClicked()
+        
+    }
+    
+    func btnMonthlyClicked(){
         setMonthStartDate()
         setMonthData()
         selection = .monthly
@@ -298,13 +321,13 @@ class SalesReportVC: UIViewController {
         lblDaily.textColor = UIColor.black
         lblWeekly.textColor = UIColor.black
         lblMonthly.textColor = UIColor.themeColor
-     //   self.tableView.reloadData()
-       // tableView.beginUpdates()
-     //   tableView.endUpdates()
-       // if(statusReportData[].isOpened){
-       
-       // }
-       //  tableViewCollapseSections()
+        //   self.tableView.reloadData()
+        // tableView.beginUpdates()
+        //   tableView.endUpdates()
+        // if(statusReportData[].isOpened){
+        
+        // }
+        //  tableViewCollapseSections()
         reloadTable()
     }
     
@@ -429,7 +452,12 @@ class SalesReportVC: UIViewController {
             case .success(let report):
                 self.reportData = report
                self.initData()
+                if(self.reportsMonthly){
+                self.setMonthData()
+                }
+                else{
                 self.setDayData()
+                }
                 self.reloadTable()
                 
             case .failure(let error):
