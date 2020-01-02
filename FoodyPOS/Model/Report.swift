@@ -38,7 +38,7 @@ struct Day: Codable {
     let totalsales: String
     ///Variable for TotalsOrders key
     let totalsOrders: String
-    let byDate: [ByDate]?
+ //   let byDate: [ByDate]?
     
      /**
     Enum is defined here. It assigns response keys of Day object to corresponding variables
@@ -50,11 +50,11 @@ struct Day: Codable {
         case totalsales = "Totalsales"
         ///Assign TotalsOrders key to totalsOrders variable which displays total orders day
         case totalsOrders = "TotalsOrders"
-        case byDate = "ByDate"
+    //    case byDate = "ByDate"
     }
 }
 
-struct ByDate: Codable{
+/**struct ByDate: Codable{
     let orderDate : String?
     let totalSales : String?
     let totalOrders : String?
@@ -80,7 +80,7 @@ struct OrderDetails: Codable{
         case orderTime = "OrderTime"
         case orderTotal = "OrderTotal"
     }
-}
+}**/
 
 
 ///Structure for Monthly reports
@@ -91,7 +91,7 @@ struct Month: Codable {
     let totalsales: String 
      ///Variable for TotalsOrders key
     let totalsOrders: String
-    let byMonthDate: [ByMonthDate]?
+  //  let byMonthDate: [ByMonthDate]?
     
     /**
     Enum is defined here. It assigns response keys of Month object to corresponding variables
@@ -103,11 +103,11 @@ struct Month: Codable {
         case totalsales = "Totalsales"
          ///Assign TotalsOrders key to totalsOrders variable which displays total orders month
         case totalsOrders = "TotalsOrders"
-        case byMonthDate = "ByDate"
+    //    case byMonthDate = "ByDate"
     }
 }
 
-struct ByMonthDate: Codable{
+/**struct ByMonthDate: Codable{
     let orderDate: String?
     let totalSales: String?
     let totalOrders: String?
@@ -133,7 +133,7 @@ struct MonthOrderDetails: Codable{
         case orderTime = "OrderTime"
         case orderTotal = "Ordertotal"
     }
-}
+}**/
 ///Structure for Weekly reports
 struct Week: Codable {
     ///Variable for Week key
@@ -142,7 +142,7 @@ struct Week: Codable {
     let totalsales: String 
      ///Variable for TotalsOrders key
     let totalsOrders: String
-    let byWeekDate: [ByWeekDate]?
+  //  let byWeekDate: [ByWeekDate]?
     
      /**
     Enum is defined here. It assigns response keys of Week object to corresponding variables
@@ -154,11 +154,11 @@ struct Week: Codable {
         case totalsales = "Totalsales"
         ///Assign TotalsOrders key to totalsOrders variable which displays total orders week
         case totalsOrders = "TotalsOrders"
-        case byWeekDate = "ByDate"
+   //     case byWeekDate = "ByDate"
     }
 }
 
-struct ByWeekDate: Codable {
+/**struct ByWeekDate: Codable {
     let orderDate: String?
     let totalSales: String?
     let totalOrders: String?
@@ -184,6 +184,6 @@ struct WeekOrderDetails: Codable{
         case orderTime = "OrderTime"
         case orderTotal = "OrderTotal"
     }
-}
+}**/
 
 
