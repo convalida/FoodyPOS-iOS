@@ -96,6 +96,7 @@ class SalesReportVC: UIViewController {
     var orderNum:String?
     var reportsMonthly=false
     var reportsDaily=false
+    var reportsWeekly=false
     
     ///Set status bar to visible
     override var prefersStatusBarHidden: Bool {
@@ -133,6 +134,9 @@ class SalesReportVC: UIViewController {
         if(reportsMonthly){
             btnMonthlyClicked()
         }
+        else if (reportsWeekly){
+        btnWeeklyClicked()
+        }
      /**   else if (reportsDaily){
       //  btnDailyClicked()
         }**/
@@ -169,7 +173,17 @@ class SalesReportVC: UIViewController {
     func initDate() {
         if !isSearch {
             let lastSun = Date.today().previous(.monday)
+            let date = Date()
+            let calendar = Calendar.current
+           // calendar.component(.year, from: date)
+          //  lastSun.getDateString().substring(to: 7)
+            if(calendar.component(.year, from: lastSun) != calendar.component(.year, from: date)){
+                        let startDate = Date.startOfYear()
+                btnStartDate.setTitle(startDate.getDateString(), for: .normal)
+            }
+            else{
             btnStartDate.setTitle(lastSun.getDateString(), for: .normal)
+            }
             btnEndDate.setTitle(Date.todayDate, for: .normal)
         }
     }
@@ -246,6 +260,9 @@ class SalesReportVC: UIViewController {
     Set tint color of weekly image, monthly image, weekly button and monthly button to black. Call reloadTable method to reload the table.
     */
     @IBAction func btnDailyDidClicked(_ sender: UIButton) {
+        reportsDaily = true
+        reportsWeekly = false
+        reportsMonthly = false
         initDate()
         setDayData()
         selection = .daily
@@ -273,6 +290,9 @@ class SalesReportVC: UIViewController {
     }
     
    func btnWeeklyClicked(){
+    reportsWeekly = true
+    reportsMonthly = false
+    reportsDaily = false
     setStartDate()
     setWeekData()
     selection = .weekly
@@ -313,6 +333,8 @@ class SalesReportVC: UIViewController {
     
     func btnMonthlyClicked(){
         reportsMonthly = true
+        reportsDaily = false
+        reportsWeekly = false
         setMonthStartDate()
         setMonthData()
         selection = .monthly
@@ -455,6 +477,9 @@ class SalesReportVC: UIViewController {
           /**     self.initData()**/
                 if(self.reportsMonthly){
                 self.setMonthData()
+                }
+                else if(self.reportsWeekly){
+                self.setWeekData()
                 }
                 else{
                 self.setDayData()
