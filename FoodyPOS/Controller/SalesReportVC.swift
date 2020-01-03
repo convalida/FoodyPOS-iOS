@@ -173,7 +173,7 @@ class SalesReportVC: UIViewController {
     func initDate() {
         if !isSearch {
             let lastSun = Date.today().previous(.monday)
-            let date = Date()
+          /**  let date = Date()
             let calendar = Calendar.current
            // calendar.component(.year, from: date)
           //  lastSun.getDateString().substring(to: 7)
@@ -181,9 +181,9 @@ class SalesReportVC: UIViewController {
                         let startDate = Date.startOfYear()
                 btnStartDate.setTitle(startDate.getDateString(), for: .normal)
             }
-            else{
+            else{**/
             btnStartDate.setTitle(lastSun.getDateString(), for: .normal)
-            }
+        //    }
             btnEndDate.setTitle(Date.todayDate, for: .normal)
         }
     }

@@ -46,6 +46,7 @@ class OrderListVC: UIViewController {
     var endDate:String?
     var orderNumber:String?
     var reportsOrderList=false
+    var searchBtnClicked=false
     
     
     ///Set status bar to visible 
@@ -186,6 +187,7 @@ class OrderListVC: UIViewController {
    call method callOrderAPI which hits orders web service, else show message Start date must be less than or equal to end date in toast.
    */
     @IBAction func btnDateSearchDidClicked(_ sender: UIButton) {
+        searchBtnClicked=true
         if Date.getDate(fromString: (btnStartDate.titleLabel?.text)!)! <= Date.getDate(fromString: (btnEndDate.titleLabel?.text)!)! {
             callOrderAPI()
         }else {
@@ -235,7 +237,7 @@ class OrderListVC: UIViewController {
         var startdate:String?
         var enddate:String?
         
-        if(reportsOrderList){
+        if(reportsOrderList && !searchBtnClicked){
           /** let parameterDic = ["RestaurantId":restaurantID,
                                 "startdate":startDate,
                                 "enddate":endDate,
