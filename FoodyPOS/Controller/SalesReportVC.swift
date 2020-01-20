@@ -1086,21 +1086,45 @@ extension SalesReportVC:UITableViewDelegate {
          //   tableView.selectRow(at: indexPath, animated: true, scrollPosition: .middle)
             
         }**/
-     //   switch selection{
-      //  case .daily:
+        switch selection{
+        case .daily:
             let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.OrderListVC) as! OrderListVC
             vc.restaurantID = UserManager.restaurantID
-            vc.startDate = btnStartDate.titleLabel?.text
-            vc.endDate = btnEndDate.titleLabel?.text
+           // vc.startDate = btnStartDate.titleLabel?.text
+           // vc.endDate = btnEndDate.titleLabel?.text
+            if let report = reportData{
+            let day = report.day![indexPath.row]
+                vc.startDate = day.startDate
+                vc.endDate = day.endDate
+            }
             vc.orderNumber = ""
             vc.reportsOrderList=true
             self.navigationController?.pushViewController(vc, animated: true)
             
-     /**   case .weekly:
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.OrderListVC)
+        case .weekly:
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.OrderListVC) as! OrderListVC
+            vc.restaurantID = UserManager.restaurantID
+            if let report = reportData{
+            let week = report.week![indexPath.row]
+                vc.startDate = week.startDate
+                vc.endDate = week.endDate
+            }
+            vc.orderNumber = ""
+            vc.reportsOrderList=true
+            self.navigationController?.pushViewController(vc, animated: true)
+            
         case .monthly:
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.OrderListVC)
-        }**/
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.OrderListVC) as! OrderListVC
+            vc.restaurantID = UserManager.restaurantID
+            if let report = reportData{
+            let month = report.month![indexPath.row]
+                vc.startDate = month.startDate
+                vc.endDate = month.endDate
+            }
+            vc.orderNumber = ""
+            vc.reportsOrderList=true
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
         
         
     }
