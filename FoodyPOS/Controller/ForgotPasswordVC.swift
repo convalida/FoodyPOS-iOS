@@ -27,7 +27,7 @@ class ForgotPasswordVC: UIViewController {
     }
     
     ///Instantiate hud view
-    var hudView = UIView()
+    var hudView = UIView()//Progress bar
     
     //MARK: ---------View Life Cycle---------
     

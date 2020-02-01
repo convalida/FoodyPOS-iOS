@@ -39,16 +39,16 @@ class NotificationsVC: UIViewController {
             tableView.tableFooterView?.frame.size.height = 100
         }
   //     initHudView()
-        callNotificationsAPI()
+    //    callNotificationsAPI()
 
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-      /**  if(notificationsData == nil){
+        if(notificationsData == nil){
             callNotificationsAPI()
-        }**/
+        }
     }
     
     @IBAction func btnBackDidClick(_ sender: Any) {
@@ -104,10 +104,10 @@ class NotificationsVC: UIViewController {
        self.hudView.isHidden=false
         APIClient.notifications(parameters: parameterDic){ (result) in
             self.hudView.isHidden=true
-            print(result)
+          //  print(result)
             switch result{
             case .success(let notifications):
-                print (notifications)
+             //   print (notifications)
                 self.notificationsData = notifications
                 self.reloadTable()
                 

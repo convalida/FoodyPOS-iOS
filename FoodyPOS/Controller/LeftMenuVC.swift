@@ -232,8 +232,8 @@ extension LeftMenuVC:UITableViewDelegate {
                 
             case 1:
                 parentVC?.leftSlideMenu.close()
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.NotificationsVC) as! NotificationsVC
-                self.navigationController?.pushViewController(vc, animated: true)
+             //   let vc = self.storyboard?.instantiateViewController(withIdentifier: StoryboardConstant.NotificationsVC) as! NotificationsVC
+              //  self.navigationController?.pushViewController(vc, animated: true)
            
             default:
                 print("Default")
